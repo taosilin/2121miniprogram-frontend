@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/index/index",
     "pages/logs/logs",
     "pages/shoppingMall/shoppingMall",
@@ -16,7 +17,7 @@
   "tabBar":{
     "position": "bottom",
     "borderStyle": "white",
-    "selectedColor": "#315668",
+    "selectedColor": "#747474",
     "list": [
       {
         "pagePath": "pages/index/index",

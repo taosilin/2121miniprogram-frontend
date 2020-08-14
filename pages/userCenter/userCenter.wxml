@@ -1,4 +1,62 @@
 <!--pages/userCenter/userCenter.wxml-->
 <view class="container">
-  <text>个人中心</text>
+  <view class="card">
+    <image class="cardBkg" src='../../image/myCard.png' mode="widthFix"></image>
+    <view class="userInfo">
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      <view class="content">
+        <text class="username">{{userInfo.nickName}}</text>
+        <text class="Info">已经在2121星球居住</text>
+        <text class="username">1</text>
+        <text class="Info">年了</text>
+      </view>
+    </view>
+  </view>
+  <view class="myOrder">
+    <view class="ordertext">我的订单</view>
+    <view class="orders">
+      <view class="orderList">
+        <image class="orderstate-pay" src="../../image/icon/payment.png" mode="widthFix"></image>
+        <view class="statetext">待付款</view>
+      </view>
+      <view class="orderList">
+        <image class="orderstate-receive" src="../../image/icon/receive.png" mode="widthFix"></image>
+        <view class="statetext">待收货</view>
+      </view>
+      <view class="orderList">
+        <image class="orderstate-comment" src="../../image/icon/comment.png" mode="widthFix"></image>
+        <view class="statetext">待评价</view>
+      </view>
+      <view class="orderList">
+        <image class="orderstate-refund" src="../../image/icon/refund.png" mode="widthFix"></image>
+        <view class="statetext">退货/售后</view>
+      </view>
+    </view>
+  </view>
+  <view class="others">
+    <view class="function">
+      <image class="othericon" src="../../image/icon/favorites.png" mode="widthFix"></image>
+      <text class="functext">收藏夹</text>
+    </view>
+    <view class="function">
+      <image class="othericon" src="../../image/icon/address.png" mode="widthFix"></image>
+      <text class="functext">我的地址</text>
+    </view>
+    <view class="function">
+      <image class="othericon" src="../../image/icon/service.png" mode="widthFix"></image>
+      <text class="functext">联系客服</text>
+    </view>
+    <view class="function">
+      <image class="othericon" src="../../image/icon/policy.png" mode="widthFix"></image>
+      <text class="functext">相关政策</text>
+    </view>
+  </view>
+  <view class="more">
+    <image class="moreicon" src="../../image/icon/source.png" mode="widthFix"></image>
+    <view class="moretext">
+      <text>更多精彩</text>
+      <text>尽在2121公众号</text>
+    </view>
+    <view class="follow-btn">去关注></view>
+  </view>
 </view>
