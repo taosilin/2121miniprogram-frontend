@@ -13,7 +13,7 @@
     </view>
   </view>
   <view class="myOrder">
-    <view class="ordertext">我的订单</view>
+    <view class="ordertext" bindtap="goToMyOrders">我的订单</view>
     <view class="orders">
       <view class="orderList">
         <image class="orderstate-pay" src="../../image/icon/payment.png" mode="widthFix"></image>
@@ -35,19 +35,19 @@
   </view>
   <view class="others">
     <view class="function">
-      <image class="othericon" src="../../image/icon/favorites.png" mode="widthFix"></image>
+      <image class="othericon-favorites" src="../../image/icon/favorites.png" mode="widthFix"></image>
       <text class="functext">收藏夹</text>
     </view>
     <view class="function">
-      <image class="othericon" src="../../image/icon/address.png" mode="widthFix"></image>
+      <image class="othericon-address" src="../../image/icon/address.png" mode="widthFix"></image>
       <text class="functext">我的地址</text>
     </view>
     <view class="function">
-      <image class="othericon" src="../../image/icon/service.png" mode="widthFix"></image>
+      <image class="othericon-service" src="../../image/icon/service.png" mode="widthFix"></image>
       <text class="functext">联系客服</text>
     </view>
     <view class="function">
-      <image class="othericon" src="../../image/icon/policy.png" mode="widthFix"></image>
+      <image class="othericon-policy" src="../../image/icon/policy.png" mode="widthFix"></image>
       <text class="functext">相关政策</text>
     </view>
   </view>

@@ -64,5 +64,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  goToMyOrders:function(){
+    wx.navigateTo({
+      url: '../myOrders/myOrders',
+    })
   }
 })

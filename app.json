@@ -1,12 +1,12 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/logs/logs",
     "pages/shoppingMall/shoppingMall",
     "pages/optometry/optometry",
     "pages/shoppingCart/shoppingCart",
-    "pages/userCenter/userCenter"
+    "pages/userCenter/userCenter",
+    "pages/myOrders/myOrders"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,7 +14,7 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
-  "tabBar":{
+  "tabBar": {
     "position": "bottom",
     "borderStyle": "white",
     "selectedColor": "#747474",

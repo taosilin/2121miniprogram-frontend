@@ -1,0 +1,25 @@
+<!--pages/myOrders/myOrders.wxml-->
+<view>
+  <view class="container">
+    <block wx:for="{{orders}}">
+      <view class="order">
+        <view class="header">{{item.orderdate}}{{item.orderid}}{{item.state}}</view>
+        <view class="content">
+          <view>
+            <image class="orderpicture" src="{{item.picture}}" mode="widthFix"></image>
+          </view>
+          <view class="info">
+            <text>{{item.name}}</text>
+            <text>货号：{{item.orderid}}</text>
+            <text>颜色：{{item.color}}</text>
+            <text>度数：{{item.degree}}</text>
+          </view>
+          <view class="rightinfo">
+            <text>¥{{item.price}}</text>
+            <text>{{item.num}}件</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

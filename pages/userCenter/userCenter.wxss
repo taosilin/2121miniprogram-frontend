@@ -92,8 +92,17 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.othericon{
-  width: 15px;
+.othericon-favorites{
+  width: 26px;
+}
+.othericon-address{
+  width: 14px;
+}
+.othericon-service{
+  width: 24px;
+}
+.othericon-policy{
+  width: 20px;
 }
 .functext{
   margin-left: 5px;
