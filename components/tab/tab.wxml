@@ -1,11 +1,11 @@
 <!--components/tab/tab.wxml-->
 <view class="component">
   <view class="content">
-    <view class='label' wx:for="{{tabs}}" data-index="{{index}}" wx:key="{{index}}" style='min-width: {{ itemWidth }}rpx; height: {{ height }}rpx' catchtap='onItemTap'>
+    <view class='label' data-cus="{{ dataCus[index] }}" wx:for="{{tabs}}" data-index="{{index}}" wx:key="{{index}}" style='min-width: {{ itemWidth }}rpx; height: {{ height }}rpx' catchtap='onItemTap'>
       <text class="text" style='color: {{ mSelected == index ? selectColor : textColor }};font-size: {{ textSize }}rpx;'>{{item}}</text>
     </view>    
   </view>
   <view class='bottom-bar {{ theme == "smallBar" ? "small" : "" }}' style='background-color: {{ selectColor }}; left: {{ left }}px; right: {{ right }}px; bottom: {{ bottom }}rpx; transition: {{ transition }}; border-shadow: 0rpx 0rpx 10rpx 0rpx {{ selectColor }};'></view>
-  <view>这里是组件的内部节点</view>
-  <slot></slot> 
+  <!-- <view>这里是组件的内部节点</view>
+  <slot></slot>  -->
 </view>

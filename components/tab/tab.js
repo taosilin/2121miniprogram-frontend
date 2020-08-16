@@ -6,6 +6,7 @@ Component({
   /**
    * 组件的属性列表
    */
+  behaviors:[],
   properties: {
     tabs:{
       type: Array,
@@ -67,13 +68,10 @@ Component({
   },
 
   /**
-   * 组件的初始数据
+   * 组件的初始数据，私有数据
    */
   data: {
-    // tabs:['全部订单','待付款','待收货','待评价','售后']
     itemWidth:128,
-    isScroll:true,
-    scrollStyle:'border-bottom:1px solid #e5e5e5;',
     left:'0',
     right:'750',
     bottom:'0',
@@ -93,7 +91,7 @@ Component({
     barLeft:function(index,dom){
       let that = this;
       this.setData({
-        left:dom[index.left]
+        left:dom[index].left
       })
     },
     barRight:function(index,dom){
@@ -118,6 +116,7 @@ Component({
         this.barRight(index, this.data.domData);
       }
       this.triggerEvent('itemtap',e,{bubbles:true});
+      console.log(this.data.mSelected);
     }
   },
   lifetimes:{
