@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "label-bar":"../../components/tab/tab"
+  }
 }

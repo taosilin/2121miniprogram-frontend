@@ -1,0 +1,27 @@
+/* components/tab/tab.wxss */
+.component{
+  width:100%;
+  background-color:bisque;
+  box-sizing: border-box;
+}
+.content{
+  display: relative;
+}
+.label{
+  display: inline-flex;
+  padding: 0 15rpx;
+  align-items: center;
+  justify-content: center;
+}
+.text{
+  transition:color 0.2s;
+}
+.bottom-bar {
+  position: absolute;
+  height: 2px;
+  border-radius: 2px
+}
+.small {
+  height: 4px;
+  border-radius: 2px;
+}

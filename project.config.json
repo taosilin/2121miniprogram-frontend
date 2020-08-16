@@ -22,7 +22,7 @@
 		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false,
 		"showShadowRootInWxmlPanel": true,
-		"checkSiteMap":false
+		"checkSiteMap": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.1",

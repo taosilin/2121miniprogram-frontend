@@ -1,5 +1,11 @@
 <!--index.wxml-->
 <view class="container">
+  <view>
+    <label-bar>
+      <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
+      <view>这里是插入到组件slot中的内容</view>
+    </label-bar>
+  </view>
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
