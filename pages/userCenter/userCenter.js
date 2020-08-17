@@ -6,15 +6,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:{}
+    userInfo:{},
+    orderDivTop:170,
+    otherDivTop:300,
+    moreDivTop:560
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({userInfo:app.globalData.userInfo})
-    // console.log(this.data.userInfo)
+    this.setData({userInfo:app.globalData.userInfo});
+    const sysInfo = wx.getSystemInfoSync();
+    console.log(sysInfo.windowWidth);
+    console.log(sysInfo.windowHeight);
+    this.setData({
+      orderDivTop:sysInfo.windowWidth/2-40,
+      otherDivTop:sysInfo.windowWidth/2+102,
+      moreDivTop:sysInfo.windowWidth/2+370,
+    });
+    console.log(this.data.orderDivTop);
+    console.log(this.data.otherDivTop);
+    console.log(this.data.moreDivTop);
   },
 
   /**

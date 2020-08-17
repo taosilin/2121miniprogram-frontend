@@ -12,7 +12,7 @@
       </view>
     </view>
   </view>
-  <view class="myOrder">
+  <view class="myOrder" style="margin-top:{{orderDivTop}}px;">
     <view class="ordertext" bindtap="goToMyOrders">
       <text>我的订单</text>
       <view class='arrow'></view>
@@ -42,7 +42,7 @@
       </view>
     </view>
   </view>
-  <view class="others">
+  <view class="others" style="margin-top:{{otherDivTop}}px;">
     <view class="function">
       <view class="iconborder">
         <image class="othericon-favorites" src="../../image/icon/favorites.png" mode="widthFix"></image>
@@ -72,7 +72,7 @@
       <view class='arrow1'></view> 
     </view>
   </view>
-  <view class="more">
+  <view class="more" style="margin-top:{{moreDivTop}}px;">
     <image class="moreicon" src="../../image/icon/source.png" mode="widthFix"></image>
     <view class="moretext">
       <text>更多精彩</text>
