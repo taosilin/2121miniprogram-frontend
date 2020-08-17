@@ -21,9 +21,9 @@ Page({
     console.log(sysInfo.windowWidth);
     console.log(sysInfo.windowHeight);
     this.setData({
-      orderDivTop:sysInfo.windowWidth/2-40,
-      otherDivTop:sysInfo.windowWidth/2+102,
-      moreDivTop:sysInfo.windowWidth/2+370,
+      orderDivTop:sysInfo.windowWidth*0.42,
+      otherDivTop:sysInfo.windowWidth*0.42+142,
+      moreDivTop:sysInfo.windowWidth*0.42+410,
     });
     console.log(this.data.orderDivTop);
     console.log(this.data.otherDivTop);
