@@ -83,5 +83,10 @@ Page({
     wx.navigateTo({
       url: '../myOrders/myOrders',
     })
+  },
+  goToMyAddress:function(){
+    wx.navigateTo({
+      url: '../myAddress/myAddress',
+    })
   }
 })

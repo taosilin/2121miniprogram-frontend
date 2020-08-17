@@ -50,7 +50,7 @@
       <text class="functext">收藏夹</text>
       <view class='arrow1'></view>
     </view>
-    <view class="function">
+    <view class="function" bindtap="goToMyAddress">
       <view class="iconborder">
         <image class="othericon-address" src="../../image/icon/address.png" mode="widthFix"></image>
       </view>

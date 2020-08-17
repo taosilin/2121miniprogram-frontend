@@ -6,7 +6,8 @@
     "pages/optometry/optometry",
     "pages/shoppingCart/shoppingCart",
     "pages/userCenter/userCenter",
-    "pages/myOrders/myOrders"
+    "pages/myOrders/myOrders",
+    "pages/myAddress/myAddress"
   ],
   "window": {
     "backgroundTextStyle": "light",

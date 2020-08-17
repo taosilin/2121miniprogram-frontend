@@ -25,7 +25,7 @@
             <text>度数：{{item.leftdegree}}|{{item.rightdegree}}</text>
           </view>
           <view class="rightinfo">
-            <text>¥{{item.price}}</text>
+            <text>¥ {{item.price}}</text>
             <text style="color:#3D3D3D;">{{item.num}}件</text>
           </view>
         </view>
