@@ -25,14 +25,17 @@
         <image class="orderstate-pay" src="../../image/icon/payment.png" mode="widthFix"></image>
         <view class="statetext">待付款</view>
       </view>
+      <view class='line'></view>
       <view class="orderList">
         <image class="orderstate-receive" src="../../image/icon/receive.png" mode="widthFix"></image>
         <view class="statetext">待收货</view>
       </view>
+      <view class='line'></view>
       <view class="orderList">
         <image class="orderstate-comment" src="../../image/icon/comment.png" mode="widthFix"></image>
         <view class="statetext">待评价</view>
       </view>
+      <view class='line'></view>
       <view class="orderList">
         <image class="orderstate-refund" src="../../image/icon/refund.png" mode="widthFix"></image>
         <view class="statetext">退货/售后</view>
@@ -41,22 +44,30 @@
   </view>
   <view class="others">
     <view class="function">
-      <image class="othericon-favorites" src="../../image/icon/favorites.png" mode="widthFix"></image>
+      <view class="iconborder">
+        <image class="othericon-favorites" src="../../image/icon/favorites.png" mode="widthFix"></image>
+      </view>
       <text class="functext">收藏夹</text>
       <view class='arrow1'></view>
     </view>
     <view class="function">
-      <image class="othericon-address" src="../../image/icon/address.png" mode="widthFix"></image>
+      <view class="iconborder">
+        <image class="othericon-address" src="../../image/icon/address.png" mode="widthFix"></image>
+      </view>
       <text class="functext">我的地址</text>
       <view class='arrow1'></view>
     </view>
     <view class="function">
-      <image class="othericon-service" src="../../image/icon/service.png" mode="widthFix"></image>
+      <view class="iconborder">
+        <image class="othericon-service" src="../../image/icon/service.png" mode="widthFix"></image>
+      </view>
       <text class="functext">联系客服</text>
       <view class='arrow1'></view>
     </view>
     <view class="function">
-      <image class="othericon-policy" src="../../image/icon/policy.png" mode="widthFix"></image>
+      <view class="iconborder">
+        <image class="othericon-policy" src="../../image/icon/policy.png" mode="widthFix"></image>
+      </view>
       <text class="functext">相关政策</text>
       <view class='arrow1'></view> 
     </view>
