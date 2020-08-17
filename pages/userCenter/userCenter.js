@@ -22,8 +22,8 @@ Page({
     console.log(sysInfo.windowHeight);
     this.setData({
       orderDivTop:sysInfo.windowWidth*0.42,
-      otherDivTop:sysInfo.windowWidth*0.42+142,
-      moreDivTop:sysInfo.windowWidth*0.42+410,
+      otherDivTop:sysInfo.windowWidth*0.42+129,
+      moreDivTop:sysInfo.windowWidth*0.42+404,
     });
     console.log(this.data.orderDivTop);
     console.log(this.data.otherDivTop);
