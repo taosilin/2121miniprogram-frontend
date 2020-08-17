@@ -148,7 +148,7 @@ Component({
         })
         if(that.data.theme==themes.smallBar){
           that.barLeft(that.data.mSelected,that.data.textDomData);
-          that.barRight(that.data.mSelected, that.data.textDomData);
+          that.barRight(that.data.mSelected,that.data.textDomData);
         }
         console.log(res)
       }).exec()

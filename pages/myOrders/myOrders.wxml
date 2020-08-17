@@ -9,20 +9,41 @@
     </view>
     <block wx:for="{{orders}}">
       <view class="order">
-        <view class="header">{{item.orderdate}}{{item.orderid}}{{item.state}}</view>
+        <view class="header">
+          <view class="lefttext">{{item.orderdate}}</view>
+          <view class="midtext">{{item.orderid}}</view>
+          <view class="righttext">{{item.state}}</view>
+        </view>
         <view class="content">
-          <view>
+          <view class="imgDiv">
             <image class="orderpicture" src="{{item.picture}}" mode="widthFix"></image>
           </view>
           <view class="info">
-            <text>{{item.name}}</text>
-            <text>货号：{{item.orderid}}</text>
-            <text>颜色：{{item.color}}</text>
-            <text>度数：{{item.degree}}</text>
+            <text class="infotext">{{item.name}}</text>
+            <text class="infotext">货号：{{item.orderid}}</text>
+            <text class="infotext">颜色：{{item.color}}</text>
+            <text>度数：{{item.leftdegree}}|{{item.rightdegree}}</text>
           </view>
           <view class="rightinfo">
             <text>¥{{item.price}}</text>
-            <text>{{item.num}}件</text>
+            <text style="color:#3D3D3D;">{{item.num}}件</text>
+          </view>
+        </view>
+        <view class="footer">
+          <view class="total">合计：¥{{item.price}}</view>
+          <view wx:if="{{item.state=='待付款'}}" class="btnDiv">
+            <view class="normal-btn">关闭订单</view>
+            <view class="important-btn">去付款</view>
+          </view>
+          <view wx:elif="{{item.state=='待收货'}}" class="btnDiv">
+            <view class="normal-btn">查看物流</view>
+            <view class="normal-btn">查看详情</view>
+          </view>
+          <view wx:elif="{{item.state=='待评价'}}" class="btnDiv">
+            <view class="normal-btn">去评价</view>
+          </view>
+          <view wx:elif="{{item.state=='已完成'}}" class="btnDiv">
+            <view class="normal-btn">订单详情</view>
           </view>
         </view>
       </view>

@@ -13,7 +13,8 @@ Page({
         color:"银色",
         price:275,
         num:1,
-        degree:-3.25,
+        leftdegree:-3.25,
+        rightdegree:-3.75,
         state:"待付款",
         picture:"../../image/glasses.jpg"
       },
@@ -24,7 +25,8 @@ Page({
         color:"黑色",
         price:299,
         num:1,
-        degree:-5.50,
+        leftdegree:-5.50,
+        rightdegree:-5.50,
         state:"待付款",
         picture:"../../image/glasses.jpg"
       },
@@ -35,8 +37,45 @@ Page({
         color:"黑色",
         price:299,
         num:1,
-        degree:-5.50,
+        leftdegree:-5.50,
+        rightdegree:-5.50,
         state:"待付款",
+        picture:"../../image/glasses.jpg"
+      },
+      {
+        orderdate:"2020-08-17",
+        name:"黑色粗边眼镜",
+        orderid:"12345567788898",
+        color:"黑色",
+        price:299,
+        num:1,
+        leftdegree:-5.50,
+        rightdegree:-5.50,
+        state:"待收货",
+        picture:"../../image/glasses.jpg"
+      },
+      {
+        orderdate:"2020-08-17",
+        name:"黑色粗边眼镜",
+        orderid:"123456789098",
+        color:"黑色",
+        price:299,
+        num:1,
+        leftdegree:-5.50,
+        rightdegree:-5.50,
+        state:"待评价",
+        picture:"../../image/glasses.jpg"
+      },
+      {
+        orderdate:"2020-08-17",
+        name:"黑色粗边眼镜",
+        orderid:"12345567788898",
+        color:"黑色",
+        price:599,
+        num:1,
+        leftdegree:-5.50,
+        rightdegree:-5.50,
+        state:"已完成",
         picture:"../../image/glasses.jpg"
       }
     ]
