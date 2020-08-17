@@ -14,13 +14,13 @@
           <view class="midtext">{{item.orderid}}</view>
           <view class="righttext">{{item.state}}</view>
         </view>
-        <view class="content">
+        <view wx:for="{{item.commodityList}}" class="content">
           <view class="imgDiv">
             <image class="orderpicture" src="{{item.picture}}" mode="widthFix"></image>
           </view>
           <view class="info">
             <text class="infotext">{{item.name}}</text>
-            <text class="infotext">货号：{{item.orderid}}</text>
+            <text class="infotext">货号：{{item.cmdid}}</text>
             <text class="infotext">颜色：{{item.color}}</text>
             <text>度数：{{item.leftdegree}}|{{item.rightdegree}}</text>
           </view>
@@ -30,7 +30,7 @@
           </view>
         </view>
         <view class="footer">
-          <view class="total">合计：¥{{item.price}}</view>
+          <view class="total">合计：¥{{item.sum}}</view>
           <view wx:if="{{item.state=='待付款'}}" class="btnDiv">
             <view class="normal-btn">关闭订单</view>
             <view class="important-btn">去付款</view>

@@ -43,7 +43,7 @@
 }
 .imgDiv{
   width: 100px;
-  height: 100px;
+  height: 102px;
   border: solid #979797 1px;
   display: flex;
   align-items: center;
