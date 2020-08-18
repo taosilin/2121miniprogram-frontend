@@ -1,39 +1,11 @@
-// pages/myAddress/myAddress.js
+// pages/addAddress/addAddress.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      addresses:[
-      {
-        name:"好汉陶",
-        tel:"18916273661",
-        province:"上海市",
-        city:"上海市",
-        district:"嘉定区",
-        detail:"曹安公路4800号",
-        isDefault:true
-      } ,
-      {
-        name:"陶陶子",
-        tel:"18916273661",
-        province:"上海市",
-        city:"上海市",
-        district:"杨浦区",
-        detail:"四平路1239号",
-        isDefault:false
-      } ,
-      {
-        name:"思霖姐",
-        tel:"18916273661",
-        province:"上海市",
-        city:"上海市",
-        district:"长宁区",
-        detail:"福泉北路518号",
-        isDefault:false
-      } 
-      ]
+
   },
 
   /**
@@ -90,10 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  goToAddAddress:function(){
-    wx.navigateTo({
-      url: '../addAddress/addAddress',
-    })
   }
 })

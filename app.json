@@ -7,7 +7,8 @@
     "pages/shoppingCart/shoppingCart",
     "pages/userCenter/userCenter",
     "pages/myOrders/myOrders",
-    "pages/myAddress/myAddress"
+    "pages/myAddress/myAddress",
+    "pages/addAddress/addAddress"
   ],
   "window": {
     "backgroundTextStyle": "light",
