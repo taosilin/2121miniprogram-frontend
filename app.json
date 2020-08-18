@@ -8,7 +8,8 @@
     "pages/userCenter/userCenter",
     "pages/myOrders/myOrders",
     "pages/myAddress/myAddress",
-    "pages/addAddress/addAddress"
+    "pages/addAddress/addAddress",
+    "pages/productList/productList"
   ],
   "window": {
     "backgroundTextStyle": "light",

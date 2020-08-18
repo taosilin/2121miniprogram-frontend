@@ -1,1 +1,47 @@
 /* pages/shoppingMall/shoppingMall.wxss */
+.container{
+  margin: 0px;
+  padding: 0px;
+}
+.labelbar{
+  width: 100%;
+}
+.classification{
+  width: 100%;
+  margin-top: 50px;
+}
+.typeName{
+  width: 100%;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #000000;
+  font-weight: bold;
+  padding-left: 17px;
+}
+.typeContainer{
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 11px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: space-around;
+  /* justify-content : space-between; */
+}
+.typeItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 6px;
+  /* margin-right: 36px; */
+}
+.typeImg{
+  width: 94px;
+}
+.typeText{
+  font-size: 14px;
+  color: #000000;
+  letter-spacing: 0.8px;
+}

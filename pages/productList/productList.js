@@ -1,31 +1,11 @@
-// pages/shoppingMall/shoppingMall.js
+// pages/productList/productList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    types:[
-      {
-        typename:"框型",
-        types:[
-          {typename:"圆框",imgUrl:"../../image/glasses.jpg"},
-          {typename:"方框",imgUrl:"../../image/glasses.jpg"},
-          {typename:"半框",imgUrl:"../../image/glasses.jpg"},
-          {typename:"大框",imgUrl:"../../image/glasses.jpg"},
-          {typename:"飞行员款",imgUrl:"../../image/glasses.jpg"}
-        ]
-      },
-      {
-        typename:"风格",
-        types:[
-          {typename:"商务",imgUrl:"../../image/glasses.jpg"},
-          {typename:"休闲",imgUrl:"../../image/glasses.jpg"},
-          {typename:"复古",imgUrl:"../../image/glasses.jpg"},
-          {typename:"学生",imgUrl:"../../image/glasses.jpg"}
-        ]
-      }
-    ]
+
   },
 
   /**
