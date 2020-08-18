@@ -1,14 +1,16 @@
 <!--pages/myOrders/myOrders.wxml-->
-<view>
-  <view class="container">
-    <view>
+
+<view class="container">
+    <!-- 标签页 -->
+    <view class="labelbar">
       <label-bar>
         <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
         <!-- <view>这里是插入到组件slot中的内容</view> -->
       </label-bar>
     </view>
-    <block wx:for="{{orders}}">
-      <view class="order">
+    <!-- 有订单时内容 -->
+    <block wx:if="{{orders.length!=0}}">
+      <view wx:for="{{orders}}" class="order">
         <view class="header">
           <view class="lefttext">{{item.orderdate}}</view>
           <view class="midtext">{{item.orderid}}</view>
@@ -48,5 +50,32 @@
         </view>
       </view>
     </block>
-  </view>
+    <!-- 无订单时内容 -->
+    <block wx:else>
+      <view class="noOrderContainer" style="height:{{windowHeight}}px;">
+        <view class="noOrderImgDiv">
+          <image class="noOrderImg" src="../../image/noOrder.png" mode="widthFix"></image>
+        </view>
+        <view class="noOrderTextDiv">
+          <view>这里什么都没有</view>
+          <view>快去逛逛吧</view>
+        </view>
+        <view class="recommendDiv">
+          <view class="rcmdHeader">
+            <view class="titleText">为你推荐</view>
+            <view class="changeText">换一批？</view>
+          </view>
+          <view class="rcmdContent">
+            <view class="rcmdItem" wx:for="{{recommend}}">
+              <image class="rcmdImg" src="{{item.imgUrl}}" mode="widthFix"></image>
+              <view class="rcmdInfo">
+                <view style="margin-bottom:5px;">{{item.name}}</view>
+                <view>¥{{item.price}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
 </view>
+
