@@ -5,14 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    name:"",
+    tel:"",
+    region:[],
+    detail:"",
+    isNew:true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (options.info!=undefined){
+      var info = JSON.parse(options.info);
+      this.setData({
+        name:info.name,
+        tel:info.tel,
+        region:[info.province,info.city,info.district],
+        detail:info.detail,
+        isNew:false
+      })
+    }
   },
 
   /**
@@ -62,5 +75,37 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  onNameChange:function(e){
+    this.setData({
+      name:e.detail.value
+    })
+  },
+  onTelChange:function(e){
+    this.setData({
+      tel:e.detail.value
+    })
+  },
+  onDetailChange:function(e){
+    this.setData({
+      detail:e.detail.value
+    })
+  },
+  bindRegionChange:function(e){
+    console.log("picker值变为",e.detail.value)
+    this.setData({
+      region:e.detail.value
+    })
+  },
+  onSubmit:function(){
+    console.log(this.data);
+    wx.navigateTo({
+      url: '../myAddress/myAddress',
+    });
+    wx.showToast({
+      title: '保存成功',
+      icon: 'success',
+      duration: 2000
+    });
   }
 })

@@ -25,14 +25,14 @@
   font-size: 12px;
 }
 .arrow{
-  width: 10px;
-  height: 10px;
+  width: 8.5px;
+  height: 8.5px;
   border-top: 2px solid #5B5B5B;
   border-right: 2px solid #5B5B5B;
   transform: rotate(45deg);
   position: absolute;
   right: 20px;
-  top:67px;
+  top: 67px;
 } 
 
 .importantInfo{
@@ -44,6 +44,18 @@
   font-size: 14px;
   color: #838383;
 }
+.divContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.divLine{
+  background: #EFEFEF;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+ }
 .btnDiv{
   display: flex;
   align-items: center;
@@ -61,4 +73,5 @@
   align-items: center;
   vertical-align: center;
   justify-content: center;
+  letter-spacing:1px;/*字间距*/
 }

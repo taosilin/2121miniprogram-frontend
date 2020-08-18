@@ -1,1 +1,51 @@
 /* pages/addAddress/addAddress.wxss */
+.container{
+  margin: 0px;
+  padding: 0px;
+}
+.formList{
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+  color: #616161;
+  font-weight: bold;
+  margin-bottom: 46px;
+}
+.formItem{
+  height: 77px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #F9F9F9;
+  padding-left: 15px;
+  border-bottom: 1px solid white;
+}
+.btnDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.importantBtn{
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+  width: 206px;
+  height: 49px;
+  border-radius: 10px;
+  background-color: #215470;
+  color: white;
+  font-size: 16px;
+}
+.normalBtn{
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+  width: 206px;
+  height: 49px;
+  border-radius: 10px;
+  color: #404040;
+  border:#979797 solid 1px;
+  font-size: 16px;
+}

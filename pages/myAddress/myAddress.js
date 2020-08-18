@@ -95,5 +95,14 @@ Page({
     wx.navigateTo({
       url: '../addAddress/addAddress',
     })
+  },
+  onChangeAddress:function(e){
+    console.log(e.currentTarget.dataset.id);
+    var id = e.currentTarget.dataset.id;
+    var info = JSON.stringify(this.data.addresses[id]);
+    console.log(info);
+    wx.navigateTo({
+      url: '../addAddress/addAddress?info='+info,
+    });
   }
 })
