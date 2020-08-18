@@ -72,6 +72,8 @@ Component({
    */
   data: {
     itemWidth:128,
+    isScroll:true,
+    scrollStyle:'border-bootom:1px solid #e5e5e5;',
     left:'0',
     right:'750',
     bottom:'0',
@@ -107,7 +109,7 @@ Component({
         transition:str,
         lastIndex:index,
         mSelected:index
-      })
+      });
       if(this.data.theme==themes.smallBar){
         this.barLeft(index,this.data.textDomData);
         this.barRight(index,this.data.textDomData);
@@ -125,7 +127,7 @@ Component({
       const sysInfo = wx.getSystemInfoSync();
       this.setData({
         windowWidth:sysInfo.screenWidth
-      })
+      });
       const query = this.createSelectorQuery();
       query.in(this).selectAll('.item').fields({
         dataset:true,
@@ -137,7 +139,7 @@ Component({
         })
         that.barLeft(that.data.mSelected,that.data.domData);
         that.barRight(that.data.mSelected, that.data.domData);
-      }).exec()
+      }).exec();
       query.in(this).selectAll('.text').fields({
         dataset:true,
         rect:true,
