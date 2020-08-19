@@ -31,8 +31,9 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: space-around;
-  /* justify-content : space-around; */
+  align-items: flex-start;  /*纵轴对齐方式*/
+  align-content:stretch;      /*多行对齐方式*/
+  justify-content : space-between;  /*横轴对齐方式*/
 }
 .typeItem{
   display: flex;

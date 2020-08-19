@@ -159,6 +159,8 @@ Page({
       }
     ],
     windowHeight:700,
+    itemWidth:167,
+    pdr:24,
     tabs:['全部订单', '待付款', '待收货', '待评价', '售后']
   },
 
@@ -168,7 +170,9 @@ Page({
   onLoad: function (options) {
     const sysInfo = wx.getSystemInfoSync();
     this.setData({
-      windowHeight:sysInfo.windowHeight-32
+      windowHeight:sysInfo.windowHeight-32,
+      itemWidth:(sysInfo.windowWidth-80)/2,
+      pdr:(sysInfo.windowWidth-80)*0.1437/2
     })
   },
 

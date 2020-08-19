@@ -66,7 +66,7 @@
             <view class="changeText">换一批？</view>
           </view>
           <view class="rcmdContent">
-            <view class="rcmdItem" wx:for="{{recommend}}">
+            <view class="rcmdItem" wx:for="{{recommend}}" style="width:{{itemWidth}}px;padding-right:{{pdr}}">
               <image class="rcmdImg" src="{{item.imgUrl}}" mode="widthFix"></image>
               <view class="rcmdInfo">
                 <view style="margin-bottom:5px;">{{item.name}}</view>

@@ -26,14 +26,18 @@ Page({
           {typename:"学生",imgUrl:"../../image/glasses.jpg"}
         ]
       }
-    ]
+    ],
+    itemWidth:94
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const sysInfo = wx.getSystemInfoSync();
+    this.setData({
+      itemWidth:(sysInfo.windowWidth-132)/3
+    })
   },
 
   /**

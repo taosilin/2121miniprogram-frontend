@@ -12,7 +12,7 @@
       <view class="typeContainer">
         <block wx:for="{{item.types}}" data-id="{{index}}">
           <view class="typeItem" bindtap="goToProductList" data-id="{{index}}">
-            <image class="typeImg" src="{{item.imgUrl}}" mode="widthFix"></image>
+            <image class="typeImg" src="{{item.imgUrl}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>
             <view class="typeText">{{item.typename}}</view>
           </view>
         </block>
