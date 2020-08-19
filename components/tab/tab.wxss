@@ -3,16 +3,16 @@
   width:100%;
   white-space: nowrap;
   box-sizing: border-box;
+  position: relative;
 }
 .content{
   position: relative;
 }
 .item{
   display: inline-flex;
-  /* padding: 0 15rpx; */
+  /* padding: 0 30rpx; */
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
 }
 .text{
   transition:color 0.2s;

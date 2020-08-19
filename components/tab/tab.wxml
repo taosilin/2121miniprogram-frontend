@@ -5,7 +5,7 @@
       <text class="text" style='color: {{ mSelected == index ? selectTextColor : textColor }};font-size: {{ textSize }}px;letter-spacing:{{ letterSpacing }}; font-weight:{{ mSelected == index? selectBold:normal }};'>{{item}}</text>
     </view>    
   </view>
-  <view class='bottom-bar {{ theme == "smallBar" ? "small" : "" }}' style='background-color: {{ selectColor }}; left: {{ left }}px; right: {{ right }}px; bottom: {{ bottom }}px; transition: {{ transition }}; border-shadow: 0rpx 0rpx 10rpx 0rpx {{ selectColor }};'></view>
+  <view class='bottom-bar {{ theme == "smallBar" ? "small" : "" }}' style='background-color: {{ selectColor }}; left: {{ left }}px; right: {{ right }}px; bottom: {{ bottom }}rpx; transition: {{ transition }}; border-shadow: 0rpx 0rpx 10rpx 0rpx {{ selectColor }};'></view>
   <!-- <view>这里是组件的内部节点</view>
   <slot></slot>  -->
 </scroll-view>

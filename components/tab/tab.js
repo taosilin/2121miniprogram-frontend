@@ -112,15 +112,19 @@ Component({
   methods: {
     barLeft:function(index,dom){
       let that = this;
+      let itemWidth = this.data.itemWidth;
       this.setData({
-        left:dom[index].left
+        left:dom[index].left-itemWidth*0.25
       })
+      console.log(this.data.left)
     },
     barRight:function(index,dom){
       let that = this;
+      let itemWidth = this.data.itemWidth;
       this.setData({
-        right:that.data.windowWidth-dom[index].right
+        right:that.data.windowWidth-dom[index].right-itemWidth*0.25
       })
+      console.log(this.data.right)
     },
     onItemTap:function(e){
       const index = e.currentTarget.dataset.index;
@@ -146,7 +150,7 @@ Component({
       let that=this;
       const sysInfo = wx.getSystemInfoSync();
       this.setData({
-        windowWidth:sysInfo.screenWidth
+        windowWidth:sysInfo.windowWidth
       });
       const query = this.createSelectorQuery();
       query.in(this).selectAll('.item').fields({
