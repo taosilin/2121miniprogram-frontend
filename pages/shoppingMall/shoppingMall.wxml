@@ -9,9 +9,9 @@
   <block wx:for="{{types}}">
     <view class="classification">
       <view class="typeName">{{item.typename}}</view>
-      <view class="typeContainer" >
-        <block wx:for="{{item.types}}">
-          <view class="typeItem">
+      <view class="typeContainer">
+        <block wx:for="{{item.types}}" data-id="{{index}}">
+          <view class="typeItem" bindtap="goToProductList" data-id="{{index}}">
             <image class="typeImg" src="{{item.imgUrl}}" mode="widthFix"></image>
             <view class="typeText">{{item.typename}}</view>
           </view>

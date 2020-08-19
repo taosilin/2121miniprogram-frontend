@@ -83,5 +83,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goToProductList:function(e){
+    console.log(e);
+    wx.navigateTo({
+      url: '../productList/productList',
+    })
   }
 })

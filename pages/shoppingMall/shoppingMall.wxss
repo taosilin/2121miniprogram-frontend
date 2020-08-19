@@ -6,6 +6,9 @@
 .labelbar{
   width: 100%;
   box-sizing: border-box;
+  padding-top:13px;
+  padding-left: 26px;
+  padding-right: 26px;
 }
 .classification{
   width: 100%;
@@ -29,7 +32,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: space-around;
-  /* justify-content : space-between; */
+  /* justify-content : space-around; */
 }
 .typeItem{
   display: flex;

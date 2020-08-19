@@ -5,14 +5,65 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    productList:[
+      {
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses1.jpg'
+      },
+      {
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses1.jpg'
+      },
+      {
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:true,
+        originalPrice:599,
+        imgUrl:'../../image/glasses1.jpg'
+      },{
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses1.jpg'
+      },
+      {
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses1.jpg'
+      },{
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:false,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses1.jpg'
+      }
+    ],
+    itemWidth:181
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const sysInfo = wx.getSystemInfoSync();
+    this.setData({
+      itemWidth:(sysInfo.windowWidth-54)/2
+    });
   },
 
   /**

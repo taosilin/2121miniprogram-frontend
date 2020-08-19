@@ -99,8 +99,8 @@ Page({
   },
   onSubmit:function(){
     console.log(this.data);
-    wx.navigateTo({
-      url: '../myAddress/myAddress',
+    wx.navigateBack({
+      delta:1,
     });
     wx.showToast({
       title: '保存成功',
