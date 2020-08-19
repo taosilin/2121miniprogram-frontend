@@ -158,7 +158,8 @@ Page({
         imgUrl:'../../image/glasses.jpg'
       }
     ],
-    windowHeight:700
+    windowHeight:700,
+    tabs:['全部订单', '待付款', '待收货', '待评价', '售后']
   },
 
   /**

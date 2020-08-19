@@ -5,6 +5,7 @@
 }
 .labelbar{
   width: 100%;
+  box-sizing: border-box;
 }
 .classification{
   width: 100%;

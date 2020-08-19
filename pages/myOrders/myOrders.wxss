@@ -5,6 +5,15 @@
   margin: 0px;
   padding: 0px;
 }
+.labelbar{
+  width: 100%;
+  box-sizing: border-box;
+  padding:8px,26px,6px,26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
 .order{
   width:90%;
   border-color: #D7D7D7;

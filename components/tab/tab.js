@@ -8,9 +8,10 @@ Component({
    */
   behaviors:[],
   properties: {
+    // 标签内容
     tabs:{
       type: Array,
-      value: ['全部订单', '待付款', '待收货', '待评价', '售后'],
+      value: ['item1', 'item2', 'item3', 'item4', 'item5'],
       observer:function(newVal){
         if (newVal&&newVal.length<5){
           this.setData({
@@ -19,21 +20,40 @@ Component({
         }
       }
     },
+    //标签栏高度(px)
     height:{
       type:String,
-      value:'120'
+      value:'39'
     },
+    //未选中标签文字颜色
     textColor:{
       type:String,
       value:'#666666'
     },
+    //选中标签文字颜色
+    selectTextColor:{
+      type:String,
+      value:'#666666'
+    },
+    //标签文字大小(px)
     textSize:{
       type:String,
-      value:'28'
+      value:'14'
     },
+    //选中滑动条颜色
     selectColor:{
       type:String,
-      value:'#FE9036'
+      value:'#8493DF'
+    },
+    //标签字间距(px)
+    letterSpacing:{
+      type:String,
+      value:'0.5'
+    },
+    //选中加粗
+    selectBold:{
+        type:String,
+        value:'normal'
     },
     selected:{
       type:String,
@@ -50,7 +70,7 @@ Component({
       observer:function(newVal){
         if(this.data.theme==themes.smallBar){
           this.setData({
-            bottom:this.data.heignt/2-this.data.textSize-8,
+            bottom:this.data.height/2-this.data.textSize-8,
             scrollStyle:''
           })
         }
@@ -73,7 +93,7 @@ Component({
   data: {
     itemWidth:128,
     isScroll:true,
-    scrollStyle:'border-bootom:1px solid #e5e5e5;',
+    scrollStyle:'border-bootom:1px solid #EAEAEA;',
     left:'0',
     right:'750',
     bottom:'0',

@@ -1,6 +1,11 @@
 <!--pages/shoppingMall/shoppingMall.wxml-->
 <view class="container">
-  <view class="labelbar">placeholder tab</view>
+  <view class="labelbar">
+    <label-bar tabs="{{classes}}" selectTextColor="#000000" textColor="#BEBEBE" selectColor="#FFFFFF" letterSpacing="0.8" textSize="14" selectBold="bold">
+        <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
+        <!-- <view>这里是插入到组件slot中的内容</view> -->
+    </label-bar>
+  </view>
   <block wx:for="{{types}}">
     <view class="classification">
       <view class="typeName">{{item.typename}}</view>
