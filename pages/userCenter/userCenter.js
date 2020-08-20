@@ -114,6 +114,11 @@ Page({
       url: '../myOrders/myOrders',
     })
   },
+  goToLikeList:function(){
+    wx.navigateTo({
+      url: '../likeList/likeList',
+    })
+  },
   goToMyAddress:function(){
     wx.navigateTo({
       url: '../myAddress/myAddress',

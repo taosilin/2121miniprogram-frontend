@@ -54,7 +54,7 @@
     <block wx:else>
       <view class="noOrderContainer" style="height:{{windowHeight}}px;">
         <view class="noOrderImgDiv">
-          <image class="noOrderImg" src="../../image/noOrder.png" mode="widthFix"></image>
+          <image class="noOrderImg" src="../../image/noOrder.png" mode="widthFix" style="width:{{imgWidth}}px;"></image>
         </view>
         <view class="noOrderTextDiv">
           <view>这里什么都没有</view>

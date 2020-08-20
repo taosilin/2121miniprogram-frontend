@@ -5,14 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    productList:[],
+    windowWidth:414,
+    imgWidth:264
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const sysInfo = wx.getSystemInfoSync();
+    this.setData({
+      windowWidth:sysInfo.windowWidth,
+      imgWidth:sysInfo.windowWidth*0.637
+    })
   },
 
   /**

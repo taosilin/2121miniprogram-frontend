@@ -1,0 +1,14 @@
+<!--pages/couponList/couponList.wxml-->
+<view class="container">
+  <!-- 有优惠券时 -->
+  <block wx:if="{{couponList.length!=0}}">
+  </block>
+  <!-- 无优惠券时 -->
+  <block wx:else>
+    <view class="nothingDiv">
+      <image class="noCouponImg" src="../../image/noCoupon.png" mode="widthFix" style="width:{{imgWidth}}px;"></image>
+      <view class="text1">暂无优惠券</view>
+      <view class="text2">您还没有收到优惠券哦</view>
+    </view>
+  </block>
+</view>

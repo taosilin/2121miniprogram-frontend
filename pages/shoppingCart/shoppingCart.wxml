@@ -1,2 +1,14 @@
 <!--pages/shoppingCart/shoppingCart.wxml-->
-<text>pages/shoppingCart/shoppingCart.wxml</text>
+<view class="container">
+  <!-- 购物车有物品时 -->
+  <block wx:if="{{productList.length!=0}}">
+  </block>
+  <!-- 购物车无物品时 -->
+  <block wx:else>
+    <view class="nothingDiv">
+      <image class="noProductImg" src="../../image/noProduct.png" mode="widthFix" style="width:{{imgWidth}}px;"></image>
+      <view class="promptText">您的购物车空空如也~</view>
+      <view class="shopBtn">去逛逛</view>
+    </view>
+  </block>
+</view>

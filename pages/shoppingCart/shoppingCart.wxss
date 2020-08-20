@@ -1,1 +1,33 @@
 /* pages/shoppingCart/shoppingCart.wxss */
+.container{
+  margin: 0px;
+  padding: 0px;
+}
+.nothingDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.noProductImg{
+  padding:110px 75px 42px 75px;
+}
+.promptText{
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #585858;
+  margin-bottom: 22px;
+}
+.shopBtn{
+  width: 81px;
+  height: 38px;
+  border: solid 1px #585858;
+  border-radius: 19px;
+  font-size: 14px;
+  color: #585858;
+  letter-spacing: 1px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

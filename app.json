@@ -13,7 +13,8 @@
     "pages/policy/policy",
     "pages/agreement/agreement",
     "pages/privacy/privacy",
-    "pages/likeList/likeList"
+    "pages/likeList/likeList",
+    "pages/couponList/couponList"
   ],
   "window": {
     "backgroundTextStyle": "light",

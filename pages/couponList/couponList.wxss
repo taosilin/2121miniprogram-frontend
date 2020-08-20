@@ -1,0 +1,25 @@
+/* pages/couponList/couponList.wxss */
+.container{
+  margin: 0px;
+  padding: 0px;
+}
+.nothingDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.noCouponImg{
+  padding:67px 84px 41px 84px;
+}
+.text1{
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: black;
+  margin-bottom: 7px;
+}
+.text2{
+  font-size: 14px;
+  color: #585858;
+  letter-spacing: 2px;
+}

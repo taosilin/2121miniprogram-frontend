@@ -1,18 +1,24 @@
-// pages/likeList/likeList.js
+// pages/couponList/couponList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    likeList:[]
+    couponList:[],
+    windowWidth:414,
+    imgWidth:246
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const sysInfo = wx.getSystemInfoSync();
+    this.setData({
+      windowWidth:sysInfo.windowWidth,
+      imgWidth:sysInfo.windowWidth*0.594
+    })
   },
 
   /**

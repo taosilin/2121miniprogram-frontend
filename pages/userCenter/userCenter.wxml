@@ -43,7 +43,7 @@
     </view>
   </view>
   <view class="others" style="margin-top:{{otherDivTop}}px;">
-    <view class="function">
+    <view class="function" bindtap="goToLikeList">
       <view class="iconborder">
         <image class="othericon-favorites" src="../../image/icon/favorites.png" mode="widthFix"></image>
       </view>
