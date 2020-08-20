@@ -7,7 +7,20 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    windowWidth:414,
+    postHeight:504,
+    indicatorDots: true,//显示指示点
+    autoplay: true,//自动播放
+    interval: 2000,
+    duration: 500,
+    circular:true, //衔接滑动
+    postList:[
+      {imgUrl:'../../image/post.png'},
+      {imgUrl:'../../image/post0.png'},
+      {imgUrl:'../../image/post1.png'},
+      {imgUrl:'../../image/post2.png'}
+    ]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -42,6 +55,11 @@ Page({
         }
       })
     }
+    const sysInfo = wx.getSystemInfoSync();
+    this.setData({
+      windowWidth:sysInfo.windowWidth,
+      postHeight:sysInfo.windowWidth*1.2174
+    })
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -50,5 +68,9 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  onSlideChange: function (event) { 
+    var postId = event.detail.current; 
+    console.log(postId);
   }
 })
