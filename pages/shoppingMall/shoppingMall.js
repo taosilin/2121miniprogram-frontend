@@ -1,4 +1,5 @@
 // pages/shoppingMall/shoppingMall.js
+const App = getApp();//设立顶部栏高度
 Page({
 
   /**
@@ -38,6 +39,9 @@ Page({
     this.setData({
       itemWidth:(sysInfo.windowWidth-132)/3
     })
+    this.setData({
+      navH: App.globalData.navHeight
+    });
   },
 
   /**
