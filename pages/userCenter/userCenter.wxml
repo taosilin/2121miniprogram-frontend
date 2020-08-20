@@ -64,7 +64,7 @@
       <text class="functext">联系客服</text>
       <view class='arrow1'></view>
     </view>
-    <view class="function">
+    <view class="function" bindtap="goToPolicy">
       <view class="iconborder">
         <image class="othericon-policy" src="../../image/icon/policy.png" mode="widthFix"></image>
       </view>

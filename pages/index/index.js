@@ -18,8 +18,7 @@ Page({
     postList:[
       {imgUrl:'../../image/post.png'},
       {imgUrl:'../../image/post0.png'},
-      {imgUrl:'../../image/post1.png'},
-      {imgUrl:'../../image/post2.png'}
+      {imgUrl:'../../image/post1.png'}
     ]
   },
   //事件处理函数
@@ -71,6 +70,6 @@ Page({
   },
   onSlideChange: function (event) { 
     var postId = event.detail.current; 
-    console.log(postId);
+    // console.log(postId);
   }
 })

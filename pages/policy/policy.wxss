@@ -1,0 +1,27 @@
+/* pages/policy/policy.wxss */
+.container{
+  margin: 0px;
+  padding: 0px;
+}
+.cell{
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid #EEEEEE;
+  padding:18px 26px 16px 26px;
+}
+.text{
+  color: #5B5B5B;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+.arrow{
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #5B5B5B;
+  border-right: 1px solid #5B5B5B;
+  position: absolute;
+  right: 21px;
+  transform: rotate(45deg);
+  top:23px;
+}

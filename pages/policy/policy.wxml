@@ -1,0 +1,11 @@
+<!--pages/policy/policy.wxml-->
+<view class="container">
+  <view class="cell" bindtap="goToAgreement">
+    <text class="text">用户协议</text>
+    <view class='arrow'></view>
+  </view>
+  <view class="cell" bindtap="goToPrivacy">
+    <text class="text">隐私政策</text>
+    <view class='arrow'></view>
+  </view>
+</view>

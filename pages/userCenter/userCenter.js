@@ -118,5 +118,10 @@ Page({
     wx.navigateTo({
       url: '../myAddress/myAddress',
     })
+  },
+  goToPolicy:function(){
+    wx.navigateTo({
+      url: '../policy/policy',
+    })
   }
 })

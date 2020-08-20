@@ -12,12 +12,36 @@
 .couponDiv{
   margin-top: 8px;
 }
+
+/*滑块容器*/
 .swiperContainer{
   padding-top: 0px;
 }
 .vol-swiper-item {
   box-sizing: border-box;
 }
-.swiperItem{
-  background: #fff;
+/*未选中指示点样式*/
+.swiperContainer .wx-swiper-dot{
+  width: 6px;
+  height: 6px;
+}
+.swiperContainer .wx-swiper-dots-horizontal{
+  position: absolute;
+  margin-left:240rpx ;
+  margin-bottom: 15px;  
+}
+
+/*选中指示点样式*/
+.swiperContainer .wx-swiper-dot-active{
+  width:18px;
+  display: inline-flex;
+  height: 6px;
+  margin-left: 6px;
+  justify-content:space-between;
+}
+.swiperContainer .wx-swiper-dot::before{
+  content: '';
+  flex-grow: 1; 
+  background: rgba(255,255,255,0.8);
+  border-radius: 8rpx
 }

@@ -9,7 +9,11 @@
     "pages/myOrders/myOrders",
     "pages/myAddress/myAddress",
     "pages/addAddress/addAddress",
-    "pages/productList/productList"
+    "pages/productList/productList",
+    "pages/policy/policy",
+    "pages/agreement/agreement",
+    "pages/privacy/privacy",
+    "pages/likeList/likeList"
   ],
   "window": {
     "backgroundTextStyle": "light",
