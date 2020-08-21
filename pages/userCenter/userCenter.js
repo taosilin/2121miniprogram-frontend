@@ -124,6 +124,11 @@ Page({
       url: '../myAddress/myAddress',
     })
   },
+  goToCouponList:function(){
+    wx.navigateTo({
+      url: '../couponList/couponList',
+    })
+  },
   goToPolicy:function(){
     wx.navigateTo({
       url: '../policy/policy',

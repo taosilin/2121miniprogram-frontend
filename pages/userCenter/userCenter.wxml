@@ -57,7 +57,7 @@
       <text class="functext">我的地址</text>
       <view class='arrow1'></view>
     </view>
-    <view class="function">
+    <view class="function" bindtap="goToCouponList">
       <view class="iconborder">
         <image class="othericon-coupon" src="../../image/icon/coupon.png" mode="widthFix"></image>
       </view>
