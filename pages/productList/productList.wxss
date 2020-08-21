@@ -11,6 +11,7 @@
   position: relative;
   font-size: 14px;
   letter-spacing: 0.8px;
+  height: 30px;
 }
 .arrow{
   display: inline-block;
@@ -30,14 +31,17 @@
   flex-wrap: wrap;
   box-sizing: border-box;
   justify-content:space-between;
-  padding-left: 19px;
+  /* padding-left: 19px;
   padding-right: 19px;
-  padding-top: 21px;
+  padding-top: 21px; */
 }
 .productItem{
   position: relative;
-  padding-bottom: 33px;
+  padding-top: 30px;
+  padding-bottom: 22px;
   box-sizing: border-box;
+  height: 260px;
+  border: 1px solid #F2F2F2;
 }
 .productImg{
   
@@ -45,35 +49,50 @@
 .newIcon{
   width: 44px;
   position: absolute;
-  top: 13px;
-  left:-8px;
+  top: 24px;
+  left: -2px;
 }
 .title{
   font-size: 12px;
   color: #000000;
-  letter-spacing: 0.7px;
-  margin-top: 8px;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+  margin-left: 14px;
   margin-bottom: 1px;
 }
 .price{
   font-size: 14px;
   color: #000000;
+  margin-left: 14px;
 }
 .saledPrice{
   font-size: 14px;
   color: #D30E26;
   margin-right: 6px;
+  margin-left: 14px;
 }
 .originalPrice{
   font-size: 14px;
   color: #A6A6A6;
   text-decoration:line-through;/*文字划线*/
 }
-.iconDiv{
+/* .iconDiv{
   display: flex;
   flex-direction: row;
   margin-top: 9px;
 }
 .icon{
   width: 18px;
+} */
+.priceDiv{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.comments{
+  font-size: 11px;
+  color: #ADADAD;
+  position: absolute;
+  right: 13px;
+  top: 1px;
 }

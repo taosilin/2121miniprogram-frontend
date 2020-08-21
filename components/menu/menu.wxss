@@ -1,0 +1,11 @@
+/* components/menu/menu.wxss */
+.container{
+  border: solid 1px black;
+}
+.arrow{
+  display: inline-block;
+  border: 4px solid transparent;
+  border-top: 4px solid #747474;
+  margin-left: 5px;
+  margin-top: 10rpx;
+}

@@ -12,7 +12,8 @@ Page({
         isNew:true,
         isSaled:false,
         originalPrice:599,
-        imgUrl:'../../image/glasses1.jpg'
+        imgUrl:'../../image/glasses3.png',
+        comments:1361
       },
       {
         name:'开普勒 钛架-全框',
@@ -20,7 +21,8 @@ Page({
         isNew:true,
         isSaled:false,
         originalPrice:599,
-        imgUrl:'../../image/glasses1.jpg'
+        imgUrl:'../../image/glasses3.png',
+        comments:1128
       },
       {
         name:'开普勒 钛架-全框',
@@ -28,14 +30,8 @@ Page({
         isNew:true,
         isSaled:true,
         originalPrice:599,
-        imgUrl:'../../image/glasses1.jpg'
-      },{
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses1.jpg'
+        imgUrl:'../../image/glasses3.png',
+        comments:910
       },
       {
         name:'开普勒 钛架-全框',
@@ -43,17 +39,29 @@ Page({
         isNew:true,
         isSaled:false,
         originalPrice:599,
-        imgUrl:'../../image/glasses1.jpg'
-      },{
+        imgUrl:'../../image/glasses3.png',
+        comments:13610
+      },
+      {
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses3.png',
+        comments:678
+      },
+      {
         name:'开普勒 钛架-全框',
         price:299,
         isNew:false,
         isSaled:false,
         originalPrice:599,
-        imgUrl:'../../image/glasses1.jpg'
+        imgUrl:'../../image/glasses3.png',
+        comments:12345
       }
     ],
-    itemWidth:181
+    itemWidth:207
   },
 
   /**
@@ -62,7 +70,7 @@ Page({
   onLoad: function (options) {
     const sysInfo = wx.getSystemInfoSync();
     this.setData({
-      itemWidth:(sysInfo.windowWidth-54)/2
+      itemWidth:sysInfo.windowWidth/2
     });
   },
 

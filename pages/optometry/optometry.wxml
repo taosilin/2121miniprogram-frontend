@@ -1,2 +1,5 @@
 <!--pages/optometry/optometry.wxml-->
-<text>pages/optometry/optometry.wxml</text>
+<!-- <text>pages/optometry/optometry.wxml</text> -->
+<view>
+  <menu></menu>
+</view>

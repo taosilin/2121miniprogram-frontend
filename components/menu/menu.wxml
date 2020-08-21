@@ -1,0 +1,6 @@
+<!--components/menu/menu.wxml-->
+<view class="container">
+  <view>
+  {{menuName}}<view class="arrow"></view>
+  </view>
+</view>
