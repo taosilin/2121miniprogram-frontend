@@ -8,7 +8,7 @@
         <text class="username">{{userInfo.nickName}}</text>
         <text class="Info">已经在2121星球居住</text>
         <text class="username">1</text>
-        <text class="Info">年了</text>
+        <text class="Info">天了</text>
       </view>
     </view>
   </view>
@@ -55,6 +55,13 @@
         <image class="othericon-address" src="../../image/icon/address.png" mode="widthFix"></image>
       </view>
       <text class="functext">我的地址</text>
+      <view class='arrow1'></view>
+    </view>
+    <view class="function">
+      <view class="iconborder">
+        <image class="othericon-coupon" src="../../image/icon/coupon.png" mode="widthFix"></image>
+      </view>
+      <text class="functext">优惠券</text>
       <view class='arrow1'></view>
     </view>
     <view class="function">

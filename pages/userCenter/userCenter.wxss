@@ -142,6 +142,9 @@
 .othericon-address{
   width: 14px;
 }
+.ordericon-coupon{
+  width: 25px;
+}
 .othericon-service{
   width: 24px;
 }
@@ -167,7 +170,7 @@
   display: flex;
   align-items: center;
   background-color: white;
-  margin-top: 560px;
+  margin-top: 600px;
   font-size: 14px;
   padding-left: 32px; 
   border-style: solid;
