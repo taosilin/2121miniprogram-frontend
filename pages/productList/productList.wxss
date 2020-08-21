@@ -76,14 +76,6 @@
   color: #A6A6A6;
   text-decoration:line-through;/*文字划线*/
 }
-/* .iconDiv{
-  display: flex;
-  flex-direction: row;
-  margin-top: 9px;
-}
-.icon{
-  width: 18px;
-} */
 .priceDiv{
   display: flex;
   flex-direction: row;

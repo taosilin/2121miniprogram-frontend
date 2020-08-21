@@ -128,41 +128,65 @@ Page({
     orders:[],
     recommend:[
       {
-        name:"银色细边眼镜",
-        price:275,
-        imgUrl:'../../image/glasses.jpg'
-      },
-      {
-        name:"银色细边眼镜",
-        price:599,
-        imgUrl:'../../image/glasses.jpg'
-      },
-      {
-        name:"银色细边眼镜",
+        name:'开普勒 钛架-全框',
         price:299,
-        imgUrl:'../../image/glasses.jpg'
+        isNew:true,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses3.png',
+        comments:1361
       },
       {
-        name:"银色细边眼镜",
-        price:275,
-        imgUrl:'../../image/glasses.jpg'
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses3.png',
+        comments:1128
       },
       {
-        name:"银色细边眼镜",
-        price:275,
-        imgUrl:'../../image/glasses.jpg'
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:true,
+        originalPrice:599,
+        imgUrl:'../../image/glasses3.png',
+        comments:910
       },
       {
-        name:"银色细边眼镜",
-        price:275,
-        imgUrl:'../../image/glasses.jpg'
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses3.png',
+        comments:13610
+      },
+      {
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses3.png',
+        comments:678
+      },
+      {
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:false,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses3.png',
+        comments:12345
       }
     ],
     windowHeight:700,
-    itemWidth:167,
+    itemWidth:207,
     pdr:24,
     tabs:['全部订单', '待付款', '待收货', '待评价', '售后'],
-    imgWidth:165
+    imgWidth:112
   },
 
   /**
@@ -172,9 +196,9 @@ Page({
     const sysInfo = wx.getSystemInfoSync();
     this.setData({
       windowHeight:sysInfo.windowHeight-32,
-      itemWidth:(sysInfo.windowWidth-80)/2,
+      itemWidth:sysInfo.windowWidth/2,
       pdr:(sysInfo.windowWidth-80)*0.1437/2,
-      imgWidth:sysInfo.windowWidth*0.398
+      imgWidth:(sysInfo.windowWidth)*0.2705
     })
   },
 

@@ -18,11 +18,6 @@
           <view wx:else class="price">¥{{item.price}}</view>
           <view class="comments">{{item.comments}}条好评</view>
         </view>
-        
-        <!-- <view class="iconDiv">
-          <image class="icon" src="../../image/icon/like.png" mode="widthFix" style="margin-right:18px;"></image>
-          <image class="icon" src="../../image/icon/cart.png" mode="widthFix"></image>
-        </view> -->
       </view>
     </block>
   </view>

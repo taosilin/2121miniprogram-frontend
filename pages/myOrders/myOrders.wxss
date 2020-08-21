@@ -150,11 +150,11 @@
   vertical-align: center;
   justify-content: center;
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 38px;
+  padding-top: 32px;
+  padding-bottom: 24px;
 }
 .noOrderImg{
-  width: 165px;
+  width: 112px;
 }
 .noOrderTextDiv{
   display: flex;
@@ -167,8 +167,6 @@
 .recommendDiv{
   position: absolute;
   height:313px;
-  margin-left:34px;
-  margin-right: 34px;
   margin-top: 30px; /*??????????????*/
   box-sizing: border-box;
   /* bottom: 0px; */
@@ -178,45 +176,76 @@
   flex-direction: row;
   align-items: center;
   width: 100%;
+  box-sizing: border-box;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  padding-left: 28px;
 }
 .titleText{
   font-size: 16px;
   color: #000000;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
 }
-.changeText{
-  position: absolute;
-  right: 0px;
-  text-decoration-line: underline;
-  font-size: 14px;
-  color: #5B5B5B;
-}
-.rcmdContent{
+.productList{
+  width: 100%;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content : space-between;/**/
-  align-content: space-between;/**/
-  padding-top: 26px;
-  padding-bottom: 37px;
+  box-sizing: border-box;
+  justify-content:space-between;
+  /* padding-left: 19px;
+  padding-right: 19px;
+  padding-top: 21px; */
 }
-.rcmdItem{
-  width: 167px;
-  height: 69px;
-  background-color: #F1F1F1;
-  border-radius: 19px;
+.productItem{
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 22px;
+  box-sizing: border-box;
+  height: 260px;
+  border: 1px solid #F2F2F2;
+}
+.productImg{
+  
+}
+.newIcon{
+  width: 44px;
+  position: absolute;
+  top: 24px;
+  left: -2px;
+}
+.title{
+  font-size: 12px;
+  color: #000000;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+  margin-left: 14px;
+  margin-bottom: 1px;
+}
+.price{
+  font-size: 14px;
+  color: #000000;
+  margin-left: 14px;
+}
+.saledPrice{
+  font-size: 14px;
+  color: #D30E26;
+  margin-right: 6px;
+  margin-left: 14px;
+}
+.originalPrice{
+  font-size: 14px;
+  color: #A6A6A6;
+  text-decoration:line-through;/*文字划线*/
+}
+.priceDiv{
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin-bottom: 11px;
-  padding-right: 24px;
-  box-sizing: border-box;
+  position: relative;
 }
-.rcmdImg{
-  width: 91px;
-}
-.rcmdInfo{
+.comments{
   font-size: 11px;
-  color: #3D3D3D;
-  padding-left: 7px;
+  color: #ADADAD;
+  position: absolute;
+  right: 13px;
+  top: 1px;
 }

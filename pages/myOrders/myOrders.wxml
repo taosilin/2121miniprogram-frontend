@@ -3,7 +3,7 @@
 <view class="container">
     <!-- 标签页 -->
     <view class="labelbar">
-      <label-bar tabs="{{tabs}}" selectColor="#8493DF" selectTextColor="#000000" textColor="#000000" letterSpacing="0.5" textSize="14" height="39">
+      <label-bar tabs="{{tabs}}" selectColor="#72C9FA" selectTextColor="#000000" textColor="#000000" letterSpacing="0.5" textSize="14" height="39">
         <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
         <!-- <view>这里是插入到组件slot中的内容</view> -->
       </label-bar>
@@ -59,20 +59,27 @@
         <view class="noOrderTextDiv">
           <view>这里什么都没有</view>
           <view>快去逛逛吧</view>
-        </view>
+        </view>  
         <view class="recommendDiv">
           <view class="rcmdHeader">
             <view class="titleText">为你推荐</view>
-            <view class="changeText">换一批？</view>
           </view>
-          <view class="rcmdContent">
-            <view class="rcmdItem" wx:for="{{recommend}}" style="width:{{itemWidth}}px;padding-right:{{pdr}}">
-              <image class="rcmdImg" src="{{item.imgUrl}}" mode="widthFix"></image>
-              <view class="rcmdInfo">
-                <view style="margin-bottom:5px;">{{item.name}}</view>
-                <view>¥{{item.price}}</view>
+          <view class="productList">
+            <block wx:for="{{recommend}}">
+              <view class="productItem" style="width:{{itemWidth}}px;">
+                <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
+                <image class="productImg" src="{{item.imgUrl}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>    
+                <view class="title">{{item.name}}</view>
+                <view class="priceDiv">
+                  <view wx:if="{{item.isSaled}}">
+                    <text class="saledPrice">¥{{item.price}}</text>
+                    <text class="originalPrice">¥{{item.originalPrice}}</text>
+                  </view>
+                  <view wx:else class="price">¥{{item.price}}</view>
+                  <view class="comments">{{item.comments}}条好评</view>
+                </view>
               </view>
-            </view>
+            </block>
           </view>
         </view>
       </view>
