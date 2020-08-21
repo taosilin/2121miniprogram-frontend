@@ -15,5 +15,37 @@
   justify-content: center;
 }
 .content{
-  
+  padding: 20px 27px;
+}
+.div_class{
+  width: 100%;
+}
+
+/* 大标题 */
+.title{
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+  margin-top: 26px;
+}
+.paragraphs{
+  font-size: 14px;
+  color: #747474;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+.small_title{
+  font-size: 14px;
+  color: black;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+.bold_text{
+  font-weight: bold;
+}
+.big_space{
+  margin-top: 8px;
+}
+.small_space{
+  margin-top: 5px;
 }

@@ -4,5 +4,6 @@
   2121 用户协议
   </view>
   <view class="content">
+    <rich-text nodes="{{htmlSnip}}"></rich-text>
   </view>
 </view>
