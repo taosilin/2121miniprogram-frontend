@@ -1,6 +1,8 @@
 /* components/menu/menu.wxss */
 .container{
-  border: solid 1px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .arrow{
   display: inline-block;
@@ -8,4 +10,26 @@
   border-top: 4px solid #747474;
   margin-left: 5px;
   margin-top: 10rpx;
+}
+.itemContainer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.z-height{
+  overflow-y: scroll;
+  background: #fff;
+}
+.disappear {
+  display: none;
+}
+.show {
+  display: block;
+}
+.menuItem {
+  border-bottom: solid #f7f7f7 1rpx;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
 }
