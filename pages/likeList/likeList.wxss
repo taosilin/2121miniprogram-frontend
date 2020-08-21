@@ -1,1 +1,44 @@
 /* pages/likeList/likeList.wxss */
+.container{
+  margin: 0px;
+  padding: 0px;
+}
+.likeDiv{
+  width: 100%;
+  padding: 21px 22px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.likeItem{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  box-shadow: 0px 1px 6px #D9D9D9;
+}
+.itemImg{
+  width: 154px;
+  margin-left: 18px;
+  margin-top: 35px;
+}
+.content{
+  padding-top: 38px;
+}
+.name{
+  font-size: 14px;
+  color: black;
+}
+.price{
+  font-size: 17px;
+  color: #53A9DE;
+  position: absolute;
+  bottom: 18px;
+}
+.likeIcon{
+  width: 15px;
+  position: absolute;
+  top: 11px;
+  right: 12px;
+}

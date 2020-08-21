@@ -5,7 +5,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-    likeList:[]
+    likeList:[
+      {
+        name:"开普勒 钛架-全框",
+        price:299,
+        imgUrl:"../../image/glasses2.png"
+      },
+      {
+        name:"ART.钛材光学镜-C",
+        price:299,
+        imgUrl:"../../image/glasses2.png"
+      },
+      {
+        name:"开普勒 钛架-全框",
+        price:299,
+        imgUrl:"../../image/glasses2.png"
+      },
+      {
+        name:"ART.钛材光学镜-C",
+        price:299,
+        imgUrl:"../../image/glasses2.png"
+      },
+      {
+        name:"开普勒 钛架-全框",
+        price:299,
+        imgUrl:"../../image/glasses2.png"
+      },
+      {
+        name:"开普勒 钛架-全框",
+        price:299,
+        imgUrl:"../../image/glasses2.png"
+      }
+    ]
   },
 
   /**

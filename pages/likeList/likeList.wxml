@@ -1,3 +1,26 @@
 <!--pages/likeList/likeList.wxml-->
-<view class="container">收藏夹
+<view class="container">
+  <!-- 收藏夹有物品时 -->
+  <block wx:if="{{likeList.length!=0}}">
+    <view class="likeDiv">
+      <block wx:for="{{likeList}}">
+        <view class="likeItem">
+          <image class="itemImg" src="{{item.imgUrl}}" mode="widthFix"></image>
+          <view class="content">
+            <view class="name">{{item.name}}</view>
+            <view class="price">¥ {{item.price}}</view>
+          </view>
+          <image class="likeIcon" src="../../image/icon/liking.png" mode="widthFix"></image>
+        </view>
+      </block>
+    </view>
+  </block>
+  <!-- 收藏夹无物品时 -->
+  <block wx:else>
+    <!-- <view class="nothingDiv">
+      <image class="noProductImg" src="../../image/noProduct.png" mode="widthFix" style="width:{{imgWidth}}px;"></image>
+      <view class="promptText">您的购物车空空如也~</view>
+      <view class="shopBtn">去逛逛</view>
+    </view> -->
+  </block>
 </view>
