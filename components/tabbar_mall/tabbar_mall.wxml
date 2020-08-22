@@ -1,0 +1,4 @@
+<!--components/tabbar_mall/tabbar_mall.wxml-->
+<view class="component_container">
+  <text class="title">Mall</text>
+</view>

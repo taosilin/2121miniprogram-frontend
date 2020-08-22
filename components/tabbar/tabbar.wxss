@@ -1,0 +1,57 @@
+/* components/tabbar/tabbar.wxss */
+.nav-tabs {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  box-sizing: border-box;
+  /* border: 2px solid red; */
+}
+.tabbarBkgDiv{
+  width: 100%;
+  /* position: absolute; */
+  z-index: -1;
+  box-sizing: border-box;
+  /* border: solid 1px red; */
+}
+.bkgImg{
+  width: 100%;
+}
+.tabList{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  z-index: 10;
+  padding-top: 30px;
+}
+.tabItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  /* border: solid 1px green; */
+}
+.tab-text {
+  font-size: 10px;
+  color: #747474;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+.tab-selected-text{
+  font-size: 10px;
+  color: #000000;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+.normalIcon {
+  width:30px;
+}
+.midIcon{
+  width: 52px;
+  position: relative;
+  bottom: 10px;
+}

@@ -186,7 +186,8 @@ Page({
     itemWidth:207,
     pdr:24,
     tabs:['全部订单', '待付款', '待收货', '待评价', '售后'],
-    imgWidth:112
+    imgWidth:112,
+    selectTab:0
   },
 
   /**

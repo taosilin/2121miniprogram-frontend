@@ -1,0 +1,4 @@
+<!--components/tabbar_cart/tabbar_cart.wxml-->
+<view class="component_container">
+  <text class="title">Cart</text>
+</view>

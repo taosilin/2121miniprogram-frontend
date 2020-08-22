@@ -32,8 +32,8 @@
   justify-content: center;
   width: 206px;
   height: 49px;
-  border-radius: 10px;
-  background-color: #215470;
+  border-radius: 24.5px;
+  background-color: #72C9FA;
   color: white;
   font-size: 16px;
 }
@@ -44,8 +44,8 @@
   justify-content: center;
   width: 206px;
   height: 49px;
-  border-radius: 10px;
-  color: #404040;
-  border:#979797 solid 1px;
+  border-radius: 24.5px;
+  color: #72C9FA;
+  border:#72C9FA solid 1px;
   font-size: 16px;
 }

@@ -32,7 +32,7 @@
 }
 .price{
   font-size: 17px;
-  color: #53A9DE;
+  color: black;
   position: absolute;
   bottom: 18px;
 }

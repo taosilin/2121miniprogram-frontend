@@ -2,6 +2,24 @@
 <view class="container">
   <!-- 购物车有物品时 -->
   <block wx:if="{{productList.length!=0}}">
+    <view class="productDiv">
+      <block wx:for="{{productList}}">
+        <view class="productItem">
+          <view>
+          </view>
+          <view class="imgDiv">
+            <image class="productImg" src="{{item.imgUrl}}" mode="widthFix"></image>
+          </view>
+          <view class="contentDiv">
+            <view>{{item.name}}</view>
+            <view class="btn">定制信息</view>
+            <view>{{item.price}}</view>
+          </view>
+          <view class="numDiv">
+          </view>
+        </view>
+      </block>
+    </view>
   </block>
   <!-- 购物车无物品时 -->
   <block wx:else>

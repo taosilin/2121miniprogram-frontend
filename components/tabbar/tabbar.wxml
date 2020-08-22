@@ -1,0 +1,57 @@
+<!--components/tabbar/tabbar.wxml-->
+<view class="nav-tabs">
+    <view class="tabbarBkgDiv">
+      <image class="bkgImg" src="../../image/tabbar_bkg.png" mode="widthFix"></image>
+    </view>   
+    <view class="tabList">
+      <block wx:for="{{tabs}}" data-id="{{index}}">
+        <view class="tabItem" data-id="{{index}}" data-path="{{item.pagePath}}" bindtap="swichNav">
+          <block wx:if="{{index!=2}}">
+            <image class="normalIcon" src="{{currentTab == index ? item.selectedIconPath : item.iconPath }}" mode="widthFix"></image>
+            <text class="{{currentTab == index ? 'tab-selected-text' : 'tab-text' }}">{{item.text}}</text>  
+          </block>
+          <block wx:else>
+            <image class="midIcon" src="{{currentTab == index ? item.selectedIconPath : item.iconPath }}" mode="widthFix"></image>
+            <text class="{{currentTab == index ? 'tab-selected-text' : 'tab-text' }}">{{item.text}}</text>  
+          </block>                 
+        </view>  
+      </block>   
+    </view>
+  </view>
+<!-- "tabBar": {
+    "position": "bottom",
+    "borderStyle": "white",
+    "selectedColor": "#747474",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/icon/index_normal.png",
+        "selectedIconPath": "image/icon/index_selected.png"
+      },
+      {
+        "pagePath": "pages/shoppingMall/shoppingMall",
+        "text": "商城",
+        "iconPath": "image/icon/mall_normal.png",
+        "selectedIconPath": "image/icon/mall_selected.png"
+      },
+      {
+        "pagePath": "pages/optometry/optometry",
+        "text": "验光狮",
+        "iconPath": "image/icon/optometry_normal.png",
+        "selectedIconPath": "image/icon/optometry_selected.png"
+      },
+      {
+        "pagePath": "pages/shoppingCart/shoppingCart",
+        "text": "购物车",
+        "iconPath": "image/icon/cart_normal.png",
+        "selectedIconPath": "image/icon/cart_selected.png"
+      },
+      {
+        "pagePath": "pages/userCenter/userCenter",
+        "text": "我的",
+        "iconPath": "image/icon/me_normal.png",
+        "selectedIconPath": "image/icon/me_selected.png"
+      }
+    ]
+  }, -->

@@ -3,6 +3,22 @@
   margin: 0px;
   padding: 0px;
 }
+.productDiv{
+
+}
+.productItem{
+  display: flex;
+  flex-direction: row;
+  padding-top: 19px;
+  padding-bottom: 19px;
+}
+.imgDiv{
+  width: 103px;
+  height: 103px;
+}
+.productImg{
+  width: 103px;
+}
 .nothingDiv{
   display: flex;
   flex-direction: column;

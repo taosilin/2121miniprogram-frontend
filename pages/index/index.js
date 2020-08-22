@@ -17,8 +17,41 @@ Page({
     circular:true, //衔接滑动
     postList:[
       {imgUrl:'../../image/post.png'},
-      {imgUrl:'../../image/post0.png'},
-      {imgUrl:'../../image/post1.png'}
+      {imgUrl:'../../image/post.png'},
+      {imgUrl:'../../image/post.png'}
+    ],
+    currentTab: 0,
+    tabs: [
+      {
+        "iconPath": "../../image/icon/index_normal.png",
+        "selectedIconPath": "../../image/icon/index_selected.png",
+        "pagePath":"../../pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "../../image/icon/mall_normal.png",
+        "selectedIconPath": "../../image/icon/mall_selected.png",
+        "pagePath":"../../pages/shoppingMall/shoppingMall",
+        "text": "商城"
+      },
+      {
+        "iconPath": "../../image/icon/optometry_normal.png",
+        "selectedIconPath": "../../image/icon/optometry_selected.png",
+        "pagePath":"../../pages/optpmetry/optpmetry",
+        "text": "验光狮"
+      },
+      {
+        "iconPath": "../../image/icon/cart_normal.png",
+        "selectedIconPath": "../../image/icon/cart_selected.png",
+        "pagePath":"../../pages/shoppingCart/shoppingCart",
+        "text": "购物车"
+      },
+      {
+        "iconPath": "../../image/icon/me_normal.png",
+        "selectedIconPath": "../../image/icon/me_selected.png",
+        "pagePath":"../../pages/userCenter/userCenter",
+        "text": "我的"
+      }
     ]
   },
   //事件处理函数
@@ -71,5 +104,18 @@ Page({
   onSlideChange: function (event) { 
     var postId = event.detail.current; 
     // console.log(postId);
+  },
+  //tabbar切换
+  swichNav: function (e) {
+    //console.log(e);
+    let that = this;
+    if (this.data.currentTab === e.currentTarget.dataset.id) {
+      return false;
+    } else {
+      that.setData({
+        currentTab: e.currentTarget.dataset.id
+      })
+    }
   }
+
 })

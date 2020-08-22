@@ -1,0 +1,4 @@
+<!--components/tabbar_index/tabbar_index.wxml-->
+<view class="component_container">
+  <text class="title">Index</text>
+</view>

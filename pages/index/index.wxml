@@ -22,4 +22,53 @@
   <view class="couponDiv">
     <image class="couponImg" src="../../image/coupon.jpg" mode="widthFix" style="width:{{windowWidth}}px;"></image>
   </view>
+
+<!-- 自定义 tabbar -->
+  <!-- <view class="nav-tabs">
+    <view class="tabbarBkgDiv">
+      <image class="bkgImg" src="../../image/tabbar_bkg.png" mode="widthFix"></image>
+    </view>   
+    <view class="tabList">
+      <view class="iconDiv">
+        <image class="icon0" src="{{currentTab == 0 ? tabs[0].selectedIconPath : tabs[0].iconPath }}" mode="widthFix"></image>
+        <image class="icon1" src="{{currentTab == 1 ? tabs[1].selectedIconPath : tabs[1].iconPath }}" mode="widthFix"></image>
+        <image class="icon2" src="{{currentTab == 2 ? tabs[2].selectedIconPath : tabs[2].iconPath }}" mode="widthFix"></image>
+        <image class="icon3" src="{{currentTab == 3 ? tabs[3].selectedIconPath : tabs[3].iconPath }}" mode="widthFix"></image>
+        <image class="icon4" src="{{currentTab == 4 ? tabs[4].selectedIconPath : tabs[4].iconPath }}" mode="widthFix"></image>
+      </view>
+      <view class="textDiv">
+        <text class="{{currentTab == 0 ? 'tab-selected-text' : 'tab-text' }}">{{tabs[0].text}}</text>
+        <text class="{{currentTab == 1 ? 'tab-selected-text' : 'tab-text' }}">{{tabs[1].text}}</text>
+        <text class="{{currentTab == 2 ? 'tab-selected-text' : 'tab-text' }}">{{tabs[2].text}}</text>
+        <text class="{{currentTab == 3 ? 'tab-selected-text' : 'tab-text' }}">{{tabs[3].text}}</text>
+        <text class="{{currentTab == 4 ? 'tab-selected-text' : 'tab-text' }}">{{tabs[4].text}}</text>
+      </view> -->
+
+        <!-- <view class="tabItem" data-id="0" bindtap="swichNav">  
+        </view>
+        <view class="tabItem" data-id="1" bindtap="swichNav">
+                
+        </view>
+        <view class="tabItem" data-id="2" bindtap="swichNav">
+            <image class="normalIcon" src="{{currentTab == index ? tabs[2].selectedIconPath : tabs[2].iconPath }}" mode="widthFix"></image>
+            <image class="midIcon" src="{{currentTab == index ? tabs[2].selectedIconPath : tabs[2].iconPath }}" mode="widthFix"></image>
+          
+        </view>
+        <view class="tabItem" data-id="3" bindtap="swichNav">
+            <image class="normalIcon" src="{{currentTab == index ? tabs[3].selectedIconPath : tabs[3].iconPath }}" mode="widthFix"></image>
+            <image class="midIcon" src="{{currentTab == index ? tabs[3].selectedIconPath : tabs[3].iconPath }}" mode="widthFix"></image>
+          
+        </view>
+        <view class="tabItem" data-id="4" bindtap="swichNav">
+            <image class="normalIcon" src="{{currentTab == index ? tabs[4].selectedIconPath : tabs[4].iconPath }}" mode="widthFix"></image>
+            <image class="midIcon" src="{{currentTab == index ? tabs[4].selectedIconPath : tabs[4].iconPath }}" mode="widthFix"></image>   
+        </view> -->
+
+    <!-- </view>
+  </view> -->
+  <!-- <view class="tabbarDiv">
+    <tabbar/>
+  </view> -->
+  
 </view>
+

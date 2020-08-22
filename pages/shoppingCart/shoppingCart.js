@@ -5,7 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-    productList:[],
+    //productList:[],
+    productList:[
+      {
+        name:"开普勒钛架全框眼镜",
+        price:275,
+        imgUrl:"../../image/glasses.jpg",
+        num:1
+      },
+      {
+        name:"开普勒钛架全框眼镜",
+        price:275,
+        imgUrl:"../../image/glasses.jpg",
+        num:1
+      },
+      {
+        name:"开普勒钛架全框眼镜",
+        price:275,
+        imgUrl:"../../image/glasses.jpg",
+        num:1
+      }
+    ],
     windowWidth:414,
     imgWidth:264
   },
