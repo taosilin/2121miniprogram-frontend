@@ -61,7 +61,8 @@ Page({
         comments:12345
       }
     ],
-    itemWidth:207
+    itemWidth:207,
+    menuItem:['最佳匹配','最新上架','价格低至高','价格高至低']
   },
 
   /**

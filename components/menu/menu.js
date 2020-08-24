@@ -6,15 +6,15 @@ Component({
   properties: {
     menuName:{
       type:String,
-      value:'菜单'
+      value:'排序'
     },
     menuItem:{
       type:Array,
-      value:['item1','item2','item3']
+      value:['最佳匹配','最新上架','价格低至高','价格高至低']
     },
     width:{
       type:String,
-      value:'100'
+      value:'130'
     },
     height:{
       type:String,
@@ -50,7 +50,8 @@ Component({
       console.log(selectId,selectName)
       this.setData({
         selectId:selectId,
-        selectName:selectName
+        selectName:selectName,
+        menuOpen:!this.data.menuOpen
       })
     }
   }

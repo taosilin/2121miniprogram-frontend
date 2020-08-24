@@ -1,13 +1,14 @@
 <!--components/menu/menu.wxml-->
 <view class="container" style="width:{{width}}px; height:{{height}}px; font-size:{{titleSize}}px;">
-  <view bindtap="openMenu">
+  <view class="menuHeader" bindtap="openMenu">
   {{menuName}}<view class="arrow"></view>
+  {{menuItem[selectId]}}
   </view>
 </view>
 <view class="itemContainer {{menuOpen ? 'show' : 'disappear'}}">
   <view class="z-height">
     <block wx:for="{{menuItem}}" wx:key="index">
-      <view class="menuItem" data-model='{{item}}' data-id="{{index}}" bindtap='selectItem'> {{item}}</view>
+      <view class="menuItem {{selectId==index?'selectText':'normalText'}}" data-model='{{item}}' data-id="{{index}}" bindtap='selectItem'> {{item}}</view>
     </block>
   </view>
 </view>

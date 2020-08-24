@@ -2,8 +2,8 @@
 <view class="container">
   <view class="header">
     筛选<view class="arrow"></view>
-    <view class="right-text">排序 最佳匹配<view class="arrow"></view></view>
   </view>
+  <menu class="menu" menuName="排序" menuItem="{{menuItem}}"/>
   <view class="productList">
     <block wx:for="{{productList}}">
       <view class="productItem" style="width:{{itemWidth}}px;">

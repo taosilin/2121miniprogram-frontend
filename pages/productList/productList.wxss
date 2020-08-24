@@ -22,8 +22,11 @@
 }
 .right-text{
   display: inline-block;
-  position: absolute;
-  right: 19px;
+  /* position: absolute;
+  right: 19px; */
+}
+.menu{
+  width: 100%;
 }
 .productList{
   width: 100%;

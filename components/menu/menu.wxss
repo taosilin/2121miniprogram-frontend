@@ -4,6 +4,11 @@
   align-items: center;
   justify-content: center;
 }
+.menuHeader{
+  font-size: 13px;
+  color: black;
+  font-weight: bold;
+}
 .arrow{
   display: inline-block;
   border: 4px solid transparent;
@@ -16,7 +21,8 @@
   height: 100%;
   position: absolute;
   overflow-y: scroll;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
 }
 .z-height{
   overflow-y: scroll;
@@ -29,7 +35,16 @@
   display: block;
 }
 .menuItem {
-  border-bottom: solid #f7f7f7 1rpx;
+  border-bottom: solid #EAEAEA 1px;
   justify-content: space-between;
-  padding: 20rpx 30rpx;
+  padding: 24px 21px;
+}
+.selectText{
+  font-size: 13px;
+  color: black;
+  font-weight: bold;
+}
+.normalText{
+  font-size: 13px;
+  color: #575757;
 }
