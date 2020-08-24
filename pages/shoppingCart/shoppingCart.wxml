@@ -5,17 +5,19 @@
     <view class="productDiv">
       <block wx:for="{{productList}}">
         <view class="productItem">
-          <view>
+          <view class="selectDiv">
+            <radio class="selectProduct" value="{{index}}" checked="{{item.selected}}" color="#72C9FA" bindtap="radioChange" data-id="{{index}}"/>
           </view>
-          <view class="imgDiv">
-            <image class="productImg" src="{{item.imgUrl}}" mode="widthFix"></image>
+          <view class="imgDiv" style="width:{{productWidth}}px;">
+            <image class="productImg" src="{{item.imgUrl}}" mode="widthFix" style="width:{{productWidth}}px;"></image>
           </view>
-          <view class="contentDiv">
-            <view>{{item.name}}</view>
-            <view class="btn">定制信息</view>
-            <view>{{item.price}}</view>
-          </view>
-          <view class="numDiv">
+          <view class="contentDiv" style="width:{{contentWidth}}px;">
+            <view class="content">{{item.name}}</view>
+            <view class="selectBtn">定制信息</view>
+            <view class="priceDiv">
+              ¥ {{item.price}}
+              <stepper class="stepper" num="{{item.num}}"/>
+            </view>
           </view>
         </view>
       </block>

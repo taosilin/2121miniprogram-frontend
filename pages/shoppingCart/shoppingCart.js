@@ -11,23 +11,28 @@ Page({
         name:"开普勒钛架全框眼镜",
         price:275,
         imgUrl:"../../image/glasses.jpg",
-        num:1
+        num:100,
+        selected:false
       },
       {
         name:"开普勒钛架全框眼镜",
         price:275,
         imgUrl:"../../image/glasses.jpg",
-        num:1
+        num:1,
+        selected:false
       },
       {
         name:"开普勒钛架全框眼镜",
         price:275,
         imgUrl:"../../image/glasses.jpg",
-        num:1
+        num:1,
+        selected:false
       }
     ],
     windowWidth:414,
-    imgWidth:264
+    imgWidth:264,
+    productWidth:103,
+    contentWidth:230
   },
 
   /**
@@ -37,7 +42,9 @@ Page({
     const sysInfo = wx.getSystemInfoSync();
     this.setData({
       windowWidth:sysInfo.windowWidth,
-      imgWidth:sysInfo.windowWidth*0.637
+      imgWidth:sysInfo.windowWidth*0.637,
+      productWidth:sysInfo.windowWidth*0.24879,
+      contentWidth:sysInfo.windowWidth*0.5
     })
   },
 
@@ -88,5 +95,14 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  radioChange(e) {
+    // console.log('radio发生change事件，携带value值为：', e.currentTarget.dataset.id);
+    let id = e.currentTarget.dataset.id;
+    let items = this.data.productList;
+    items[id].selected = !items[id].selected
+    this.setData({
+      productList:items
+    })
   }
 })

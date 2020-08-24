@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "stepper":"../../components/stepper/stepper"
+  },
   "navigationBarTitleText":"购物车"
 }
