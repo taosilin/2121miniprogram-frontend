@@ -68,6 +68,46 @@
   position: absolute;
   right: 0px;
 }
+.footer{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 54px;
+  border:1px solid #000000;
+  background-color: white; 
+}
+.radioDiv{
+  font-size: 14px;
+  color: black;
+  margin-left: 15px;
+}
+.sumDiv{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 15px;
+}
+.sum{
+  font-size: 14px;
+  color: #000000;
+}
+.settleBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 104px;
+    height: 43px;
+    background-color: #72C9FA;
+    color: white;
+    font-size: 16px;
+    border-radius: 21.5px;
+    margin-left: 16px;
+}
+
 
 .nothingDiv{
   display: flex;
