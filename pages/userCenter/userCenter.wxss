@@ -170,7 +170,7 @@
   display: flex;
   align-items: center;
   background-color: white;
-  margin-top: 600px;
+  margin-top: 570px;
   font-size: 14px;
   padding-left: 32px; 
   border-style: solid;

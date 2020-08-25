@@ -1,7 +1,37 @@
 <!--pages/couponList/couponList.wxml-->
-<view class="container">
+<view class="container" style="height:{{windowHeight}}px;">
+  <view class="header">
+    <input class="inputDiv" style="width:{{inputWidth}}px;" placeholder="请输入优惠券码" value="{{inputCode}}" bindinput="onInputChange"></input>
+    <view wx:if="{{inputCode==''}}" class="disableBtn" style="width:{{btnWidth}}px;">兑换</view>
+    <view wx:else class="exchangeBtn" style="width:{{btnWidth}}px;" bindtap="onExchange">兑换</view>
+  </view>
   <!-- 有优惠券时 -->
   <block wx:if="{{couponList.length!=0}}">
+    <view class="couponList">
+      <block wx:for="{{couponList}}">
+        <view class="couponItem" style="height:{{couponHeight}}px;">
+          <image class="couponImg" src="../../image/coupon.png" mode="widthFix"></image>
+          <view class="contentDiv">
+            <view class="leftDiv">
+              <view class="topDiv">
+                <radio class="selectCoupon" value="{{index}}" checked="{{item.selected}}" color="#72C9FA" bindtap="selectCoupon" data-id="{{index}}"/>
+                <view class="couponName">{{item.name}}</view>
+              </view>                          
+              <view class="bottomDiv">
+                <view class="timeLimit">使用期限:2020.8.8-2020.8.31</view>
+                <view wx:if="{{!item.openDetail}}" class="description" bindtap="onDetail" data-id="{{index}}">使用说明﹀</view>
+                <view wx:else class="description" bindtap="onDetail" data-id="{{index}}">使用说明︿</view>
+              </view>
+            </view>
+            <view class="rightDiv">
+              <view class="discount">¥{{item.discount}}</view>
+              <view class="restriction">{{item.restriction}}</view>
+            </view>
+          </view>  
+        </view>
+        <view wx:if="{{item.openDetail}}" class="detailDiv">{{item.description}}</view>      
+      </block>
+    </view>  
   </block>
   <!-- 无优惠券时 -->
   <block wx:else>
@@ -11,4 +41,7 @@
       <view class="text2">您还没有收到优惠券哦</view>
     </view>
   </block>
+  <view class="footer">
+    <view class="useBtn">去使用</view>
+  </view>
 </view>

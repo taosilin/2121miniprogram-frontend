@@ -9,7 +9,7 @@ Page({
     userInfo:{},
     orderDivTop:170,
     otherDivTop:300,
-    moreDivTop:600
+    moreDivTop:590
   },
 
   /**
@@ -22,7 +22,7 @@ Page({
     this.setData({
       orderDivTop:sysInfo.windowWidth*0.42,
       otherDivTop:sysInfo.windowWidth*0.42+129,
-      moreDivTop:sysInfo.windowWidth*0.42+464,
+      moreDivTop:sysInfo.windowWidth*0.42+434,
     });
 
     if (app.globalData.userInfo) {
