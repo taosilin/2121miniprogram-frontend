@@ -22,6 +22,15 @@
         </view>
       </block>
     </view>
+    <view class="footer">
+      <view class="radioDiv">
+        <radio class="selectAll" value="{{index}}" checked="{{item.isDefult}}" color="#72C9FA"/>全选
+      </view>
+      <view class="sumDiv">
+        <view class="sum">合计：¥275</view>
+        <view class="settleBtn">去结算</view>
+      </view>  
+    </view>
   </block>
   
   <!-- 购物车无物品时 -->
@@ -32,14 +41,4 @@
       <view class="shopBtn">去逛逛</view>
     </view>
   </block>
-
-  <view class="footer">
-    <view class="radioDiv">
-      <radio class="selectAll" value="{{index}}" checked="{{item.isDefult}}" color="#72C9FA"/>全选
-    </view>
-    <view class="sumDiv">
-      <view class="sum">合计：¥275</view>
-      <view class="settleBtn">去结算</view>
-    </view>  
-  </view>
 </view>

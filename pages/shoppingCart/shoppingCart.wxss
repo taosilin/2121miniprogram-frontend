@@ -5,6 +5,7 @@
 }
 .productDiv{
   width: 100%;
+  padding-bottom: 54px;
 }
 .productItem{
   width: 100%;
