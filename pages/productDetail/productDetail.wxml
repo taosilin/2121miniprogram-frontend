@@ -1,2 +1,44 @@
 <!--pages/productDetail/productDetail.wxml-->
-<text>pages/productDetail/productDetail.wxml</text>
+<view class="container">
+
+  <view class="info">
+    <view class="title">{{product.name}}</view>
+    <view class="subTitle">{{product.subTitle}}</view>
+    <view class="cycle">生产周期：{{product.productionCycle}}天</view>
+  </view>
+
+  <view class="imgDiv">
+    <swiper class="swiperContainer" style="height:{{imgHeight}}px;"
+      indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}"
+      interval="{{interval}}"
+      duration="{{duration}}"
+      circular="{{circular}}"
+      indicator-color="#FFFFFF"
+      indicator-active-color="#FFFFFF"
+      bindchange="onSlideChange">
+        <block wx:for="{{product.imgList}}" wx:key="index">
+          <swiper-item class="vol-swiper-item">
+            <view class="swiperItem">
+              <image class="productImg" src="{{item}}" mode="widthFix" style="width:{{windowWidth}}px;"></image>
+            </view>
+          </swiper-item>
+        </block>
+    </swiper>
+  </view>
+
+  <view class="footer">
+    <view class="navDiv">
+      <image class="serviceIcon" src="../../image/icon/service_normal.png" mode="widthFix"></image>
+      客服
+    </view>
+    <view class="navDiv">
+      <image class="cartIcon" src="../../image/icon/addCart.png" mode="widthFix"></image>
+      购物车
+    </view>   
+    <view class="footerBtn">
+      <view class="leftBtn">加入购物车</view>
+      <view class="rightBtn">立即购买</view>
+    </view>
+  </view>
+</view>

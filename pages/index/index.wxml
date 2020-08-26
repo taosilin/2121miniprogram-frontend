@@ -19,6 +19,7 @@
         </block>
     </swiper>  
   </view>
+  
   <view class="couponDiv">
     <image class="couponImg" src="../../image/coupon.jpg" mode="widthFix" style="width:{{windowWidth}}px;"></image>
   </view>

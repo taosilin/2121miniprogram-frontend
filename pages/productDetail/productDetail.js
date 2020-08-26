@@ -5,14 +5,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    product:{
+      name:"开普勒·钛架-全框（含镜片）",
+      subTitle:'选用高端航空专用钛 设计优雅',
+      productionCycle:3,
+      imgList:[
+        '../../image/glasses4.png',
+        '../../image/glasses4.png',
+        '../../image/glasses4.png'
+      ],
+      price:299,
+      originalPrice:899
+    },
+    indicatorDots: true,//显示指示点
+    autoplay: true,//自动播放
+    interval: 3000,
+    duration: 500,
+    circular:true, //衔接滑动
+    windowWidth:414,
+    imgHeight:290
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const sysInfo = wx.getSystemInfoSync();
+    this.setData({
+      windowWidth:sysInfo.windowWidth,
+      imgHeight:sysInfo.windowWidth*0.70048  
+    })
   },
 
   /**
@@ -62,5 +84,9 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  onSlideChange: function (event) { 
+    var postId = event.detail.current; 
+    // console.log(postId);
   }
 })
