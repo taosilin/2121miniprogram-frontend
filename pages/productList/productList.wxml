@@ -6,7 +6,7 @@
   <menu class="menu" menuName="排序" menuItem="{{menuItem}}"/>
   <view class="productList">
     <block wx:for="{{productList}}">
-      <view class="productItem" style="width:{{itemWidth}}px;">
+      <view class="productItem" style="width:{{itemWidth}}px;" bindtap="goToProductDetail">
         <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
         <image class="productImg" src="{{item.imgUrl}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>    
         <view class="title">{{item.name}}</view>

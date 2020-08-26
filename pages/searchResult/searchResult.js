@@ -5,14 +5,135 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    searchResult:[],
+    // searchResult:[
+    //   {
+    //     name:'开普勒 钛架-全框',
+    //     price:299,
+    //     isNew:true,
+    //     isSaled:false,
+    //     originalPrice:599,
+    //     imgUrl:'../../image/glasses3.png',
+    //     comments:1361
+    //   },
+    //   {
+    //     name:'开普勒 钛架-全框',
+    //     price:299,
+    //     isNew:true,
+    //     isSaled:false,
+    //     originalPrice:599,
+    //     imgUrl:'../../image/glasses3.png',
+    //     comments:1128
+    //   },
+    //   {
+    //     name:'开普勒 钛架-全框',
+    //     price:299,
+    //     isNew:true,
+    //     isSaled:true,
+    //     originalPrice:599,
+    //     imgUrl:'../../image/glasses3.png',
+    //     comments:910
+    //   },
+    //   {
+    //     name:'开普勒 钛架-全框',
+    //     price:299,
+    //     isNew:true,
+    //     isSaled:false,
+    //     originalPrice:599,
+    //     imgUrl:'../../image/glasses3.png',
+    //     comments:13610
+    //   },
+    //   {
+    //     name:'开普勒 钛架-全框',
+    //     price:299,
+    //     isNew:true,
+    //     isSaled:false,
+    //     originalPrice:599,
+    //     imgUrl:'../../image/glasses3.png',
+    //     comments:678
+    //   },
+    //   {
+    //     name:'开普勒 钛架-全框',
+    //     price:299,
+    //     isNew:false,
+    //     isSaled:false,
+    //     originalPrice:599,
+    //     imgUrl:'../../image/glasses3.png',
+    //     comments:12345
+    //   }
+    // ],
+    itemWidth:207,
+    searchContent:'',
+    searchInput:'',
+    recommend:[
+      {
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses3.png',
+        comments:1361
+      },
+      {
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses3.png',
+        comments:1128
+      },
+      {
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:true,
+        originalPrice:599,
+        imgUrl:'../../image/glasses3.png',
+        comments:910
+      },
+      {
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses3.png',
+        comments:13610
+      },
+      {
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:true,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses3.png',
+        comments:678
+      },
+      {
+        name:'开普勒 钛架-全框',
+        price:299,
+        isNew:false,
+        isSaled:false,
+        originalPrice:599,
+        imgUrl:'../../image/glasses3.png',
+        comments:12345
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      searchContent:options.searchInput
+    });
+    const sysInfo = wx.getSystemInfoSync();
+    this.setData({
+      itemWidth:sysInfo.windowWidth/2
+    });
   },
 
   /**
@@ -62,5 +183,33 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  //前往商品详情页
+  goToProductDetail:function(e){
+    let id = e.currentTarget.dataset.id;
+    //待修改
+    wx.navigateTo({
+      url: '../productDetail/productDetail',
+    })
+  },
+
+  onInputChange:function(e){
+    this.setData({
+      searchInput:e.detail.value
+    });
+  },
+
+  onCancel:function(){
+    this.setData({
+      searchInput:''
+    })
+  },
+
+  onSearch:function(e){
+    if (this.data.searchInput!=''){
+      wx.navigateTo({
+        url: '../searchResult/searchResult?searchInput='+this.data.searchInput,
+      })
+    }
+  },
 })

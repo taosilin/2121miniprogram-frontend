@@ -1,2 +1,60 @@
 <!--pages/searchResult/searchResult.wxml-->
-<text>pages/searchResult/searchResult.wxml</text>
+<view class="container">
+  <!-- 搜索有结果 -->
+  <block wx:if="{{searchResult.length!=0}}">
+    <view class="titleDiv">
+      <view class="bigTitle">{{searchContent}}</view>
+      <view class="smallTitle">{{searchResult.length}}件商品</view>
+    </view>
+    <view class="productList">
+      <block wx:for="{{searchResult}}">
+        <view class="productItem" style="width:{{itemWidth}}px;" data-id="{{index}}" bindtap="goToProductDetail">
+          <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
+          <image class="productImg" src="{{item.imgUrl}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>    
+          <view class="title">{{item.name}}</view>
+          <view class="priceDiv">
+            <view wx:if="{{item.isSaled}}">
+              <text class="saledPrice">¥{{item.price}}</text>
+              <text class="originalPrice">¥{{item.originalPrice}}</text>
+            </view>
+            <view wx:else class="price">¥{{item.price}}</view>
+            <view class="comments">{{item.comments}}条好评</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+  <!-- 搜索无结果 -->
+  <block ex:else>
+    <view class="searchHeader">
+      <input class="inputDiv" placeholder="请输入产品名称或产品类别" value="{{searchInput}}" bindinput="onInputChange"></input>
+      <image class="cancelIcon" src="../../image/icon/cancel.png" mode="widthFix" bindtap="onCancel"></image>
+      <image class="searchIcon" src="../../image/icon/search.png" mode="widthFix" bindtap="onSearch"></image>
+    </view>
+    <view class="promptDiv">
+      <view>抱歉，我们未能找到相关商品</view>
+      <view>请尝试搜索其他关键词</view>
+    </view>
+    <view class="line"></view>
+    <view class="rcmdHeader">
+      <view class="titleText">为你推荐</view>
+    </view>
+    <view class="productList">
+      <block wx:for="{{recommend}}">
+        <view class="productItem" style="width:{{itemWidth}}px;" data-id="{{index}}" bindtap="goToProductDetail">
+          <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
+          <image class="productImg" src="{{item.imgUrl}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>    
+          <view class="title">{{item.name}}</view>
+          <view class="priceDiv">
+            <view wx:if="{{item.isSaled}}">
+              <text class="saledPrice">¥{{item.price}}</text>
+              <text class="originalPrice">¥{{item.originalPrice}}</text>
+            </view>
+            <view wx:else class="price">¥{{item.price}}</view>
+            <view class="comments">{{item.comments}}条好评</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

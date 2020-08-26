@@ -15,7 +15,8 @@
     "pages/privacy/privacy",
     "pages/likeList/likeList",
     "pages/couponList/couponList",
-    "pages/searchResult/searchResult"
+    "pages/searchResult/searchResult",
+    "pages/productDetail/productDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

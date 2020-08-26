@@ -122,5 +122,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  //前往商品详情页
+  goToProductDetail:function(e){
+    let id = e.currentTarget.dataset.id;
+    //待修改
+    wx.navigateTo({
+      url: '../productDetail/productDetail',
+    })
   }
 })
