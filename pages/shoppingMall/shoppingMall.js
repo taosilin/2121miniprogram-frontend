@@ -28,7 +28,8 @@ Page({
         ]
       }
     ],
-    itemWidth:94
+    itemWidth:94,
+    searchOpen:false
   },
 
   /**
@@ -96,6 +97,11 @@ Page({
     console.log(e);
     wx.navigateTo({
       url: '../productList/productList',
+    })
+  },
+  onOpenSearch:function(e){
+    this.setData({
+      searchOpen:!this.data.searchOpen
     })
   }
 })

@@ -1,14 +1,17 @@
 <!--pages/shoppingMall/shoppingMall.wxml-->
 <view class="container">
+
   <view class='nav' style='height:{{navH}}px'>
-    <view class='nav-title'>
-      <view class="INinputheader">
+    <view class='navTitle'>
+      <view class="inputHeader">
         <view class="navText">商城</view>
-        <image class="searchImg" src="../../image/icon/search.png" mode="widthFix"></image>
-        <input class="weui-input"/>
+        <image class="searchImg" src="../../image/icon/search.png" mode="widthFix" bindtap="onOpenSearch"></image>
       </view>
     </view>
   </view>
+
+  <search class="search {{searchOpen?'show':'disappear'}}"/>
+
   <view class="labelbar">
     <label-bar tabs="{{classes}}" selectTextColor="#000000" textColor="#BEBEBE" selectColor="#FFFFFF" letterSpacing="0.8" textSize="14" selectBold="bold">
         <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->

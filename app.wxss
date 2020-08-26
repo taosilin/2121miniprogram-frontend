@@ -1,4 +1,6 @@
 /**app.wxss**/
+/* @import "utils/pingfangsc.wxss"; */
+
 .container {
   height: 100%;
   display: flex;

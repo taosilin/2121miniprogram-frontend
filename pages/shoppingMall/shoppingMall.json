@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "label-bar":"../../components/tab/tab"
+    "label-bar":"../../components/tab/tab",
+    "search":"../../components/searchBox/searchBox"
   },
   "navigationBarTitleText":"商城",
   "navigationStyle": "custom"

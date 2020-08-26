@@ -2,4 +2,5 @@
 <!-- <text>pages/optometry/optometry.wxml</text> -->
 <view>
   <menu></menu>
+  <search/>
 </view>

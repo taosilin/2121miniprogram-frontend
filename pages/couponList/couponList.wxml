@@ -32,6 +32,9 @@
         <view wx:if="{{item.openDetail}}" class="detailDiv">{{item.description}}</view>      
       </block>
     </view>  
+    <view class="footer">
+      <view class="useBtn">去使用</view>
+    </view>
   </block>
   <!-- 无优惠券时 -->
   <block wx:else>
@@ -41,7 +44,5 @@
       <view class="text2">您还没有收到优惠券哦</view>
     </view>
   </block>
-  <view class="footer">
-    <view class="useBtn">去使用</view>
-  </view>
+  
 </view>
