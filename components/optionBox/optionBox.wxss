@@ -1,0 +1,33 @@
+/* components/optionBox/optionBox.wxss */
+.selectBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid 1px #CECECE;
+}
+.inputBox{
+  box-sizing: border-box;
+  padding: 8px 10px 8px 6px;
+}
+.arrow{
+  display: inline-block;
+  border: 4px solid transparent;
+  border-top: 4px solid #CECECE;
+  margin-right: 6px;
+}
+.optionBox{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow-y: scroll;
+  z-index: 10;
+}
+.disappear {
+  display: none;
+}
+.show {
+  display: block;
+}
+.optionItem{
+
+}

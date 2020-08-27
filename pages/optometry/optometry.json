@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "menu":"../../components/menu/menu",
-    "search":"../../components/searchBox/searchBox"
+    "search":"../../components/searchBox/searchBox",
+    "action-sheet":"../../components/actionSheet/actionSheet"
   }
 }

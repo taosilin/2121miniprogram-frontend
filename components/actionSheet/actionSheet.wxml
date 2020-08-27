@@ -1,0 +1,74 @@
+<!--components/actionSheet/actionSheet.wxml-->
+<view class="container">
+  <view class="action-sheet">  
+    <view class="z-height">
+      <image class="closeIcon" src="../../image/icon/close.png" mode="widthFix"></image>
+      <view class="imgDiv">
+        <image class="productImg" src="../../image/glasses2.jpg" mode="widthFix"></image>
+      </view>
+      <view class="info">
+        <view>
+          <text class="price">¥ {{price}}</text>
+          <text class="originalPrice">¥ {{originalPrice}}</text>
+        </view>
+        <view class="cycle">生产周期：3天</view>
+      </view>
+      <view class="btnDiv">
+        <view class="btn1 {{selectTab==0?'selectBtn':'normalBtn'}}" bindtap="onBtn1">选择镜框和镜腿</view>
+        <view class="btn2 {{selectTab==1?'selectBtn':'normalBtn'}}" bindtap="onBtn2">选择度数</view>
+        <view class="btn3 {{selectTab==2?'selectBtn':'normalBtn'}}" bindtap="onBtn3">选择镜片</view>
+      </view>
+      <view class="contentDiv">
+        <block wx:if="{{selectTab==0}}">
+          <view class="content1">
+            <text class="title">镜框</text>
+            <text class="choose">已选：（7001A_C01_深蓝x枪）</text>
+          </view>
+          <view class="frameImgDiv">
+            <block wx:for="{{[1,2,3]}}" wx:for-item="i">
+              <view class="frameItem">
+                <view class="frameImg"></view>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:elif="{{selectTab==1}}">
+          <view class="content2">
+            <view class="degreeRow">
+              度数：<option-box placeholderText="左眼度数"/><option-box style="margin-left:14px;" placeholderText="右眼度数"/>
+            </view>
+            <view class="degreeRow">
+              瞳距：<option-box boxWidth="342" placeholderText="请选择瞳距"/>
+            </view>
+            <view class="degreeRow">
+              散光：<option-box placeholderText="左眼散光"/><option-box style="margin-left:14px;" placeholderText="右眼散光"/>
+            </view>
+            <view class="degreeRow">
+              轴位：<option-box placeholderText="左眼轴位"/><option-box style="margin-left:14px;" placeholderText="右眼轴位"/>
+            </view>
+            <view class="bottomText">验光单怎么看？</view>
+            <view class="bottomBtn">购买平光</view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="content3">
+            <view class="lensTitle">镜片功能</view>
+            <view class="optionList">
+              <block wx:for="{{['高清绿膜镜片','科技膜层变色镜片','科技膜层变色镜片']}}">
+                <view class="optionItem">{{item}}</view>
+              </block>
+            </view>
+            <view class="description">超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度</view>
+            <view class="lensTitle">镜片规格</view>
+            <view class="optionList">
+              <block wx:for="{{['1.74薄','1.56薄','1.64薄','1.74薄','1.74薄']}}">
+                <view class="optionItem">{{item}}</view>
+              </block>
+            </view>
+            <view class="completeBtn">完成</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<!--components/optionBox/optionBox.wxml-->
+<view class="container" style="width:{{boxWidth}}px;height:{{boxHeight}}px;font-size:{{fontSize}}px;color:{{fontColor}};">
+  <view class="selectBox" bindtap="openOption">
+    <input class="inputBox" value="{{optionValue}}" disabled placeholder="{{placeholderText}}" style="width:{{boxWidth}}px;height:{{boxHeight}}px;"/>
+    <view class="arrow"></view>
+  </view>
+  <view class="optionBox {{isOpen?'show':'disappear'}}">
+    <block wx:for="{{options}}">
+      <view class="optionItem">{{item}}</view>
+    </block>
+  </view>
+</view>
