@@ -145,6 +145,8 @@
 }
 .smallIcon{
   width: 12px;
+  margin-left: 18px;
+  margin-right: 6px;
 }
 .moreIcon{
   width: 18px;
