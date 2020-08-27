@@ -4,14 +4,21 @@
   padding: 0px;
   width: 100%;
 }
-.info{
+.content{
   width: 100%;
   padding-bottom: 104px;
+}
+.info{
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 16px;
 }
 .title{
   font-size: 20px;
   color: black;
   font-weight: bold;
+  margin-top: 1px;
+  margin-bottom: 6px;
 }
 .subTitle{
   font-size: 13px;
@@ -20,9 +27,12 @@
 .cycle{
   font-size: 12px;
   color: #A6A6A6;
+  margin-top: 7px;
+  margin-bottom: 10px;
 }
 .imgDiv{
   width: 100%;
+  height: 337px;
 }
 /* 滑块容器 */
 .swiperContainer{
@@ -40,29 +50,105 @@
 .swiperContainer .wx-swiper-dot{
   width: 6px;
   height: 6px;
-  color: #BEBEBE;
 }
-.swiperContainer .wx-swiper-dots-horizontal{
-  /* position: absolute;
-  margin-left:240rpx ;
-  margin-bottom: 15px;   */
-}
+/* .swiperContainer .wx-swiper-dots-horizontal{
+  position: absolute;
+  margin-left:187.5rpx ;
+  margin-bottom: -15px;  
+} */
 /*选中指示点样式*/
 .swiperContainer .wx-swiper-dot-active{
-  width:18px;
+  width:24px;
   display: inline-flex;
   height: 6px;
   margin-left: 6px;
   justify-content:space-between;
-  color: #747474;
 }
 .swiperContainer .wx-swiper-dot::before{
   content: '';
   flex-grow: 1; 
-  background: rgba(255,255,255,0.8);
-  border-radius: 8rpx
+  background: #747474;
+  border-radius: 3px;
 }
 
+.smallImgDiv{
+  width: 100%;
+  height: 59px;
+  padding-left: 18px;
+  box-sizing: border-box;
+}
+.smallImg{
+  width: 59px;
+  border: 1px solid #979797;
+}
+.otherDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding: 15px 18px 0px 23px;
+  box-sizing: border-box;
+}
+.parameter{
+  font-size: 12px;
+  color: #484848;
+}
+.iconDiv{
+  font-size: 12px;
+  color: #000000;
+  position: absolute;
+  right: 23px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.likeIcon{
+  width: 20px;
+  margin-right: 4px;
+}
+.shareIcon{
+  width: 15px;
+  margin-left: 14px;
+  margin-right: 4px;
+}
+
+.priceDiv{
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 18px;
+  padding-top: 25px;
+  padding-bottom: 43px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.price{
+  font-size: 28px;
+  color: #D30E26;
+}
+.originalPrice{
+  font-size: 14px;
+  color: #A6A6A6;
+  text-decoration:line-through;/*文字划线*/
+  margin-left: 8px;
+}
+
+.bottomDiv{
+  width: 100%;
+  height: 40px;
+  font-size: 12px;
+  color: #7F7F7F;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.smallIcon{
+  width: 12px;
+}
+.moreIcon{
+  width: 18px;
+}
 
 /* 商品底部导航栏 */
 .footer{
@@ -73,6 +159,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  box-sizing: border-box;
+  padding-left: 25px;
+  padding-right: 15px;
 }
 .navDiv{
   font-size: 10px;
@@ -81,7 +172,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: black 1px solid;
 }
 .serviceIcon{
   width: 28px;
@@ -94,16 +184,28 @@
   flex-direction: row;
 }
 .leftBtn{
+  width: 133px;
+  height: 51px;
   color: #72C9FA;
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 2px;
   border: 1px solid #72C9FA;
+  border-radius: 25.5px 0px 0px 25.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .rightBtn{
+  width: 133px;
+  height: 51px;
   background-color: #72C9FA;
   color: white;
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 2px;
+  border-radius: 0px 25.5px 25.5px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

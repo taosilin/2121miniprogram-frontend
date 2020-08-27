@@ -1,32 +1,58 @@
 <!--pages/productDetail/productDetail.wxml-->
 <view class="container">
+  <view class="content">
+    <view class="info">
+      <view class="title">{{product.name}}</view>
+      <view class="subTitle">{{product.subTitle}}</view>
+      <view class="cycle">生产周期：{{product.productionCycle}}天
+        <image class="smallIcon" src="../../image/icon/question.png" mode="widthFix" />
+      </view>
+    </view>
 
-  <view class="info">
-    <view class="title">{{product.name}}</view>
-    <view class="subTitle">{{product.subTitle}}</view>
-    <view class="cycle">生产周期：{{product.productionCycle}}天</view>
+    <view class="imgDiv">
+      <swiper class="swiperContainer" style="height:{{imgHeight}}px;"
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}"
+        interval="{{interval}}"
+        duration="{{duration}}"
+        circular="{{circular}}"
+        indicator-color="#BEBEBE"
+        indicator-active-color="#747474"
+        bindchange="onSlideChange">
+          <block wx:for="{{product.imgList}}" wx:key="index">
+            <swiper-item class="vol-swiper-item">
+              <view class="swiperItem">
+                <image class="productImg" src="{{item}}" mode="widthFix" style="width:{{windowWidth}}px;"></image>
+              </view>
+            </swiper-item>
+          </block>
+      </swiper>
+    </view>
+    <view class="smallImgDiv">
+      <block wx:for="{{product.smallImgList}}">
+        <image class="smallImg" src="{{item}}" mode="widthFix"></image>
+      </block>
+    </view>
+    <view class="otherDiv">
+      <text class="parameter">颜色：黑色</text>
+      <view class="iconDiv">
+        <image class="likeIcon" src="../../image/icon/favorites_normal.png" mode="widthFix"></image>收藏
+        <image class="shareIcon" src="../../image/icon/share.png" mode="widthFix"></image>分享
+      </view>  
+    </view>
+    <view class="priceDiv">
+      <text class="price">¥ {{product.price}}</text>
+      <text class="originalPrice">¥ {{product.originalPrice}}</text>
+    </view>
+    <view class="bottomDiv">
+      <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />15天无忧退货
+      <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />先行赔付
+      <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />超时赔偿
+      <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />顺丰包邮
+      <image class="moreIcon" src="../../image/icon/more.png" mode="widthFix" />
+    </view>
   </view>
-
-  <view class="imgDiv">
-    <swiper class="swiperContainer" style="height:{{imgHeight}}px;"
-      indicator-dots="{{indicatorDots}}"
-      autoplay="{{autoplay}}"
-      interval="{{interval}}"
-      duration="{{duration}}"
-      circular="{{circular}}"
-      indicator-color="#FFFFFF"
-      indicator-active-color="#FFFFFF"
-      bindchange="onSlideChange">
-        <block wx:for="{{product.imgList}}" wx:key="index">
-          <swiper-item class="vol-swiper-item">
-            <view class="swiperItem">
-              <image class="productImg" src="{{item}}" mode="widthFix" style="width:{{windowWidth}}px;"></image>
-            </view>
-          </swiper-item>
-        </block>
-    </swiper>
-  </view>
-
+  
   <view class="footer">
     <view class="navDiv">
       <image class="serviceIcon" src="../../image/icon/service_normal.png" mode="widthFix"></image>
@@ -37,8 +63,8 @@
       购物车
     </view>   
     <view class="footerBtn">
-      <view class="leftBtn">加入购物车</view>
-      <view class="rightBtn">立即购买</view>
+      <view class="leftBtn" style="width:{{btnWidth}}px;">加入购物车</view>
+      <view class="rightBtn" style="width:{{btnWidth}}px;">立即购买</view>
     </view>
   </view>
 </view>

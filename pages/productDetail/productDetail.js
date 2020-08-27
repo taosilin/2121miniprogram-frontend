@@ -14,6 +14,11 @@ Page({
         '../../image/glasses4.png',
         '../../image/glasses4.png'
       ],
+      smallImgList:[
+        '../../image/glasses2.jpg',
+        '../../image/glasses2.jpg',
+        '../../image/glasses2.jpg'
+      ],
       price:299,
       originalPrice:899
     },
@@ -23,7 +28,8 @@ Page({
     duration: 500,
     circular:true, //衔接滑动
     windowWidth:414,
-    imgHeight:290
+    imgHeight:290,
+    btnWidth:133
   },
 
   /**
@@ -33,7 +39,8 @@ Page({
     const sysInfo = wx.getSystemInfoSync();
     this.setData({
       windowWidth:sysInfo.windowWidth,
-      imgHeight:sysInfo.windowWidth*0.70048  
+      imgHeight:sysInfo.windowWidth*0.70048,
+      btnWidth:sysInfo.windowWidth*0.32125  
     })
   },
 
