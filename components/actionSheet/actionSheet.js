@@ -15,6 +15,14 @@ Component({
     selectTab:{
       type:Number,
       value:0
+    },
+    actionSheetOpen:{
+      type:Boolean,
+      value:false
+    },
+    optionItem:{
+      type:Number,
+      value:0
     }
   },
 
@@ -28,6 +36,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    onClose:function(){
+      this.setData({
+        actionSheetOpen:false
+      })
+    },
     onBtn1:function(){
       this.setData({
         selectTab:0
@@ -41,6 +54,12 @@ Component({
     onBtn3:function(){
       this.setData({
         selectTab:2
+      })
+    },
+    onItemChange:function(e){
+      let id = e.currentTarget.dataset.id;
+      this.setData({
+        optionItem:id
       })
     }
   }

@@ -63,8 +63,10 @@
       购物车
     </view>   
     <view class="footerBtn">
-      <view class="leftBtn" style="width:{{btnWidth}}px;">加入购物车</view>
+      <view class="leftBtn" style="width:{{btnWidth}}px;" bindtap="openActionSheet">加入购物车</view>
       <view class="rightBtn" style="width:{{btnWidth}}px;">立即购买</view>
     </view>
   </view>
+  
 </view>
+<action-sheet actionSheetOpen="{{actionSheetOpen}}" />

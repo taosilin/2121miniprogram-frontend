@@ -3,6 +3,8 @@
   margin:0px;
   padding: 0px;
   width: 100%;
+  position: absolute;
+  z-index: 1;
 }
 .content{
   width: 100%;
@@ -211,3 +213,4 @@
   align-items: center;
   justify-content: center;
 }
+

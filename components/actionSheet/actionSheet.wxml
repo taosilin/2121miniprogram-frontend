@@ -1,8 +1,8 @@
 <!--components/actionSheet/actionSheet.wxml-->
-<view class="container">
+<view class="container {{actionSheetOpen?'show':'disappear'}}">
   <view class="action-sheet">  
     <view class="z-height">
-      <image class="closeIcon" src="../../image/icon/close.png" mode="widthFix"></image>
+      <image class="closeIcon" src="../../image/icon/close.png" mode="widthFix" bindtap="onClose"></image>
       <view class="imgDiv">
         <image class="productImg" src="../../image/glasses2.jpg" mode="widthFix"></image>
       </view>
@@ -55,7 +55,7 @@
             <view class="lensTitle">镜片功能</view>
             <view class="optionList">
               <block wx:for="{{['高清绿膜镜片','科技膜层变色镜片','科技膜层变色镜片']}}">
-                <view class="optionItem">{{item}}</view>
+                <view class="{{optionItem==index?'selectItem':'optionItem'}}" data-id="{{index}}" bindtap="onItemChange">{{item}}</view>
               </block>
             </view>
             <view class="description">超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度超薄镜片厚度</view>

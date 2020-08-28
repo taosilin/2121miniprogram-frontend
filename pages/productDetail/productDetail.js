@@ -29,7 +29,8 @@ Page({
     circular:true, //衔接滑动
     windowWidth:414,
     imgHeight:290,
-    btnWidth:133
+    btnWidth:133,
+    actionSheetOpen:false
   },
 
   /**
@@ -95,5 +96,10 @@ Page({
   onSlideChange: function (event) { 
     var postId = event.detail.current; 
     // console.log(postId);
+  },
+  openActionSheet:function(){
+    this.setData({
+      actionSheetOpen:true
+    })
   }
 })
