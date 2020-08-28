@@ -15,7 +15,7 @@
       <view class="leftText">配送方式</view>
       <view class="rightText">顺丰包邮</view>
     </view>
-    <view class="row">
+    <view class="row" bindtap="goToCouponChoose">
       <view class="leftText">优惠券</view>
       <view class="rightText" style="font-size:12px;">1张可用<view class='arrow'></view></view>
     </view>

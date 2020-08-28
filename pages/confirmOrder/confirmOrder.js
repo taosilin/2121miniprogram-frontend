@@ -79,5 +79,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goToCouponChoose:function(){
+    wx.navigateTo({
+      url: '../couponChoose/couponChoose',
+    })
   }
 })

@@ -17,7 +17,8 @@
     "pages/couponList/couponList",
     "pages/searchResult/searchResult",
     "pages/productDetail/productDetail",
-    "pages/confirmOrder/confirmOrder"
+    "pages/confirmOrder/confirmOrder",
+    "pages/couponChoose/couponChoose"
   ],
   "window": {
     "backgroundTextStyle": "light",
