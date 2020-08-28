@@ -1,0 +1,12 @@
+<!--components/popup/popup.wxml-->
+<view class="container" hidden="{{flag}}" bindtap="hidePopup">
+  <view class="popupContainer">
+    <view class="popupTitle">定制信息</view>
+    <view class="divLine"></view>
+    <view class="popupRow">类型：近视</view>
+    <view class="popupRow">度数：左眼-2.75；右眼-4.50</view>
+    <view class="popupRow">瞳距：72</view>
+    <view class="popupRow">散光：左眼-0.25；右眼-0.50</view>
+    <view class="popupRow">轴位：左眼 0；右眼 0</view>
+  </view>
+</view>

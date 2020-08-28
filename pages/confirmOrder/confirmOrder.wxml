@@ -45,7 +45,7 @@
         <view>{{product.name}}</view>
         <view class="contentRow">
           <view style="color:#747474;">类型：近视</view>
-          <view class="customBtn">定制信息</view>
+          <view class="customBtn" bindtap="openPopup">定制信息</view>
         </view>
         <view class="contentRow">
           <view>¥ {{product.price}}</view>
@@ -55,3 +55,4 @@
     </view>
   </view>
 </view>
+<popup id="popup" />
