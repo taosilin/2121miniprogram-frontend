@@ -125,3 +125,6 @@
 .show {
   display: block;
 }
+.tabbarDiv{
+  width: 100%;
+}

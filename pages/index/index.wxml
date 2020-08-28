@@ -43,33 +43,49 @@
         <text class="{{currentTab == 2 ? 'tab-selected-text' : 'tab-text' }}">{{tabs[2].text}}</text>
         <text class="{{currentTab == 3 ? 'tab-selected-text' : 'tab-text' }}">{{tabs[3].text}}</text>
         <text class="{{currentTab == 4 ? 'tab-selected-text' : 'tab-text' }}">{{tabs[4].text}}</text>
-      </view> -->
-
-        <!-- <view class="tabItem" data-id="0" bindtap="swichNav">  
-        </view>
-        <view class="tabItem" data-id="1" bindtap="swichNav">
-                
-        </view>
-        <view class="tabItem" data-id="2" bindtap="swichNav">
-            <image class="normalIcon" src="{{currentTab == index ? tabs[2].selectedIconPath : tabs[2].iconPath }}" mode="widthFix"></image>
-            <image class="midIcon" src="{{currentTab == index ? tabs[2].selectedIconPath : tabs[2].iconPath }}" mode="widthFix"></image>
-          
-        </view>
-        <view class="tabItem" data-id="3" bindtap="swichNav">
-            <image class="normalIcon" src="{{currentTab == index ? tabs[3].selectedIconPath : tabs[3].iconPath }}" mode="widthFix"></image>
-            <image class="midIcon" src="{{currentTab == index ? tabs[3].selectedIconPath : tabs[3].iconPath }}" mode="widthFix"></image>
-          
-        </view>
-        <view class="tabItem" data-id="4" bindtap="swichNav">
-            <image class="normalIcon" src="{{currentTab == index ? tabs[4].selectedIconPath : tabs[4].iconPath }}" mode="widthFix"></image>
-            <image class="midIcon" src="{{currentTab == index ? tabs[4].selectedIconPath : tabs[4].iconPath }}" mode="widthFix"></image>   
-        </view> -->
-
-    <!-- </view>
+      </view>
+    </view>
   </view> -->
-  <!-- <view class="tabbarDiv">
-    <tabbar/>
-  </view> -->
+  <view class="tabbarDiv">
+    <tabbar />
+  </view>
   
 </view>
 
+<!-- "tabBar": {
+    "position": "bottom",
+    "borderStyle": "white",
+    "selectedColor": "#747474",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/icon/index_normal.png",
+        "selectedIconPath": "image/icon/index_selected.png"
+      },
+      {
+        "pagePath": "pages/shoppingMall/shoppingMall",
+        "text": "商城",
+        "iconPath": "image/icon/mall_normal.png",
+        "selectedIconPath": "image/icon/mall_selected.png"
+      },
+      {
+        "pagePath": "pages/optometry/optometry",
+        "text": "验光狮",
+        "iconPath": "image/icon/optometry_normal.png",
+        "selectedIconPath": "image/icon/optometry_selected.png"
+      },
+      {
+        "pagePath": "pages/shoppingCart/shoppingCart",
+        "text": "购物车",
+        "iconPath": "image/icon/cart_normal.png",
+        "selectedIconPath": "image/icon/cart_selected.png"
+      },
+      {
+        "pagePath": "pages/userCenter/userCenter",
+        "text": "我的",
+        "iconPath": "image/icon/me_normal.png",
+        "selectedIconPath": "image/icon/me_selected.png"
+      }
+    ]
+  }, -->

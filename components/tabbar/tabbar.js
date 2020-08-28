@@ -63,6 +63,31 @@ Component({
           currentTab: e.currentTarget.dataset.id
         })
       }
+    },
+    goToIndex:function(){
+      wx.navigateTo({
+        url: '../../pages/index/index',
+      })
+    },
+    goToShoppingMall:function(){
+      wx.navigateTo({
+        url: '../../pages/shoppingMall/shoppingMall',
+      })
+    },
+    goToOptometry:function(){
+      wx.navigateTo({
+        url: '../../pages/optometry/optometry',
+      })
+    },
+    goToShoppingCart:function(){
+      wx.navigateTo({
+        url: '../../pages/shoppingCart/shoppingCart',
+      })
+    },
+    goToUserCenter:function(){
+      wx.navigateTo({
+        url: '../../pages/userCenter/userCenter',
+      })
     }
   }
 })

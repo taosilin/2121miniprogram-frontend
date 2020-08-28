@@ -1,8 +1,5 @@
 {
   "usingComponents": {
-    "menu":"../../components/menu/menu",
-    "search":"../../components/searchBox/searchBox",
-    "action-sheet":"../../components/actionSheet/actionSheet",
-    "popup":"../../components/popup/popup"
+    "tabbar":"../../components/tabbar/tabbar"
   }
 }

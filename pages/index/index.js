@@ -104,18 +104,18 @@ Page({
   onSlideChange: function (event) { 
     var postId = event.detail.current; 
     // console.log(postId);
-  },
-  //tabbar切换
-  swichNav: function (e) {
-    //console.log(e);
-    let that = this;
-    if (this.data.currentTab === e.currentTarget.dataset.id) {
-      return false;
-    } else {
-      that.setData({
-        currentTab: e.currentTarget.dataset.id
-      })
-    }
   }
+  // //tabbar切换
+  // swichNav: function (e) {
+  //   //console.log(e);
+  //   let that = this;
+  //   if (this.data.currentTab === e.currentTarget.dataset.id) {
+  //     return false;
+  //   } else {
+  //     that.setData({
+  //       currentTab: e.currentTarget.dataset.id
+  //     })
+  //   }
+  // }
 
 })

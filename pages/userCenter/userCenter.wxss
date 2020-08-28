@@ -205,3 +205,6 @@
   vertical-align: center;
   justify-content: center;
 }
+.tabbarDiv{
+  width: 100%;
+}

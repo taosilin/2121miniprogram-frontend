@@ -1,10 +1,5 @@
 {
   "usingComponents": {
-    "component_index":"../../components/tabbar_index/tabbar_index",
-    "component_mall":"../../components/tabbar_mall/tabbar_mall",
-    "component_optometry":"../../components/tabbar_optometry/tabbar_optometry",
-    "component_cart":"../../components/tabbar_cart/tabbar_cart",
-    "component_me":"../../components/tabbar_me/tabbar_me",
     "tabbar":"../../components/tabbar/tabbar"
   },
   "navigationBarTitleText":"2121"

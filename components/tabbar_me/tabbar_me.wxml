@@ -1,4 +1,0 @@
-<!--components/tabbar_me/tabbar_me.wxml-->
-<view class="component_container">
-  <text class="title">Me</text>
-</view>

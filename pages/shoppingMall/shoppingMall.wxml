@@ -33,4 +33,7 @@
       </view>
     </view>  
   </block> 
+  <view class="tabbarDiv">
+    <tabbar />
+  </view>
 </view>

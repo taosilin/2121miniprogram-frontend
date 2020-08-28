@@ -1,4 +1,0 @@
-<!--components/tabbar_optometry/tabbar_optometry.wxml-->
-<view class="component_container">
-  <text class="title">Optometry</text>
-</view>
