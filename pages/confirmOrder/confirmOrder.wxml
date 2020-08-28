@@ -1,0 +1,57 @@
+<!--pages/confirmOrder/confirmOrder.wxml-->
+<view class="container">
+  <view class="addressDiv">
+    <view class="addressInfo">
+      <view class="addressText">{{address.name}} {{address.telephone}}</view>
+      <view class="addressText">{{address.province}} {{address.city}} {{address.district}} {{address.detail}}</view>
+    </view>
+    <view class="arrowDiv">
+      <view class='arrow'></view>
+    </view>
+  </view>
+  
+  <view class="priceDiv">
+    <view class="row">
+      <view class="leftText">配送方式</view>
+      <view class="rightText">顺丰包邮</view>
+    </view>
+    <view class="row">
+      <view class="leftText">优惠券</view>
+      <view class="rightText" style="font-size:12px;">1张可用<view class='arrow'></view></view>
+    </view>
+    <view class="divLine"></view>
+    <view class="row">
+      <view class="leftText">商品金额</view>
+      <view class="rightText" style="color:black;">¥ 299</view>
+    </view>
+    <view class="row">
+      <view class="leftText">优惠</view>
+      <view class="rightText">¥ 0</view>
+    </view>
+    <view class="row">
+      <view class="leftText" style="font-size:17px;font-weight:bold;">合计</view>
+      <view class="rightText" style="font-size:17px;font-weight:bold;color:black;">¥ 299</view>
+    </view>
+    <view class="payBtn">立即支付</view>
+  </view>
+
+  <view class="productDiv">
+    <view class="productTitle">订单商品</view>
+    <view class="productContent">
+      <view class="productImgDiv" style="width:{{imgUrl}}px;">
+        <image class="productImg" src="{{product.imgUrl}}" mode="widthFix" style="width:{{imgUrl}}px;"></image>
+      </view>
+      <view class="contentDiv">
+        <view>{{product.name}}</view>
+        <view class="contentRow">
+          <view style="color:#747474;">类型：近视</view>
+          <view class="customBtn">定制信息</view>
+        </view>
+        <view class="contentRow">
+          <view>¥ {{product.price}}</view>
+          <view>数量：{{product.num}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

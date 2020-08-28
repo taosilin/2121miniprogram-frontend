@@ -61,6 +61,11 @@ Component({
       this.setData({
         optionItem:id
       })
+    },
+    onComplete:function(){
+      wx.navigateTo({
+        url: '../../pages/confirmOrder/confirmOrder',
+      })
     }
   }
 })

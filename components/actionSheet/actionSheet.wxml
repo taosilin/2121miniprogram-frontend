@@ -65,7 +65,7 @@
                 <view class="optionItem">{{item}}</view>
               </block>
             </view>
-            <view class="completeBtn">完成</view>
+            <view class="completeBtn" bindtap="onComplete">完成</view>
           </view>
         </block>
       </view>

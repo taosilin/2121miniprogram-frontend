@@ -16,7 +16,8 @@
     "pages/likeList/likeList",
     "pages/couponList/couponList",
     "pages/searchResult/searchResult",
-    "pages/productDetail/productDetail"
+    "pages/productDetail/productDetail",
+    "pages/confirmOrder/confirmOrder"
   ],
   "window": {
     "backgroundTextStyle": "light",

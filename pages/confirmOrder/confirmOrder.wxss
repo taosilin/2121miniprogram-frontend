@@ -1,0 +1,138 @@
+/* pages/confirmOrder/confirmOrder.wxss */
+.container{
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #EEEEEE;
+}
+.addressDiv{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+.addressInfo{
+  width: 90%;
+}
+.addressText{
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.arrowDiv{
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrow{
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #5B5B5B;
+  border-right: 1px solid #5B5B5B;
+  transform: rotate(45deg);
+}
+.priceDiv{
+  margin: 10px 0px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.row{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.leftText{
+  font-size: 14px;
+  color: black;
+}
+.rightText{
+  font-size: 14px;
+  color: #747474;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.divLine{
+  background-color: #D5D5D5;
+  width: 100%;
+  height: 1px;
+ }
+.payBtn{
+  font-size: 17px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: #72C9FA;
+  width: 90.8%;
+  height: 56px;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 31px;
+  margin-bottom: 36px;
+}
+.productDiv{
+  width: 100%;
+  font-size: 14px;
+  box-sizing: border-box;
+  background-color: white;
+}
+.productTitle{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px 18px 15px 18px;
+}
+.productContent{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 14px 18px;
+}
+.productImgDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 103px;
+  height: 103px;
+}
+.productImg{
+  width: 103px;
+}
+.contentDiv{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-left: 14px;
+}
+.customBtn{
+  width: 82px;
+  height: 36px;
+  color: #72C9FA;
+  border: 1px solid #72C9FA;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contentRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
