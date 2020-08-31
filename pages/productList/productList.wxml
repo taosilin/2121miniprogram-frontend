@@ -1,8 +1,9 @@
 <!--pages/productList/productList.wxml-->
 <view class="container">
   <view class="header">
-    筛选<view class="arrow"></view>
+    
   </view>
+  <fliter class="fliter" />
   <menu class="menu" menuName="排序" menuItem="{{menuItem}}"/>
   <view class="productList">
     <block wx:for="{{productList}}">

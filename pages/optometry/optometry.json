@@ -2,5 +2,6 @@
   "usingComponents": {
     "tabbar":"../../components/tabbar/tabbar",
     "fliter":"../../components/fliter/fliter"
-  }
+  },
+  "navigationBarTitleText":"验光狮"
 }

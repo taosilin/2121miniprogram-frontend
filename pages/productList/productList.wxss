@@ -25,6 +25,9 @@
   /* position: absolute;
   right: 19px; */
 }
+.fliter{
+  width: 100%;
+}
 .menu{
   width: 100%;
 }

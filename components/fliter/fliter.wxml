@@ -1,6 +1,24 @@
 <!--components/fliter/fliter.wxml-->
-<view class="container">
-  <view class="fliterContainer">
-  筛选
+<view class="container" style="width:{{width}}px; height:{{height}}px; font-size:{{titleSize}}px;">
+  <view class="fliterHeader" bindtap="openFliter">
+  筛选<view class="arrow"></view>
+  </view>
+</view>
+<view class="fliterContainer {{fliterOpen ? 'show' : 'disappear'}}">
+  <view class="z-height">
+    <view class="filterList">
+      <block wx:for="{{fliterList}}">
+        <view class="fliterItem" data-i="{{index}}" bindtap="fliterChange">
+          <view class="fliterName">{{item.fliterName}}</view> 
+          <view class="fliterOptions">
+            <view class="{{item.selectItem==index?'selectItem':'optionItem'}}" wx:for="{{item.options}}" data-j="{{index}}">{{item}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="btnDiv">
+      <view class="leftBtn">重置</view>
+      <view class="rightBtn">确定</view>
+    </view>
   </view>
 </view>
