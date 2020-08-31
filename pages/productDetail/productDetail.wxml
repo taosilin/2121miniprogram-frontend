@@ -58,15 +58,17 @@
       <image class="serviceIcon" src="../../image/icon/service_normal.png" mode="widthFix"></image>
       客服
     </view>
-    <view class="navDiv">
+    <view class="navDiv" bindtap="goToShoppingCart">
       <image class="cartIcon" src="../../image/icon/addCart.png" mode="widthFix"></image>
       购物车
     </view>   
     <view class="footerBtn">
-      <view class="leftBtn" style="width:{{btnWidth}}px;">加入购物车</view>
-      <view class="rightBtn" style="width:{{btnWidth}}px;" bindtap="openActionSheet">立即购买</view>
+      <view class="leftBtn" style="width:{{btnWidth}}px;" bindtap="onAddCart">加入购物车</view>
+      <view class="rightBtn" style="width:{{btnWidth}}px;" bindtap="onBuyNow">立即购买</view>
     </view>
   </view>
   
 </view>
-<action-sheet actionSheetOpen="{{actionSheetOpen}}" />
+
+<action-sheet id="addCart" addCart="0" />
+<action-sheet id="buyNow" addCart="1" />

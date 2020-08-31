@@ -49,7 +49,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    //获得actionSheet组件
+    this.addCart = this.selectComponent("#addCart");
+    this.buyNow = this.selectComponent("#buyNow");
   },
 
   /**
@@ -97,9 +99,15 @@ Page({
     var postId = event.detail.current; 
     // console.log(postId);
   },
-  openActionSheet:function(){
-    this.setData({
-      actionSheetOpen:true
+  goToShoppingCart:function(){
+    wx.navigateTo({
+      url: '../shoppingCart/shoppingCart',
     })
+  },
+  onAddCart:function(){
+    this.addCart.showSheet();
+  },
+  onBuyNow:function(){
+    this.buyNow.showSheet();
   }
 })

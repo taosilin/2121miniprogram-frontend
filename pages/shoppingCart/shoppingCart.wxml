@@ -13,7 +13,7 @@
           </view>
           <view class="contentDiv" style="width:{{contentWidth}}px;">
             <view class="content">{{item.name}}</view>
-            <view class="selectBtn">定制信息</view>
+            <view class="selectBtn" bindtap="openPopup">定制信息</view>
             <view class="priceDiv">
               ¥ {{item.price}}
               <stepper class="stepper" num="{{item.num}}"/>
@@ -44,4 +44,5 @@
   <view class="tabbarDiv">
     <tabbar />
   </view>
+  <popup id="popup" />
 </view>

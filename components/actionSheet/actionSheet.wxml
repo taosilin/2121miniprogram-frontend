@@ -1,8 +1,8 @@
 <!--components/actionSheet/actionSheet.wxml-->
-<view class="container {{actionSheetOpen?'show':'disappear'}}">
+<view class="container" hidden="{{flag}}">
   <view class="action-sheet">  
     <view class="z-height">
-      <image class="closeIcon" src="../../image/icon/close.png" mode="widthFix" bindtap="onClose"></image>
+      <image class="closeIcon" src="../../image/icon/close.png" mode="widthFix" bindtap="hideSheet"></image>
       <view class="imgDiv">
         <image class="productImg" src="../../image/glasses2.jpg" mode="widthFix"></image>
       </view>
@@ -65,7 +65,13 @@
                 <view class="optionItem">{{item}}</view>
               </block>
             </view>
-            <view class="completeBtn" bindtap="onComplete">完成</view>
+            <block wx:if="{{addCart=='0'}}">
+              <view class="addBtn" bindtap="onAddCart">加入购物车</view>
+            </block>
+            <block wx:else>
+              <view class="completeBtn" bindtap="onComplete">完成</view>
+            </block>
+            
           </view>
         </block>
       </view>
