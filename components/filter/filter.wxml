@@ -1,16 +1,16 @@
-<!--components/fliter/fliter.wxml-->
+<!--components/filter/filter.wxml-->
 <view class="container" style="width:{{width}}px; height:{{height}}px; font-size:{{titleSize}}px;">
-  <view class="fliterHeader" bindtap="openFliter">
+  <view class="filterHeader" bindtap="openFilter">
   筛选<view class="arrow"></view>
   </view>
 </view>
-<view class="fliterContainer {{fliterOpen ? 'show' : 'disappear'}}">
+<view class="filterContainer {{filterOpen ? 'show' : 'disappear'}}">
   <view class="z-height">
     <view class="filterList">
-      <block wx:for="{{fliterList}}">
-        <view class="fliterItem" data-i="{{index}}" bindtap="fliterChange">
-          <view class="fliterName">{{item.fliterName}}</view> 
-          <view class="fliterOptions">
+      <block wx:for="{{filterList}}">
+        <view class="filterItem" data-i="{{index}}" bindtap="filterChange">
+          <view class="filterName">{{item.filterName}}</view> 
+          <view class="filterOptions">
             <view class="{{item.selectItem==index?'selectItem':'optionItem'}}" wx:for="{{item.options}}" data-j="{{index}}">{{item}}</view>
           </view>
         </view>

@@ -3,7 +3,7 @@
   <view class="header">
     
   </view>
-  <fliter class="fliter" />
+  <filter class="filter" />
   <menu class="menu" menuName="排序" menuItem="{{menuItem}}"/>
   <view class="productList">
     <block wx:for="{{productList}}">

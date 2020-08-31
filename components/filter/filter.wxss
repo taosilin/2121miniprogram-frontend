@@ -1,10 +1,10 @@
-/* components/fliter/fliter.wxss */
+/* components/filter/filter.wxss */
 .container{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.fliterHeader{
+.filterHeader{
   font-size: 13px;
   color: black;
   font-weight: bold;
@@ -22,7 +22,7 @@
 .show {
   display: block;
 }
-.fliterContainer{
+.filterContainer{
   width: 100%;
   height: 100%;
   position: absolute;
@@ -36,20 +36,20 @@
   overflow-y: scroll;
   
 }
-.fliterList{
+.filterList{
   width: 100%;
   
 }
-.fliterItem{
+.filterItem{
   margin-top: 57px;
 }
-.fliterName{
+.filterName{
   font-size: 13px;
   color: black;
   font-weight: bold;
   margin-bottom: 19px;
 }
-.fliterOptions{
+.filterOptions{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
