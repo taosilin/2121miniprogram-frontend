@@ -119,12 +119,6 @@
 .search{
   width: 100%;
 }
-.disappear {
-  display: none;
-}
-.show {
-  display: block;
-}
 .tabbarDiv{
   width: 100%;
 }

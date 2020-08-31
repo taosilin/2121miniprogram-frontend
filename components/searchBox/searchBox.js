@@ -14,7 +14,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    searchInput:''
+    searchInput:'',
+    flag:true
   },
 
   /**
@@ -56,6 +57,20 @@ Component({
       this.setData({
         historyItem:[]
       })
+    },
+
+    //隐藏
+    hideBox: function () {
+      this.setData({
+        flag: !this.data.flag
+      })
+    },
+    //展示
+    showBox () {
+      this.setData({
+        flag: !this.data.flag
+      })
     }
+
   }
 })

@@ -10,7 +10,7 @@
     </view>
   </view>
 
-  <search class="search {{searchOpen?'show':'disappear'}}"/>
+  <search class="search" id="search"/>
 
   <view class="labelbar">
     <label-bar tabs="{{classes}}" selectTextColor="#000000" textColor="#BEBEBE" selectColor="#FFFFFF" letterSpacing="0.8" textSize="14" selectBold="bold">

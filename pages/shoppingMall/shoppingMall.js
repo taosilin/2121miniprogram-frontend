@@ -28,8 +28,7 @@ Page({
         ]
       }
     ],
-    itemWidth:94,
-    searchOpen:false
+    itemWidth:94
   },
 
   /**
@@ -49,7 +48,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    //获得searchBox组件
+    this.search = this.selectComponent("#search");
   },
 
   /**
@@ -100,8 +100,6 @@ Page({
     })
   },
   onOpenSearch:function(e){
-    this.setData({
-      searchOpen:!this.data.searchOpen
-    })
+    this.search.showBox();
   }
 })
