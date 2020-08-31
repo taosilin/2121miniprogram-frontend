@@ -1,7 +1,7 @@
 /**index.wxss**/
 .container{
   margin:0px;
-  padding: 0px;
+  padding-bottom: 201rpx;
 }
 .postDiv{
   width: 100%;
@@ -55,5 +55,7 @@
 
 .tabbarDiv{
   width: 100%;
+  position: fixed;
+  bottom: 0px;
 }
 

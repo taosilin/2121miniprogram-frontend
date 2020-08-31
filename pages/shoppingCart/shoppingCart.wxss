@@ -1,7 +1,7 @@
 /* pages/shoppingCart/shoppingCart.wxss */
 .container{
   margin: 0px;
-  padding: 0px;
+  padding-bottom: 201rpx;
 }
 .productDiv{
   width: 100%;
@@ -73,7 +73,7 @@
   display: flex;
   flex-direction: row;
   position: fixed;
-  bottom: 11.8vh;
+  bottom: 11.3vh;
   align-items: center;
   justify-content: space-between;
   z-index: 9;

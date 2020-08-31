@@ -33,7 +33,8 @@
       </view>
     </view>  
   </block> 
-  <view class="tabbarDiv">
-    <tabbar currentTab="1" />
-  </view>
+  
+</view>
+<view class="tabbarDiv">
+  <tabbar currentTab="1" />
 </view>

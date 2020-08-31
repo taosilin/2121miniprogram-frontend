@@ -1,5 +1,6 @@
 <!--pages/userCenter/userCenter.wxml-->
 <view class="container">
+
   <view class="card">
     <image class="cardBkg" src='../../image/myCard.png' mode="widthFix"></image>
     <view class="userInfo">
@@ -12,6 +13,7 @@
       </view>
     </view>
   </view>
+
   <view class="myOrder" style="margin-top:{{orderDivTop}}px;">
     <view class="ordertext" bindtap="goToMyOrders">
       <text>我的订单</text>
@@ -42,6 +44,7 @@
       </view>
     </view>
   </view>
+
   <view class="others" style="margin-top:{{otherDivTop}}px;">
     <view class="function" bindtap="goToLikeList">
       <view class="iconborder">
@@ -79,6 +82,7 @@
       <view class='arrow1'></view> 
     </view>
   </view>
+
   <view class="more" style="margin-top:{{moreDivTop}}px;">
     <image class="moreicon" src="../../image/icon/source.png" mode="widthFix"></image>
     <view class="moretext">
@@ -87,7 +91,8 @@
     </view>
     <view class="follow-btn">去关注></view>
   </view>
-  <view class="tabbarDiv">
+
+</view>
+<view class="tabbarDiv">
     <tabbar currentTab="4" />
-  </view>
 </view>

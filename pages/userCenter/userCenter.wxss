@@ -1,37 +1,46 @@
 /* pages/userCenter/userCenter.wxss */
 .container{
   margin: 0px;
-  padding: 0px;
+  padding-bottom: 201rpx;
+  box-sizing: border-box;
 }
 .card{
   width:100%;
   height: 100%;
+  /* box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; */
 }
 .cardBkg{
   width:100%;
   position:absolute;
+  z-index: -1;
 }
 .userInfo{
   display: flex;
+  flex-direction: row;
+  align-items: center;
   position:absolute;
   z-index:1;
-  margin-left: 80px;
-  margin-top: 45px;
+  margin-left: 160rpx;
+  margin-top: 90rpx;
 }
 .avatar{
-  height:60px;
-  width: 60px;
+  height:120rpx;
+  width: 120rpx;
   border-radius: 50%;
 }
 .content{
-  width:120px;
-  margin-left: 10px;
+  width:240rpx;
+  margin-left: 20rpx;
 }
 .username{
-  font-size:14px;
+  font-size:28rpx;
 }
 .Info{
-  font-size:12px;
+  font-size:24rpx;
   color:#FFB019
 }
 .myOrder{
@@ -39,20 +48,20 @@
   opacity: 0.9;
   position:absolute;
   z-index:2;
-  margin-top: 170px;
+  margin-top: 340rpx;
   width: 90%;
-  height: 114px;
+  height: 228rpx;
   border-style: solid;
   box-shadow:0px 2px 4px 2px #DDDDDD;
   border-width: 0rpx;
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: 20rpx;
+  font-size: 28rpx;
 }
 .ordertext{
-  height: 40px;
+  height: 80rpx;
   box-sizing: border-box;
-  font-size: 14px;
-  padding: 13px 18px;
+  font-size: 28rpx;
+  padding: 26rpx 36rpx;
 }
 .divContainer{
   display: flex;
@@ -66,24 +75,27 @@
   left: 5%;
   right: 5%;
   width: 90%;
-  height: 3rpx;
+  height: 2rpx;
  }
  .arrow{
-  width: 10px;
-  height: 10px;
+  width: 20rpx;
+  height: 20rpx;
   border-top: 2px solid #5B5B5B;
   border-right: 2px solid #5B5B5B;
   position: absolute;
-  right: 14px;
+  right: 28rpx;
   transform: rotate(45deg);
-  top:15px;
+  top:30rpx;
 } 
 .orders{
   display: flex;
-  padding: 15px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
 }
 .orderList{
-  width:100px;
+  width:200rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,68 +108,67 @@
   background-color: #F2F2F2;
 }
 .orderstate-pay{
-  width:27px;
+  width:54rpx;
 }
 .orderstate-receive{
-  width:33px;
+  width:66rpx;
 }
 .orderstate-comment{
-  width:25px;
+  width:50rpx;
 }
 .orderstate-refund{
-  width:25px;
+  width:50rpx;
 }
 .statetext{
-  /* font-size: 14px; */
+  font-size: 28rpx;
 }
 .others{
   width: 100%;
-  height: 240px;
+  height: 480rpx;
   position:absolute;
-  margin-top: 300px;
-  font-size: 14px;
+  margin-top: 600rpx;
+  font-size: 28rpx;
   color: #5B5B5B;
 }
 .function{
   padding-left: 10%;
   position: relative;
   width: 100%;
-  height: 60px;
+  height: 120rpx;
   box-sizing: border-box;
   display: flex;
   align-items: center;
 }
 .iconborder{
-  display: inline-block;
-  width:30px;
-  height:30px;
+  width:60rpx;
+  height:60rpx;
   display: flex;
   align-items: center;
   vertical-align: center;
   justify-content: center;
 }
 .othericon-favorites{
-  width: 26px;
+  width: 52rpx;
 }
 .othericon-address{
-  width: 14px;
+  width: 28rpx;
 }
 .ordericon-coupon{
-  width: 25px;
+  width: 50rpx;
 }
 .othericon-service{
-  width: 24px;
+  width: 48rpx;
 }
 .othericon-policy{
-  width: 20px;
+  width: 40rpx;
 }
 .functext{
-  margin-left: 10px;
+  margin-left: 20rpx;
 }
 .arrow1{
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 20rpx;
+  height: 20rpx;
   border-top: 2px solid #999;
   border-right: 2px solid #999;
   right: 10%;
@@ -166,38 +177,39 @@
 .more{
   position:absolute;
   width: 90%;
-  height: 74px;
+  height: 148rpx;
   display: flex;
   align-items: center;
   background-color: white;
-  margin-top: 570px;
-  font-size: 14px;
-  padding-left: 32px; 
+  margin-top: 1140rpx;
+  font-size: 28rpx;
+  padding-left: 64rpx; 
   border-style: solid;
   box-shadow:0px 2px 4px 2px #DDDDDD;
   border-width: 0rpx;
-  border-radius: 10px;
+  border-radius: 20rpx;
   box-sizing: border-box;
 }
 .moreicon{
-    width: 44px;
+    width: 88rpx;
 }
 .moreinfo{
   display: flex;
+  flex-direction: row;
 }
 .moretext{
-  font-size: 14px;
+  font-size: 28rpx;
   display: flex;
   flex-direction: column;
-  margin-left: 23px;
+  margin-left: 46rpx;
 }
 .follow-btn{
   color: #FFFFFF;
-  font-size: 10px;
+  font-size: 20rpx;
   background-color: #646ED5;
-  border-radius: 14.5px;
-  width:63px;
-  height:29px;
+  border-radius: 29rpx;
+  width:126rpx;
+  height:58rpx;
   position: absolute;
   right: 5%;
   display: flex;
@@ -207,4 +219,7 @@
 }
 .tabbarDiv{
   width: 100%;
+  position: fixed;
+  bottom: 0px;
+  z-index: 10;
 }
