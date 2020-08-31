@@ -1,6 +1,7 @@
 <!--pages/optometry/optometry.wxml-->
 <!-- <text>pages/optometry/optometry.wxml</text> -->
 <view>
+  <fliter />
   <view class="tabbarDiv">
     <tabbar />
   </view>

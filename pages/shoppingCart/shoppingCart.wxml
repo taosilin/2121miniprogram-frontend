@@ -41,8 +41,9 @@
       <view class="shopBtn">去逛逛</view>
     </view>
   </block>
-  <view class="tabbarDiv">
-    <tabbar />
-  </view>
+  
   <popup id="popup" />
+</view>
+<view class="tabbarDiv">
+    <tabbar />
 </view>

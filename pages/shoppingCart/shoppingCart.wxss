@@ -73,12 +73,12 @@
   display: flex;
   flex-direction: row;
   position: fixed;
-  bottom: 0px;
+  bottom: 11.8vh;
   align-items: center;
   justify-content: space-between;
-  z-index: 10;
+  z-index: 9;
   width: 100%;
-  height: 54px;
+  height: 6.02vh;
   border-top:1px solid #EAEAEA;
   background-color: white; 
 }
@@ -141,4 +141,7 @@
 }
 .tabbarDiv{
   width: 100%;
+  position: fixed;
+  bottom: 0px;
+  z-index: 10;
 }

@@ -1,2 +1,6 @@
 <!--components/fliter/fliter.wxml-->
-<text>components/fliter/fliter.wxml</text>
+<view class="container">
+  <view class="fliterContainer">
+  筛选
+  </view>
+</view>

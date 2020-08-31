@@ -65,27 +65,27 @@ Component({
       }
     },
     goToIndex:function(){
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../../pages/index/index',
       })
     },
     goToShoppingMall:function(){
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../../pages/shoppingMall/shoppingMall',
       })
     },
     goToOptometry:function(){
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../../pages/optometry/optometry',
       })
     },
     goToShoppingCart:function(){
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../../pages/shoppingCart/shoppingCart',
       })
     },
     goToUserCenter:function(){
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../../pages/userCenter/userCenter',
       })
     }
