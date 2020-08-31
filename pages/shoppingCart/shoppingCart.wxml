@@ -45,5 +45,5 @@
   <popup id="popup" />
 </view>
 <view class="tabbarDiv">
-    <tabbar />
+    <tabbar currentTab="3" />
 </view>

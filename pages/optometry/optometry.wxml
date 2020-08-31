@@ -3,6 +3,6 @@
 <view>
   <filter />
   <view class="tabbarDiv">
-    <tabbar />
+    <tabbar currentTab="2" />
   </view>
 </view>

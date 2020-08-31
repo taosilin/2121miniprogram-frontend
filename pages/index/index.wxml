@@ -47,7 +47,7 @@
     </view>
   </view> -->
   <view class="tabbarDiv">
-    <tabbar />
+    <tabbar currentTab="0" />
   </view>
   
 </view>

@@ -38,6 +38,10 @@ Component({
           "text": "我的"
         }
       ]
+    },
+    currentTab:{
+      type:Number,
+      value:0
     }
   },
 
@@ -45,7 +49,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    currentTab:0
+    // currentTab:0
   },
 
   /**
@@ -53,17 +57,17 @@ Component({
    */
   methods: {
     //tabbar切换
-    swichNav: function (e) {
-      //console.log(e);
-      let that = this;
-      if (this.data.currentTab === e.currentTarget.dataset.id) {
-        return false;
-      } else {
-        that.setData({
-          currentTab: e.currentTarget.dataset.id
-        })
-      }
-    },
+    // swichNav: function (e) {
+    //   //console.log(e);
+    //   let that = this;
+    //   if (this.data.currentTab === e.currentTarget.dataset.id) {
+    //     return false;
+    //   } else {
+    //     that.setData({
+    //       currentTab: e.currentTarget.dataset.id
+    //     })
+    //   }
+    // },
     goToIndex:function(){
       wx.redirectTo({
         url: '../../pages/index/index',

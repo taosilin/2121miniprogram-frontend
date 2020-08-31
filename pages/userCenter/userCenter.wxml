@@ -88,6 +88,6 @@
     <view class="follow-btn">去关注></view>
   </view>
   <view class="tabbarDiv">
-    <tabbar />
+    <tabbar currentTab="4" />
   </view>
 </view>
