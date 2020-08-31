@@ -1,8 +1,8 @@
 <!--components/tab/tab.wxml-->
-<scroll-view class="component cus" scroll-x="{{ isScroll }}" style='{{ scrollStyle }} height:{{height}}px;'>
+<scroll-view class="component cus" scroll-x="{{ isScroll }}" style='{{ scrollStyle }} height:{{height}}rpx;'>
   <view class="content">
-    <view class="item" data-cus="{{ dataCus[index] }}" data-index="{{index}}" wx:for="{{tabs}}" wx:key="{{index}}" style='min-width: {{ itemWidth }}rpx; height: {{ height }}px' catchtap='onItemTap'>
-      <text class="text" style='color: {{ mSelected == index ? selectTextColor : textColor }};font-size: {{ textSize }}px;letter-spacing:{{ letterSpacing }}; font-weight:{{ mSelected == index? selectBold:normal }};'>{{item}}</text>
+    <view class="item" data-cus="{{ dataCus[index] }}" data-index="{{index}}" wx:for="{{tabs}}" wx:key="{{index}}" style='min-width: {{ itemWidth }}rpx; height: {{ height }}rpx' catchtap='onItemTap'>
+      <text class="text" style='color: {{ mSelected == index ? selectTextColor : textColor }};font-size: {{ textSize }}rpx;letter-spacing:{{ letterSpacing }}; font-weight:{{ mSelected == index? selectBold:normal }};'>{{item}}</text>
     </view>    
   </view>
   <view class='bottom-bar {{ theme == "smallBar" ? "small" : "" }}' style='background-color: {{ selectColor }}; left: {{ left }}px; right: {{ right }}px; bottom: {{ bottom }}rpx; transition: {{ transition }}; border-shadow: 0rpx 0rpx 10rpx 0rpx {{ selectColor }};'></view>

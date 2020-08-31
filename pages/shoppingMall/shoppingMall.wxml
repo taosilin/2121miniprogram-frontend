@@ -13,7 +13,7 @@
   <search class="search" id="search"/>
 
   <view class="labelbar">
-    <label-bar tabs="{{classes}}" selectTextColor="#000000" textColor="#BEBEBE" selectColor="#FFFFFF" letterSpacing="0.8" textSize="14" selectBold="bold">
+    <label-bar tabs="{{classes}}" selectTextColor="#000000" textColor="#BEBEBE" selectColor="#FFFFFF" letterSpacing="1.6" textSize="28" selectBold="bold">
         <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
         <!-- <view>这里是插入到组件slot中的内容</view> -->
     </label-bar>

@@ -6,21 +6,21 @@
 .labelbar{
   width: 100%;
   box-sizing: border-box;
-  padding-top:13px;
-  padding-left: 26px;
-  padding-right: 26px;
+  padding-top:26rpx;
+  padding-left: 52rpx;
+  padding-right: 52rpx;
 }
 .classification{
   width: 100%;
-  margin-top: 50px;
+  margin-top: 100rpx;
 }
 .typeName{
   width: 100%;
-  font-size: 20px;
-  letter-spacing: 1px;
+  font-size: 40rpx;
+  letter-spacing: 2rpx;
   color: #000000;
   font-weight: bold;
-  padding-left: 17px;
+  padding-left: 34rpx;
 }
 .typeContainer{
   width: 100%;
@@ -75,7 +75,7 @@
   bottom: 0;
   left: 0;
   z-index: 10;
-  font-family:PingFang-SC-Medium;
+  /* font-family:PingFang-SC-Medium; */
 }
 .nav .back{
   width: 22px;
@@ -99,22 +99,22 @@
   align-items: center;
 }
 .navText{
-  margin-left: 22px;
-  font-size: 17px;
-  letter-spacing: 2px;
+  margin-left: 44rpx;
+  font-size: 34rpx;
+  letter-spacing: 4rpx;
   font-weight: bold;
-  height: 30px;
-  width: 40px;
+  height: 60rpx;
+  width: 80rpx;
   /* border: blueviolet 1px solid; */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .searchImg{
-  width: 17.5px;
-  margin-left: 12px;
+  width: 35rpx;
+  margin-left: 24rpx;
   /* border: 1px solid green; */
-  padding: 5px;
+  padding: 10rpx;
 }
 .search{
   width: 100%;

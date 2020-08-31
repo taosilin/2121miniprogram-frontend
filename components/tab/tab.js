@@ -20,10 +20,10 @@ Component({
         }
       }
     },
-    //标签栏高度(px)
+    //标签栏高度(rpx)
     height:{
       type:String,
-      value:'39'
+      value:'78'
     },
     //未选中标签文字颜色
     textColor:{
@@ -35,20 +35,20 @@ Component({
       type:String,
       value:'#666666'
     },
-    //标签文字大小(px)
+    //标签文字大小(rpx)
     textSize:{
       type:String,
-      value:'14'
+      value:'28'
     },
     //选中滑动条颜色
     selectColor:{
       type:String,
       value:'#8493DF'
     },
-    //标签字间距(px)
+    //标签字间距(rpx)
     letterSpacing:{
       type:String,
-      value:'0.5'
+      value:'1'
     },
     //选中加粗
     selectBold:{

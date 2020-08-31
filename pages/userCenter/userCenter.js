@@ -7,9 +7,7 @@ Page({
    */
   data: {
     userInfo:{},
-    orderDivTop:170,
-    otherDivTop:300,
-    moreDivTop:590
+    orderDivTop:170
   },
 
   /**
@@ -20,9 +18,7 @@ Page({
     this.setData({userInfo:app.globalData.userInfo});
     const sysInfo = wx.getSystemInfoSync();
     this.setData({
-      orderDivTop:sysInfo.windowWidth*0.42,
-      otherDivTop:sysInfo.windowWidth*0.42+129,
-      moreDivTop:sysInfo.windowWidth*0.42+434,
+      orderDivTop:sysInfo.windowWidth*0.42
     });
 
     if (app.globalData.userInfo) {
