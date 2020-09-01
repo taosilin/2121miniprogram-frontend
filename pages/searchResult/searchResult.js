@@ -5,63 +5,63 @@ Page({
    * 页面的初始数据
    */
   data: {
-    //searchResult:[],
-    searchResult:[
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:1361
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:1128
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:true,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:910
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:13610
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:678
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:false,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:12345
-      }
-    ],
+    searchResult:[],
+    // searchResult:[
+    //   {
+    //     name:'开普勒 钛架-全框',
+    //     price:299,
+    //     isNew:true,
+    //     isSaled:false,
+    //     originalPrice:599,
+    //     imgUrl:'../../image/glasses3.png',
+    //     comments:1361
+    //   },
+    //   {
+    //     name:'开普勒 钛架-全框',
+    //     price:299,
+    //     isNew:true,
+    //     isSaled:false,
+    //     originalPrice:599,
+    //     imgUrl:'../../image/glasses3.png',
+    //     comments:1128
+    //   },
+    //   {
+    //     name:'开普勒 钛架-全框',
+    //     price:299,
+    //     isNew:true,
+    //     isSaled:true,
+    //     originalPrice:599,
+    //     imgUrl:'../../image/glasses3.png',
+    //     comments:910
+    //   },
+    //   {
+    //     name:'开普勒 钛架-全框',
+    //     price:299,
+    //     isNew:true,
+    //     isSaled:false,
+    //     originalPrice:599,
+    //     imgUrl:'../../image/glasses3.png',
+    //     comments:13610
+    //   },
+    //   {
+    //     name:'开普勒 钛架-全框',
+    //     price:299,
+    //     isNew:true,
+    //     isSaled:false,
+    //     originalPrice:599,
+    //     imgUrl:'../../image/glasses3.png',
+    //     comments:678
+    //   },
+    //   {
+    //     name:'开普勒 钛架-全框',
+    //     price:299,
+    //     isNew:false,
+    //     isSaled:false,
+    //     originalPrice:599,
+    //     imgUrl:'../../image/glasses3.png',
+    //     comments:12345
+    //   }
+    // ],
     itemWidth:207,
     searchContent:'',
     searchInput:'',

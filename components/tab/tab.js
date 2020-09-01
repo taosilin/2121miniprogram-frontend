@@ -116,7 +116,6 @@ Component({
       this.setData({
         left:dom[index].left-itemWidth*0.25
       })
-      // console.log(this.data.left)
     },
     barRight:function(index,dom){
       let that = this;
@@ -124,7 +123,6 @@ Component({
       this.setData({
         right:that.data.windowWidth-dom[index].right-itemWidth*0.25
       })
-      // console.log(this.data.right)
     },
     onItemTap:function(e){
       const index = e.currentTarget.dataset.index;
@@ -142,7 +140,6 @@ Component({
         this.barRight(index, this.data.domData);
       }
       this.triggerEvent('itemtap',e,{bubbles:true});
-      // console.log(this.data.mSelected);
     }
   },
   lifetimes:{
@@ -176,7 +173,6 @@ Component({
           that.barLeft(that.data.mSelected,that.data.textDomData);
           that.barRight(that.data.mSelected,that.data.textDomData);
         }
-        console.log(res)
       }).exec()
     }
   }

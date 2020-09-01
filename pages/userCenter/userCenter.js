@@ -105,9 +105,10 @@ Page({
 
   },
 
-  goToMyOrders:function(){
+  goToMyOrders:function(e){
+    let index = e.currentTarget.dataset.index;
     wx.navigateTo({
-      url: '../myOrders/myOrders',
+      url: '../myOrders/myOrders?index='+index,
     })
   },
   goToLikeList:function(){

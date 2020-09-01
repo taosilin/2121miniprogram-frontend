@@ -15,7 +15,7 @@
   </view>
 
   <view class="myOrder" style="margin-top:{{orderDivTop}}px;">
-    <view class="ordertext" bindtap="goToMyOrders">
+    <view class="ordertext" data-index="0" bindtap="goToMyOrders">
       <text>我的订单</text>
       <view class='arrow'></view>
     </view>
@@ -23,22 +23,22 @@
       <view class="divLine"></view>
     </view>
     <view class="orders">
-      <view class="orderList">
+      <view class="orderList" data-index="1" bindtap="goToMyOrders">
         <image class="orderstate-pay" src="../../image/icon/payment.png" mode="widthFix"></image>
         <view class="statetext">待付款</view>
       </view>
       <view class='line'></view>
-      <view class="orderList">
+      <view class="orderList" data-index="2" bindtap="goToMyOrders">
         <image class="orderstate-receive" src="../../image/icon/receive.png" mode="widthFix"></image>
         <view class="statetext">待收货</view>
       </view>
       <view class='line'></view>
-      <view class="orderList">
+      <view class="orderList" data-index="3" bindtap="goToMyOrders">
         <image class="orderstate-comment" src="../../image/icon/comment.png" mode="widthFix"></image>
         <view class="statetext">待评价</view>
       </view>
       <view class='line'></view>
-      <view class="orderList">
+      <view class="orderList" data-index="4" bindtap="goToMyOrders">
         <image class="orderstate-refund" src="../../image/icon/refund.png" mode="widthFix"></image>
         <view class="statetext">退货/售后</view>
       </view>

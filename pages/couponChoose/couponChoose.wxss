@@ -137,6 +137,12 @@
   font-size: 9px;
   color: #72C9FA;
 }
+.disabled-description{
+  display: flex;
+  flex-direction: row;
+  font-size: 9px;
+  color: #C1C1C1;
+}
 .arrow-down{
   width: 6px;
   height: 6px;

@@ -24,33 +24,36 @@
 }
 .typeContainer{
   width: 100%;
-  padding-left: 60rpx;
-  padding-right: 60rpx;
+  padding-left: 54rpx;
+  /* padding-right: 54rpx; */
   padding-top: 22rpx;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;  /*纵轴对齐方式*/
-  align-content:stretch;      /*多行对齐方式*/
-  justify-content : space-between;  /*横轴对齐方式*/
+  /*纵轴对齐方式*/
+  /* align-items: flex-start;   */
+  /*多行对齐方式*/
+  /* align-content:stretch;  */
+  /*横轴对齐方式*/     
+  /* justify-content : space-between;   */
 }
 .typeItem{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 12rpx;
-  /* margin-right: 36px; */
+  margin-right: 54rpx;
 }
 .imgDiv{
-  width: 188rpx;
-  height: 188rpx;
+  width: 170rpx;
+  height: 170rpx;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .typeImg{
-  width: 188rpx;
+  width: 170rpx;
 }
 .typeText{
   font-size: 28rpx;

@@ -194,8 +194,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
     const sysInfo = wx.getSystemInfoSync();
     this.setData({
+      selectTab:options.index,
       windowHeight:sysInfo.windowHeight-32,
       itemWidth:sysInfo.windowWidth/2,
       pdr:(sysInfo.windowWidth-80)*0.1437/2,
@@ -207,7 +209,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**

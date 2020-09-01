@@ -14,17 +14,18 @@
     <view class="couponList">
       <block wx:for="{{couponList}}">
         <view class="couponItem" style="height:{{couponHeight}}px;">
-          <image class="couponImg" src="../../image/coupon.png" mode="widthFix"></image>
+          <image wx:if="{{isEnable}}" class="couponImg" src="../../image/coupon.png" mode="widthFix"></image>
+          <image wx:else class="couponImg" src="../../image/disabledCoupon.png" mode="widthFix"></image>
           <view class="contentDiv">
             <view class="leftDiv">
               <view class="topDiv">
-                <radio class="selectCoupon" value="{{index}}" checked="{{item.selected}}" color="#72C9FA" bindtap="selectCoupon" data-id="{{index}}"/>
+                <radio wx:if="{{isEnable}}" class="selectCoupon" value="{{index}}" checked="{{item.selected}}" color="#72C9FA" bindtap="selectCoupon" data-id="{{index}}"/>
                 <view class="couponName">{{item.name}}</view>
               </view>                          
               <view class="bottomDiv">
                 <view class="timeLimit">使用期限:2020.8.8-2020.8.31</view>
-                <view wx:if="{{!item.openDetail}}" class="description" bindtap="onDetail" data-id="{{index}}">使用说明﹀</view>
-                <view wx:else class="description" bindtap="onDetail" data-id="{{index}}">使用说明︿</view>
+                <view wx:if="{{!item.openDetail}}" class="{{isEnable?'description':'disabled-description'}}" bindtap="onDetail" data-id="{{index}}">使用说明﹀</view>
+                <view wx:else  class="{{isEnable?'description':'disabled-description'}}" bindtap="onDetail" data-id="{{index}}">使用说明︿</view>
               </view>
             </view>
             <view class="rightDiv">

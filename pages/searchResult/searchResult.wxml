@@ -25,7 +25,7 @@
     </view>
   </block>
   <!-- 搜索无结果 -->
-  <block ex:else>
+  <block wx:else>
     <view class="searchHeader">
       <input class="inputDiv" placeholder="请输入产品名称或产品类别" value="{{searchInput}}" bindinput="onInputChange"></input>
       <image class="cancelIcon" src="../../image/icon/cancel.png" mode="widthFix" bindtap="onCancel"></image>

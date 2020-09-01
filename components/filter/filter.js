@@ -6,7 +6,7 @@ Component({
   properties: {
     width:{
       type:String,
-      value:'260'
+      value:'150'
     },
     height:{
       type:String,

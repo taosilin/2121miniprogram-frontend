@@ -5,7 +5,7 @@
 .action-sheet{
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   overflow-y: scroll;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 9;
@@ -86,6 +86,7 @@
   border-radius: 0rpx 43rpx 43rpx 0rpx;
   position: absolute;
   z-index: 3;
+  box-sizing: border-box;
 }
 .btn2{
   width: 68%;
@@ -120,6 +121,14 @@
 .selectBtn{
   background-color: #72C9FA;
   color: white;
+}
+.btn1-after{
+  background-color: #F9F9F9;
+  color: #BBBBBB;
+}
+.btn2-after{
+  background-color: #F2F2F2;
+  color: #BBBBBB;
 }
 
 .contentDiv{
@@ -208,19 +217,20 @@
 .lensTitle{
   width: 100%;
   box-sizing: border-box;
-  padding: 28rpx 24rpx;/*????????*/
+  padding: 24rpx 50rpx;/*????????*/
   font-size: 28rpx;
   color: black;
 }
 .optionList{
   width: 100%;
   box-sizing: border-box;
-  padding: 24rpx 28rpx;
+  padding: 24rpx 28rpx;/*???????*/
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 .optionItem{
+  height: 64rpx;
   box-sizing: border-box;
   padding: 14rpx 18rpx;
   font-size: 26rpx;
@@ -230,6 +240,7 @@
   color: #747474;
 }
 .selectItem{
+  height: 64rpx;
   box-sizing: border-box;
   padding: 14rpx 18rpx;
   font-size: 26rpx;

@@ -1,6 +1,6 @@
 /* pages/searchResult/searchResult.wxss */
 .container{
-  margin:0px;
+  margin: 0px;
   padding: 0px;
 }
 .titleDiv{
@@ -29,7 +29,7 @@
   padding-top: 30px;
   padding-bottom: 22px;
   box-sizing: border-box;
-  height: 260px;
+  height: 520rpx;
   border: 1px solid #F2F2F2;
 }
 .productImg{

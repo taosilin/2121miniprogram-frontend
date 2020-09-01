@@ -14,8 +14,8 @@
         <view class="cycle">生产周期：3天</view>
       </view>
       <view class="btnDiv">
-        <view class="btn1 {{selectTab==0?'selectBtn':'normalBtn'}}" bindtap="onBtn1">选择镜框和镜腿</view>
-        <view class="btn2 {{selectTab==1?'selectBtn':'normalBtn'}}" bindtap="onBtn2">选择度数</view>
+        <view class="btn1 {{selectTab==0?'selectBtn':'btn1-after'}}" bindtap="onBtn1">选择镜框和镜腿</view>
+        <view class="btn2 {{selectTab==1?'selectBtn':(selectTab==2?'btn2-after':'normalBtn')}}" bindtap="onBtn2">选择度数</view>
         <view class="btn3 {{selectTab==2?'selectBtn':'normalBtn'}}" bindtap="onBtn3">选择镜片</view>
       </view>
       <view class="contentDiv">
@@ -54,7 +54,7 @@
           <view class="content3">
             <view class="lensTitle">镜片功能</view>
             <view class="optionList">
-              <block wx:for="{{['高清绿膜镜片','科技膜层变色镜片','科技膜层变色镜片']}}">
+              <block wx:for="{{['高清绿膜镜片','高清绿膜镜片','科技膜层变色镜片']}}">
                 <view class="{{optionItem==index?'selectItem':'optionItem'}}" data-id="{{index}}" bindtap="onItemChange">{{item}}</view>
               </block>
             </view>
