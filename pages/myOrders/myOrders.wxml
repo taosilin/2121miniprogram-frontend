@@ -52,7 +52,7 @@
     </block>
     <!-- 无订单时内容 -->
     <block wx:else>
-      <view class="noOrderContainer" style="height:{{windowHeight}}px;">
+      <view class="noOrderContainer">
         <view class="noOrderImgDiv">
           <image class="noOrderImg" src="../../image/noOrder.png" mode="widthFix" style="width:{{imgWidth}}px;"></image>
         </view>

@@ -182,7 +182,7 @@ Page({
         comments:12345
       }
     ],
-    windowHeight:700,
+    // windowHeight:700,
     itemWidth:207,
     pdr:24,
     tabs:['全部订单', '待付款', '待收货', '待评价', '售后'],
@@ -194,7 +194,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
     const sysInfo = wx.getSystemInfoSync();
     this.setData({
       selectTab:options.index,

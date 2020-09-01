@@ -4,7 +4,19 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    customInfo:{
+      type:Object,
+      value:{
+        glassesType:'近视',
+        leftEyeDegree:'-2.75',
+        rightEyeDegree:'-4.50',
+        interpupillaryDistance:'72',
+        leftEyeAstigmatism:'-0.25',
+        rightEyeAstigmatism:'-0.50',
+        leftEyeAxis:'0',
+        rightEyeAxis:'0'
+      }
+    }
   },
 
   /**

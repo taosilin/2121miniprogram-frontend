@@ -21,6 +21,7 @@
   position: absolute;
   overflow-y: scroll;
   z-index: 10;
+  background-color: white;
 }
 .disappear {
   display: none;

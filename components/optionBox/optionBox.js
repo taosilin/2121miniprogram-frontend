@@ -6,7 +6,7 @@ Component({
   properties: {
     boxWidth:{
       type:String,
-      value:'328'
+      value:'297'
     },
     boxHeight:{
       type:String,
