@@ -1,8 +1,5 @@
 <!--pages/productList/productList.wxml-->
 <view class="container">
-  <view class="header">
-    
-  </view>
   <filter class="filter" />
   <menu class="menu" menuName="排序" menuItem="{{menuItem}}"/>
   <view class="productList">

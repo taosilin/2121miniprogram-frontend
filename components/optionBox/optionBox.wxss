@@ -3,17 +3,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: solid 1px #CECECE;
+  border: 2rpx solid #CECECE;
 }
 .inputBox{
   box-sizing: border-box;
-  padding: 8px 10px 8px 6px;
+  padding: 16rpx 20rpx 16rpx 12rpx;
 }
 .arrow{
   display: inline-block;
-  border: 4px solid transparent;
-  border-top: 4px solid #CECECE;
-  margin-right: 6px;
+  border: 8rpx solid transparent;
+  border-top: 8rpx solid #CECECE;
+  margin-right: 12rpx;
 }
 .optionBox{
   width: 100%;

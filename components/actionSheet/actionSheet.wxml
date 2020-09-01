@@ -35,16 +35,16 @@
         <block wx:elif="{{selectTab==1}}">
           <view class="content2">
             <view class="degreeRow">
-              度数：<option-box placeholderText="左眼度数"/><option-box style="margin-left:14px;" placeholderText="右眼度数"/>
+              度数：<option-box placeholderText="左眼度数"/><option-box style="margin-left:28rpx;" placeholderText="右眼度数"/>
             </view>
             <view class="degreeRow">
-              瞳距：<option-box boxWidth="342" placeholderText="请选择瞳距"/>
+              瞳距：<option-box boxWidth="684" placeholderText="请选择瞳距"/>
             </view>
             <view class="degreeRow">
-              散光：<option-box placeholderText="左眼散光"/><option-box style="margin-left:14px;" placeholderText="右眼散光"/>
+              散光：<option-box placeholderText="左眼散光"/><option-box style="margin-left:28rpx;" placeholderText="右眼散光"/>
             </view>
             <view class="degreeRow">
-              轴位：<option-box placeholderText="左眼轴位"/><option-box style="margin-left:14px;" placeholderText="右眼轴位"/>
+              轴位：<option-box placeholderText="左眼轴位"/><option-box style="margin-left:28rpx;" placeholderText="右眼轴位"/>
             </view>
             <view class="bottomText">验光单怎么看？</view>
             <view class="bottomBtn">购买平光</view>

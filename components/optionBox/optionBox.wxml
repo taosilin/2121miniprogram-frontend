@@ -1,7 +1,7 @@
 <!--components/optionBox/optionBox.wxml-->
-<view class="container" style="width:{{boxWidth}}px;height:{{boxHeight}}px;font-size:{{fontSize}}px;color:{{fontColor}};">
+<view class="container" style="width:{{boxWidth}}rpx;height:{{boxHeight}}rpx;font-size:{{fontSize}}rpx;color:{{fontColor}};">
   <view class="selectBox" bindtap="openOption">
-    <input class="inputBox" value="{{optionValue}}" disabled placeholder="{{placeholderText}}" style="width:{{boxWidth}}px;height:{{boxHeight}}px;"/>
+    <input class="inputBox" value="{{optionValue}}" disabled placeholder="{{placeholderText}}" style="width:{{boxWidth}}rpx;height:{{boxHeight}}rpx;"/>
     <view class="arrow"></view>
   </view>
   <view class="optionBox {{isOpen?'show':'disappear'}}">

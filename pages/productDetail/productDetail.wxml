@@ -5,7 +5,7 @@
       <view class="title">{{product.name}}</view>
       <view class="subTitle">{{product.subTitle}}</view>
       <view class="cycle">生产周期：{{product.productionCycle}}天
-        <image class="smallIcon" src="../../image/icon/question.png" mode="widthFix" />
+        <image src="../../image/icon/question.png" mode="widthFix" style="width:24rpx;margin-left:4rpx;"/>
       </view>
     </view>
 

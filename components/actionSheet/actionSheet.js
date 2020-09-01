@@ -80,6 +80,9 @@ Component({
       })
     },
     onComplete:function(){
+      this.setData({
+        flag: !this.data.flag
+      });
       wx.navigateTo({
         url: '../../pages/confirmOrder/confirmOrder',
       })

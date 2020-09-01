@@ -6,11 +6,11 @@ Component({
   properties: {
     boxWidth:{
       type:String,
-      value:'164'
+      value:'328'
     },
     boxHeight:{
       type:String,
-      value:'34'
+      value:'68'
     },
     options:{
       type:Array,
@@ -22,7 +22,7 @@ Component({
     },
     fontSize:{
       type:String,
-      value:'13'
+      value:'26'
     },
     fontColor:{
       type:String,

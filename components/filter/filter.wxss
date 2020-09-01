@@ -5,15 +5,15 @@
   justify-content: center;
 }
 .filterHeader{
-  font-size: 13px;
+  font-size: 26rpx;
   color: black;
   font-weight: bold;
 }
 .arrow{
   display: inline-block;
-  border: 4px solid transparent;
-  border-top: 4px solid #747474;
-  margin-left: 5px;
+  border: 8rpx solid transparent;
+  border-top: 8rpx solid #747474;
+  margin-left: 10rpx;
   margin-top: 10rpx;
 }
 .disappear {
@@ -29,25 +29,23 @@
   overflow-y: scroll;
   z-index: 10;
   box-sizing: border-box;
-  padding: 3px 21px;
+  padding: 6rpx 42rpx;
   background-color: white;
 }
 .z-height{
-  overflow-y: scroll;
-  
+  overflow-y: scroll; 
 }
 .filterList{
   width: 100%;
-  
 }
 .filterItem{
-  margin-top: 57px;
+  margin-top: 114rpx;
 }
 .filterName{
-  font-size: 13px;
+  font-size: 26rpx;
   color: black;
   font-weight: bold;
-  margin-bottom: 19px;
+  margin-bottom: 38rpx;
 }
 .filterOptions{
   display: flex;
@@ -55,51 +53,51 @@
   flex-wrap: wrap;
 }
 .optionItem{
-  height: 40px;
-  border-radius: 20px;
-  margin-left: 15px;
-  margin-bottom: 19px;
+  height: 80rpx;
+  border-radius: 40rpx;
+  margin-left: 30rpx;
+  margin-bottom: 38rpx;
   box-sizing: border-box;
-  padding: 11px 22px;
-  font-size: 13px;
+  padding: 22rpx 44rpx;
+  font-size: 26rpx;
   background-color: #F7F7F7;
 }
 .selectItem{
-  height: 40px;
-  border-radius: 20px;
-  margin-left: 15px;
-  margin-bottom: 19px;
+  height: 80rpx;
+  border-radius: 40rpx;
+  margin-left: 30rpx;
+  margin-bottom: 38rpx;
   box-sizing: border-box;
-  padding: 11px 22px;
-  font-size: 13px;
+  padding: 22rpx 44rpx;
+  font-size: 26rpx;
   background-color: #F7F7F7;
   color: #72C9FA;
-  border: 1px solid #72C9FA;
+  border: 2rpx solid #72C9FA;
 }
 .btnDiv{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: 16px;
-  border-top: 1px solid #EAEAEA;
+  font-size: 32rpx;
+  border-top: 2rpx solid #EAEAEA;
   box-sizing: border-box;
-  padding-top: 21px;
+  padding-top: 42rpx;
 }
 .leftBtn{
   width: 43%;
-  height: 43px;
-  border-radius: 24px;
+  height: 86rpx;
+  border-radius: 48rpx;
   color: black;
-  border: 1px solid #CFCFCF;
+  border: 2rpx solid #CFCFCF;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .rightBtn{
   width: 43%;
-  height: 43px;
-  border-radius: 24px;
+  height: 86rpx;
+  border-radius: 48rpx;
   color: white;
   background-color: #72C9FA;
   display: flex;

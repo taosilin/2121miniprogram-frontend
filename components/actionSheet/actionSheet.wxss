@@ -12,108 +12,108 @@
 }
 .z-height{
   width: 100%;
-  height: 531px;
+  height: 1062rpx;
   overflow-y: scroll;
   background: white;
   display: flex;
   flex-direction: column;
   position: absolute;
-  bottom: 0px;
-  border-radius: 19px 19px 0px 0px;
+  bottom: 0rpx;
+  border-radius: 38rpx 38rpx 0rpx 0rpx;
   overflow: visible;
   z-index: 10;
 }
 .imgDiv{
-  width: 126px;
-  height: 126px;
-  border: 1px solid #CACACA;
-  border-radius: 10px;
+  width: 252rpx;
+  height: 252rpx;
+  border: 2rpx solid #CACACA;
+  border-radius: 20rpx;
   overflow: hidden;
   position: absolute;
-  left: 21px;
-  top: -18px;
+  left: 42rpx;
+  top: -36rpx;
 }
 .productImg{
-  width: 126px;
+  width: 252rpx;
 }
 .closeIcon{
   position: absolute;
-  right: 16px;
-  top: -37px;
-  width: 27px;
+  right: 32rpx;
+  top: -74rpx;
+  width: 54rpx;
 }
 .info{
   /* width: 100%; */
-  height: 108px;
+  height: 216rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 167px;
+  left: 334rpx;
 }
 .price{
-  font-size: 20px;
+  font-size: 40rpx;
   color: #D30E26;
 }
 .originalPrice{
-  font-size: 14px;
+  font-size: 28rpx;
   color: #A6A6A6;
   text-decoration:line-through;/*文字划线*/
-  margin-left: 8px;
+  margin-left: 16rpx;
 }
 .cycle{
-  font-size: 12px;
+  font-size: 24rpx;
   color: #9E9E9E;
 }
 
 .btnDiv{
   width: 100%;
-  height: 43px;
+  height: 86rpx;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 125px;
+  top: 250rpx;
 }
 .btn1{
   width: 34%;
-  height: 43px;
-  font-size: 12px;
+  height: 86rpx;
+  font-size: 24rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0px 21.5px 21.5px 0px;
+  border-radius: 0rpx 43rpx 43rpx 0rpx;
   position: absolute;
   z-index: 3;
 }
 .btn2{
   width: 68%;
-  height: 43px;
-  font-size: 12px;
+  height: 86rpx;
+  font-size: 24rpx;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  border-radius: 0px 21.5px 21.5px 0px;
+  border-radius: 0rpx 43rpx 43rpx 0rpx;
   position: absolute;
   z-index: 2;
-  padding-right: 50px;
+  padding-right: 100rpx;
   box-sizing: border-box;
 }
 .btn3{
   width: 100%;
-  height: 43px;
-  font-size: 12px;
+  height: 86rpx;
+  font-size: 24rpx;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   position: absolute;
   z-index: 1;
-  padding-right: 37px;
+  padding-right: 74rpx;
   box-sizing: border-box;
 }
 .normalBtn{
-  border: 1px solid #CDCDCD;
+  border: 2rpx solid #CDCDCD;
   color: #747474;
   background-color: white;
 }
@@ -126,46 +126,46 @@
   width: 100%;
   box-sizing: border-box;
   position: absolute;
-  top: 168px;
+  top: 336rpx;
 }
 
 .content1{
-  font-size: 12px;
+  font-size: 24rpx;
   width: 100%;
   box-sizing: border-box;
-  padding-left: 14px;
-  padding-top: 23px;
+  padding-left: 28rpx;
+  padding-top: 46rpx;
 }
 .title{
   color: black;
 }
 .choose{
   color: #747474;
-  margin-left: 8px;
+  margin-left: 16rpx;
 }
 .frameImgDiv{
   width: 100%;
   box-sizing: border-box;
-  padding:12px 14px;
+  padding:24rpx 28rpx;
   display: flex;
   flex-direction: row;
 }
 .frameItem{
-  width: 66px;
-  height: 66px;
-  border: 1px solid #979797;
+  width: 132rpx;
+  height: 132rpx;
+  border: 2rpx solid #979797;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .frameImg{
-  width: 54px;
-  height: 54px;
+  width: 108rpx;
+  height: 108rpx;
   background-color: #979797;
 }
 
 .content2{
-  padding: 23px 13px;
+  padding: 46rpx 26rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -175,28 +175,28 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
-  margin-bottom: 22px;
+  font-size: 24rpx; /*26rpx*/
+  margin-bottom: 44rpx;
 }
 .bottomText{
   width: 100%;
-  font-size: 13px;
+  font-size: 26rpx;
   color: #747474;
   text-align: right;
   box-sizing: border-box;
-  padding-right: 13px;
+  padding-right: 26rpx;
 }
 .bottomBtn{
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 112px;
-  height: 32px;
-  font-size: 13px;
+  width: 224rpx;
+  height: 64rpx;
+  font-size: 26rpx;
   color: #747474;
-  border: 1px solid #CECECE;
-  border-radius: 16px;
+  border: 2rpx solid #CECECE;
+  border-radius: 32rpx;
 }
 
 .content3{
@@ -208,48 +208,48 @@
 .lensTitle{
   width: 100%;
   box-sizing: border-box;
-  padding: 14px 12px;/*????????*/
-  font-size: 14px;
+  padding: 28rpx 24rpx;/*????????*/
+  font-size: 28rpx;
   color: black;
 }
 .optionList{
   width: 100%;
   box-sizing: border-box;
-  padding: 12px 14px;
+  padding: 24rpx 28rpx;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 .optionItem{
   box-sizing: border-box;
-  padding: 7px 9px;
-  font-size: 13px;
-  border-radius: 5px;
-  margin-right: 8px;
-  margin-bottom: 12px;/*?????????*/
+  padding: 14rpx 18rpx;
+  font-size: 26rpx;
+  border-radius: 10rpx;
+  margin-right: 16rpx;
+  margin-bottom: 24rpx;/*?????????*/
   color: #747474;
 }
 .selectItem{
   box-sizing: border-box;
-  padding: 7px 9px;
-  font-size: 13px;
-  border: 1px solid #747474;
-  border-radius: 5px;
-  margin-right: 8px;
-  margin-bottom: 12px;/*?????????*/
+  padding: 14rpx 18rpx;
+  font-size: 26rpx;
+  border: 2rpx solid #747474;
+  border-radius: 10rpx;
+  margin-right: 16rpx;
+  margin-bottom: 24rpx;/*?????????*/
 }
 .description{
   background-color: #F5F5F5;
   color: #747474;
-  font-size: 12px;
+  font-size: 24rpx;
   width: 100%;
   box-sizing: border-box;
-  padding: 21px 24px;
+  padding: 42rpx 48rpx;
 }
 .addBtn{
-  width: 114px;
-  height: 32px;
-  border-radius: 16px;
+  width: 228rpx;
+  height: 64rpx;
+  border-radius: 32rpx;
   background-color: #72C9FA;
   color: white;
   display: flex;
@@ -257,9 +257,9 @@
   justify-content: center;
 }
 .completeBtn{
-  width: 112px;
-  height: 32px;
-  border-radius: 16px;
+  width: 224rpx;
+  height: 64rpx;
+  border-radius: 32rpx;
   background-color: #72C9FA;
   color: white;
   display: flex;

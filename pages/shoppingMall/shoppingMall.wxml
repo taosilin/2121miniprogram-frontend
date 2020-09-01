@@ -24,8 +24,8 @@
       <view class="typeContainer">
         <block wx:for="{{item.types}}" data-id="{{index}}">
           <view class="typeItem" bindtap="goToProductList" data-id="{{index}}">
-            <view class="imgDiv" style="width:{{itemWidth}}px; height:{{itemWidth}}px;">
-              <image class="typeImg" src="{{item.imgUrl}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>
+            <view class="imgDiv">
+              <image class="typeImg" src="{{item.imgUrl}}" mode="widthFix"></image>
             </view>         
             <view class="typeText">{{item.typename}}</view>
           </view>

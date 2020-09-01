@@ -1,11 +1,11 @@
 <!--components/searchBox/searchBox.wxml-->
-<view class="container" hidden="{{flag}}" bindtap="hideBox">
+<view class="container" hidden="{{flag}}">
   <view class="searchHeader">
     <input class="inputDiv" placeholder="请输入产品名称或产品类别" value="{{searchInput}}" bindinput="onInputChange"></input>
     <image class="cancelIcon" src="../../image/icon/cancel.png" mode="widthFix" bindtap="onCancel"></image>
     <image class="searchIcon" src="../../image/icon/search.png" mode="widthFix" bindtap="onSearch"></image>
   </view>
-  <view class="searchHistory">
+  <view class="searchHistory" bindtap="hideBox">
     <view class="z-height">
       <view class="historyTitle">历史记录</view>
       <view class="historyList">

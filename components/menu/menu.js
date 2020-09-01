@@ -14,15 +14,15 @@ Component({
     },
     width:{
       type:String,
-      value:'130'
+      value:'260'
     },
     height:{
       type:String,
-      value:'30'
+      value:'60'
     },
     titleSize:{
       type:String,
-      value:'14'
+      value:'28'
     }
   },
 
