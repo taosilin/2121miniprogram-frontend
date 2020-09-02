@@ -1,11 +1,11 @@
 <!--components/menu/menu.wxml-->
 <view class="container" style="width:{{width}}rpx; height:{{height}}rpx; font-size:{{titleSize}}rpx;">
   <view class="menuHeader" bindtap="openMenu">
-  {{menuName}}<view class="arrow"></view>
+  {{menuName}}<view wx:if="{{!menuOpen}}" class="arrow"/><view wx:else class="arrow1"/>
   {{menuItem[selectId]}}
   </view>
 </view>
-<view class="itemContainer {{menuOpen ? 'show' : 'disappear'}}">
+<view class="itemContainer {{menuOpen ? 'show' : 'disappear'}}" bindtap="openMenu">
   <view class="z-height">
     <block wx:for="{{menuItem}}" wx:key="index">
       <view class="menuItem {{selectId==index?'selectText':'normalText'}}" data-model='{{item}}' data-id="{{index}}" bindtap='selectItem'> {{item}}</view>

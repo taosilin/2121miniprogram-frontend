@@ -14,7 +14,7 @@ Component({
     },
     options:{
       type:Array,
-      value:['200','250','300','350']
+      value:['200','250','300','350','400']
     },
     placeholderText:{
       type:String,
@@ -43,9 +43,19 @@ Component({
    */
   methods: {
     openOption:function(){
-      this.setData({
-        isOpen:!this.data.isOpen
+      wx.showActionSheet({
+        itemList: ['200','250','300','350','400'],
+        success (res) {
+          console.log(res.tapIndex)
+        },
+        fail (res) {
+          console.log(res.errMsg)
+        }
       })
+      
+      // this.setData({
+      //   isOpen:!this.data.isOpen
+      // })
     }
   }
 })

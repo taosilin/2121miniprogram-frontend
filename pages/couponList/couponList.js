@@ -108,7 +108,6 @@ Page({
     })
   },
   onDetail:function(e){
-    console.log(e)
     let id = e.currentTarget.dataset.id;
     let items = this.data.couponList;
     items[id].openDetail = !items[id].openDetail;

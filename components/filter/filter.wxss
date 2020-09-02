@@ -16,6 +16,13 @@
   margin-left: 10rpx;
   margin-top: 10rpx;
 }
+.arrow1{
+  display: inline-block;
+  border: 8rpx solid transparent;
+  border-bottom: 8rpx solid #747474;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}
 .disappear {
   display: none;
 }
@@ -26,20 +33,23 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   z-index: 10;
   box-sizing: border-box;
   padding: 6rpx 42rpx;
   background-color: white;
 }
 .z-height{
+  width: 100%;
+  height: 100%;
   overflow-y: scroll; 
+  background-color: white;
 }
 .filterList{
   width: 100%;
 }
 .filterItem{
-  margin-top: 114rpx;
+  margin-top: 90rpx;/*114rpx*/
 }
 .filterName{
   font-size: 26rpx;

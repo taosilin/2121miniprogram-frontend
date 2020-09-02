@@ -50,8 +50,7 @@ Component({
       console.log(selectId,selectName)
       this.setData({
         selectId:selectId,
-        selectName:selectName,
-        menuOpen:!this.data.menuOpen
+        selectName:selectName
       })
     }
   }

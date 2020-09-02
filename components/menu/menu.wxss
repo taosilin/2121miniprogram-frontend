@@ -16,17 +16,27 @@
   margin-left: 10rpx;
   margin-top: 10rpx;
 }
+.arrow1{
+  display: inline-block;
+  border: 8rpx solid transparent;
+  border-bottom: 8rpx solid #747474;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}
 .itemContainer{
   width: 100%;
   height: 100%;
   position: absolute;
   overflow-y: scroll;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 10;
+  z-index: 9;
 }
 .z-height{
+  width: 100%;
   overflow-y: scroll;
   background: #fff;
+  position: absolute;
+  z-index: 10;
 }
 .disappear {
   display: none;

@@ -1,7 +1,7 @@
 <!--components/filter/filter.wxml-->
 <view class="container" style="width:{{width}}rpx; height:{{height}}rpx; font-size:{{titleSize}}rpx;">
   <view class="filterHeader" bindtap="openFilter">
-  筛选<view class="arrow"></view>
+  筛选<view wx:if="{{!filterOpen}}" class="arrow"/><view wx:else class="arrow1"/>
   </view>
 </view>
 <view class="filterContainer {{filterOpen ? 'show' : 'disappear'}}">

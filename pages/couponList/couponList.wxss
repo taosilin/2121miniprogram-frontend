@@ -14,7 +14,7 @@
   padding: 8px 13px;
 }
 .inputDiv{
-  font-size: 14px;
+  font-size: 28rpx;
   background-color: #F0F0F0;
   padding-left: 13px;
   box-sizing: border-box;
@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 30rpx;
   color: white;
   background-color: #CEEFFF;
   width: 79px;
@@ -35,7 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 30rpx;
   color: white;
   background-color: #72C9FA;
   width: 79px;
@@ -85,12 +85,12 @@
   flex-direction: row;
 }
 .selectCoupon{
-  margin-right: 9px;
+  margin-right: 18rpx;
 }
 .couponName{
-  font-size: 22px;
+  font-size: 44rpx;
   color: #747474;
-  letter-spacing: 1px;
+  letter-spacing: 2rpx;
 }
 .bottomDiv{
   width: 100%;
@@ -102,14 +102,14 @@
   bottom: 6px;
 }
 .timeLimit{
-  font-size: 11px;
+  font-size: 22rpx;
   color: #C1C1C1;
   letter-spacing: -0.5px;
 }
 .description{
   display: flex;
   flex-direction: row;
-  font-size: 9px;
+  font-size: 18rpx;
   color: #72C9FA;
 }
 .arrow-down{
@@ -139,7 +139,7 @@
   position: relative;
 }
 .discount{
-  font-size: 35px;
+  font-size: 70rpx;
   position: absolute;
   right: 29px;
 }
@@ -147,7 +147,7 @@
   position: absolute;
   right: 29px;
   bottom:7px;
-  font-size: 14px;
+  font-size: 28rpx;
   letter-spacing: 0.5px;
 }
 .detailDiv{
@@ -157,7 +157,7 @@
   height: 38px;
   padding-left: 9px;
   box-sizing: border-box;
-  font-size: 11px;
+  font-size: 22rpx;
   color: #747474;
   background-color: #F7F7F7;
 }
@@ -175,7 +175,7 @@
   height: 49px;
   color: white;
   background-color: #72C9FA;
-  font-size: 17px;
+  font-size: 34rpx;
   letter-spacing: 1px;
   font-weight: bold;
   display: flex;
@@ -194,13 +194,13 @@
   padding:67px 84px 41px 84px;
 }
 .text1{
-  font-size: 18px;
+  font-size: 36rpx;
   letter-spacing: 2px;
   color: black;
   margin-bottom: 7px;
 }
 .text2{
-  font-size: 14px;
+  font-size: 28rpx;
   color: #585858;
   letter-spacing: 2px;
 }
