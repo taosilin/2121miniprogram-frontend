@@ -34,6 +34,25 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
+      wx.request({
+        url: app.globalData.host+'/user/add',
+        data: {
+          userID:'18916273661',
+          nickname:app.globalData.userInfo.nickName,
+          gender:app.globalData.userInfo.gender,
+          avatarUrl:app.globalData.userInfo.avatarUrl
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'//默认值
+        },
+        success: function (res) {
+          console.log(res.data);
+        },
+        fail: function (res) {
+          console.log("用户已存在");
+        }
+      });
     } else if (this.data.canIUse){
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
@@ -42,6 +61,24 @@ Page({
           userInfo: res.userInfo,
           hasUserInfo: true
         })
+        wx.request({
+          url: app.globalData.host+'/user/add',
+          data: {
+            nickname:app.globalData.userInfo.nickName,
+            gender:app.globalData.userInfo.gender,
+            avatarUrl:app.globalData.userInfo.avatarUrl
+          },
+          method: 'POST',
+          header: {
+            'content-type': 'application/json'//默认值
+          },
+          success: function (res) {
+            console.log(res.data);
+          },
+          fail: function (res) {
+            console.log("用户已存在");
+          }
+        });
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
@@ -60,6 +97,7 @@ Page({
       windowWidth:sysInfo.windowWidth,
       postHeight:sysInfo.windowWidth*1.2174
     })
+    
   },
   getUserInfo: function(e) {
     console.log(e)
