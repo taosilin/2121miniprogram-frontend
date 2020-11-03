@@ -3,15 +3,22 @@
 
   <view class="card">
     <image class="cardBkg" src='../../image/myCard.png' mode="widthFix"></image>
-    <view class="userInfo">
+
+    <view class="userInfo" wx:if="{{userInfo}}">
       <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
       <view class="content">
         <text class="username">{{userInfo.nickName}}</text>
         <text class="Info">已经在2121星球居住</text>
-        <text class="username">1</text>
+        <text class="username">{{registrationTime}}</text>
         <text class="Info">天了</text>
       </view>
     </view>
+
+    <view class="userInfo" wx:else>
+     <button class="authorizedLogin" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">使用微信账号登录</button>
+     <button class="authorizedLogin" open-type="getPhoneNumber" bindgetphonenumber="bindgetphonenumber">获取手机号</button>
+    </view>
+
   </view>
 
   <view class="myOrder" style="margin-top:{{orderDivTop}}px;">
@@ -93,6 +100,6 @@
   </view>
 
 </view>
-<view class="tabbarDiv">
+<!-- <view class="tabbarDiv">
     <tabbar currentTab="4" />
-</view>
+</view> -->

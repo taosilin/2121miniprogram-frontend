@@ -25,9 +25,9 @@
   </view>
   
 </view>
-<view class="tabbarDiv">
+<!-- <view class="tabbarDiv">
   <tabbar currentTab="0" />
-</view>
+</view> -->
 <!-- "tabBar": {
     "position": "bottom",
     "borderStyle": "white",

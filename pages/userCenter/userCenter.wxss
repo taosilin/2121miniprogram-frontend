@@ -215,3 +215,8 @@
   bottom: 0px;
   z-index: 10;
 }
+/* 授权登录按钮 */
+.authorizedLogin{
+  background-color: #72C9FA;
+  color: #ffffff;
+}

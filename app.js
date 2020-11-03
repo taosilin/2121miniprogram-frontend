@@ -9,7 +9,23 @@ App({
     // 登录
     wx.login({
       success: res => {
+        console.log(res)
+        var _app = this
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: this.globalData.host + '/app/initWxLogin',
+          data:{
+            jsCode: res.code
+          },
+          method: 'POST',
+          header:{
+            'content-type':'application/json'
+          },
+          success:(res) => {
+            console.log(res)
+            _app.globalData.session_key = res.data.data
+          }
+        }) 
       }
     })
     // 获取用户信息
@@ -44,7 +60,9 @@ App({
   },
   globalData: {
     userInfo: null,
-    host:'http://localhost:8080',
-    navHeight:0
+    host: 'http://localhost:8088',
+    navHeight: 0,
+    session_key: null,
+    phoneNumber: null
   }
 })

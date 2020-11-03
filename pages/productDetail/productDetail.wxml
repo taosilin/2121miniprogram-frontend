@@ -2,8 +2,8 @@
 <view class="container">
   <view class="content">
     <view class="info">
-      <view class="title">{{product.name}}</view>
-      <view class="subTitle">{{product.subTitle}}</view>
+      <view class="title">{{frameDetail.frameName}}</view>
+      <view class="subTitle">{{frameDetail.sketch}}</view>
       <view class="cycle">生产周期：{{product.productionCycle}}天
         <image src="../../image/icon/question.png" mode="widthFix" style="width:24rpx;margin-left:4rpx;"/>
       </view>
@@ -19,7 +19,7 @@
         indicator-color="#BEBEBE"
         indicator-active-color="#747474"
         bindchange="onSlideChange">
-          <block wx:for="{{product.imgList}}" wx:key="index">
+          <block wx:for="{{frameDetail.imageList}}" wx:key="index">
             <swiper-item class="vol-swiper-item">
               <view class="swiperItem">
                 <image class="productImg" src="{{item}}" mode="widthFix" style="width:{{windowWidth}}px;"></image>
@@ -41,7 +41,7 @@
       </view>  
     </view>
     <view class="priceDiv">
-      <text class="price">¥ {{product.price}}</text>
+      <text class="price">¥ {{frameDetail.price}}</text>
       <text class="originalPrice">¥ {{product.originalPrice}}</text>
     </view>
     <view class="bottomDiv">

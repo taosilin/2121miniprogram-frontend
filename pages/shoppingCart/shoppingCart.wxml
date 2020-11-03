@@ -44,6 +44,6 @@
   
   <popup id="popup" />
 </view>
-<view class="tabbarDiv">
+<!-- <view class="tabbarDiv">
     <tabbar currentTab="3" />
-</view>
+</view> -->

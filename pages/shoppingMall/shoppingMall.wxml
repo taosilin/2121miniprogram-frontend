@@ -35,6 +35,6 @@
   </block> 
   
 </view>
-<view class="tabbarDiv">
+<!-- <view class="tabbarDiv">
   <tabbar currentTab="1" />
-</view>
+</view> -->
