@@ -15,8 +15,8 @@
     </view>
 
     <view class="userInfo" wx:else>
-     <button class="authorizedLogin" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">使用微信账号登录</button>
-     <button class="authorizedLogin" open-type="getPhoneNumber" bindgetphonenumber="bindgetphonenumber">获取手机号</button>
+      <button wx:if="{{phoneNumber}}" class="authorizedLogin" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">使用微信账号登录</button>
+      <button wx:else class="authorizedLogin" open-type="getPhoneNumber" bindgetphonenumber="bindgetphonenumber">获取手机号</button>
     </view>
 
   </view>

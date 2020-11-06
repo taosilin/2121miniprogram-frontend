@@ -32,6 +32,10 @@
   position: absolute;
   left: 42rpx;
   top: -36rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ background-color: #ffffff;
 }
 .productImg{
   width: 252rpx;
@@ -159,7 +163,14 @@
   display: flex;
   flex-direction: row;
 }
-.frameItem{
+.frameItemNormal{
+  width: 132rpx;
+  height: 132rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frameItemSelected{
   width: 132rpx;
   height: 132rpx;
   border: 2rpx solid #979797;

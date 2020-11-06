@@ -18,6 +18,7 @@
         circular="{{circular}}"
         indicator-color="#BEBEBE"
         indicator-active-color="#747474"
+        current="{{selectSpec}}"
         bindchange="onSlideChange">
           <block wx:for="{{frameDetail.imageList}}" wx:key="index">
             <swiper-item class="vol-swiper-item">
@@ -28,15 +29,19 @@
           </block>
       </swiper>
     </view>
+
     <view class="smallImgDiv">
-      <block wx:for="{{product.smallImgList}}">
-        <image class="smallImg" src="{{item}}" mode="widthFix"></image>
+      <block wx:for="{{colors}}">
+        <view class="{{index==selectSpec?'specSelected':'specNormal'}}" data-id="{{index}}" bindtap="onSpecChange">
+          <image class="smallImg" src="{{item.specImage}}" mode="widthFix"></image>
+        </view>
       </block>
     </view>
+
     <view class="otherDiv">
-      <text class="parameter">颜色：黑色</text>
+      <text class="parameter">颜色：{{colors[selectSpec].colorName}}</text>
       <view class="iconDiv">
-        <image class="likeIcon" src="../../image/icon/favorites_normal.png" mode="widthFix"></image>收藏
+        <image class="likeIcon" src="../../image/icon/favorites_normal.png" mode="widthFix" bindtap="onAddLike"></image>收藏
         <image class="shareIcon" src="../../image/icon/share.png" mode="widthFix"></image>分享
       </view>  
     </view>
@@ -70,5 +75,5 @@
   
 </view>
 
-<action-sheet id="addCart" addCart="0" />
-<action-sheet id="buyNow" addCart="1" />
+<action-sheet id="addCart" addCart="0" colors="{{colors}}" />
+<action-sheet id="buyNow" colors="{{colors}}" addCart="1" />

@@ -1,49 +1,45 @@
 // pages/likeList/likeList.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    likeList:[
-      {
-        name:"开普勒 钛架-全框",
-        price:299,
-        imgUrl:"../../image/glasses2.png"
-      },
-      {
-        name:"ART.钛材光学镜-C",
-        price:299,
-        imgUrl:"../../image/glasses2.png"
-      },
-      {
-        name:"开普勒 钛架-全框",
-        price:299,
-        imgUrl:"../../image/glasses2.png"
-      },
-      {
-        name:"ART.钛材光学镜-C",
-        price:299,
-        imgUrl:"../../image/glasses2.png"
-      },
-      {
-        name:"开普勒 钛架-全框",
-        price:299,
-        imgUrl:"../../image/glasses2.png"
-      },
-      {
-        name:"开普勒 钛架-全框",
-        price:299,
-        imgUrl:"../../image/glasses2.png"
-      }
-    ]
+    likeList: null,
+    likeIcon: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var _this = this;
+    wx.request({
+      url: app.globalData.host+'/like/frame',
+      data:{
+        userID: app.globalData.phoneNumber
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          likeList: res.data.data
+        });
+        let likeIcon = new Array();
+        for (let i=0;i<_this.data.likeList.length;i++){
+          likeIcon.push(true);
+        }
+        _this.setData({
+          likeIcon: likeIcon
+        });
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   },
 
   /**
@@ -93,5 +89,54 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  // 跳转到镜框详情
+  onFrameDetail(e){
+    console.log(e)
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../productDetail/productDetail?frameID=' + id
+    })
+  },
+
+  // 取消收藏
+  onDeleteLike(e){
+    console.log(e);
+    var _this = this;
+    let id = e.currentTarget.dataset.id;
+    let likeIcon = this.data.likeIcon;
+    likeIcon[id] = !likeIcon[id]
+    this.setData({
+      likeIcon:likeIcon
+    });
+    setTimeout(function(){
+      wx.request({
+        url: app.globalData.host + '/like/delete',
+        data:{
+          userID: app.globalData.phoneNumber,
+          productID: _this.data.likeList[id].frameID
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'//默认值
+        },
+        success: function (res) {
+          console.log(res)
+          let likeList = _this.data.likeList;
+          let likeIcon = _this.data.likeIcon;
+          likeList.splice(id,1);
+          likeIcon.splice(id,1);
+          _this.setData({
+            likeList: likeList,
+            likeIcon: likeIcon
+          })
+        },
+        fail: function (res) {
+          console.log("请求失败");
+        }
+      })
+    },500)
   }
+  
 })

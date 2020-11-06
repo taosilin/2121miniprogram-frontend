@@ -19,9 +19,12 @@ Page({
     },
 
     franeDetail: null,
+    specs: null,
+    colors: null,
+    selectSpec:0,
 
     indicatorDots: true,//显示指示点
-    autoplay: true,//自动播放
+    autoplay: false,//自动播放
     interval: 3000,
     duration: 500,
     circular:true, //衔接滑动
@@ -45,7 +48,7 @@ Page({
     wx.request({
       url: app.globalData.host+'/frame/detail',
       data: {
-        frameID: "4B01"
+        frameID: options.frameID
       },
       method: 'POST',
       header: {
@@ -56,7 +59,9 @@ Page({
         let frameDetail = res.data.data.frame;
         frameDetail.imageList = imageList;
         _this.setData({
-          frameDetail: frameDetail
+          frameDetail: frameDetail,
+          specs: res.data.data.specs,
+          colors: res.data.data.colors
         })
         console.log(res);
       },
@@ -116,19 +121,52 @@ Page({
   onShareAppMessage: function () {
 
   },
+
+  // 滑动
   onSlideChange: function (event) { 
-    var postId = event.detail.current; 
-    // console.log(postId);
+    this.setData({
+      selectSpec: event.detail.current
+    });
   },
-  goToShoppingCart:function(){
-    wx.navigateTo({
-      url: '../shoppingCart/shoppingCart',
+  // 点击SKU缩略图
+  onSpecChange(e){
+    this.setData({
+      selectSpec: e.currentTarget.dataset.id
     })
   },
-  onAddCart:function(){
+
+  goToShoppingCart: function(){
+    wx.switchTab({
+      url: '../shoppingCart/shoppingCart'
+    });
+  },
+  onAddCart: function(){
     this.addCart.showSheet();
   },
-  onBuyNow:function(){
+  onBuyNow: function(){
     this.buyNow.showSheet();
+  },
+  onAddLike: function(){
+    wx.request({
+      url: app.globalData.host + '/like/add',
+      data: {
+        userID: app.globalData.phoneNumber,
+        productID: this.data.frameDetail.frameID
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        wx.showToast({
+          title: '已收藏',
+          icon: 'success',
+          duration: 2000
+        });
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   }
 })

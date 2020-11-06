@@ -1,46 +1,38 @@
 // pages/myAddress/myAddress.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      addresses:[
-      {
-        name:"好汉陶",
-        tel:"18916273661",
-        province:"上海市",
-        city:"上海市",
-        district:"嘉定区",
-        detail:"曹安公路4800号",
-        isDefault:true
-      } ,
-      {
-        name:"陶陶子",
-        tel:"18916273661",
-        province:"上海市",
-        city:"上海市",
-        district:"杨浦区",
-        detail:"四平路1239号",
-        isDefault:false
-      } ,
-      {
-        name:"思霖姐",
-        tel:"18916273661",
-        province:"上海市",
-        city:"上海市",
-        district:"长宁区",
-        detail:"福泉北路518号",
-        isDefault:false
-      } 
-      ]
+      addresses: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var _this = this;
+    wx.request({
+      url: app.globalData.host+'/address/list',
+      data:{
+        userID: app.globalData.phoneNumber
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        console.log(res.data);
+        _this.setData({
+          addresses: res.data.data
+        });
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   },
 
   /**
@@ -54,7 +46,26 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var _this = this;
+    wx.request({
+      url: app.globalData.host+'/address/list',
+      data:{
+        userID: app.globalData.phoneNumber
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        console.log(res.data);
+        _this.setData({
+          addresses: res.data.data
+        });
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   },
 
   /**

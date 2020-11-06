@@ -4,6 +4,14 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    colors:{
+      type: Array,
+      value: {}
+    },
+    selectedColor:{
+      type:Number,
+      value: 0
+    },
     price:{
       type:Number,
       value:299
@@ -85,6 +93,11 @@ Component({
       });
       wx.navigateTo({
         url: '../../pages/confirmOrder/confirmOrder',
+      })
+    },
+    onColorChange:function(e){
+      this.setData({
+        selectedColor: e.currentTarget.dataset.id
       })
     }
   }

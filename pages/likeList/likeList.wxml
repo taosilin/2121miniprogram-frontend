@@ -4,13 +4,16 @@
   <block wx:if="{{likeList.length!=0}}">
     <view class="likeDiv">
       <block wx:for="{{likeList}}">
-        <view class="likeItem">
-          <image class="itemImg" src="{{item.imgUrl}}" mode="widthFix"></image>
-          <view class="content">
-            <view class="name">{{item.name}}</view>
+        <view class="likeItem" data-id="{{item.frameID}}">
+          <view class="imgDiv" data-id="{{item.frameID}}" bindtap="onFrameDetail">
+            <image class="itemImg" src="{{item.coverImage}}" mode="widthFix"></image>
+          </view>
+          <view class="content" data-id="{{item.frameID}}" bindtap="onFrameDetail">
+            <view class="name">{{item.frameName}}</view>
             <view class="price">¥ {{item.price}}</view>
           </view>
-          <image class="likeIcon" src="../../image/icon/liking.png" mode="widthFix"></image>
+          <image class="likeIcon" wx:if="{{likeIcon[index]}}" src="../../image/icon/liking.png" mode="widthFix" data-id="{{index}}" bindtap="onDeleteLike"></image>
+          <image class="likeIcon" wx:else src="../../image/icon/like.png" mode="widthFix" data-id="{{index}}" bindtap="onDeleteLike"></image>
         </view>
       </block>
     </view>

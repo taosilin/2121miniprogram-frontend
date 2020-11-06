@@ -1,4 +1,5 @@
 // pages/productList/productList.js
+const app = getApp()
 Page({
 
   /**
@@ -61,8 +62,9 @@ Page({
         comments:12345
       }
     ],
-    itemWidth:207,
-    menuItem:['最佳匹配','最新上架','价格低至高','价格高至低']
+    itemWidth: 207,
+    menuItem: ['最佳匹配','最新上架','价格低至高','价格高至低'],
+    frameList: null
   },
 
   /**
@@ -73,6 +75,28 @@ Page({
     this.setData({
       itemWidth:sysInfo.windowWidth/2
     });
+
+    var _this = this;
+    wx.request({
+      url: app.globalData.host+'/frame/list',
+      data: {
+        page: 0,
+        size: 20
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          frameList: res.data.data
+        })
+        console.log(_this.frameList);
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   },
 
   /**
@@ -126,9 +150,10 @@ Page({
   //前往商品详情页
   goToProductDetail:function(e){
     let id = e.currentTarget.dataset.id;
+    console.log(e);
     //待修改
     wx.navigateTo({
-      url: '../productDetail/productDetail',
+      url: '../productDetail/productDetail?frameID='+id,
     })
   }
 })

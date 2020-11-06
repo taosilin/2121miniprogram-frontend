@@ -7,14 +7,14 @@
           <view class="infoDiv">
 
             <view bindtap="onChangeAddress" data-id="{{index}}">
-              <view class="importantInfo" style="margin-bottom:8px;">{{item.name}}</view>
-              <view class="importantInfo">{{item.tel}}</view>
+              <view class="importantInfo" style="margin-bottom:16rpx;">{{item.receiver}}</view>
+              <view class="importantInfo">{{item.telephone}}</view>
               <view class="addressDetail">{{item.province}} {{item.city}} {{item.district}}</view>
-              <view class="addressDetail" style="margin-bottom:19px;">{{item.detail}}</view>
+              <view class="addressDetail" style="margin-bottom:38rpx;">{{item.detail}}</view>
             </view>
             
             <view class="radioDiv">
-              <radio class="defaultAdd" value="{{index}}" checked="{{item.isDefult}}" color="#215470"/>设为默认地址
+              <radio class="defaultAdd" value="{{index}}" checked="{{item.isDefult}}" color="#72C9FA"/>设为默认地址
             </view>
           </view>
           <view class='arrow'></view>     

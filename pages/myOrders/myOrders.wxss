@@ -113,7 +113,7 @@
   height:29px;
   border-radius: 7px;
   font-size: 14px;
-  background-color: #215470;
+  background-color: #87B1E3;
   color: white;
   display: flex;
   align-items: center;

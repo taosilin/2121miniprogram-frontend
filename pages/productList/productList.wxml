@@ -3,18 +3,18 @@
   <filter class="filter" />
   <menu class="menu" menuName="排序" menuItem="{{menuItem}}"/>
   <view class="productList">
-    <block wx:for="{{productList}}">
-      <view class="productItem" style="width:{{itemWidth}}px;" bindtap="goToProductDetail">
-        <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
-        <image class="productImg" src="{{item.imgUrl}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>    
-        <view class="title">{{item.name}}</view>
+    <block wx:for="{{frameList}}">
+      <view class="productItem" style="width:{{itemWidth}}px;" bindtap="goToProductDetail" data-id="{{item.frameID}}">
+        <image wx:if="{{item.tab.indexOf('New')!=-1}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
+        <image class="productImg" src="{{item.coverImage}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>    
+        <view class="title">{{item.frameName}}</view>
         <view class="priceDiv">
           <view wx:if="{{item.isSaled}}">
             <text class="saledPrice">¥{{item.price}}</text>
             <text class="originalPrice">¥{{item.originalPrice}}</text>
           </view>
           <view wx:else class="price">¥{{item.price}}</view>
-          <view class="comments">{{item.comments}}条好评</view>
+          <view class="comments">666条好评</view>
         </view>
       </view>
     </block>

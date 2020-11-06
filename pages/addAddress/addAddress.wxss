@@ -6,19 +6,19 @@
 .formList{
   position: relative;
   width: 100%;
-  font-size: 14px;
+  font-size: 28rpx;
   color: #616161;
   font-weight: bold;
-  margin-bottom: 46px;
+  margin-bottom: 92rpx;
 }
 .formItem{
-  height: 77px;
+  height: 154rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
   background-color: #F9F9F9;
-  padding-left: 15px;
-  border-bottom: 1px solid white;
+  padding-left: 30rpx;
+  border-bottom: 2rpx solid white;
 }
 .btnDiv{
   display: flex;
@@ -30,22 +30,22 @@
   align-items: center;
   vertical-align: center;
   justify-content: center;
-  width: 206px;
-  height: 49px;
-  border-radius: 24.5px;
+  width: 412rpx;
+  height: 98rpx;
+  border-radius: 49rpx;
   background-color: #72C9FA;
   color: white;
-  font-size: 16px;
+  font-size: 32rpx;
 }
 .normalBtn{
   display: flex;
   align-items: center;
   vertical-align: center;
   justify-content: center;
-  width: 206px;
-  height: 49px;
-  border-radius: 24.5px;
+  width: 412rpx;
+  height: 98rpx;
+  border-radius: 49rpx;
   color: #72C9FA;
-  border:#72C9FA solid 1px;
-  font-size: 16px;
+  border:#72C9FA solid 2rpx;
+  font-size: 32rpx;
 }

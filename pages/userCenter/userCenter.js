@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:{},
+    userInfo: null,
+    phoneNumber: null,
     registrationTime: 1,
     orderDivTop:170
   },
@@ -16,19 +17,20 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
-    this.setData({userInfo:app.globalData.userInfo});
-    if (app.globalData.userInfo){  
+    
+    if (app.globalData.userInfo&&app.globalData.phoneNumber){  
+      this.setData({phoneNumber: app.globalData.phoneNumber});
+      this.setData({userInfo: app.globalData.userInfo});
        wx.request({
         url: app.globalData.host+'/user/detail',
         data:{
-          userID: app.globalData.userInfo.nickName
+          userID: app.globalData.phoneNumber
         },
         method: 'POST',
         header: {
           'content-type': 'application/json'//默认值
         },
         success: function (res) {
-          console.log(res.data);
           let days = _this.getDaysBetween(res.data.data.registrationTime);
           _this.setData({
             registrationTime: days
@@ -74,43 +76,10 @@ Page({
 
   },
 
-  // 获取用户微信信息
-  bindgetuserinfo: function(e){
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-    
-    wx.request({
-      url: app.globalData.host+'/user/add',
-      data: {
-        userID: app.globalData.userInfo.nickName,
-        nickname: app.globalData.userInfo.nickName,
-        gender: app.globalData.userInfo.gender,
-        avatarUrl: app.globalData.userInfo.avatarUrl
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/json'//默认值
-      },
-      success: function (res) {
-        console.log(res.data);
-
-      },
-      fail: function (res) {
-        console.log("请求失败");
-      }
-    });
-
-  },
-
   // 获取用户手机号
   bindgetphonenumber: function(e){
+    var _this = this;
     if (e.detail.errMsg == "getPhoneNumber:fail user deny") return;
-    console.log(encodeURIComponent(e.detail.encryptedData))
-    console.log(e)
     wx.request({
       url: app.globalData.host+'/app/decodeUserInfo',
       data: {
@@ -123,13 +92,67 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        // app.globalData.userInfo.phoneNumber = res.data.data
-        console.log(res);
+        console.log(res.data.data)
+        app.globalData.phoneNumber = res.data.data
+        _this.setData({
+          phoneNumber: res.data.data
+        })
       },
       fail: function (res) {
         console.log("请求失败");
       }
     })
+  },
+
+  // 获取用户微信信息
+  bindgetuserinfo: function(e){
+    var _this = this;
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+    
+    wx.request({
+      url: app.globalData.host+'/user/add',
+      data: {
+        userID: app.globalData.phoneNumber,
+        nickname: app.globalData.userInfo.nickName,
+        gender: app.globalData.userInfo.gender,
+        avatarUrl: app.globalData.userInfo.avatarUrl
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        if (res.data.data == "该用户已存在！"){
+          wx.request({
+            url: app.globalData.host+'/user/detail',
+            data:{
+              userID: app.globalData.phoneNumber
+            },
+            method: 'POST',
+            header: {
+              'content-type': 'application/json'//默认值
+            },
+            success: function (res) {
+              let days = _this.getDaysBetween(res.data.data.registrationTime);
+              _this.setData({
+                registrationTime: days
+              });
+            },
+            fail: function (res) {
+              console.log("请求失败");
+            }
+          })
+        }
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    });
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

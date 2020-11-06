@@ -78,10 +78,27 @@
   height: 118rpx;
   padding-left: 36rpx;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
+.specSelected{
+  width: 118rpx;
+  height: 118rpx;
+  display: flex;
+  align-items: center;
+  border: 2rpx solid #979797;
+}
+
+.specNormal{
+  width: 118rpx;
+  height: 118rpx;
+  display: flex;
+  align-items: center;
+}
+
 .smallImg{
   width: 118rpx;
-  border: 2rpx solid #979797;
 }
 .otherDiv{
   width: 100%;

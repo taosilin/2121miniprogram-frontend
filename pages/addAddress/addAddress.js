@@ -1,15 +1,17 @@
 // pages/addAddress/addAddress.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    name:"",
-    tel:"",
-    region:[],
-    detail:"",
-    isNew:true
+    addressID: "",
+    receiver: "",
+    telephone: "",
+    region: [],
+    detail: "",
+    isNew: true
   },
 
   /**
@@ -19,10 +21,11 @@ Page({
     if (options.info!=undefined){
       var info = JSON.parse(options.info);
       this.setData({
-        name:info.name,
-        tel:info.tel,
-        region:[info.province,info.city,info.district],
-        detail:info.detail,
+        addressID: info.addressID,
+        receiver: info.receiver,
+        telephone: info.telephone,
+        region: [info.province,info.city,info.district],
+        detail: info.detail,
         isNew:false
       })
     }
@@ -76,14 +79,14 @@ Page({
   onShareAppMessage: function () {
 
   },
-  onNameChange:function(e){
+  onReceiverChange:function(e){
     this.setData({
-      name:e.detail.value
+      receiver:e.detail.value
     })
   },
   onTelChange:function(e){
     this.setData({
-      tel:e.detail.value
+      telephone:e.detail.value
     })
   },
   onDetailChange:function(e){
@@ -97,15 +100,100 @@ Page({
       region:e.detail.value
     })
   },
-  onSubmit:function(){
-    console.log(this.data);
-    wx.navigateBack({
-      delta:1,
-    });
-    wx.showToast({
-      title: '保存成功',
-      icon: 'success',
-      duration: 2000
-    });
+
+  // 提交新增地址
+  onAdd: function(){
+    wx.request({
+      url: app.globalData.host + '/address/add',
+      data:{
+        addressID: (new Date()).getTime().toString(),
+        userID: app.globalData.phoneNumber,
+        receiver: this.data.receiver,
+        telephone: this.data.telephone,
+        province: this.data.region[0],
+        city: this.data.region[1],
+        district: this.data.region[2],
+        detail: this.data.detail,
+        defaultAdd: "0"
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        wx.navigateBack({
+          delta:1,
+        });
+        wx.showToast({
+          title: '保存成功',
+          icon: 'success',
+          duration: 2000
+        });
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
+  },
+
+  // 编辑地址
+  onUpdate: function(){
+    wx.request({
+      url: app.globalData.host + '/address/update',
+      data: {
+        addressID: this.data.addressID,
+        receiver: this.data.receiver,
+        telephone: this.data.telephone,
+        province: this.data.region[0],
+        city: this.data.region[1],
+        district: this.data.region[2],
+        detail: this.data.detail
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        wx.navigateBack({
+          delta:1,
+        });
+        wx.showToast({
+          title: '保存成功',
+          icon: 'success',
+          duration: 2000
+        });
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
+  },
+
+  // 删除地址
+  onDelete: function(){
+    wx.request({
+      url: app.globalData.host + '/address/delete',
+      data: {
+        addressID: this.data.addressID
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        wx.navigateBack({
+          delta:1,
+        });
+        wx.showToast({
+          title: '删除成功',
+          icon: 'success',
+          duration: 2000
+        });
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   }
+
 })

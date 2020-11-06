@@ -4,11 +4,11 @@
     <view class="z-height">
       <image class="closeIcon" src="../../image/icon/close.png" mode="widthFix" bindtap="hideSheet"></image>
       <view class="imgDiv">
-        <image class="productImg" src="../../image/glasses2.jpg" mode="widthFix"></image>
+          <image class="productImg" src="{{colors[selectedColor].specImage}}" mode="widthFix"></image>
       </view>
       <view class="info">
         <view>
-          <text class="price">¥ {{price}}</text>
+          <text class="price">¥ {{colors[selectedColor].price}}</text>
           <text class="originalPrice">¥ {{originalPrice}}</text>
         </view>
         <view class="cycle">生产周期：3天</view>
@@ -22,12 +22,12 @@
         <block wx:if="{{selectTab==0}}">
           <view class="content1">
             <text class="title">镜框</text>
-            <text class="choose">已选：（7001A_C01_深蓝x枪）</text>
+            <text class="choose">已选：{{colors[selectedColor].colorName}}</text>
           </view>
           <view class="frameImgDiv">
-            <block wx:for="{{[1,2,3]}}" wx:for-item="i">
-              <view class="frameItem">
-                <view class="frameImg"></view>
+            <block wx:for="{{colors}}">
+              <view class="{{index==selectedColor?'frameItemSelected':'frameItemNormal'}}" data-id="{{index}}" bindtap="onColorChange">
+                <image class="frameImg" src="{{item.colorImage}}"></image>
               </view>
             </block>
           </view>

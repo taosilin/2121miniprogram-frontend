@@ -13,35 +13,35 @@
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-  padding-top: 12px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 19px;
+  padding-top: 24rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  padding-bottom: 38rpx;
 }
 .infoDiv{
 
 }
 .radioDiv{
-  font-size: 12px;
+  font-size: 24rpx;
 }
 .arrow{
-  width: 8.5px;
-  height: 8.5px;
-  border-top: 2px solid #5B5B5B;
-  border-right: 2px solid #5B5B5B;
+  width: 17rpx;
+  height: 17rpx;
+  border-top: 4rpx solid #5B5B5B;
+  border-right: 4rpx solid #5B5B5B;
   transform: rotate(45deg);
   position: absolute;
-  right: 20px;
-  top: 67px;
+  right: 40rpx;
+  top: 134rpx;
 } 
 
 .importantInfo{
-  font-size: 14px;
+  font-size: 28rpx;
   color: #000000;
   font-weight: bold;
 }
 .addressDetail{
-  font-size: 14px;
+  font-size: 28rpx;
   color: #838383;
 }
 .divContainer{
@@ -54,24 +54,24 @@
   background: #EFEFEF;
   position: absolute;
   width: 100%;
-  height: 1px;
+  height: 2rpx;
  }
 .btnDiv{
   display: flex;
   align-items: center;
-  margin-top: 31px;
+  margin-top: 62rpx;
 }
 .addBtn{
-  width: 206px;
-  height: 49px;
-  background-color: #215470;
+  width: 412rpx;
+  height: 98rpx;
+  background-color: #72C9FA;
   color: white;
-  font-size: 16px;
+  font-size: 32rpx;
   font-weight:bold;
-  border-radius: 10px;
+  border-radius: 49rpx;
   display: flex;
   align-items: center;
   vertical-align: center;
   justify-content: center;
-  letter-spacing:1px;/*字间距*/
+  letter-spacing: 2rpx;/*字间距*/
 }
