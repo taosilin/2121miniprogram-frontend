@@ -35,19 +35,19 @@
         <block wx:elif="{{selectTab==1}}">
           <view class="content2">
             <view class="degreeRow">
-              度数：<option-box placeholderText="左眼度数"/><option-box style="margin-left:25rpx;" placeholderText="右眼度数"/>
+              度数：<option-box placeholderText="左眼度数" bindoptionChange="onLeftDegreeChange"/><option-box style="margin-left:25rpx;" placeholderText="右眼度数" bindoptionChange="onRightDegreeChange"/>
             </view>
             <view class="degreeRow">
-              瞳距：<option-box boxWidth="620" placeholderText="请选择瞳距"/>
+              瞳距：<option-box boxWidth="620" placeholderText="请选择瞳距" options="{{interpupillarys}}" bindoptionChange="onInterpupillaryChange"/>
             </view>
             <view class="degreeRow">
-              散光：<option-box placeholderText="左眼散光"/><option-box style="margin-left:25rpx;" placeholderText="右眼散光"/>
+              散光：<option-box placeholderText="左眼散光" options="{{astigmatisms}}" bindoptionChange="onLeftAstigmatismChange"/><option-box style="margin-left:25rpx;" placeholderText="右眼散光" options="{{astigmatisms}}" bindoptionChange="onRightAstigmatismChange"/>
             </view>
             <view class="degreeRow">
-              轴位：<option-box placeholderText="左眼轴位"/><option-box style="margin-left:25rpx;" placeholderText="右眼轴位"/>
+              轴位：<option-box placeholderText="左眼轴位" options="{{axiss}}" bindoptionChange="onLeftAxisChange"/><option-box style="margin-left:25rpx;" placeholderText="右眼轴位" options="{{axiss}}" bindoptionChange="onRightAxisChange"/>
             </view>
             <view class="bottomText">验光单怎么看？</view>
-            <view class="bottomBtn">购买平光</view>
+            <view class="bottomBtn" bindtap="onConfirm">购买平光</view>
           </view>
         </block>
         <block wx:else>
@@ -71,7 +71,7 @@
             <block wx:else>
               <view class="completeBtn" bindtap="onComplete">完成</view>
             </block>
-            
+  
           </view>
         </block>
       </view>
