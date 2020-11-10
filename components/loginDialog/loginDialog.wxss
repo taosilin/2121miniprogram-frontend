@@ -1,0 +1,49 @@
+/* components/loginDialog/loginDialog.wxss */
+.container{
+  width: 100%;
+}
+.background{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 19;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.z-height{
+  width: 90%;
+  /* height: 1062rpx; */
+  overflow-y: scroll;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  overflow: visible;
+  z-index: 20;
+}
+.infoDiv{
+  display: flex;
+  flex-direction: column;
+}
+.btnDiv{
+  display: flex;
+  flex-direction: column;
+}
+.title{
+  font-weight: bold;
+}
+.info{
+  font-size: 24rpx;
+  color: grey;
+}
+.confirmBtn{
+  
+}
+.cancelBtn{
+  border: 1px solid black;
+  color: gray;
+}

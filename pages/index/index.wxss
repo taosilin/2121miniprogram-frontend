@@ -1,7 +1,7 @@
 /**index.wxss**/
 .container{
   margin:0px;
-  padding-bottom: 201rpx;
+  /* padding-bottom: 201rpx; */
 }
 .postDiv{
   width: 100%;

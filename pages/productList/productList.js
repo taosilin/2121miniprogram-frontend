@@ -91,7 +91,6 @@ Page({
         _this.setData({
           frameList: res.data.data
         })
-        console.log(_this.frameList);
       },
       fail: function (res) {
         console.log("请求失败");

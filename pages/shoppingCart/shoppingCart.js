@@ -1,4 +1,5 @@
 // pages/shoppingCart/shoppingCart.js
+const app = getApp()
 Page({
 
   /**
@@ -75,11 +76,31 @@ Page({
    */
   onLoad: function (options) {
     const sysInfo = wx.getSystemInfoSync();
+    var _this = this;
     this.setData({
       windowWidth:sysInfo.windowWidth,
       imgWidth:sysInfo.windowWidth*0.637,
       productWidth:sysInfo.windowWidth*0.24879,
       contentWidth:sysInfo.windowWidth*0.5
+    })
+
+    wx.request({
+      url: app.globalData.host + '/cart/user',
+      data:{
+        userID: app.globalData.phoneNumber
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          productList: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
     })
   },
 
@@ -95,7 +116,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var _this = this;
+    wx.request({
+      url: app.globalData.host + '/cart/user',
+      data:{
+        userID: app.globalData.phoneNumber
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          productList: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   },
 
   /**

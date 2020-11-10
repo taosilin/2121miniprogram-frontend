@@ -68,15 +68,15 @@
             <block wx:for="{{recommend}}">
               <view class="productItem" style="width:{{itemWidth}}px;">
                 <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
-                <image class="productImg" src="{{item.imgUrl}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>    
-                <view class="title">{{item.name}}</view>
+                <image class="productImg" src="{{item.coverImage}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>    
+                <view class="title">{{item.frameName}}</view>
                 <view class="priceDiv">
                   <view wx:if="{{item.isSaled}}">
                     <text class="saledPrice">¥{{item.price}}</text>
-                    <text class="originalPrice">¥{{item.originalPrice}}</text>
+                    <text class="originalPrice">¥899</text>
                   </view>
                   <view wx:else class="price">¥{{item.price}}</view>
-                  <view class="comments">{{item.comments}}条好评</view>
+                  <view class="comments">1128条好评</view>
                 </view>
               </view>
             </block>

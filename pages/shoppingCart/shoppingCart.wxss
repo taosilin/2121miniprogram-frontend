@@ -1,7 +1,7 @@
 /* pages/shoppingCart/shoppingCart.wxss */
 .container{
   margin: 0px;
-  padding-bottom: 201rpx;
+  /* padding-bottom: 201rpx; */
 }
 .productDiv{
   width: 100%;

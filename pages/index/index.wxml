@@ -21,7 +21,7 @@
   </view>
   
   <view class="couponDiv">
-    <image class="couponImg" src="../../image/coupon.jpg" mode="widthFix" style="width:{{windowWidth}}px;"></image>
+    <image class="couponImg" src="../../image/couponIndex.png" mode="widthFix" style="width:{{windowWidth}}px;"></image>
   </view>
   
 </view>

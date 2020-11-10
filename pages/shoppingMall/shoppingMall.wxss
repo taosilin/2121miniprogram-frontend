@@ -1,7 +1,7 @@
 /* pages/shoppingMall/shoppingMall.wxss */
 .container{
   margin: 0px;
-  padding-bottom: 201rpx;
+  /* padding-bottom: 201rpx; */
 }
 .labelbar{
   width: 100%;

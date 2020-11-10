@@ -14,9 +14,9 @@
       </view>
     </view>
 
-    <view class="userInfo" wx:else>
-      <button wx:if="{{phoneNumber}}" class="authorizedLogin" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">使用微信账号登录</button>
-      <button wx:else class="authorizedLogin" open-type="getPhoneNumber" bindgetphonenumber="bindgetphonenumber">获取手机号</button>
+    <view class="loginDiv" wx:else>
+      <image class="loginAvatar" src="../../image/login.png" mode="widthFix"></image>
+      <button class="authorizedLogin" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">点击授权用户信息</button>
     </view>
 
   </view>
@@ -98,8 +98,10 @@
     </view>
     <view class="follow-btn">去关注></view>
   </view>
-
 </view>
+
+<dialog id="getPhoneNumber" />
+
 <!-- <view class="tabbarDiv">
     <tabbar currentTab="4" />
 </view> -->

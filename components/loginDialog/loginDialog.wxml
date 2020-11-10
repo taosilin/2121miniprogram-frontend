@@ -1,0 +1,18 @@
+<!--components/loginDialog/loginDialog.wxml-->
+<view class="container" hidden="{{flag}}">
+  <view class="background">
+    <view class="z-height">
+
+      <view class="infoDiv">
+        <view class="title">授权获取手机号</view>
+        <view class="info">您暂未授权2121小程序获取您的手机号。如需正常使用，请先绑定手机号</view>
+      </view>
+
+      <view class="btnDiv">
+        <button class="confirmBtn" open-type="getPhoneNumber" bindgetphonenumber="bindgetphonenumber">立即绑定</button>
+        <button class="cancelBtn">取消</button>
+      </view>
+
+    </view>
+  </view>
+</view>

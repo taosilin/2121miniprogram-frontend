@@ -1,4 +1,5 @@
 // pages/myOrders/myOrders.js
+const app = getApp()
 Page({
 
   /**
@@ -195,12 +196,52 @@ Page({
    */
   onLoad: function (options) {
     const sysInfo = wx.getSystemInfoSync();
+    var _this = this;
     this.setData({
       selectTab:options.index,
       windowHeight:sysInfo.windowHeight-32,
       itemWidth:sysInfo.windowWidth/2,
       pdr:(sysInfo.windowWidth-80)*0.1437/2,
       imgWidth:(sysInfo.windowWidth)*0.2705
+    })
+    wx.request({
+      url: app.globalData.host + '/order/userlist',
+      data:{
+        userID: app.globalData.phoneNumber
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          orders: res.data.data
+        })
+        if (res.data.data.length==0){
+          wx.request({
+            url: app.globalData.host+'/frame/list',
+            data: {
+              page: 0,
+              size: 20
+            },
+            method: 'POST',
+            header: {
+              'content-type': 'application/json'//默认值
+            },
+            success: function (res) {
+              _this.setData({
+                recommend: res.data.data
+              })
+            },
+            fail: function (res) {
+              console.log("请求失败");
+            }
+          })
+        }
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
     })
   },
 

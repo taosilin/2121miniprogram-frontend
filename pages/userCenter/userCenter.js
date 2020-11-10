@@ -18,9 +18,9 @@ Page({
   onLoad: function (options) {
     var _this = this;
     
-    if (app.globalData.userInfo&&app.globalData.phoneNumber){  
+    if (app.globalData.phoneNumber){  
       this.setData({phoneNumber: app.globalData.phoneNumber});
-      this.setData({userInfo: app.globalData.userInfo});
+      // this.setData({userInfo: app.globalData.userInfo});
        wx.request({
         url: app.globalData.host+'/user/detail',
         data:{
@@ -112,7 +112,9 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-    
+    this.getPhoneNumber.setData({
+      flag: false
+    })
     wx.request({
       url: app.globalData.host+'/user/add',
       data: {
@@ -158,7 +160,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    //获得dialog组件
+    this.getPhoneNumber = this.selectComponent("#getPhoneNumber");
   },
 
   /**
