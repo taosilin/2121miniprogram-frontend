@@ -20,7 +20,8 @@ Page({
       {imgUrl:'../../image/post.png'},
       {imgUrl:'../../image/post.png'}
     ],
-    currentTab: 0
+    currentTab: 0,
+    popupVisible: true
   },
   //事件处理函数
   bindViewTap: function() {
@@ -103,6 +104,21 @@ Page({
   onSlideChange: function (event) { 
     var postId = event.detail.current; 
     // console.log(postId);
+  },
+  onPopup:function(){
+    this.setData({
+      popupVisible: !this.data.popupVisible
+    })
+  },
+  onGetCoupon:function(){
+    this.setData({
+      popupVisible: !this.data.popupVisible
+    })
+    wx.showToast({
+      title: "      已放入您的优惠券中      ",
+      icon:'none',
+      duration: 2000
+    })
   }
   // //tabbar切换
   // swichNav: function (e) {

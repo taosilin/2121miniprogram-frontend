@@ -22,8 +22,30 @@
   align-items: center;
 }
 .selectProduct{
-
+  
 }
+
+/* checkbox样式 */
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  background: #72C9FA;
+  border: 2rpx solid transparent;
+}
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before { 
+  color: #fff;
+  background: transparent;
+}
+
 .imgDiv{
   width: 206rpx;
   height: 206rpx;

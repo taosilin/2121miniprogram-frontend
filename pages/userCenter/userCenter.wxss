@@ -237,4 +237,5 @@
   font-size: 24rpx;
   background-color: transparent;
   border: none;
+  font-weight: normal;
 }

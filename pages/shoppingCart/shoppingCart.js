@@ -7,64 +7,7 @@ Page({
    */
   data: {
     //productList:[],
-    productList:[
-      {
-        name:"开普勒钛架全框眼镜",
-        price:275,
-        imgUrl:"../../image/glasses.jpg",
-        num:100,
-        selected:false
-      },
-      {
-        name:"开普勒钛架全框眼镜",
-        price:275,
-        imgUrl:"../../image/glasses.jpg",
-        num:1,
-        selected:false
-      },
-      {
-        name:"开普勒钛架全框眼镜",
-        price:275,
-        imgUrl:"../../image/glasses.jpg",
-        num:1,
-        selected:false
-      },
-      {
-        name:"开普勒钛架全框眼镜",
-        price:275,
-        imgUrl:"../../image/glasses.jpg",
-        num:1,
-        selected:false
-      },
-      {
-        name:"开普勒钛架全框眼镜",
-        price:275,
-        imgUrl:"../../image/glasses.jpg",
-        num:1,
-        selected:false
-      },
-      {
-        name:"开普勒钛架全框眼镜",
-        price:275,
-        imgUrl:"../../image/glasses.jpg",
-        num:1,
-        selected:false
-      },
-      {
-        name:"开普勒钛架全框眼镜",
-        price:275,
-        imgUrl:"../../image/glasses.jpg",
-        num:1,
-        selected:false
-      },
-      {
-        name:"开普勒钛架全框眼镜",
-        price:275,
-        imgUrl:"../../image/glasses.jpg",
-        num:1,
-        selected:false
-      }
-    ],
+    productList:[],
     windowWidth:414,
     imgWidth:264,
     productWidth:103,

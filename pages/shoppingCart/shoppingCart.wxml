@@ -3,24 +3,27 @@
   <!-- 购物车有物品时 -->
   <block wx:if="{{productList.length!=0}}">
     <view class="productDiv">
-      <block wx:for="{{productList}}">
-        <view class="productItem">
-          <view class="selectDiv">
-            <radio class="selectProduct" value="{{index}}" checked="{{item.selected}}" color="#72C9FA" bindtap="radioChange" data-id="{{index}}"/>
-          </view>
-          <view class="imgDiv" style="width:{{productWidth}}px;">
-            <image class="productImg" src="{{item.spec.specImage}}" mode="widthFix" style="width:{{productWidth}}px;"></image>
-          </view>
-          <view class="contentDiv" style="width:{{contentWidth}}px;">
-            <view class="content">{{item.frame.frameName}}</view>
-            <view class="selectBtn" bindtap="openPopup">定制信息</view>
-            <view class="priceDiv">
-              ¥ {{item.spec.price}}
-              <stepper class="stepper" num="{{item.cart.num}}"/>
+      <checkbox-group>
+        <block wx:for="{{productList}}">
+          <view class="productItem">
+            <view class="selectDiv">
+              <checkbox class="selectProduct" value="{{index}}" checked="{{item.selected}}" color="#72C9FA" bindtap="radioChange" data-id="{{index}}"></checkbox>
+            </view>
+            <view class="imgDiv" style="width:{{productWidth}}px;">
+              <image class="productImg" src="{{item.spec.specImage}}" mode="widthFix" style="width:{{productWidth}}px;"></image>
+            </view>
+            <view class="contentDiv" style="width:{{contentWidth}}px;">
+              <view class="content">{{item.frame.frameName}}</view>
+              <view class="selectBtn" bindtap="openPopup">定制信息</view>
+              <view class="priceDiv">
+                ¥ {{item.spec.price}}
+                <stepper class="stepper" num="{{item.cart.num}}"/>
+              </view>
             </view>
           </view>
-        </view>
-      </block>
+        </block>
+      </checkbox-group>
+      
     </view>
     <view class="footer">
       <view class="radioDiv">
