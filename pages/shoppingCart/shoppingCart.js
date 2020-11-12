@@ -6,12 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    //productList:[],
     productList:[],
     windowWidth:414,
     imgWidth:264,
     productWidth:103,
-    contentWidth:230
+    contentWidth:230,
+    checkbox: [], // 多选框
+    checkboxBool: [],
+    selectAll: false,  // 全选
+    total: 0  // 合计总价
   },
 
   /**
@@ -39,7 +42,11 @@ Page({
       success: function (res) {
         _this.setData({
           productList: res.data.data
-        })
+        });
+        var checkboxBool = new Array();
+        for (let i=0;i<res.data.data.length;i++){
+          checkboxBool.push(false);
+        }
       },
       fail: function (res) {
         console.log("请求失败");
@@ -114,16 +121,121 @@ Page({
   onShareAppMessage: function () {
 
   },
-  radioChange(e) {
-    // console.log('radio发生change事件，携带value值为：', e.currentTarget.dataset.id);
-    let id = e.currentTarget.dataset.id;
-    let items = this.data.productList;
-    items[id].selected = !items[id].selected
+  // 多选框选项变化
+  checkboxChange: function(e) {
+    console.log(e.detail.value);
+    let checkboxBool = this.data.checkboxBool;
+
+    if (e.detail.value.length==this.data.productList.length){
+      for (let i=0;i<this.data.productList.length;i++){
+        checkboxBool[i] = true;
+      }
+      this.setData({
+        selectAll: true
+      });
+    }
+    else if (e.detail.value.length==0){
+      for (let i=0;i<this.data.productList.length;i++){
+        checkboxBool[i] = false;
+      }
+      this.setData({
+        selectAll: false
+      });
+    }
+    else{
+      for (let i=0;i<this.data.productList.length;i++){
+        if (e.detail.value.indexOf(i.toString())!=-1){
+          checkboxBool[i] = true;
+        }
+        else{
+          checkboxBool[i] = false;
+        }    
+      }
+      this.setData({
+        selectAll: false
+      });
+    }
     this.setData({
-      productList:items
-    })
+      checkbox: e.detail.value,
+      checkboxBool: checkboxBool
+    });
+
+    this.computeTotal();
   },
+
+  // 全选or取消全选
+  selectAll:function(){
+    var checkbox = new Array();
+    var checkboxBool = this.data.checkboxBool;
+    if (this.data.checkbox.length<this.data.productList.length){
+      // 全选
+      for (let i=0;i<this.data.productList.length;i++){
+        checkbox.push(i.toString());
+        checkboxBool[i] = true;
+      }    
+    }
+    else{
+      // 取消全选
+      for (let i=0;i<this.data.productList.length;i++){
+        checkboxBool[i] = false;
+      } 
+    }
+
+    this.setData({
+      checkbox: checkbox,
+      checkboxBool: checkboxBool
+    });
+
+    this.computeTotal();
+  },
+
   openPopup:function(){
     this.popup.showPopup();
+  },
+
+  // 商品数量变化
+  onNumChange:function(e){
+    let id = e.currentTarget.dataset.id;
+
+    var tmp = this.data.productList;
+    tmp[id].cart.num = e.detail;
+    this.setData({
+      productList: tmp
+    });
+
+
+    wx.request({
+      url: app.globalData.host+'/cart/update',
+      data:{
+        userID: app.globalData.phoneNumber,
+        productID: this.data.productList[id].spec.productID,
+        specID: this.data.productList[id].spec.specID,
+        num: e.detail
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
+    this.computeTotal();
+  },
+
+  // 计算合计总价
+  computeTotal:function(){
+    let total = 0;
+    for (let i=0;i<this.data.checkbox.length;i++){
+      let index = Number(this.data.checkbox[i]);
+      total = total + this.data.productList[index].spec.price*this.data.productList[index].cart.num;
+    }
+    this.setData({
+      total: total
+    })
   }
+
 })

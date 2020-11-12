@@ -1,7 +1,7 @@
 <!--pages/myAddress/myAddress.wxml-->
 <view class="container">
   <view class="addressList">
-    <view wx:if="{{address.length>0}}">
+    <view wx:if="{{addresses.length>0}}">
       <radio-group bindchange="radioChange">
         <block wx:for="{{addresses}}" wx:key="{{index}}" data-index="{{index}}">
           <view class="addressItem">
@@ -15,7 +15,7 @@
               </view>
               
               <view class="radioDiv">
-                <radio class="defaultAdd" value="{{index}}" checked="{{item.isDefult}}" color="#72C9FA"/>设为默认地址
+                <radio class="defaultAdd" value="{{item.addressID}}" checked="{{isDefault[index]}}" color="#72C9FA"/>设为默认地址
               </view>
             </view>
             <view class='arrow'></view>     

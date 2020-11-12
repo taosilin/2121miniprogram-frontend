@@ -140,22 +140,22 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   justify-content: center;
 }
 .noProductImg{
-  padding:110px 75px 42px 75px;
+  padding: 220rpx 150rpx 84rpx 150rpx;
 }
 .promptText{
-  font-size: 14px;
-  letter-spacing: 2px;
+  font-size: 28rpx;
+  letter-spacing: 4rpx;
   color: #585858;
-  margin-bottom: 22px;
+  margin-bottom: 44rpx;
 }
 .shopBtn{
-  width: 81px;
-  height: 38px;
-  border: solid 1px #585858;
-  border-radius: 19px;
-  font-size: 14px;
+  width: 162rpx;
+  height: 76rpx;
+  border: solid 2rpx #585858;
+  border-radius: 38rpx;
+  font-size: 28rpx;
   color: #585858;
-  letter-spacing: 1px;
+  letter-spacing: 2rpx;
   font-weight: bold;
   display: flex;
   align-items: center;

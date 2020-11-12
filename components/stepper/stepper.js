@@ -34,6 +34,7 @@ Component({
         num: num,
         minusStatus: minusStatus
       });
+      this.triggerEvent("numChange",this.data.num);
     },
     /* 点击加号 */
     bindPlus: function () {
@@ -47,6 +48,7 @@ Component({
         num: num,
         minusStatus: minusStatus
       });
+      this.triggerEvent("numChange",this.data.num);
     },
     /* 输入框事件 */
     bindManual: function (e) {
@@ -55,6 +57,7 @@ Component({
       this.setData({
         num: num
       });
+      this.triggerEvent("numChange",this.data.num);
     }
   }
 })

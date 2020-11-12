@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-      addresses: []
+      addresses: [],
+      isDefault: [true]
   },
 
   /**
@@ -102,11 +103,15 @@ Page({
   onShareAppMessage: function () {
 
   },
+
+  // 添加地址
   goToAddAddress:function(){
     wx.navigateTo({
       url: '../addAddress/addAddress',
     })
   },
+
+  // 修改地址
   onChangeAddress:function(e){
     console.log(e.currentTarget.dataset.id);
     var id = e.currentTarget.dataset.id;
@@ -115,5 +120,30 @@ Page({
     wx.navigateTo({
       url: '../addAddress/addAddress?info='+info,
     });
+  },
+  // 修改默认地址
+  radioChange:function(e){
+    var _this = this;
+    wx.request({
+      url: app.globalData.host+'/address/modifyDefaultAdd',
+      data:{
+        addressID: e.detail.value,
+        userID: app.globalData.phoneNumber
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        wx.showToast({
+          title: '修改成功',
+          icon: 'success',
+          duration: 2000
+        });
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   }
 })

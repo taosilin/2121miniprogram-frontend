@@ -3,11 +3,11 @@
   <!-- 购物车有物品时 -->
   <block wx:if="{{productList.length!=0}}">
     <view class="productDiv">
-      <checkbox-group>
+      <checkbox-group bindchange="checkboxChange" >
         <block wx:for="{{productList}}">
           <view class="productItem">
-            <view class="selectDiv">
-              <checkbox class="selectProduct" value="{{index}}" checked="{{item.selected}}" color="#72C9FA" bindtap="radioChange" data-id="{{index}}"></checkbox>
+            <view class="selectDiv" data-id="{{index}}">
+              <checkbox class="selectProduct" value="{{index}}" checked="{{checkboxBool[index]}}"></checkbox>
             </view>
             <view class="imgDiv" style="width:{{productWidth}}px;">
               <image class="productImg" src="{{item.spec.specImage}}" mode="widthFix" style="width:{{productWidth}}px;"></image>
@@ -17,7 +17,7 @@
               <view class="selectBtn" bindtap="openPopup">定制信息</view>
               <view class="priceDiv">
                 ¥ {{item.spec.price}}
-                <stepper class="stepper" num="{{item.cart.num}}"/>
+                <stepper class="stepper" num="{{item.cart.num}}" data-id="{{index}}" bindnumChange="onNumChange"/>
               </view>
             </view>
           </view>
@@ -27,10 +27,10 @@
     </view>
     <view class="footer">
       <view class="radioDiv">
-        <radio class="selectAll" value="{{index}}" checked="{{item.isDefult}}" color="#72C9FA"/>全选
+        <checkbox class="selectAll" checked="{{selectAll}}" bindtap="selectAll" color="#72C9FA"></checkbox>全选
       </view>
       <view class="sumDiv">
-        <view class="sum">合计：¥275</view>
+        <view class="sum">合计：¥{{total}}</view>
         <view class="settleBtn">去结算</view>
       </view>  
     </view>
