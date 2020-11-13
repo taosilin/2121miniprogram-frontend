@@ -2,7 +2,7 @@
 <view class="container">
   <view class="addressDiv">
     <view class="addressInfo">
-      <view class="addressText">{{address.name}} {{address.telephone}}</view>
+      <view class="addressText">{{address.receiver}} {{address.telephone}}</view>
       <view class="addressText">{{address.province}} {{address.city}} {{address.district}} {{address.detail}}</view>
     </view>
     <view class="arrowDiv">
@@ -17,7 +17,7 @@
     </view>
     <view class="row" bindtap="goToCouponChoose">
       <view class="leftText">优惠券</view>
-      <view class="rightText" style="font-size:12px;">1张可用<view class='arrow'></view></view>
+      <view class="rightText" style="font-size:24rpx;">1张可用<view class='arrow'></view></view>
     </view>
     <view class="divLine"></view>
     <view class="row">
@@ -29,8 +29,8 @@
       <view class="rightText">¥ 0</view>
     </view>
     <view class="row">
-      <view class="leftText" style="font-size:17px;font-weight:bold;">合计</view>
-      <view class="rightText" style="font-size:17px;font-weight:bold;color:black;">¥ 299</view>
+      <view class="leftText" style="font-size:34rpx;font-weight:bold;">合计</view>
+      <view class="rightText" style="font-size:34rpx;font-weight:bold;color:black;">¥ 299</view>
     </view>
     <view class="payBtn">立即支付</view>
   </view>
@@ -38,8 +38,8 @@
   <view class="productDiv">
     <view class="productTitle">订单商品</view>
     <view class="productContent">
-      <view class="productImgDiv" style="width:{{imgUrl}}px;">
-        <image class="productImg" src="{{product.imgUrl}}" mode="widthFix" style="width:{{imgUrl}}px;"></image>
+      <view class="productImgDiv">
+        <image class="productImg" src="{{product.imgUrl}}" mode="widthFix"></image>
       </view>
       <view class="contentDiv">
         <view>{{product.name}}</view>

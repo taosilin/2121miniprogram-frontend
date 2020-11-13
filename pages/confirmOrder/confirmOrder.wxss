@@ -9,7 +9,7 @@
 .addressDiv{
   width: 100%;
   box-sizing: border-box;
-  padding: 16px 18px;
+  padding: 32rpx 36rpx;
   display: flex;
   flex-direction: row;
   background-color: white;
@@ -18,8 +18,8 @@
   width: 90%;
 }
 .addressText{
-  font-size: 14px;
-  margin-bottom: 14px;
+  font-size: 28rpx;
+  margin-bottom: 28rpx;
 }
 .arrowDiv{
   width: 10%;
@@ -28,14 +28,14 @@
   justify-content: center;
 }
 .arrow{
-  width: 10px;
-  height: 10px;
-  border-top: 1px solid #5B5B5B;
-  border-right: 1px solid #5B5B5B;
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 2rpx solid #5B5B5B;
+  border-right: 2rpx solid #5B5B5B;
   transform: rotate(45deg);
 }
 .priceDiv{
-  margin: 10px 0px;
+  margin: 20rpx 0px;
   width: 100%;
   background-color: white;
   display: flex;
@@ -46,18 +46,18 @@
 .row{
   width: 100%;
   box-sizing: border-box;
-  padding: 16px 18px;
+  padding: 32rpx 36rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 .leftText{
-  font-size: 14px;
+  font-size: 28rpx;
   color: black;
 }
 .rightText{
-  font-size: 14px;
+  font-size: 28rpx;
   color: #747474;
   display: flex;
   flex-direction: row;
@@ -66,33 +66,33 @@
 .divLine{
   background-color: #D5D5D5;
   width: 100%;
-  height: 1px;
+  height: 2rpx;
  }
 .payBtn{
-  font-size: 17px;
+  font-size: 34rpx;
   color: white;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 2rpx;
   background-color: #72C9FA;
   width: 90.8%;
-  height: 56px;
-  border-radius: 28px;
+  height: 112rpx;
+  border-radius: 56rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 31px;
-  margin-bottom: 36px;
+  margin-top: 62rpx;
+  margin-bottom: 64rpx;
 }
 .productDiv{
   width: 100%;
-  font-size: 14px;
+  font-size: 28rpx;
   box-sizing: border-box;
   background-color: white;
 }
 .productTitle{
   width: 100%;
   box-sizing: border-box;
-  padding: 18px 18px 15px 18px;
+  padding: 36rpx 36rpx 30rpx 36rpx;
 }
 .productContent{
   width: 100%;
@@ -100,17 +100,17 @@
   flex-direction: row;
   justify-content: space-around;
   box-sizing: border-box;
-  padding: 14px 18px;
+  padding: 28rpx 36rpx;
 }
 .productImgDiv{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 103px;
-  height: 103px;
+  width: 186.6rpx;
+  height: 186.6rpx;
 }
 .productImg{
-  width: 103px;
+  width: 186.6rpx;
 }
 .contentDiv{
   width: 75%;
@@ -118,14 +118,14 @@
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  padding-left: 14px;
+  padding-left: 28rpx;
 }
 .customBtn{
-  width: 82px;
-  height: 36px;
+  width: 164rpx;
+  height: 72rpx;
   color: #72C9FA;
-  border: 1px solid #72C9FA;
-  border-radius: 18px;
+  border: 2rpx solid #72C9FA;
+  border-radius: 36rpx;
   display: flex;
   align-items: center;
   justify-content: center;

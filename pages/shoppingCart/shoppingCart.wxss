@@ -47,13 +47,13 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
 }
 
 .imgDiv{
-  width: 206rpx;
-  height: 206rpx;
+  width: 186.6rpx;
+  height: 186.6rpx;
   align-items: center;
   display: flex;
 }
 .productImg{
-  width: 206rpx;
+  width: 186.6rpx;
 }
 .selectBtn{
   width: 134rpx;
@@ -140,6 +140,7 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   justify-content: center;
 }
 .noProductImg{
+  width: 478rpx;
   padding: 220rpx 150rpx 84rpx 150rpx;
 }
 .promptText{

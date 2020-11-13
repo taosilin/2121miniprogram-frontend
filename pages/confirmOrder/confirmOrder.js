@@ -1,4 +1,5 @@
 // pages/confirmOrder/confirmOrder.js
+const app = getApp();
 Page({
 
   /**
@@ -18,8 +19,7 @@ Page({
       price:299,
       num:1,
       imgUrl:"../../image/glasses.jpg"
-    },
-    imgWidth:103
+    }
   },
 
   /**
@@ -27,9 +27,26 @@ Page({
    */
   onLoad: function (options) {
     const sysInfo = wx.getSystemInfoSync();
-    this.setData({
-      imgWidth:sysInfo.windowWidth*0.24879
-    });
+
+    var _this = this;
+    wx.request({
+      url: app.globalData.host+'/address/default',
+      data:{
+        userID: app.globalData.phoneNumber
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          address: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   },
 
   /**

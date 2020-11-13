@@ -114,11 +114,6 @@ Page({
     this.setData({
       popupVisible: !this.data.popupVisible
     })
-    wx.showToast({
-      title: "      已放入您的优惠券中      ",
-      icon:'none',
-      duration: 2000
-    })
   }
   // //tabbar切换
   // swichNav: function (e) {

@@ -9,10 +9,10 @@
             <view class="selectDiv" data-id="{{index}}">
               <checkbox class="selectProduct" value="{{index}}" checked="{{checkboxBool[index]}}"></checkbox>
             </view>
-            <view class="imgDiv" style="width:{{productWidth}}px;">
-              <image class="productImg" src="{{item.spec.specImage}}" mode="widthFix" style="width:{{productWidth}}px;"></image>
+            <view class="imgDiv">
+              <image class="productImg" src="{{item.spec.specImage}}" mode="widthFix"></image>
             </view>
-            <view class="contentDiv" style="width:{{contentWidth}}px;">
+            <view class="contentDiv">
               <view class="content">{{item.frame.frameName}}</view>
               <view class="selectBtn" bindtap="openPopup">定制信息</view>
               <view class="priceDiv">
@@ -21,6 +21,7 @@
               </view>
             </view>
           </view>
+
         </block>
       </checkbox-group>
       
@@ -39,7 +40,7 @@
   <!-- 购物车无物品时 -->
   <block wx:else>
     <view class="nothingDiv">
-      <image class="noProductImg" src="../../image/noProduct.png" mode="widthFix" style="width:{{imgWidth}}px;"></image>
+      <image class="noProductImg" src="../../image/noProduct.png" mode="widthFix"></image>
       <view class="promptText">您的购物车空空如也~</view>
       <view class="shopBtn">去逛逛</view>
     </view>

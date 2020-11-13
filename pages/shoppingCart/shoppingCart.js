@@ -7,10 +7,6 @@ Page({
    */
   data: {
     productList:[],
-    windowWidth:414,
-    imgWidth:264,
-    productWidth:103,
-    contentWidth:230,
     checkbox: [], // 多选框
     checkboxBool: [],
     selectAll: false,  // 全选
@@ -23,12 +19,6 @@ Page({
   onLoad: function (options) {
     const sysInfo = wx.getSystemInfoSync();
     var _this = this;
-    this.setData({
-      windowWidth:sysInfo.windowWidth,
-      imgWidth:sysInfo.windowWidth*0.637,
-      productWidth:sysInfo.windowWidth*0.24879,
-      contentWidth:sysInfo.windowWidth*0.5
-    })
 
     wx.request({
       url: app.globalData.host + '/cart/user',
@@ -202,7 +192,6 @@ Page({
     this.setData({
       productList: tmp
     });
-
 
     wx.request({
       url: app.globalData.host+'/cart/update',

@@ -1,4 +1,5 @@
 // components/actionSheet/actionSheet.js
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -6,7 +7,7 @@ Component({
   properties: {
     colors:{
       type: Array,
-      value: {}
+      value: []
     },
     selectedColor:{
       type:Number,
@@ -38,7 +39,7 @@ Component({
     },
     astigmatisms:{
       type: Array,
-      value: [0,-25,-50,-75,-100,-125,-150,-175,-200]
+      value: [0.00,-0.25,-0.50,-0.75,-1.00,-1.25,-1.50,-1.75,-2.00]
     },
     axiss:{
       type: Array,
@@ -54,10 +55,10 @@ Component({
     leftDegree: 0,
     rightDegree: 0,
     interpupillary: 0,
-    leftAstigmatism: 0,
-    rightAstigmatism: 0,
-    leftAxis: 0,
-    rightAxis: 0
+    leftAstigmatism: null,
+    rightAstigmatism: null,
+    leftAxis: null,
+    rightAxis: null
   },
 
   /**
@@ -98,14 +99,47 @@ Component({
         optionItem:id
       })
     },
+
+    // 添加到购物车
     onAddCart:function(){
       this.setData({
         flag: !this.data.flag
       });
-      wx.showToast({
-        title: '添加成功',
+
+      wx.request({
+        url: app.globalData.host+'/cart/add',
+        data:{
+          userID: app.globalData.phoneNumber,
+          productID: this.data.colors[this.data.selectedColor].productID,
+          specID: this.data.colors[this.data.selectedColor].specID,
+          num: 1,
+          lensID: "Lens001",
+          leftDegree: this.data.leftDegree,
+          rightDegree: this.data.rightDegree,
+          interpupillary: this.data.interpupillary,
+          leftAstigmatism: this.data.leftAstigmatism,
+          rightAstigmatism: this.data.rightAstigmatism,
+          leftAxis: this.data.leftAxis,
+          rightAxis: this.data.rightAxis
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'//默认值
+        },
+        success: function (res) {
+          wx.showToast({
+            title: '添加成功',
+            icon: 'success',
+            duration: 2000
+          });
+        },
+        fail: function (res) {
+          console.log("请求失败");
+        }
       })
     },
+
+    // 立即购买
     onComplete:function(){
       this.setData({
         flag: !this.data.flag
@@ -114,6 +148,8 @@ Component({
         url: '../../pages/confirmOrder/confirmOrder',
       })
     },
+
+
     onColorChange:function(e){
       this.setData({
         selectedColor: e.currentTarget.dataset.id

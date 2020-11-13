@@ -65,8 +65,8 @@
   height: 100%;
   position: fixed;
   overflow-y: scroll;
-  background-color: rgba(0, 0, 0, 0.45);
-  z-index: 19;
+  background-color: rgba(0, 0, 0, 0.74);
+  z-index: 99;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,11 +79,11 @@
   flex-direction: column;
   position: absolute;
   overflow: visible;
-  z-index: 20;
+  z-index: 100;
   align-items: center;
 }
 .popupImg{
-  width: 697rpx;
+  width: 750rpx;
   border-radius: 28rpx;
   margin-bottom: 32rpx;
 }

@@ -20,10 +20,9 @@
   </block>
   <!-- 收藏夹无物品时 -->
   <block wx:else>
-    <!-- <view class="nothingDiv">
-      <image class="noProductImg" src="../../image/noProduct.png" mode="widthFix" style="width:{{imgWidth}}px;"></image>
-      <view class="promptText">您的购物车空空如也~</view>
-      <view class="shopBtn">去逛逛</view>
-    </view> -->
+    <view class="nothingDiv">
+      <image class="noLikeImg" src="../../image/noLike.png" mode="widthFix"></image>
+      <view class="promptText">收藏夹空空如也~</view>
+    </view>
   </block>
 </view>
