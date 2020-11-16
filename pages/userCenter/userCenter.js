@@ -8,8 +8,7 @@ Page({
   data: {
     userInfo: null,
     phoneNumber: null,
-    registrationTime: 1,
-    orderDivTop:170
+    registrationTime: 1
   },
 
   /**
@@ -43,9 +42,6 @@ Page({
     }
    
     const sysInfo = wx.getSystemInfoSync();
-    this.setData({
-      orderDivTop:sysInfo.windowWidth*0.42
-    });
     
     // if (app.globalData.userInfo) {
     //   this.setData({

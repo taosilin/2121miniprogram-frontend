@@ -9,22 +9,22 @@
 .labelbar{
   width: 100%;
   box-sizing: border-box;
-  padding:8px,26px,6px,26px;
+  padding:16rpx,52rpx,12rpx,52rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: white;
 }
 .order{
-  width: 90%;
-  border-radius: 10px;
-  margin-top: 23px;
+  width: 712rpx;
+  border-radius: 20rpx;
+  margin-top: 46rpx;
   overflow: hidden;
   position: relative;
   
 }
 .header{
-  font-size: 13px;
+  font-size: 26rpx;
   color: #000000;
   background-color: #FBFBFB;
   display: flex;
@@ -33,9 +33,9 @@
   justify-content: space-around;
   position: relative;
   width: 100%;
-  height: 30px;
+  height: 60rpx;
   border: thin;
-  border-radius: 10px;
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
 }
 .lefttext{
   
@@ -47,62 +47,62 @@
   
 }
 .imgDiv{
-  width: 100px;
-  height: 102px;
+  width: 184.7rpx;
+  height: 184.7rpx;
   display: flex;
   align-items: center;
-  margin-left: 8px;
+  margin-left: 16rpx;
   position: absolute;
 }
 .orderpicture{
   position: absolute;
-  width: 100px;
+  width: 184.7rpx;
 }
 .content{
   position: relative;
   display: flex;
   flex-direction: row;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  height: 102px;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  height: 184.7rpx;
   background-color: white;
 }
 .info{
   position: absolute;
-  left: 119px; 
+  left: 238rpx; 
   display: flex;
   flex-direction: column;
-  font-size: 13px;
+  font-size: 26rpx;
   color: #3d3d3d;
 }
 .infotext{
-  margin-bottom: 8px;
+  margin-bottom: 16rpx;
 }
 .rightinfo{
   text-align: right;
   position: absolute;
-  right: 8px;
+  right: 16rpx;
   display: flex;
   flex-direction: column;
-  font-size: 14px;
+  font-size: 28rpx;
 }
 .footer{
-  height: 72px;
+  height: 144rpx;
   position: relative;
   background-color: white;
 }
 .total{
   position: absolute;
-  right: 8px;
-  height: 30px;
-  font-size: 13px;
+  right: 16rpx;
+  height: 60rpx;
+  font-size: 26rpx;
 }
 .btnDiv{
   display: flex;
   flex-direction: row;
   position: absolute;
-  right: 8px;
-  top: 30px;
+  right: 16rpx;
+  top: 60rpx;
 }
 .important-btn{
   width:166rpx;
@@ -116,7 +116,7 @@
   vertical-align: center;
   justify-content: center;
   letter-spacing:4rpx; /*字间距*/
-  margin-left: 12px;
+  margin-left: 24rpx;
 }
 .normal-btn{
   width:166rpx;
@@ -130,7 +130,7 @@
   vertical-align: center;
   justify-content: center;
   letter-spacing:4rpx;/*字间距*/
-  margin-left: 12px;
+  margin-left: 24rpx;
 }
 
 .noOrderContainer{
@@ -190,6 +190,7 @@
   justify-content:space-between;
 }
 .productItem{
+  width: 375rpx;
   position: relative;
   padding-top: 60rpx;
   padding-bottom: 44rpx;
@@ -198,7 +199,7 @@
   border: 2rpx solid #F2F2F2;
 }
 .productImg{
-  
+  width: 375rpx;
 }
 .newIcon{
   width: 88rpx;

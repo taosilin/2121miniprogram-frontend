@@ -5,6 +5,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    frame:{
+      type:Object,
+      value:{}
+    },
     colors:{
       type: Array,
       value: []
@@ -144,8 +148,28 @@ Component({
       this.setData({
         flag: !this.data.flag
       });
+      let buySpec = JSON.stringify([{
+        cart:{
+          lensID: "Lens001",
+          num: 1,
+          leftDegree: this.data.leftDegree,
+          rightDegree: this.data.rightDegree,
+          interpupillary: this.data.interpupillary,
+          leftAstigmatism: this.data.leftAstigmatism,
+          rightAstigmatism: this.data.rightAstigmatism,
+          leftAxis: this.data.leftAxis,
+          rightAxis: this.data.rightAxis
+        },
+        frame:this.data.frame,
+        spec:{
+          specID: this.data.colors[this.data.selectedColor].specID,
+          productID: this.data.colors[this.data.selectedColor].productID,
+          price: this.data.colors[this.data.selectedColor].price,
+          specImage: this.data.colors[this.data.selectedColor].specImage,
+        }
+      }]);
       wx.navigateTo({
-        url: '../../pages/confirmOrder/confirmOrder',
+        url: '../../pages/confirmOrder/confirmOrder?buySpec='+buySpec,
       })
     },
 

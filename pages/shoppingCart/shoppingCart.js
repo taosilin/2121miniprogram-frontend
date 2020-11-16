@@ -10,7 +10,17 @@ Page({
     checkbox: [], // 多选框
     checkboxBool: [],
     selectAll: false,  // 全选
-    total: 0  // 合计总价
+    total: 0,  // 合计总价
+    customInfo: {
+      glassesType:'近视',
+      leftEyeDegree:0.00,
+      rightEyeDegree:0.00,
+      interpupillaryDistance:0,
+      leftEyeAstigmatism:null,
+      rightEyeAstigmatism:null,
+      leftEyeAxis:null,
+      rightEyeAxis:null
+    }
   },
 
   /**
@@ -30,6 +40,7 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
+        console.log(res.data.data)
         _this.setData({
           productList: res.data.data
         });
@@ -179,7 +190,29 @@ Page({
     this.computeTotal();
   },
 
-  openPopup:function(){
+  // 打开定制信息弹窗
+  openPopup:function(e){
+    let index = e.currentTarget.dataset.id;
+    let customInfo = {
+      glassesType:'近视',
+      leftEyeDegree:0.00,
+      rightEyeDegree:0.00,
+      interpupillaryDistance:0,
+      leftEyeAstigmatism:null,
+      rightEyeAstigmatism:null,
+      leftEyeAxis:null,
+      rightEyeAxis:null
+    };
+    customInfo.leftEyeDegree = this.data.productList[index].cart.leftDegree;
+    customInfo.rightEyeDegree = this.data.productList[index].cart.rightDegree;
+    customInfo.interpupillaryDistance = this.data.productList[index].cart.interpupillary;
+    customInfo.leftEyeAstigmatism = this.data.productList[index].cart.leftAstigmatism;
+    customInfo.rightEyeAstigmatism = this.data.productList[index].cart.rightAstigmatism;
+    customInfo.leftEyeAxis = this.data.productList[index].cart.leftAxis;
+    customInfo.rightEyeAxis = this.data.productList[index].cart.rightAxis;
+    this.setData({
+      customInfo:customInfo
+    })
     this.popup.showPopup();
   },
 
@@ -224,6 +257,19 @@ Page({
     }
     this.setData({
       total: total
+    })
+  },
+
+  // 结算
+  onSettlement:function(){
+    let buySpec = [];
+    for (let i=0;i<this.data.checkbox.length;i++){
+      let index = Number(this.data.checkbox[i]);
+      buySpec.push(this.data.productList[index]);
+    }
+    buySpec = JSON.stringify(buySpec);
+    wx.navigateTo({
+      url: '../../pages/confirmOrder/confirmOrder?buySpec='+buySpec,
     })
   }
 

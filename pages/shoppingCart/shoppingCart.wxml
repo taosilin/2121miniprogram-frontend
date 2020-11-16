@@ -14,7 +14,7 @@
             </view>
             <view class="contentDiv">
               <view class="content">{{item.frame.frameName}}</view>
-              <view class="selectBtn" bindtap="openPopup">定制信息</view>
+              <view class="selectBtn" data-id="{{index}}" bindtap="openPopup">定制信息</view>
               <view class="priceDiv">
                 ¥ {{item.spec.price}}
                 <stepper class="stepper" num="{{item.cart.num}}" data-id="{{index}}" bindnumChange="onNumChange"/>
@@ -32,7 +32,8 @@
       </view>
       <view class="sumDiv">
         <view class="sum">合计：¥{{total}}</view>
-        <view class="settleBtn">去结算</view>
+        <view wx:if="{{checkbox.length>0}}" class="settleBtn" bindtap="onSettlement">去结算</view>
+        <view wx:else class="settleBtn-disabled">去结算</view>
       </view>  
     </view>
   </block>
@@ -46,7 +47,7 @@
     </view>
   </block>
   
-  <popup id="popup" />
+  <popup id="popup" customInfo="{{customInfo}}"/>
 </view>
 <!-- <view class="tabbarDiv">
     <tabbar currentTab="3" />

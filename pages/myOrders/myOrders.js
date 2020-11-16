@@ -6,188 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    orders:[
-      {
-        orderdate:"2020-08-01",
-        orderid:"12345567788898",
-        state:"待付款",
-        sum:550,
-        commodityList:[
-          {
-            name:"银色细边眼镜",
-            cmdid:"xxxxxx1",
-            color:"银色",
-            price:275,
-            num:1,
-            leftdegree:-3.25,
-            rightdegree:-3.75,
-            picture:"../../image/glasses.jpg"
-          },
-          {
-            name:"银色细边眼镜",
-            cmdid:"xxxxxx2",
-            color:"银色",
-            price:275,
-            num:1,
-            leftdegree:-3.25,
-            rightdegree:-3.75,
-            picture:"../../image/glasses.jpg"
-          }
-        ]
-      },
-      {
-        orderdate:"2020-08-01",
-        orderid:"12345567788898",     
-        state:"待付款",
-        sum:299,
-        commodityList:[
-          {
-            name:"黑色粗边眼镜",
-            cmdid:"1234567890",
-            color:"黑色",
-            price:299,
-            num:1,
-            leftdegree:-5.50,
-            rightdegree:-5.50,
-            picture:"../../image/glasses.jpg",
-          }
-        ]
-      },
-      {
-        orderdate:"2020-08-01",
-        orderid:"12345567788898",
-        sum:299,
-        state:"待付款",
-        commodityList:[
-          {
-            name:"黑色粗边眼镜",
-            cmdid:"1234567890",
-            color:"黑色",
-            price:299,
-            num:1,
-            leftdegree:-5.50,
-            rightdegree:-5.50,
-            picture:"../../image/glasses.jpg",
-          }
-        ]
-      },
-      {
-        orderdate:"2020-08-17",
-        orderid:"12345567788898",
-        sum:299,
-        state:"待收货",
-        commodityList:[
-          {
-            name:"黑色粗边眼镜",
-            cmdid:"1234567890",
-            color:"黑色",
-            price:299,
-            num:1,
-            leftdegree:-5.50,
-            rightdegree:-5.50,
-            picture:"../../image/glasses.jpg",
-          }
-        ]
-      },
-      {
-        orderdate:"2020-08-17",
-        orderid:"123456789098",
-        sum:299,
-        state:"待评价",
-        commodityList:[
-          {
-            name:"黑色粗边眼镜",
-            cmdid:"1234567890",
-            color:"黑色",
-            price:299,
-            num:1,
-            leftdegree:-5.50,
-            rightdegree:-5.50,
-            picture:"../../image/glasses.jpg",
-          }
-        ]
-      },
-      {
-        orderdate:"2020-08-17",
-        orderid:"12345567788898",
-        sum:599,
-        state:"已完成",
-        commodityList:[
-          {
-            name:"黑色粗边眼镜",
-            cmdid:"1234567890",
-            color:"黑色",
-            price:599,
-            num:1,
-            leftdegree:-5.50,
-            rightdegree:-5.50,
-            picture:"../../image/glasses.jpg",
-          }
-        ]
-      }
-    ],
-    //orders:[],
-    recommend:[
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:1361
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:1128
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:true,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:910
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:13610
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:678
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:false,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:12345
-      }
-    ],
+    orders:[],
+    ordersfilter:[],
+    recommend:[],
     // windowHeight:700,
-    itemWidth:207,
-    pdr:24,
     tabs:['全部订单', '待付款', '待收货', '待评价', '售后'],
-    imgWidth:112,
     selectTab:0
   },
 
@@ -198,11 +21,7 @@ Page({
     const sysInfo = wx.getSystemInfoSync();
     var _this = this;
     this.setData({
-      selectTab:options.index,
-      windowHeight:sysInfo.windowHeight-32,
-      itemWidth:sysInfo.windowWidth/2,
-      pdr:(sysInfo.windowWidth-80)*0.1437/2,
-      imgWidth:(sysInfo.windowWidth)*0.2705
+      selectTab:options.index
     })
     wx.request({
       url: app.globalData.host + '/order/userlist',
@@ -217,32 +36,33 @@ Page({
         _this.setData({
           orders: res.data.data
         })
-        if (res.data.data.length==0){
-          wx.request({
-            url: app.globalData.host+'/frame/list',
-            data: {
-              page: 0,
-              size: 20
-            },
-            method: 'POST',
-            header: {
-              'content-type': 'application/json'//默认值
-            },
-            success: function (res) {
-              _this.setData({
-                recommend: res.data.data
-              })
-            },
-            fail: function (res) {
-              console.log("请求失败");
-            }
-          })
-        }
+        _this.orderFilter();
       },
       fail: function (res) {
         console.log("请求失败");
       }
     })
+    wx.request({
+      url: app.globalData.host+'/frame/list',
+      data: {
+        page: 0,
+        size: 20
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          recommend: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
+
+    
   },
 
   /**
@@ -291,5 +111,67 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  //tab选项改变
+  onTabChange:function(e){
+    this.setData({
+      selectTab:e.detail
+    })
+    this.orderFilter();
+  },
+
+  // 订单按状态筛选
+  orderFilter:function(){
+    if (this.data.selectTab==0){
+      this.setData({
+        ordersfilter: this.data.orders
+      })
+    }
+    else if(this.data.selectTab==1){
+      let orders = [];
+      for (let i=0;i<this.data.orders.length;i++){
+        if (this.data.orders[i].order.state=='1'){
+          orders.push(this.data.orders[i]);
+        }
+      } 
+      this.setData({
+        ordersfilter:orders
+      });
+    }
+    else if (this.data.selectTab==2){
+      let orders = [];
+      for (let i=0;i<this.data.orders.length;i++){
+        if (this.data.orders[i].order.state=='5'){
+          orders.push(this.data.orders[i]);
+        }
+      } 
+      this.setData({
+        ordersfilter:orders
+      });
+    }
+    else if (this.data.selectTab==3){
+      let orders = [];
+      for (let i=0;i<this.data.orders.length;i++){
+        if (this.data.orders[i].order.state=='6'){
+          orders.push(this.data.orders[i]);
+        }
+      } 
+      this.setData({
+        ordersfilter:orders
+      });
+    }
+    else{
+      let orders = [];
+      for (let i=0;i<this.data.orders.length;i++){
+        if (this.data.orders[i].order.state=='9'||this.data.orders[i].order.state=='10'||this.data.orders[i].order.state=='11'||this.data.orders[i].order.state=='12'){
+          orders.push(this.data.orders[i]);
+        }
+      } 
+      this.setData({
+        ordersfilter:orders
+      });
+      console.log(this.data.ordersfilter.length)
+    }
   }
 })

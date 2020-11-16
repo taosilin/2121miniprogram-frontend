@@ -21,7 +21,7 @@
 
   </view>
 
-  <view class="myOrder" style="margin-top:{{orderDivTop}}px;">
+  <view class="myOrder">
     <view class="ordertext" data-index="0" bindtap="goToMyOrders">
       <text>我的订单</text>
       <view class='arrow'></view>

@@ -19,6 +19,17 @@ Page({
       price:299,
       num:1,
       imgUrl:"../../image/glasses.jpg"
+    },
+    buySpec:[],
+    customInfo: {
+      glassesType:'近视',
+      leftEyeDegree:0.00,
+      rightEyeDegree:0.00,
+      interpupillaryDistance:0,
+      leftEyeAstigmatism:null,
+      rightEyeAstigmatism:null,
+      leftEyeAxis:null,
+      rightEyeAxis:null
     }
   },
 
@@ -27,7 +38,10 @@ Page({
    */
   onLoad: function (options) {
     const sysInfo = wx.getSystemInfoSync();
-
+    console.log(JSON.parse(options.buySpec))
+    this.setData({
+      buySpec:JSON.parse(options.buySpec)
+    })
     var _this = this;
     wx.request({
       url: app.globalData.host+'/address/default',
@@ -103,7 +117,28 @@ Page({
       url: '../couponChoose/couponChoose',
     })
   },
-  openPopup:function(){
+  openPopup:function(e){
+    let index = e.currentTarget.dataset.id;
+    let customInfo = {
+      glassesType:'近视',
+      leftEyeDegree:0.00,
+      rightEyeDegree:0.00,
+      interpupillaryDistance:0,
+      leftEyeAstigmatism:null,
+      rightEyeAstigmatism:null,
+      leftEyeAxis:null,
+      rightEyeAxis:null
+    };
+    customInfo.leftEyeDegree = this.data.buySpec[index].cart.leftDegree;
+    customInfo.rightEyeDegree = this.data.buySpec[index].cart.rightDegree;
+    customInfo.interpupillaryDistance = this.data.buySpec[index].cart.interpupillary;
+    customInfo.leftEyeAstigmatism = this.data.buySpec[index].cart.leftAstigmatism;
+    customInfo.rightEyeAstigmatism = this.data.buySpec[index].cart.rightAstigmatism;
+    customInfo.leftEyeAxis = this.data.buySpec[index].cart.leftAxis;
+    customInfo.rightEyeAxis = this.data.buySpec[index].cart.rightAxis;
+    this.setData({
+      customInfo:customInfo
+    })
     this.popup.showPopup();
   }
 })

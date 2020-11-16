@@ -37,22 +37,26 @@
 
   <view class="productDiv">
     <view class="productTitle">订单商品</view>
-    <view class="productContent">
-      <view class="productImgDiv">
-        <image class="productImg" src="{{product.imgUrl}}" mode="widthFix"></image>
-      </view>
-      <view class="contentDiv">
-        <view>{{product.name}}</view>
-        <view class="contentRow">
-          <view style="color:#747474;">类型：近视</view>
-          <view class="customBtn" bindtap="openPopup">定制信息</view>
+
+    <block wx:for="{{buySpec}}">
+      <view class="productContent">
+        <view class="productImgDiv">
+          <image class="productImg" src="{{item.spec.specImage}}" mode="widthFix"></image>
         </view>
-        <view class="contentRow">
-          <view>¥ {{product.price}}</view>
-          <view>数量：{{product.num}}</view>
+        <view class="contentDiv">
+          <view>{{item.frame.frameName}}</view>
+          <view class="contentRow">
+            <view style="color:#747474;">类型：近视</view>
+            <view class="customBtn" data-id="{{index}}" bindtap="openPopup">定制信息</view>
+          </view>
+          <view class="contentRow">
+            <view>¥ {{item.spec.price}}</view>
+            <view>数量：{{item.cart.num}}</view>
+          </view>
         </view>
       </view>
-    </view>
+    </block>
+    
   </view>
 </view>
-<popup id="popup" />
+<popup id="popup" customInfo="{{customInfo}}"/>

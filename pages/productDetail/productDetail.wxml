@@ -76,4 +76,4 @@
 </view>
 
 <action-sheet id="addCart" addCart="0" colors="{{colors}}" />
-<action-sheet id="buyNow" colors="{{colors}}" addCart="1" />
+<action-sheet id="buyNow" addCart="1" colors="{{colors}}" frame="{{frameDetail}}"/>

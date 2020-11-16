@@ -89,7 +89,7 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
 }
 .stepper{
   position: absolute;
-  right: 0px;
+  right: 32rpx;
 }
 .footer{
   display: flex;
@@ -130,6 +130,18 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
     font-size: 32rpx;
     border-radius: 43rpx;
     margin-left: 32rpx;
+}
+.settleBtn-disabled{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 208rpx;
+  height: 86rpx;
+  background-color: #DBDBDB;
+  color: white;
+  font-size: 32rpx;
+  border-radius: 43rpx;
+  margin-left: 32rpx;
 }
 
 

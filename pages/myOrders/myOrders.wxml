@@ -3,14 +3,14 @@
 <view class="container">
     <!-- 标签页 -->
     <view class="labelbar">
-      <label-bar tabs="{{tabs}}" selected="{{selectTab}}" selectColor="#72C9FA" selectTextColor="#000000" textColor="#000000" letterSpacing="1" textSize="28" height="78">
+      <label-bar tabs="{{tabs}}" selected="{{selectTab}}" selectColor="#72C9FA" selectTextColor="#000000" textColor="#000000" letterSpacing="1" textSize="28" height="78" binditemtap="onTabChange">
         <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
         <!-- <view>这里是插入到组件slot中的内容</view> -->
       </label-bar>
     </view>
     <!-- 有订单时内容 -->
-    <block wx:if="{{orders.length!=0}}">
-      <view wx:for="{{orders}}" class="order">
+    <block wx:if="{{ordersfilter.length!=0}}">
+      <view wx:for="{{ordersfilter}}" class="order">
         <view class="header">
           <view class="lefttext">{{item.order.orderTime}}</view>
           <view class="midtext">{{item.order.orderID}}</view>
@@ -66,7 +66,7 @@
     <block wx:else>
       <view class="noOrderContainer">
         <view class="noOrderImgDiv">
-          <image class="noOrderImg" src="../../image/noOrder.png" mode="widthFix" style="width:{{imgWidth}}px;"></image>
+          <image class="noOrderImg" src="../../image/noOrder.png" mode="widthFix"></image>
         </view>
         <view class="noOrderTextDiv">
           <view>这里什么都没有</view>
@@ -78,9 +78,9 @@
           </view>
           <view class="productList">
             <block wx:for="{{recommend}}">
-              <view class="productItem" style="width:{{itemWidth}}px;">
+              <view class="productItem">
                 <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
-                <image class="productImg" src="{{item.coverImage}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>    
+                <image class="productImg" src="{{item.coverImage}}" mode="widthFix"></image>    
                 <view class="title">{{item.frameName}}</view>
                 <view class="priceDiv">
                   <view wx:if="{{item.isSaled}}">

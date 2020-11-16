@@ -18,7 +18,7 @@ Page({
       originalPrice:899
     },
 
-    franeDetail: null,
+    frameDetail: null,
     specs: null,
     colors: null,
     selectSpec:0,
@@ -146,6 +146,7 @@ Page({
   onBuyNow: function(){
     this.buyNow.showSheet();
   },
+  // 添加到收藏夹
   onAddLike: function(){
     wx.request({
       url: app.globalData.host + '/like/add',

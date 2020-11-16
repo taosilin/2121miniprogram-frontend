@@ -5,6 +5,7 @@
   box-sizing: border-box;
   width: 100%;
   position: absolute;
+  overflow-y: scroll;
 }
 .card{
   width:100%;
@@ -50,10 +51,10 @@
   opacity: 0.9;
   position:absolute;
   z-index:2;
-  margin-top: 340rpx;
+  margin-top: 307rpx;
   width: 90%;
   height: 228rpx;
-  box-shadow:2px 3px 5px 2px #E1E1E1;
+  box-shadow:4rpx 6rpx 10rpx 4rpx #E1E1E1;
   border-radius: 40rpx;
   font-size: 28rpx;
 }
@@ -80,8 +81,8 @@
  .arrow{
   width: 20rpx;
   height: 20rpx;
-  border-top: 2px solid #5B5B5B;
-  border-right: 2px solid #5B5B5B;
+  border-top: 4rpx solid #5B5B5B;
+  border-right: 4rpx solid #5B5B5B;
   position: absolute;
   right: 28rpx;
   transform: rotate(45deg);
@@ -167,8 +168,8 @@
   position: absolute;
   width: 20rpx;
   height: 20rpx;
-  border-top: 2px solid #999;
-  border-right: 2px solid #999;
+  border-top: 4rpx solid #999;
+  border-right: 4rpx solid #999;
   right: 10%;
   transform: rotate(45deg);
 } 
@@ -181,7 +182,7 @@
   display: flex;
   align-items: center;
   background-color: white;
-  box-shadow:2px 3px 5px 2px #E1E1E1;
+  box-shadow:4rpx 6rpx 10rpx 4rpx #E1E1E1;
   border-radius: 20rpx;
 }
 .moreicon{

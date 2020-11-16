@@ -35,7 +35,7 @@
   transform: rotate(45deg);
 }
 .priceDiv{
-  margin: 20rpx 0px;
+  margin: 20rpx 0rpx;
   width: 100%;
   background-color: white;
   display: flex;

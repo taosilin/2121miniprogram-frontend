@@ -139,7 +139,7 @@ Component({
         this.barLeft(index,this.data.domData);
         this.barRight(index, this.data.domData);
       }
-      this.triggerEvent('itemtap',e,{bubbles:true});
+      this.triggerEvent('itemtap',index,{bubbles:true});
     }
   },
   lifetimes:{
