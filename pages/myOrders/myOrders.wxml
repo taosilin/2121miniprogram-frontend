@@ -34,7 +34,6 @@
           </view>
           <view class="info">
             <text class="infotext">{{item.frameName}}</text>
-            <text class="infotext">货号：{{item.cmdid}}</text>
             <text class="infotext">颜色：{{item.colorName}}</text>
             <text>度数：{{item.leftDegree}}|{{item.rightDegree}}</text>
           </view>

@@ -1,6 +1,6 @@
 <!--pages/confirmOrder/confirmOrder.wxml-->
 <view class="container">
-  <view class="addressDiv">
+  <view class="addressDiv" bindtap="goAddressList">
     <view class="addressInfo">
       <view class="addressText">{{address.receiver}} {{address.telephone}}</view>
       <view class="addressText">{{address.province}} {{address.city}} {{address.district}} {{address.detail}}</view>
@@ -22,15 +22,16 @@
     <view class="divLine"></view>
     <view class="row">
       <view class="leftText">商品金额</view>
-      <view class="rightText" style="color:black;">¥ 299</view>
+      <view class="rightText" style="color:black;">¥ {{totalAmount}}</view>
     </view>
     <view class="row">
       <view class="leftText">优惠</view>
-      <view class="rightText">¥ 0</view>
+      <view wx:if="{{coupon}}" class="rightText" style="color:#D30E26;">-¥ {{coupon.discount}}</view>
+      <view wx:else class="rightText">¥ {{discount}}</view>
     </view>
     <view class="row">
       <view class="leftText" style="font-size:34rpx;font-weight:bold;">合计</view>
-      <view class="rightText" style="font-size:34rpx;font-weight:bold;color:black;">¥ 299</view>
+      <view class="rightText" style="font-size:34rpx;font-weight:bold;color:black;">¥ {{actualAmount}}</view>
     </view>
     <view class="payBtn">立即支付</view>
   </view>

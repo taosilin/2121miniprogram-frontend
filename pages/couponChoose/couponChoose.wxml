@@ -1,41 +1,43 @@
 <!--pages/couponChoose/couponChoose.wxml-->
-<view class="container" style="height:{{windowHeight}}px;">
+<view class="container">
   <view class="tab">
     <view class="tabItem {{isEnable?'selectTab':'normalTab'}}" bindtap="onEnable">可用（{{enableList.length}}）</view>
     <view class="tabItem {{isEnable?'normalTab':'selectTab'}}" bindtap="onDisable">不可用（{{disableList.length}}）</view>
   </view>
   <view class="header">
-    <input class="inputDiv" style="width:{{inputWidth}}px;" placeholder="请输入优惠券码" value="{{inputCode}}" bindinput="onInputChange"></input>
-    <view wx:if="{{inputCode==''}}" class="disableBtn" style="width:{{btnWidth}}px;">兑换</view>
-    <view wx:else class="exchangeBtn" style="width:{{btnWidth}}px;" bindtap="onExchange">兑换</view>
+    <input class="inputDiv" placeholder="请输入优惠券码" value="{{inputCode}}" bindinput="onInputChange"></input>
+    <view wx:if="{{inputCode==''}}" class="disableBtn">兑换</view>
+    <view wx:else class="exchangeBtn" bindtap="onExchange">兑换</view>
   </view>
   <!-- 有优惠券时 -->
   <block wx:if="{{couponList.length!=0}}">
-    <view class="couponList">
-      <block wx:for="{{couponList}}">
-        <view class="couponItem" style="height:{{couponHeight}}px;">
-          <image wx:if="{{isEnable}}" class="couponImg" src="../../image/coupon.png" mode="widthFix"></image>
-          <image wx:else class="couponImg" src="../../image/disabledCoupon.png" mode="widthFix"></image>
-          <view class="contentDiv">
-            <view class="leftDiv">
-              <view class="topDiv">
-                <radio wx:if="{{isEnable}}" class="selectCoupon" value="{{index}}" checked="{{item.selected}}" color="#72C9FA" bindtap="selectCoupon" data-id="{{index}}"/>
-                <view class="couponName">{{item.name}}</view>
-              </view>                          
-              <view class="bottomDiv">
-                <view class="timeLimit">使用期限:2020.8.8-2020.8.31</view>
-                <view wx:if="{{!item.openDetail}}" class="{{isEnable?'description':'disabled-description'}}" bindtap="onDetail" data-id="{{index}}">使用说明﹀</view>
-                <view wx:else  class="{{isEnable?'description':'disabled-description'}}" bindtap="onDetail" data-id="{{index}}">使用说明︿</view>
+    <view class="couponList" style="height:{{couponListHeight}}px;">
+      <radio-group class="radioGroup" bindchange="radioChange">
+        <block wx:for="{{couponList}}">
+          <view class="couponItem">
+            <image wx:if="{{isEnable}}" class="couponImg" src="../../image/coupon.png" mode="widthFix"></image>
+            <image wx:else class="couponImg" src="../../image/disabledCoupon.png" mode="widthFix"></image>
+            <view class="contentDiv">
+              <view class="leftDiv">
+                <view class="topDiv">
+                  <radio wx:if="{{isEnable}}" class="selectCoupon" value="{{index}}" checked="{{item.selected}}" color="#72C9FA" bindtap="selectCoupon" data-id="{{index}}"/>
+                  <view class="couponName">{{item.couponName}}</view>
+                </view>                          
+                <view class="bottomDiv">
+                  <view class="timeLimit">使用期限:2020.8.8-2020.8.31</view>
+                  <view wx:if="{{!item.openDetail}}" class="{{isEnable?'description':'disabled-description'}}" bindtap="onDetail" data-id="{{index}}">使用说明﹀</view>
+                  <view wx:else  class="{{isEnable?'description':'disabled-description'}}" bindtap="onDetail" data-id="{{index}}">使用说明︿</view>
+                </view>
               </view>
-            </view>
-            <view class="rightDiv">
-              <view class="discount">¥{{item.discount}}</view>
-              <view class="restriction">{{item.restriction}}</view>
-            </view>
-          </view>  
-        </view>
-        <view wx:if="{{item.openDetail}}" class="detailDiv">{{item.description}}</view>      
-      </block>
+              <view class="rightDiv">
+                <view class="discount">¥{{item.discount}}</view>
+                <view class="restriction">满{{item.restriction}}元</view>
+              </view>
+            </view>  
+          </view>
+          <view wx:if="{{item.openDetail}}" class="detailDiv">{{item.description}}</view>      
+        </block>
+      </radio-group>
     </view>  
 
     <view class="footer">
@@ -50,7 +52,7 @@
   <!-- 无优惠券时 -->
   <block wx:else>
     <view class="nothingDiv">
-      <image class="noCouponImg" src="../../image/noCoupon.png" mode="widthFix" style="width:{{imgWidth}}px;"></image>
+      <image class="noCouponImg" src="../../image/noCoupon.png" mode="widthFix"></image>
       <view class="text1">暂无优惠券</view>
       <view class="text2">您还没有收到优惠券哦</view>
     </view>

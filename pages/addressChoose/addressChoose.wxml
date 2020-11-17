@@ -1,0 +1,37 @@
+<!--pages/addressChoose/addressChoose.wxml-->
+<view class="container">
+  <view class="addressList">
+    <view wx:if="{{addresses.length>0}}">
+      <radio-group bindchange="radioChange">
+        <block wx:for="{{addresses}}" wx:key="{{index}}" data-index="{{index}}">
+          <view class="addressItem">
+            <view class="infoDiv">
+
+              <view bindtap="onChangeAddress" data-id="{{index}}">
+                <view class="importantInfo" style="margin-bottom:16rpx;">{{item.receiver}}</view>
+                <view class="importantInfo">{{item.telephone}}</view>
+                <view class="addressDetail">{{item.province}} {{item.city}} {{item.district}}</view>
+                <view class="addressDetail" style="margin-bottom:38rpx;">{{item.detail}}</view>
+              </view>
+              
+              <view class="radioDiv">
+                <radio class="defaultAdd" value="{{index}}" checked="{{isDefault[index]}}" color="#72C9FA;"/>
+              </view>
+            </view>
+            <view class='arrow'></view>     
+          </view>
+          <view class="divContainer">
+            <view class="divLine"></view>
+          </view>
+        </block>
+      </radio-group>
+    </view>
+    <view class="noAddressDiv" wx:else>
+      <image class="noAddressImg" src="../../image/noAddress.png" mode="widthFix"></image>
+      <view class="noAddressInfo">还没有任何配送地址</view>
+    </view>
+  </view>
+  <view class="btnDiv">
+    <view class="addBtn" bindtap="goToAddAddress">+ 新增地址</view>
+  </view>
+</view>

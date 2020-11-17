@@ -1,0 +1,92 @@
+/* pages/addressChoose/addressChoose.wxss */
+.container{
+  margin: 0px;
+  padding: 0px;
+}
+.addressList{
+  width: 100%;
+  position: relative;
+}
+.addressItem{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding-top: 24rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  padding-bottom: 38rpx;
+}
+.infoDiv{
+
+}
+.radioDiv{
+  font-size: 24rpx;
+}
+.arrow{
+  width: 17rpx;
+  height: 17rpx;
+  border-top: 4rpx solid #5B5B5B;
+  border-right: 4rpx solid #5B5B5B;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 40rpx;
+  top: 134rpx;
+} 
+
+.importantInfo{
+  font-size: 28rpx;
+  color: #000000;
+  font-weight: bold;
+}
+.addressDetail{
+  font-size: 28rpx;
+  color: #838383;
+}
+.divContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.divLine{
+  background: #EFEFEF;
+  position: absolute;
+  width: 100%;
+  height: 2rpx;
+ }
+.btnDiv{
+  display: flex;
+  align-items: center;
+  margin-top: 62rpx;
+}
+.addBtn{
+  width: 412rpx;
+  height: 98rpx;
+  background-color: #72C9FA;
+  color: white;
+  font-size: 32rpx;
+  font-weight:bold;
+  border-radius: 49rpx;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+  letter-spacing: 2rpx;/*字间距*/
+}
+.noAddressDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.noAddressImg{
+  width: 223rpx;
+  margin-top: 184rpx;
+  margin-bottom: 34rpx;
+}
+.noAddressInfo{
+  font-size: 28rpx;
+  letter-spacing: 4rpx;
+  color: #585858;
+}

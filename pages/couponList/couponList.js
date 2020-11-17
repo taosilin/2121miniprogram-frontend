@@ -1,37 +1,35 @@
 // pages/couponList/couponList.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    couponList:[
-      {
-        name:"20元抵用券",
-        restriction:"无门槛",
-        description:"特例商品不支持使用优惠券",
-        discount:20,
-        selected:false,
-        openDetail:false
-      },
-      {
-        name:"150元抵用券",
-        restriction:"无门槛",
-        description:"特例商品不支持使用优惠券",
-        discount:150,
-        selected:false,
-        openDetail:false
-      }
-    ],
-    //couponList:[],
+    // couponList:[
+    //   {
+    //     name:"20元抵用券",
+    //     restriction:"无门槛",
+    //     description:"特例商品不支持使用优惠券",
+    //     discount:20,
+    //     selected:false,
+    //     openDetail:false
+    //   },
+    //   {
+    //     name:"150元抵用券",
+    //     restriction:"无门槛",
+    //     description:"特例商品不支持使用优惠券",
+    //     discount:150,
+    //     selected:false,
+    //     openDetail:false
+    //   }
+    // ],
+    couponList:[],
+    selectCouponIndex: null,
     inputCode:"",
     windowWidth:414,
-    imgWidth:246,
-    inputWidth:297,
-    btnWidth:79,
-    couponWidth:378,
-    couponHeight:106,
-    windowHeight:896
+    couponListHeight: 896-54-89,
+    couponWidth:378
   },
 
   /**
@@ -39,14 +37,29 @@ Page({
    */
   onLoad: function (options) {
     const sysInfo = wx.getSystemInfoSync();
+    var _this = this;
     this.setData({
       windowWidth:sysInfo.windowWidth,
-      imgWidth:sysInfo.windowWidth*0.594,
-      inputWidth:sysInfo.windowWidth*0.71739,
-      btnWidth:sysInfo.windowWidth*0.1908,
       couponWidth:sysInfo.windowWidth*0.913,
-      couponHeight:sysInfo.windowWidth*0.256,
-      windowHeight:sysInfo.windowHeight
+      couponListHeight:sysInfo.windowHeight-54-89
+    })
+    wx.request({
+      url: app.globalData.host+'/usercoupon/list',
+      data: {
+        userID: app.globalData.phoneNumber
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          couponList: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
     })
   },
 
@@ -115,11 +128,13 @@ Page({
       couponList:items
     })
   },
+
   onInputChange:function(e){
     this.setData({
       inputCode:e.detail.value
     })
   },
+
   onExchange:function(e){
     console.log(this.data.inputCode)
     wx.showModal({
@@ -140,5 +155,14 @@ Page({
         }
       }
     })
+  },
+
+  // 选择优惠券
+  radioChange:function(e){
+    console.log(e)
+    this.setData({
+      selectCouponIndex:Number(e.detail.value)
+    })
   }
+
 })

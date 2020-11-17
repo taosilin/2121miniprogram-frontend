@@ -10,18 +10,18 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  border-top: 1px solid #EAEAEA;
-  border-bottom: 1px solid #EAEAEA;
+  border-top: 2rpx solid #EAEAEA;
+  border-bottom: 2rpx solid #EAEAEA;
 }
 .tabItem{
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 26rpx;
   box-sizing: border-box;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
 }
 .selctTab{
   color: black;
@@ -36,35 +36,35 @@
   justify-content: space-between;
   box-sizing: border-box;
   width: 100%;
-  padding: 8px 13px;
+  padding: 16rpx 26rpx;
 }
 .inputDiv{
-  font-size: 14px;
+  font-size: 28rpx;
   background-color: #F0F0F0;
-  padding-left: 13px;
+  padding-left: 26rpx;
   box-sizing: border-box;
-  width: 297px;
-  height: 38px;
+  width: 538rpx;
+  height: 76rpx;
 }
 .disableBtn{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 30rpx;
   color: white;
   background-color: #CEEFFF;
-  width: 79px;
-  height: 38px;
+  width: 143.1rpx;
+  height: 76rpx;
 }
 .exchangeBtn{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 30rpx;
   color: white;
   background-color: #72C9FA;
-  width: 79px;
-  height: 38px;
+  width: 143.1rpx;
+  height: 76rpx;
 }
 .couponList{
   width: 100%;
@@ -73,14 +73,15 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  padding: 9px 18px;
+  padding: 18rpx 36rpx;
   background-color: #F2F2F2;
-  padding-bottom: 89px;
+  padding-bottom: 178rpx;
 }
 .couponItem{
   width: 100%;
   position: relative;
-  margin-top: 12px;
+  margin-top: 24rpx;
+  height: 192rpx;
 }
 .couponImg{
   width: 100%;
@@ -110,12 +111,12 @@
   flex-direction: row;
 }
 .selectCoupon{
-  margin-right: 9px;
+  margin-right: 18rpx;
 }
 .couponName{
-  font-size: 22px;
+  font-size: 44rpx;
   color: #747474;
-  letter-spacing: 1px;
+  letter-spacing: 2rpx;
 }
 .bottomDiv{
   width: 100%;
@@ -124,40 +125,40 @@
   align-items: center;
   justify-content: space-around;
   position: absolute;
-  bottom: 6px;
+  bottom: 12rpx;
 }
 .timeLimit{
-  font-size: 11px;
+  font-size: 22rpx;
   color: #C1C1C1;
-  letter-spacing: -0.5px;
+  letter-spacing: -1rpx;
 }
 .description{
   display: flex;
   flex-direction: row;
-  font-size: 9px;
+  font-size: 18rpx;
   color: #72C9FA;
 }
 .disabled-description{
   display: flex;
   flex-direction: row;
-  font-size: 9px;
+  font-size: 18rpx;
   color: #C1C1C1;
 }
 .arrow-down{
-  width: 6px;
-  height: 6px;
-  border-bottom: 1px solid #72C9FA;
-  border-right: 1px solid #72C9FA;
+  width: 12rpx;
+  height: 12rpx;
+  border-bottom: 2rpx solid #72C9FA;
+  border-right: 2rpx solid #72C9FA;
   transform: rotate(45deg);
-  margin-left: 2px;
+  margin-left: 4rpx;
 }
 .arrow-up{
-  width: 6px;
-  height: 6px;
-  border-top: 1px solid #72C9FA;
-  border-left: 1px solid #72C9FA;
+  width: 12rpx;
+  height: 12rpx;
+  border-top: 2rpx solid #72C9FA;
+  border-left: 2rpx solid #72C9FA;
   transform: rotate(45deg);
-  margin-left: 2px;
+  margin-left: 4rpx;
 }
 .rightDiv{
   width: 39%;
@@ -170,25 +171,25 @@
   position: relative;
 }
 .discount{
-  font-size: 35px;
+  font-size: 70rpx;
   position: absolute;
-  right: 29px;
+  right: 58rpx;
 }
 .restriction{
   position: absolute;
-  right: 29px;
-  bottom:7px;
-  font-size: 14px;
-  letter-spacing: 0.5px;
+  right: 58rpx;
+  bottom: 14rpx;
+  font-size: 28rpx;
+  letter-spacing: 1rpx;
 }
 .detailDiv{
   display: flex;
   align-items: center;
   width: 100%;
-  height: 38px;
-  padding-left: 9px;
+  height: 76rpx;
+  padding-left: 18rpx;
   box-sizing: border-box;
-  font-size: 11px;
+  font-size: 22rpx;
   color: #747474;
   background-color: #F7F7F7;
 }
@@ -197,7 +198,7 @@
   position: fixed;
   bottom: 0px;
   width: 100%;
-  height: 91px;
+  height: 182rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -207,25 +208,25 @@
   display: flex;
   flex-direction: column;
   color: #747474;
-  font-size: 12px;
+  font-size: 24rpx;
 }
 .priceText{
   text-align: right;
-  margin-bottom: 6px;
+  margin-bottom: 12rpx;
 }
 .useBtn{
-  width: 92px;
-  height: 40px;
+  width: 184rpx;
+  height: 80rpx;
   color: white;
   background-color: #72C9FA;
-  font-size: 16px;
-  letter-spacing: 1px;
+  font-size: 32rpx;
+  letter-spacing: 2rpx;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
-  margin:16px 15px 35px 14px;
+  border-radius: 40rpx;
+  margin: 32rpx 30rpx 70rpx 28rpx;
 }
 
 .nothingDiv{
@@ -236,16 +237,22 @@
   justify-content: center;
 }
 .noCouponImg{
-  padding:67px 84px 41px 84px;
+  margin-top: 134rpx;
+  margin-bottom: 82rpx;
+  width: 445.6rpx;
 }
 .text1{
-  font-size: 18px;
-  letter-spacing: 2px;
+  font-size: 36rpx;
+  letter-spacing: 4rpx;
   color: black;
-  margin-bottom: 7px;
+  margin-bottom: 14rpx;
 }
 .text2{
-  font-size: 14px;
+  font-size: 28rpx;
   color: #585858;
-  letter-spacing: 2px;
+  letter-spacing: 4rpx;
+}
+
+.radioGroup{
+  width: 100%;
 }

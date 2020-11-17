@@ -7,7 +7,7 @@ Page({
    */
   data: {
     address:{
-      name:"陶女士",
+      receiver:"陶女士",
       telephone:"18916273661",
       province:"上海市",
       city:"上海市",
@@ -30,7 +30,11 @@ Page({
       rightEyeAstigmatism:null,
       leftEyeAxis:null,
       rightEyeAxis:null
-    }
+    },
+    totalAmount: 0, // 商品总价
+    actualAmount: 0, // 实际付款
+    discount: 0, // 优惠金额
+    coupon: null //选择的优惠券
   },
 
   /**
@@ -38,10 +42,32 @@ Page({
    */
   onLoad: function (options) {
     const sysInfo = wx.getSystemInfoSync();
-    console.log(JSON.parse(options.buySpec))
+    console.log(JSON.parse(options.buySpec));
     this.setData({
       buySpec:JSON.parse(options.buySpec)
-    })
+    });
+
+    // 计算总价
+    let total = 0;
+    for (let i=0;i<this.data.buySpec.length;i++){
+      total = total + this.data.buySpec[i].cart.num*this.data.buySpec[i].spec.price;
+    }
+    this.setData({
+      totalAmount:total
+    });
+
+    // 计算实际付款
+    if (this.data.coupon!=null){
+      this.setData({
+        actualAmount: this.data.totalAmount-this.data.coupon.discount
+      })
+    }
+    else{
+      this.setData({
+        actualAmount: this.data.totalAmount
+      })
+    }
+    
     var _this = this;
     wx.request({
       url: app.globalData.host+'/address/default',
@@ -75,7 +101,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // 计算实际付款
+    if (this.data.coupon!=null){
+      this.setData({
+        actualAmount: this.data.totalAmount-this.data.coupon.discount
+      })
+    }
+    else{
+      this.setData({
+        actualAmount: this.data.totalAmount
+      })
+    }
   },
 
   /**
@@ -140,5 +176,11 @@ Page({
       customInfo:customInfo
     })
     this.popup.showPopup();
+  },
+
+  goAddressList:function(){
+    wx.navigateTo({
+      url: '../addressChoose/addressChoose',
+    })
   }
 })
