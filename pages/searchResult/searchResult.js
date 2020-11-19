@@ -1,4 +1,5 @@
 // pages/searchResult/searchResult.js
+const app = getApp();
 Page({
 
   /**
@@ -130,10 +131,26 @@ Page({
     this.setData({
       searchContent:options.searchInput
     });
-    const sysInfo = wx.getSystemInfoSync();
-    this.setData({
-      itemWidth:sysInfo.windowWidth/2
-    });
+    var _this = this;
+    wx.request({
+      url: app.globalData.host+'/frame/list',
+      data: {
+        page: 0,
+        size: 20
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          recommend: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   },
 
   /**

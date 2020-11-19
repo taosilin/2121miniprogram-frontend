@@ -27,10 +27,11 @@
   padding-bottom: 44rpx;
   box-sizing: border-box;
   height: 520rpx;
-  border: 2rpx solid #F2F2F2;
+  border: 1rpx solid #F5F5F5;
+  width: 375rpx;
 }
 .productImg{
-  
+  width: 373rpx;
 }
 .newIcon{
   width: 88rpx;

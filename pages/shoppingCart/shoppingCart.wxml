@@ -2,10 +2,11 @@
 <view class="container">
   <!-- 购物车有物品时 -->
   <block wx:if="{{productList.length!=0}}">
-    <view class="productDiv">
-      <checkbox-group bindchange="checkboxChange" >
-        <block wx:for="{{productList}}">
-          <view class="productItem">
+    <view class="productList">
+      <checkbox-group bindchange="checkboxChange">
+
+        <view class="productDiv" wx:for="{{productList}}">
+          <view class="productItem" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{txtStyle[index]}}" data-index="{{index}}">
             <view class="selectDiv" data-id="{{index}}">
               <checkbox class="selectProduct" value="{{index}}" checked="{{checkboxBool[index]}}"></checkbox>
             </view>
@@ -22,7 +23,14 @@
             </view>
           </view>
 
-        </block>
+          <!--这里是左滑按钮部分----start-->
+          <view class='buttons'>
+            <view class="del" data-index="{{index}}" bindtap='onDelete'>删除</view>
+          </view>
+          <!--这里是左滑按钮部分----end-->
+
+        </view>
+          
       </checkbox-group>
       
     </view>

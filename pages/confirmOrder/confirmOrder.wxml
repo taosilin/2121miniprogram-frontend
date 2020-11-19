@@ -17,7 +17,8 @@
     </view>
     <view class="row" bindtap="goToCouponChoose">
       <view class="leftText">优惠券</view>
-      <view class="rightText" style="font-size:24rpx;">1张可用<view class='arrow'></view></view>
+      <view wx:if="{{coupon}}" class="rightText" style="font-size:24rpx;">-¥ {{coupon.discount}}<view class='arrow'></view></view>
+      <view wx:else class="rightText" style="font-size:24rpx;">{{enabledCoupons.length}}张可用<view class='arrow'></view></view>
     </view>
     <view class="divLine"></view>
     <view class="row">

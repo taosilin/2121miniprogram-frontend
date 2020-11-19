@@ -20,7 +20,9 @@ Page({
       rightEyeAstigmatism:null,
       leftEyeAxis:null,
       rightEyeAxis:null
-    }
+    },
+    txtStyle:[],
+    delBtnWidth: 150//删除按钮宽度单位（rpx）
   },
 
   /**
@@ -271,6 +273,127 @@ Page({
     wx.navigateTo({
       url: '../../pages/confirmOrder/confirmOrder?buySpec='+buySpec,
     })
-  }
+  },
 
+
+  touchS: function (e) {
+    //判断是否只有一个触摸点
+     if (e.touches.length == 1) {
+       this.setData({
+         //设置触摸起始点水平方向位置
+         startX: e.touches[0].clientX
+       });
+     }
+   },
+ 
+   touchM: function (e) {
+     if (e.touches.length == 1) {
+       //手指移动时水平方向位置
+       var moveX = e.touches[0].clientX;
+       //手指起始点位置与移动期间的差值
+       var disX = this.data.startX - moveX;
+       var delBtnWidth = this.data.delBtnWidth;
+       var txtStyle = "";
+       if (disX == 0 || disX < 0) {//如果移动距离小于等于0，文本层位置不变
+         txtStyle = "left:0px";
+       } else if(disX > 0){//移动距离大于0，文本层left值等于手指移动距离
+         txtStyle = "left:-" + disX + "px";
+         if (disX >= delBtnWidth) {
+           //控制手指移动距离最大值为删除按钮的宽度
+           txtStyle = "left:-" + delBtnWidth + "px";
+         }
+       }
+       //获取手指触摸的是哪一项
+       var index = e.currentTarget.dataset.index;
+       var list = this.data.productList;
+       var style = this.data.txtStyle;
+       style[index]=txtStyle;
+       this.setData({
+         txtStyle:style
+       });
+     }
+   },
+ 
+   touchE: function (e) {
+     if (e.changedTouches.length == 1) {
+       //手指移动结束后水平位置
+       var endX = e.changedTouches[0].clientX;
+       //触摸开始与结束，手指移动的距离
+       var disX = this.data.startX - endX;
+       var delBtnWidth = this.data.delBtnWidth;
+       //如果距离小于删除按钮的1/2，不显示删除按钮
+       var txtStyle = disX > delBtnWidth / 2 ? "left:-" + delBtnWidth + "px" : "left:0px";
+       //获取手指触摸的是哪一项
+       var index = e.currentTarget.dataset.index;
+       var list = this.data.productList;
+       var style = this.data.txtStyle;
+       style[index] = txtStyle;
+       this.setData({
+         txtStyle: style
+       });
+     }
+   },
+   //获取元素自适应后的实际宽度
+   getEleWidth: function (w) {
+     var real = 0;
+     try {
+       var res = wx.getSystemInfoSync().windowWidth;
+       var scale = (750 / 2) / (w / 2);//以宽度750px设计稿做宽度的自适应
+       // console.log(scale);
+       real = Math.floor(res / scale);
+       return real;
+     } catch (e) {
+       return false;
+       // Do something when catch error
+     }
+   },
+   initEleWidth: function () {
+     var delBtnWidth = this.getEleWidth(this.data.delBtnWidth);
+     this.setData({
+       delBtnWidth: delBtnWidth
+     });
+   },
+
+   //删除购物车
+   onDelete: function (e) {
+     console.log(e)
+     var id = e.currentTarget.dataset.index;
+     var _this = this;
+     wx.showModal({
+       title: '警告',
+       content: '确定从购物车中删除？此操作不可恢复',
+       success(res) {
+         if (res.confirm) {
+           console.log('确定删除');
+           wx.request({
+             url: app.globalData.host+'/cart/delete',
+             data:{
+              userID: app.globalData.phoneNumber,
+              productID: _this.data.productList[id].spec.productID,
+              specID: _this.data.productList[id].spec.specID
+            },
+            method: 'POST',
+            header: {
+              'content-type': 'application/json'//默认值
+            },
+            success: function (res) {
+              let newList = _this.data.productList;
+              newList.splice(id,1);
+              _this.setData({
+                productList: newList,
+                txtStyle:[]
+              })
+              wx.showToast({ title: '删除成功', icon: 'none' });
+            },
+            fail: function (res) {
+              console.log("请求失败");
+            }
+           })
+         } else if (res.cancel) {
+           console.log('取消删除')
+         }
+       }
+     }); 
+   }
+  
 })

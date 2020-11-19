@@ -20,7 +20,7 @@
                   </view>                          
                   <view class="bottomDiv">
                     <view class="timeLimit">使用期限:2020.8.8-2020.8.31</view>
-                    <view wx:if="{{!item.openDetail}}" class="description" bindtap="onDetail" data-id="{{index}}">使用说明﹀</view>
+                    <view wx:if="{{!item.openDetail}}" class="description" bindtap="onDetail" data-id="{{index}}">使用说明</view>
                     <view wx:else class="description" bindtap="onDetail" data-id="{{index}}">使用说明︿</view>
                   </view>
                 </view>

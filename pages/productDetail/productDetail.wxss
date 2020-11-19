@@ -45,7 +45,7 @@
   box-sizing: border-box;
 }
 .productImg{
-
+  width: 750rpx;
 }
 
 /*未选中指示点样式*/
@@ -81,6 +81,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  
 }
 .specSelected{
   width: 118rpx;
@@ -98,7 +99,7 @@
 }
 
 .smallImg{
-  width: 118rpx;
+  width: 116rpx;
 }
 .otherDiv{
   width: 100%;

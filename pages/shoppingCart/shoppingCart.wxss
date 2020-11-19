@@ -2,18 +2,40 @@
 .container{
   margin: 0px;
   /* padding-bottom: 201rpx; */
+  width: 100%;
 }
-.productDiv{
+.productList{
   width: 100%;
   padding-bottom: 108rpx;
 }
+.productDiv{
+  width: 100%;
+  /* padding-bottom: 108rpx; */
+
+  height: 282rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  /* position: relative; */
+}
+
+
+
+
 .productItem{
   width: 100%;
   display: flex;
   flex-direction: row;
   padding-top: 38rpx;
   padding-bottom: 38rpx;
+  box-sizing: border-box;
   border-bottom: 1rpx solid #EAEAEA;
+
+  height: 282rpx;
+  position: absolute;
+  left: 0;
+  z-index: 8;
+  background-color: #fff;
 }
 .selectDiv{
   padding-left: 30rpx;
@@ -180,3 +202,23 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   bottom: 0px;
   z-index: 10;
 }
+
+.buttons{
+  position: absolute;
+  width: 100%;
+  height: 282rpx;
+  left: 0;
+  z-index: 0;
+}
+.del{   
+  position: absolute;
+  width: 150rpx;
+  height: 100%;
+  right: 0;
+  background-color: #F95147;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ } 

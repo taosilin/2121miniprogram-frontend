@@ -2,13 +2,19 @@
 .container{
   margin: 0px;
   /* padding-bottom: 201rpx; */
+  width: 100%;
 }
 .labelbar{
   width: 100%;
   box-sizing: border-box;
-  padding-top:26rpx;
+  /* padding-top:26rpx;
   padding-left: 52rpx;
-  padding-right: 52rpx;
+  padding-right: 52rpx; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
 }
 .classification{
   width: 100%;
@@ -128,4 +134,70 @@
   width: 100%;
   position: fixed;
   bottom: 0px;
+}
+
+
+
+
+
+.productList{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content:space-between;
+}
+.productItem{
+  position: relative;
+  padding-top: 60rpx;
+  padding-bottom: 44rpx;
+  box-sizing: border-box;
+  height: 520rpx;
+  border: 1rpx solid #F5F5F5;
+  width: 375rpx;
+}
+.productImg{
+  width: 373rpx;
+}
+.newIcon{
+  width: 88rpx;
+  position: absolute;
+  top: 48rpx;
+  left: -4rpx;
+}
+.title{
+  font-size: 24rpx;
+  color: #000000;
+  letter-spacing: 1rpx;
+  margin-top: 40rpx;
+  margin-left: 28rpx;
+  margin-bottom: 2rpx;
+}
+.price{
+  font-size: 28rpx;
+  color: #000000;
+  margin-left: 28rpx;
+}
+.saledPrice{
+  font-size: 28rpx;
+  color: #D30E26;
+  margin-right: 12rpx;
+  margin-left: 28rpx;
+}
+.originalPrice{
+  font-size: 28rpx;
+  color: #A6A6A6;
+  text-decoration:line-through;/*文字划线*/
+}
+.priceDiv{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.comments{
+  font-size: 22rpx;
+  color: #ADADAD;
+  position: absolute;
+  right: 26rpx;
+  top: 2rpx;
 }

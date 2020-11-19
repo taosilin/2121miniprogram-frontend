@@ -1,33 +1,34 @@
 // pages/shoppingMall/shoppingMall.js
-const App = getApp();//设立顶部栏高度
+const app = getApp();//设立顶部栏高度
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    classes:['近视眼镜','太阳镜','老花镜','散光镜','儿童矫正镜','隐形眼镜'],
-    types:[
-      {
-        typename:"框型",
-        types:[
-          {typename:"圆框",imgUrl:"../../image/glasses.jpg"},
-          {typename:"方框",imgUrl:"../../image/glasses.jpg"},
-          {typename:"半框",imgUrl:"../../image/glasses.jpg"},
-          {typename:"大框",imgUrl:"../../image/glasses.jpg"},
-          {typename:"飞行员款",imgUrl:"../../image/glasses.jpg"}
-        ]
-      },
-      {
-        typename:"风格",
-        types:[
-          {typename:"商务",imgUrl:"../../image/glasses.jpg"},
-          {typename:"休闲",imgUrl:"../../image/glasses.jpg"},
-          {typename:"复古",imgUrl:"../../image/glasses.jpg"},
-          {typename:"学生",imgUrl:"../../image/glasses.jpg"}
-        ]
-      }
-    ]
+    classes:['通勤','运动','恋爱','职场'],
+    frameList: null
+    // types:[
+    //   {
+    //     typename:"框型",
+    //     types:[
+    //       {typename:"圆框",imgUrl:"../../image/glasses.jpg"},
+    //       {typename:"方框",imgUrl:"../../image/glasses.jpg"},
+    //       {typename:"半框",imgUrl:"../../image/glasses.jpg"},
+    //       {typename:"大框",imgUrl:"../../image/glasses.jpg"},
+    //       {typename:"飞行员款",imgUrl:"../../image/glasses.jpg"}
+    //     ]
+    //   },
+    //   {
+    //     typename:"风格",
+    //     types:[
+    //       {typename:"商务",imgUrl:"../../image/glasses.jpg"},
+    //       {typename:"休闲",imgUrl:"../../image/glasses.jpg"},
+    //       {typename:"复古",imgUrl:"../../image/glasses.jpg"},
+    //       {typename:"学生",imgUrl:"../../image/glasses.jpg"}
+    //     ]
+    //   }
+    // ]
   },
 
   /**
@@ -35,8 +36,28 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      navH: App.globalData.navHeight
+      navH: app.globalData.navHeight
     });
+    var _this = this;
+    wx.request({
+      url: app.globalData.host+'/frame/list',
+      data: {
+        page: 0,
+        size: 20
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          frameList: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   },
 
   /**
@@ -45,6 +66,10 @@ Page({
   onReady: function () {
     //获得searchBox组件
     this.search = this.selectComponent("#search");
+    this.labelBar = this.selectComponent("#labelBar");
+    this.labelBar.setData({
+      itemWidth: 160
+    })
   },
 
   /**
@@ -96,5 +121,14 @@ Page({
   },
   onOpenSearch:function(e){
     this.search.showBox();
+  },
+  //前往商品详情页
+  goToProductDetail:function(e){
+    let id = e.currentTarget.dataset.id;
+    console.log(e);
+    //待修改
+    wx.navigateTo({
+      url: '../productDetail/productDetail?frameID='+id,
+    })
   }
 })

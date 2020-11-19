@@ -56,13 +56,13 @@ Component({
    */
   data: {
     flag:true,
-    leftDegree: 0,
-    rightDegree: 0,
+    leftDegree: 0.00,
+    rightDegree: 0.00,
     interpupillary: 0,
-    leftAstigmatism: null,
-    rightAstigmatism: null,
-    leftAxis: null,
-    rightAxis: null
+    leftAstigmatism: 0.00,
+    rightAstigmatism: 0.00,
+    leftAxis: 0,
+    rightAxis: 0
   },
 
   /**

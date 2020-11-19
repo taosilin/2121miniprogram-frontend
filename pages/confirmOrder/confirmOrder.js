@@ -34,7 +34,9 @@ Page({
     totalAmount: 0, // 商品总价
     actualAmount: 0, // 实际付款
     discount: 0, // 优惠金额
-    coupon: null //选择的优惠券
+    coupon: null, //选择的优惠券
+    enabledCoupons:[],
+    disabledCoupons:[]
   },
 
   /**
@@ -81,6 +83,27 @@ Page({
       success: function (res) {
         _this.setData({
           address: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
+
+    wx.request({
+      url: app.globalData.host+'/usercoupon/enable',
+      data:{
+        userID: app.globalData.phoneNumber,
+        totalAmount: this.data.totalAmount
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          enabledCoupons: res.data.data.enabledCoupons,
+          disabledCoupons:res.data.data.disabledCoupons
         })
       },
       fail: function (res) {
@@ -149,8 +172,12 @@ Page({
 
   },
   goToCouponChoose:function(){
+    let coupons = {
+      enabledCoupons:this.data.enabledCoupons,
+      disabledCoupons:this.data.disabledCoupons
+    }
     wx.navigateTo({
-      url: '../couponChoose/couponChoose',
+      url: '../couponChoose/couponChoose?coupons='+JSON.stringify(coupons),
     })
   },
   openPopup:function(e){

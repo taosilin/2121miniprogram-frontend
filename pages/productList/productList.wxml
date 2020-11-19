@@ -4,9 +4,9 @@
   <menu class="menu" menuName="排序" menuItem="{{menuItem}}"/>
   <view class="productList">
     <block wx:for="{{frameList}}">
-      <view class="productItem" style="width:{{itemWidth}}px;" bindtap="goToProductDetail" data-id="{{item.frameID}}">
+      <view class="productItem" bindtap="goToProductDetail" data-id="{{item.frameID}}">
         <image wx:if="{{item.tab.indexOf('New')!=-1}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
-        <image class="productImg" src="{{item.coverImage}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>    
+        <image class="productImg" src="{{item.coverImage}}" mode="widthFix"></image>    
         <view class="title">{{item.frameName}}</view>
         <view class="priceDiv">
           <view wx:if="{{item.isSaled}}">

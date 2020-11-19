@@ -20,13 +20,13 @@
             <view class="contentDiv">
               <view class="leftDiv">
                 <view class="topDiv">
-                  <radio wx:if="{{isEnable}}" class="selectCoupon" value="{{index}}" checked="{{item.selected}}" color="#72C9FA" bindtap="selectCoupon" data-id="{{index}}"/>
+                  <radio wx:if="{{isEnable}}" class="selectCoupon" value="{{index}}" color="#72C9FA" bindtap="selectCoupon" data-id="{{index}}"/>
                   <view class="couponName">{{item.couponName}}</view>
                 </view>                          
                 <view class="bottomDiv">
                   <view class="timeLimit">使用期限:2020.8.8-2020.8.31</view>
-                  <view wx:if="{{!item.openDetail}}" class="{{isEnable?'description':'disabled-description'}}" bindtap="onDetail" data-id="{{index}}">使用说明﹀</view>
-                  <view wx:else  class="{{isEnable?'description':'disabled-description'}}" bindtap="onDetail" data-id="{{index}}">使用说明︿</view>
+                  <view wx:if="{{!item.openDetail}}" class="{{isEnable?'description':'disabled-description'}}" bindtap="onDetail" data-id="{{index}}">使用说明</view>
+                  <view wx:else class="{{isEnable?'description':'disabled-description'}}" bindtap="onDetail" data-id="{{index}}">使用说明︿</view>
                 </view>
               </view>
               <view class="rightDiv">
@@ -42,10 +42,11 @@
 
     <view class="footer">
       <view class="priceDiv">
-        <view class="priceText">已选择<span style="color:#72C9FA;">1</span>张，共优惠<span style="color:#72C9FA;">20</span>元</view>
-        <view class="priceText">待支付<span style="color:#72C9FA;">279</span>元</view>
+        <view wx:if="{{selectCouponIndex!=null}}" class="priceText">已选择<span style="color:#72C9FA;">1</span>张，共优惠<span style="color:#72C9FA;">{{enableList[selectCouponIndex].discount}}</span>元</view>
+        <view wx:else class="priceText">已选择<span style="color:#72C9FA;">0</span>张</view>
+        <view class="priceText">待支付<span style="color:#72C9FA;">{{actualAmount}}</span>元</view>
       </view>
-      <view class="useBtn">确认</view>
+      <view class="useBtn" bindtap="onConfirm">确认</view>
     </view>
 
   </block>

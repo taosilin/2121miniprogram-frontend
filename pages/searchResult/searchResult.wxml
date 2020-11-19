@@ -8,17 +8,17 @@
     </view>
     <view class="productList">
       <block wx:for="{{searchResult}}">
-        <view class="productItem" style="width:{{itemWidth}}px;" data-id="{{index}}" bindtap="goToProductDetail">
+        <view class="productItem" data-id="{{index}}" bindtap="goToProductDetail">
           <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
-          <image class="productImg" src="{{item.imgUrl}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>    
-          <view class="title">{{item.name}}</view>
+          <image class="productImg" src="{{item.coverImage}}" mode="widthFix"></image>    
+          <view class="title">{{item.frameName}}</view>
           <view class="priceDiv">
             <view wx:if="{{item.isSaled}}">
               <text class="saledPrice">¥{{item.price}}</text>
               <text class="originalPrice">¥{{item.originalPrice}}</text>
             </view>
             <view wx:else class="price">¥{{item.price}}</view>
-            <view class="comments">{{item.comments}}条好评</view>
+            <view class="comments">666条好评</view>
           </view>
         </view>
       </block>
@@ -41,17 +41,17 @@
     </view>
     <view class="productList">
       <block wx:for="{{recommend}}">
-        <view class="productItem" style="width:{{itemWidth}}px;" data-id="{{index}}" bindtap="goToProductDetail">
+        <view class="productItem" data-id="{{index}}" bindtap="goToProductDetail">
           <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
-          <image class="productImg" src="{{item.imgUrl}}" mode="widthFix" style="width:{{itemWidth}}px;"></image>    
-          <view class="title">{{item.name}}</view>
+          <image class="productImg" src="{{item.coverImage}}" mode="widthFix"></image>    
+          <view class="title">{{item.frameName}}</view>
           <view class="priceDiv">
             <view wx:if="{{item.isSaled}}">
               <text class="saledPrice">¥{{item.price}}</text>
               <text class="originalPrice">¥{{item.originalPrice}}</text>
             </view>
             <view wx:else class="price">¥{{item.price}}</view>
-            <view class="comments">{{item.comments}}条好评</view>
+            <view class="comments">666条好评</view>
           </view>
         </view>
       </block>

@@ -7,113 +7,45 @@ Page({
    */
   data: {
     //couponList:[],
-    couponList:[
-      {
-        couponName:"20元抵用券",
-        restriction:100,
-        description:"特例商品不支持使用优惠券",
-        discount:20,
-        selected:false,
-        openDetail:false
-      },
-      {
-        couponName:"150元抵用券",
-        restriction:400,
-        description:"特例商品不支持使用优惠券",
-        discount:150,
-        selected:false,
-        openDetail:false
-      }
-    ],
+    couponList:[],
     //enableList:[],
-    enableList:[
-      {
-        couponName:"20元抵用券",
-        restriction:100,
-        description:"特例商品不支持使用优惠券",
-        discount:20,
-        selected:false,
-        openDetail:false
-      },
-      {
-        couponName:"150元抵用券",
-        restriction:400,
-        description:"特例商品不支持使用优惠券",
-        discount:150,
-        selected:false,
-        openDetail:false
-      }
-    ],
-    disableList:[
-      {
-        couponName:"20元抵用券",
-        restriction:300,
-        description:"特例商品不支持使用优惠券",
-        discount:20,
-        selected:false,
-        openDetail:false
-      },
-      {
-        couponName:"150元抵用券",
-        restriction:500,
-        description:"特例商品不支持使用优惠券",
-        discount:150,
-        selected:false,
-        openDetail:false
-      },
-      {
-        couponName:"20元抵用券",
-        restriction:300,
-        description:"特例商品不支持使用优惠券",
-        discount:20,
-        selected:false,
-        openDetail:false
-      },
-      {
-        couponName:"150元抵用券",
-        restriction:500,
-        description:"特例商品不支持使用优惠券",
-        discount:150,
-        selected:false,
-        openDetail:false
-      }
-    ],
+    enableList:[],
+    disableList:[],
     inputCode:"",
     windowWidth:414,
     couponWidth:378,
     couponListHeight: 896-143,
     isEnable:true,
-    selectCouponIndex: null
+    selectCouponIndex: null,
+    totalAmount: 0,
+    actualAmount: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let coupons = JSON.parse(options.coupons);
     const sysInfo = wx.getSystemInfoSync();
+
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1];  //当前页面
+    var prevPage = pages[pages.length - 2];  //上一个页面
+
     this.setData({
       windowWidth:sysInfo.windowWidth,
       couponWidth:sysInfo.windowWidth*0.913,
       couponListHeight:sysInfo.windowHeight-143
-    })
-    var _this = this;
-    wx.request({
-      url: app.globalData.host+'/usercoupon/list',
-      data: {
-        userID: app.globalData.phoneNumber
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/json'//默认值
-      },
-      success: function (res) {
-        _this.setData({
-          couponList: res.data.data
-        })
-      },
-      fail: function (res) {
-        console.log("请求失败");
-      }
+    });
+    this.setData({
+      couponList:coupons.enabledCoupons,
+      enableList:coupons.enabledCoupons,
+      disableList:coupons.disabledCoupons
+    });
+    
+    this.setData({
+      totalAmount:prevPage.data.totalAmount,
+      actualAmount:prevPage.data.totalAmount
     })
   },
 
@@ -225,16 +157,21 @@ Page({
   radioChange:function(e){
     let id = Number(e.detail.value)
     this.setData({
-      selectCouponIndex:id
+      selectCouponIndex:id,
+      actualAmount: this.data.totalAmount-this.data.enableList[id].discount
     })
+  },
+  // 确认选择
+  onConfirm:function(){
     var pages = getCurrentPages();
     var currPage = pages[pages.length - 1];  //当前页面
     var prevPage = pages[pages.length - 2];  //上一个页面
     prevPage.setData({
-      coupon:this.data.couponList[id]
+      coupon:this.data.couponList[this.data.selectCouponIndex]
     });
     wx.navigateBack({
       delta: 1
     }); 
   }
+
 })

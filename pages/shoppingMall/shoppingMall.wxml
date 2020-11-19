@@ -13,12 +13,12 @@
   <search class="search" id="search"/>
 
   <view class="labelbar">
-    <label-bar tabs="{{classes}}" selectTextColor="#000000" textColor="#BEBEBE" selectColor="#FFFFFF" letterSpacing="1.6" textSize="28" selectBold="bold">
+    <label-bar id="labelBar" tabs="{{classes}}" selectTextColor="#000000" textColor="#BEBEBE" selectColor="#FFFFFF" letterSpacing="1.6" textSize="28" selectBold="bold">
         <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
         <!-- <view>这里是插入到组件slot中的内容</view> -->
     </label-bar>
   </view>
-  <block wx:for="{{types}}">
+  <!-- <block wx:for="{{types}}">
     <view class="classification">
       <view class="typeName">{{item.typename}}</view>
       <view class="typeContainer">
@@ -32,8 +32,26 @@
         </block>
       </view>
     </view>  
-  </block> 
+  </block>  -->
   
+  <view class="productList">
+    <block wx:for="{{frameList}}">
+      <view class="productItem" bindtap="goToProductDetail" data-id="{{item.frameID}}">
+        <image wx:if="{{item.tab.indexOf('New')!=-1}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
+        <image class="productImg" src="{{item.coverImage}}" mode="widthFix"></image>    
+        <view class="title">{{item.frameName}}</view>
+        <view class="priceDiv">
+          <view wx:if="{{item.isSaled}}">
+            <text class="saledPrice">¥{{item.price}}</text>
+            <text class="originalPrice">¥{{item.originalPrice}}</text>
+          </view>
+          <view wx:else class="price">¥{{item.price}}</view>
+          <view class="comments">666条好评</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
 </view>
 <!-- <view class="tabbarDiv">
   <tabbar currentTab="1" />

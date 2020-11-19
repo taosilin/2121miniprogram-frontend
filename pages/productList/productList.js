@@ -6,63 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    productList:[
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:1361
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:1128
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:true,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:910
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:13610
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:true,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:678
-      },
-      {
-        name:'开普勒 钛架-全框',
-        price:299,
-        isNew:false,
-        isSaled:false,
-        originalPrice:599,
-        imgUrl:'../../image/glasses3.png',
-        comments:12345
-      }
-    ],
-    itemWidth: 207,
+    productList:[],
     menuItem: ['最佳匹配','最新上架','价格低至高','价格高至低'],
     frameList: null
   },
@@ -71,10 +15,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const sysInfo = wx.getSystemInfoSync();
-    this.setData({
-      itemWidth:sysInfo.windowWidth/2
-    });
 
     var _this = this;
     wx.request({
