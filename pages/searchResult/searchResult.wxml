@@ -8,7 +8,7 @@
     </view>
     <view class="productList">
       <block wx:for="{{searchResult}}">
-        <view class="productItem" data-id="{{index}}" bindtap="goToProductDetail">
+        <view class="productItem" data-id="{{item.frameID}}" bindtap="goToProductDetail">
           <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
           <image class="productImg" src="{{item.coverImage}}" mode="widthFix"></image>    
           <view class="title">{{item.frameName}}</view>
