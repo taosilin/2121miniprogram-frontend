@@ -61,7 +61,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    host: 'https://from2121.com',
+    host: 'https://from2121.com:8443',
     navHeight: 0,
     session_key: null,
     phoneNumber: null

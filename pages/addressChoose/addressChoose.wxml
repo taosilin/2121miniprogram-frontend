@@ -15,7 +15,7 @@
               </view>
               
               <view class="radioDiv">
-                <radio class="defaultAdd" value="{{index}}" checked="{{isDefault[index]}}" color="#72C9FA;"/>
+                <radio class="defaultAdd" value="{{index}}" checked="{{isDefault[index]}}" color="#72C9FA"/>
               </view>
             </view>
             <view class='arrow'></view>     

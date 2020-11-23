@@ -198,8 +198,14 @@
   height: 520rpx;
   border: 1rpx solid #F5F5F5;
 }
+.productImgDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .productImg{
-  width: 373rpx;
+  width: 372rpx;
 }
 .newIcon{
   width: 88rpx;

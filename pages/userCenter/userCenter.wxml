@@ -1,6 +1,6 @@
 <!--pages/userCenter/userCenter.wxml-->
 <view class="container">
-
+  <view class="wrapper">
   <view class="card">
     <image class="cardBkg" src='../../image/myCard.png' mode="widthFix"></image>
 
@@ -98,9 +98,10 @@
     </view>
     <view class="follow-btn">去关注></view>
   </view>
+  </view>
 </view>
 
-<dialog id="getPhoneNumber" />
+<dialog id="getPhoneNumber" binduserExist="binduserExist"/>
 
 <!-- <view class="tabbarDiv">
     <tabbar currentTab="4" />

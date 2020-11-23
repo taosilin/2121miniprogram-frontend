@@ -79,7 +79,9 @@
             <block wx:for="{{recommend}}">
               <view class="productItem">
                 <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
-                <image class="productImg" src="{{item.coverImage}}" mode="widthFix"></image>    
+                <view class="productImgDiv">
+                  <image class="productImg" src="{{item.coverImage}}" mode="widthFix"></image>
+                </view>    
                 <view class="title">{{item.frameName}}</view>
                 <view class="priceDiv">
                   <view wx:if="{{item.isSaled}}">

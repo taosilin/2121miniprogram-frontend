@@ -4,8 +4,25 @@
   padding: 0rpx;
   box-sizing: border-box;
   width: 100%;
+  /* height: 100%; */
+  padding-bottom: 20rpx; /**???**/
   position: absolute;
   overflow-y: scroll;
+
+}
+.wrapper{
+  margin: 0rpx;
+  padding: 0rpx;
+  box-sizing: border-box;
+  width: 100%;
+  /* height: 100%; */
+  padding-bottom: 20rpx; /**???**/
+  /* position: absolute; */
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .card{
   width:100%;
@@ -46,17 +63,20 @@
   font-size:24rpx;
   color:#FFB019
 }
+
 .myOrder{
   background-color: white;
   opacity: 0.9;
   position:absolute;
   z-index:2;
   margin-top: 307rpx;
-  width: 90%;
+  width: 675.7rpx;
   height: 228rpx;
   box-shadow:4rpx 6rpx 10rpx 4rpx #E1E1E1;
   border-radius: 40rpx;
   font-size: 28rpx;
+
+  left: 40rpx;
 }
 .ordertext{
   height: 80rpx;
