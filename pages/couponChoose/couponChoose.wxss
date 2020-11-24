@@ -3,6 +3,7 @@
   margin: 0px;
   padding: 0px;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -203,11 +204,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  background-color: white;
 }
 .priceDiv{
   display: flex;
   flex-direction: column;
-  color: #747474;
+  /* color: #747474; */
   font-size: 24rpx;
 }
 .priceText{

@@ -1,0 +1,18 @@
+<!--components/grantDialog/grantDialog.wxml-->
+<view class="container" hidden="{{flag}}">
+  <view class="background">
+    <view class="z-height">
+
+      <view class="infoDiv">
+        <view class="title">请先登录</view>
+        <view class="info">授权获取用户信息</view>
+      </view>
+      <view class="hr"></view>
+      <view class="btnDiv">
+        <button class="cancelBtn">取消</button>
+        <button class="confirmBtn" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">登录</button>
+      </view>
+
+    </view>
+  </view>
+</view>

@@ -16,9 +16,9 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
-    if (app.globalData.phoneNumber){  
+    if (app.globalData.phoneNumber!=null){  
       this.setData({phoneNumber: app.globalData.phoneNumber});
-      // this.setData({userInfo: app.globalData.userInfo});
+      this.setData({userInfo: app.globalData.userInfo});
        wx.request({
         url: app.globalData.host+'/user/detail',
         data:{
@@ -167,9 +167,9 @@ Page({
    */
   onShow: function () {
     var _this = this;
-    if (app.globalData.phoneNumber){  
+    if (app.globalData.phoneNumber!=null){  
       this.setData({phoneNumber: app.globalData.phoneNumber});
-      // this.setData({userInfo: app.globalData.userInfo});
+      this.setData({userInfo: app.globalData.userInfo});
        wx.request({
         url: app.globalData.host+'/user/detail',
         data:{

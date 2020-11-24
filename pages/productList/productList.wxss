@@ -26,7 +26,7 @@
   padding-top: 60rpx;
   padding-bottom: 44rpx;
   box-sizing: border-box;
-  height: 520rpx;
+  height: 471rpx;
   border: 1rpx solid #F5F5F5;
   width: 375rpx;
 }

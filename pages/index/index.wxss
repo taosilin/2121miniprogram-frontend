@@ -13,7 +13,9 @@
 .couponDiv{
   margin-top: 16rpx;
 }
-
+.couponImg{
+  width: 750rpx;
+}
 /*滑块容器*/
 .swiperContainer{
   padding-top: 0px;

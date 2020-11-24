@@ -8,7 +8,6 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    windowWidth:414,
     postHeight:504,
     indicatorDots: true,//显示指示点
     autoplay: true,//自动播放
@@ -21,7 +20,9 @@ Page({
       {imgUrl:'../../image/post.png'}
     ],
     currentTab: 0,
-    popupVisible: true
+    popupVisible: true,
+    userInfo: null,
+    phoneNumber: null
   },
   //事件处理函数
   bindViewTap: function() {
@@ -29,7 +30,22 @@ Page({
       url: '../logs/logs'
     })
   },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    //获得dialog组件
+    this.getUserInfo = this.selectComponent("#getUserInfo");
+    this.getPhoneNumber = this.selectComponent("#getPhoneNumber");
+  },
   onLoad: function () {
+
+    //var _this = this;
+    if (app.globalData.phoneNumber!=null){  
+      this.setData({phoneNumber: app.globalData.phoneNumber});
+      this.setData({userInfo: app.globalData.userInfo});
+    }
+
     // if (app.globalData.userInfo) {
     //   this.setData({
     //     userInfo: app.globalData.userInfo,
@@ -95,12 +111,22 @@ Page({
     // }
     const sysInfo = wx.getSystemInfoSync();
     this.setData({
-      windowWidth:sysInfo.windowWidth,
       postHeight:sysInfo.windowWidth*1.2174
     })
     
   },
-  
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    //var _this = this;
+    if (app.globalData.phoneNumber!=null){  
+      this.setData({phoneNumber: app.globalData.phoneNumber});
+      this.setData({userInfo: app.globalData.userInfo});
+    }
+  },
+
   onSlideChange: function (event) { 
     var postId = event.detail.current; 
     // console.log(postId);
@@ -111,8 +137,60 @@ Page({
     })
   },
   onGetCoupon:function(){
+    //var _this = this;
     this.setData({
       popupVisible: !this.data.popupVisible
+    });
+    wx.request({
+      url: app.globalData.host+'/usercoupon/add',
+      data:{
+        userID: app.globalData.phoneNumber,
+        couponID:"4"
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    });
+    wx.request({
+      url: app.globalData.host+'/usercoupon/add',
+      data:{
+        userID: app.globalData.phoneNumber,
+        couponID:"5"
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    });
+  },
+
+  // 登录
+  onLogin:function(){
+    this.getUserInfo.setData({
+      flag:false
+    })
+  },
+  // 获取用户微信信息
+  bindgetuserinfo: function(e){
+    // var _this = this;
+    console.log(e)
+    // app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail
+    })
+    this.getPhoneNumber.setData({
+      flag: false
     })
   }
   // //tabbar切换

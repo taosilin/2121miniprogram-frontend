@@ -53,8 +53,13 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
+        let couponList = res.data.data;
+        for (let i=0;i<couponList.length;i++){
+          couponList[i].receiveTime = couponList[i].receiveTime.slice(0,10)
+          couponList[i].deadline = couponList[i].deadline.slice(0,10)
+        }
         _this.setData({
-          couponList: res.data.data
+          couponList: couponList
         })
       },
       fail: function (res) {

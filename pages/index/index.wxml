@@ -13,7 +13,7 @@
         <block wx:for="{{postList}}" wx:key="index">
           <swiper-item class="vol-swiper-item">
             <view class="swiperItem">
-              <image class="postImg" src="{{item.imgUrl}}" mode="widthFix" style="width:{{windowWidth}}px;"></image>
+              <image class="postImg" src="{{item.imgUrl}}" mode="widthFix"></image>
             </view>
           </swiper-item>
         </block>
@@ -21,7 +21,8 @@
   </view>
   
   <view class="couponDiv">
-    <image class="couponImg" src="../../image/couponIndex.png" mode="widthFix" style="width:{{windowWidth}}px;" bindtap="onPopup"></image>
+    <image wx:if="{{userInfo!=null}}" class="couponImg" src="../../image/couponIndex.png" mode="widthFix" bindtap="onPopup"></image>
+    <image wx:else class="couponImg" src="../../image/couponIndex.png" mode="widthFix" bindtap="onLogin"></image>
   </view>
   
 </view>
@@ -32,6 +33,9 @@
     <!-- <image class="closeIcon" src="../../image/closeIcon.png" mode="widthFix" bindtap="onPopup"></image> -->
   </view>
 </view>
+
+<grant-dialog id="getUserInfo" bindgetuserinfo="bindgetuserinfo"/>
+<login-dialog id="getPhoneNumber" binduserExist="binduserExist"/>
 <!-- <view class="tabbarDiv">
   <tabbar currentTab="0" />
 </view> -->

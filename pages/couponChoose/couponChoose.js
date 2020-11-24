@@ -13,8 +13,8 @@ Page({
     disableList:[],
     inputCode:"",
     windowWidth:414,
+    windowHeight:896,
     couponWidth:378,
-    couponListHeight: 896-143,
     isEnable:true,
     selectCouponIndex: null,
     totalAmount: 0,
@@ -35,12 +35,26 @@ Page({
     this.setData({
       windowWidth:sysInfo.windowWidth,
       couponWidth:sysInfo.windowWidth*0.913,
-      couponListHeight:sysInfo.windowHeight-143
+      windowHeight:sysInfo.windowHeight
     });
+
+
+    let enableList = coupons.enabledCoupons;
+    let disableList = coupons.disabledCoupons;
+    for (let i=0;i<enableList.length;i++){
+      enableList[i].receiveTime = enableList[i].receiveTime.slice(0,10)
+      enableList[i].deadline = enableList[i].deadline.slice(0,10)
+    }
+    for (let i=0;i<enableList.length;i++){
+      disableList[i].receiveTime = disableList[i].receiveTime.slice(0,10)
+      disableList[i].deadline = disableList[i].deadline.slice(0,10)
+    }
+
+
     this.setData({
-      couponList:coupons.enabledCoupons,
-      enableList:coupons.enabledCoupons,
-      disableList:coupons.disabledCoupons
+      couponList:enableList,
+      enableList:enableList,
+      disableList:disableList
     });
     
     this.setData({
