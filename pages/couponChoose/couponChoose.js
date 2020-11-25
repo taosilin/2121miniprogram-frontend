@@ -6,9 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    //couponList:[],
     couponList:[],
-    //enableList:[],
     enableList:[],
     disableList:[],
     inputCode:"",
@@ -38,14 +36,14 @@ Page({
       windowHeight:sysInfo.windowHeight
     });
 
-
+console.log(coupons); 
     let enableList = coupons.enabledCoupons;
     let disableList = coupons.disabledCoupons;
     for (let i=0;i<enableList.length;i++){
       enableList[i].receiveTime = enableList[i].receiveTime.slice(0,10)
       enableList[i].deadline = enableList[i].deadline.slice(0,10)
     }
-    for (let i=0;i<enableList.length;i++){
+    for (let i=0;i<disableList.length;i++){
       disableList[i].receiveTime = disableList[i].receiveTime.slice(0,10)
       disableList[i].deadline = disableList[i].deadline.slice(0,10)
     }

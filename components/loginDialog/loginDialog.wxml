@@ -9,7 +9,7 @@
       </view>
       <view class="hr"></view>
       <view class="btnDiv">
-        <button class="cancelBtn">取消</button>
+        <button class="cancelBtn" bindtap="onCancel">取消</button>
         <button class="confirmBtn" open-type="getPhoneNumber" bindgetphonenumber="bindgetphonenumber">立即绑定</button>
       </view>
 

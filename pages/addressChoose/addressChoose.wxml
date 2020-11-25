@@ -6,19 +6,17 @@
         <block wx:for="{{addresses}}" wx:key="{{index}}" data-index="{{index}}">
           <view class="addressItem">
             <view class="infoDiv">
-
+              <view class="radioDiv">
+                <radio value="{{index}}" checked="{{isDefault[index]}}" color="#72C9FA"/>
+              </view>
               <view bindtap="onChangeAddress" data-id="{{index}}">
-                <view class="importantInfo" style="margin-bottom:16rpx;">{{item.receiver}}</view>
+                <view class="importantInfo">{{item.receiver}}</view>
                 <view class="importantInfo">{{item.telephone}}</view>
                 <view class="addressDetail">{{item.province}} {{item.city}} {{item.district}}</view>
-                <view class="addressDetail" style="margin-bottom:38rpx;">{{item.detail}}</view>
-              </view>
-              
-              <view class="radioDiv">
-                <radio class="defaultAdd" value="{{index}}" checked="{{isDefault[index]}}" color="#72C9FA"/>
+                <view class="addressDetail">{{item.detail}}</view>
               </view>
             </view>
-            <view class='arrow'></view>     
+            <view class='arrow' bindtap="onChangeAddress" data-id="{{index}}"></view>     
           </view>
           <view class="divContainer">
             <view class="divLine"></view>

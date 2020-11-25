@@ -99,10 +99,10 @@
   height: 2rpx;
  }
  .arrow{
-  width: 20rpx;
-  height: 20rpx;
-  border-top: 4rpx solid #5B5B5B;
-  border-right: 4rpx solid #5B5B5B;
+  width: 18rpx;
+  height: 18rpx;
+  border-top: 1.6rpx solid #5B5B5B;
+  border-right: 1.6rpx solid #5B5B5B;
   position: absolute;
   right: 28rpx;
   transform: rotate(45deg);
@@ -186,10 +186,10 @@
 }
 .arrow1{
   position: absolute;
-  width: 20rpx;
-  height: 20rpx;
-  border-top: 4rpx solid #999;
-  border-right: 4rpx solid #999;
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 1.2rpx solid #5B5B5B;
+  border-right: 1.2rpx solid #5B5B5B;
   right: 10%;
   transform: rotate(45deg);
 } 

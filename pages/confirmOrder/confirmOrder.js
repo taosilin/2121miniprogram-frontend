@@ -6,14 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    address:{
-      receiver:"陶女士",
-      telephone:"18916273661",
-      province:"上海市",
-      city:"上海市",
-      district:"嘉定区",
-      detail:"曹安公路4800号同济大学学生公寓10号楼"
-    },
+    address:{},
     product:{
       name:"开普勒钛架全框眼镜",
       price:299,
@@ -209,5 +202,15 @@ Page({
     wx.navigateTo({
       url: '../addressChoose/addressChoose',
     })
+  },
+  goAddAddress:function(){
+    wx.navigateTo({
+      url: '../addAddress/addAddress',
+    })
+  },
+  // 立即支付
+  onConfirm:function(){
+
   }
+  
 })

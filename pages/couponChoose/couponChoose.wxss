@@ -9,6 +9,7 @@
 }
 .tab{
   width: 100%;
+  height: 86.9rpx;
   display: flex;
   flex-direction: row;
   border-top: 2rpx solid #EAEAEA;
@@ -37,6 +38,7 @@
   justify-content: space-between;
   box-sizing: border-box;
   width: 100%;
+  height: 106.8rpx;
   padding: 16rpx 26rpx;
 }
 .inputDiv{
@@ -233,10 +235,11 @@
 
 .nothingDiv{
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 .noCouponImg{
   margin-top: 134rpx;

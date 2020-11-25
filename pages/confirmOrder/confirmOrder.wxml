@@ -1,9 +1,17 @@
 <!--pages/confirmOrder/confirmOrder.wxml-->
 <view class="container">
-  <view class="addressDiv" bindtap="goAddressList">
+  <view wx:if="{{address}}" class="addressDiv" bindtap="goAddressList">
     <view class="addressInfo">
       <view class="addressText">{{address.receiver}} {{address.telephone}}</view>
       <view class="addressText">{{address.province}} {{address.city}} {{address.district}} {{address.detail}}</view>
+    </view>
+    <view class="arrowDiv">
+      <view class='arrow'></view>
+    </view>
+  </view>
+  <view wx:else class="addressDiv" bindtap="goAddressList">
+    <view class="addressInfo">
+      设置收货地址
     </view>
     <view class="arrowDiv">
       <view class='arrow'></view>
@@ -34,7 +42,7 @@
       <view class="leftText" style="font-size:34rpx;font-weight:bold;">合计</view>
       <view class="rightText" style="font-size:34rpx;font-weight:bold;color:black;">¥ {{actualAmount}}</view>
     </view>
-    <view class="payBtn">立即支付</view>
+    <view class="payBtn" bindtap="onConfirm">立即支付</view>
   </view>
 
   <view class="productDiv">

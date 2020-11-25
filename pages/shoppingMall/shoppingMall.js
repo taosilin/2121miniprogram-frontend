@@ -6,8 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    classes:['学习','娱乐','生活','求职'],
-    frameList: null
+    classes: ['通勤','运动','恋爱','职场'],
+    frameList: null,
+    selectTab: 0,
+    page: 0,
+    isHideLoadMore: true,
+    isHideEnd: true
     // types:[
     //   {
     //     typename:"框型",
@@ -40,10 +44,11 @@ Page({
     });
     var _this = this;
     wx.request({
-      url: app.globalData.host+'/frame/list',
+      url: app.globalData.host+'/frame/class',
       data: {
-        page: 0,
-        size: 20
+        sortedBy: this.data.classes[this.data.selectTab],
+        page: this.data.page,
+        size: 6
       },
       method: 'POST',
       header: {
@@ -113,22 +118,110 @@ Page({
   onShareAppMessage: function () {
 
   },
+  //下拉刷新
+  onPullDownRefresh:function()
+  {
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+    
+    //模拟加载
+    setTimeout(function()
+    {
+      // complete
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    },1500);
+  },
   goToProductList:function(e){
-    console.log(e);
     wx.navigateTo({
       url: '../productList/productList',
     })
   },
+
+  //加载更多
+  onReachBottom: function () {
+    console.log('加载更多')
+    this.setData({
+      isHideLoadMore: false,
+      isHideEnd: true,
+      page: this.data.page+1
+    })
+    setTimeout(() => {
+      var _this = this;
+      wx.request({
+        url: app.globalData.host+'/frame/class',
+        data: {
+          sortedBy: this.data.classes[this.data.selectTab],
+          page: this.data.page,
+          size: 6
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'//默认值
+        },
+        success: function (res) {
+          if (res.data.data.length==0){
+            _this.setData({
+              isHideEnd: false,
+              isHideLoadMore: true,
+              page: _this.data.page-1
+            })
+          }
+          else{
+            let frameList = _this.data.frameList.concat(res.data.data);
+            _this.setData({
+              frameList: frameList
+            })
+          }
+          
+        },
+        fail: function (res) {
+          console.log("请求失败");
+        }
+      })
+    }, 1000)
+  },
+
+  // 打开搜索框
   onOpenSearch:function(e){
     this.search.showBox();
   },
-  //前往商品详情页
+
+  // 前往商品详情页
   goToProductDetail:function(e){
     let id = e.currentTarget.dataset.id;
-    console.log(e);
-    //待修改
     wx.navigateTo({
       url: '../productDetail/productDetail?frameID='+id,
+    })
+  },
+
+  // tab场景改变
+  onTabChange:function(e){
+    this.setData({
+      selectTab:e.detail,
+      page: 0,
+      isHideEnd: true,
+      isHideLoadMore: true
+    })
+    var _this = this;
+    wx.request({
+      url: app.globalData.host+'/frame/class',
+      data: {
+        sortedBy: this.data.classes[this.data.selectTab],
+        page: this.data.page,
+        size: 6
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          frameList: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
     })
   }
 })

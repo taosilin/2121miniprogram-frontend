@@ -86,6 +86,12 @@ Component({
       this.setData({
         flag: true
       })
+    },
+    // 取消获取
+    onCancel:function(e){
+      this.setData({
+        flag: true
+      });
     }
   }
 })

@@ -13,16 +13,22 @@
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-  padding-top: 24rpx;
-  padding-left: 40rpx;
+  padding-top: 38rpx;
   padding-right: 40rpx;
   padding-bottom: 38rpx;
 }
 .infoDiv{
-
+  display: flex;
+  flex-direction: row;
 }
 .radioDiv{
   font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
 }
 .arrow{
   width: 17rpx;
@@ -39,6 +45,7 @@
   font-size: 28rpx;
   color: #000000;
   font-weight: bold;
+  margin-bottom:16rpx;
 }
 .addressDetail{
   font-size: 28rpx;
@@ -81,9 +88,9 @@
   align-items: center;
 }
 .noAddressImg{
-  width: 223rpx;
-  margin-top: 184rpx;
-  margin-bottom: 34rpx;
+  width: 750rpx;
+  /* margin-top: 184rpx;
+  margin-bottom: 34rpx; */
 }
 .noAddressInfo{
   font-size: 28rpx;

@@ -13,7 +13,7 @@
   <search class="search" id="search"/>
 
   <view class="labelbar">
-    <label-bar id="labelBar" tabs="{{classes}}" selectTextColor="#000000" textColor="#BEBEBE" selectColor="#FFFFFF" letterSpacing="1.6" textSize="28" selectBold="bold">
+    <label-bar id="labelBar" tabs="{{classes}}" selectTextColor="#000000" textColor="#BEBEBE" selectColor="#FFFFFF" letterSpacing="1.6" textSize="28" selectBold="bold" binditemtap="onTabChange">
         <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
         <!-- <view>这里是插入到组件slot中的内容</view> -->
     </label-bar>
@@ -53,7 +53,12 @@
       </view>
     </block>
   </view>
-
+  <view class="footer" hidden="{{isHideLoadMore}}">
+    加载中
+  </view>
+  <view class="footer" hidden="{{isHideEnd}}">
+    我是有底线的~
+  </view>
 </view>
 <!-- <view class="tabbarDiv">
   <tabbar currentTab="1" />
