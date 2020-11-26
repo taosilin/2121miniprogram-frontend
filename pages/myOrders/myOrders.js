@@ -33,8 +33,13 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
+        //console.log(res.data.data)
+        let orders = res.data.data;
+        for (let i=0;i<orders.length;i++){
+          orders[i].order.orderTime = orders[i].order.orderTime.slice(0,10)
+        }
         _this.setData({
-          orders: res.data.data
+          orders: orders
         })
         _this.orderFilter();
       },

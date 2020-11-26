@@ -221,7 +221,7 @@
 .follow-btn{
   color: #FFFFFF;
   font-size: 20rpx;
-  background-color: #646ED5;
+  background-color: #72C9FA;
   border-radius: 29rpx;
   width:126rpx;
   height:58rpx;

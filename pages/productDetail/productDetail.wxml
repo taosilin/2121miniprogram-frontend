@@ -4,7 +4,7 @@
     <view class="info">
       <view class="title">{{frameDetail.frameName}}</view>
       <view class="subTitle">{{frameDetail.sketch}}</view>
-      <view class="cycle">生产周期：{{product.productionCycle}}天
+      <view class="cycle">预计发货：{{product.productionCycle}}天
         <image src="../../image/icon/question.png" mode="widthFix" style="width:24rpx;margin-left:4rpx;"/>
       </view>
     </view>
@@ -47,7 +47,7 @@
     </view>
     <view class="priceDiv">
       <text class="price">¥ {{frameDetail.price}}</text>
-      <text class="originalPrice">¥ {{product.originalPrice}}</text>
+      <!-- <text class="originalPrice">¥ {{product.originalPrice}}</text> -->
     </view>
     <view class="bottomDiv">
       <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />15天无忧退货
