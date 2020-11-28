@@ -178,5 +178,11 @@ Page({
       });
       console.log(this.data.ordersfilter.length)
     }
+  },
+  // 订单详情
+  onOrderDetail:function(e){
+    wx.navigateTo({
+      url: '../orderDetail/orderDetail?orderID='+e.currentTarget.dataset.id,
+    });
   }
 })

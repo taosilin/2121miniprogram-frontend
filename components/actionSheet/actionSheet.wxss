@@ -12,7 +12,7 @@
 }
 .z-height{
   width: 100%;
-  height: 1062rpx;
+  min-height: 1062rpx;
   overflow-y: scroll;
   background: white;
   display: flex;
@@ -51,14 +51,14 @@
   height: 216rpx;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   position: absolute;
   left: 334rpx;
 }
 .price{
   font-size: 40rpx;
-  color: #D30E26;
+  color: #000000;
 }
 .originalPrice{
   font-size: 28rpx;
@@ -224,6 +224,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-y: scroll;
+  /* height: 740rpx;
+  box-sizing: border-box;
+  border: 1px solid black; */
 }
 .lensTitle{
   width: 100%;
@@ -255,7 +259,8 @@
   box-sizing: border-box;
   padding: 14rpx 18rpx;
   font-size: 26rpx;
-  border: 2rpx solid #747474;
+  border: 2rpx solid #72C9FA;
+  color: #72C9FA;
   border-radius: 10rpx;
   margin-right: 16rpx;
   margin-bottom: 24rpx;/*?????????*/
@@ -266,7 +271,10 @@
   font-size: 24rpx;
   width: 100%;
   box-sizing: border-box;
-  padding: 42rpx 48rpx;
+  /* padding: 38rpx 43.4rpx; */
+  padding-left: 43.4rpx;
+  padding-right: 43.4rpx;
+  padding-bottom: 38rpx;
 }
 .addBtn{
   width: 228rpx;

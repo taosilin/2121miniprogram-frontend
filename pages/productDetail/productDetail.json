@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "action-sheet":"../../components/actionSheet/actionSheet"
-  }
+    "action-sheet":"../../components/actionSheet/actionSheet",
+    "grant-dialog":"../../components/grantDialog/grantDialog",
+    "login-dialog":"../../components/loginDialog/loginDialog"
+  },
+  "navigationBarTitleText": "2121眼镜"
 }

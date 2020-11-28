@@ -6,17 +6,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    product:{
-      name:"开普勒·钛架-全框（含镜片）",
-      subTitle:'选用高端航空专用钛 设计优雅',
-      productionCycle:3,
-      smallImgList:[
-        '../../image/glasses2.jpg',
-        '../../image/glasses2.jpg',
-        '../../image/glasses2.jpg'
-      ],
-      originalPrice:899
-    },
+    // product:{
+    //   name:"开普勒·钛架-全框（含镜片）",
+    //   subTitle:'选用高端航空专用钛 设计优雅',
+    //   productionCycle:3,
+    //   smallImgList:[
+    //     '../../image/glasses2.jpg',
+    //     '../../image/glasses2.jpg',
+    //     '../../image/glasses2.jpg'
+    //   ],
+    //   originalPrice:899
+    // },
+    userInfo: null,
+    phoneNumber: null,
 
     frameDetail: null,
     specs: null,
@@ -29,7 +31,6 @@ Page({
     duration: 500,
     circular:true, //衔接滑动
     windowWidth:414,
-    imgHeight:290,
     btnWidth:133,
     actionSheetOpen:false
   },
@@ -42,9 +43,12 @@ Page({
     const sysInfo = wx.getSystemInfoSync();
     this.setData({
       windowWidth:sysInfo.windowWidth,
-      imgHeight:sysInfo.windowWidth*0.70048,
       btnWidth:sysInfo.windowWidth*0.32125  
     })
+    if (app.globalData.phoneNumber!=null){  
+      this.setData({phoneNumber: app.globalData.phoneNumber});
+      this.setData({userInfo: app.globalData.userInfo});
+    }
     wx.request({
       url: app.globalData.host+'/frame/detail',
       data: {
@@ -78,6 +82,9 @@ Page({
     //获得actionSheet组件
     this.addCart = this.selectComponent("#addCart");
     this.buyNow = this.selectComponent("#buyNow");
+    //获得dialog组件
+    this.getUserInfo = this.selectComponent("#getUserInfo");
+    this.getPhoneNumber = this.selectComponent("#getPhoneNumber");
   },
 
   /**
@@ -168,6 +175,24 @@ Page({
       fail: function (res) {
         console.log("请求失败");
       }
+    })
+  },
+  // 登录
+  onLogin:function(){
+    this.getUserInfo.setData({
+      flag:false
+    })
+  },
+  // 获取用户微信信息
+  bindgetuserinfo: function(e){
+    // var _this = this;
+    console.log(e)
+    // app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail
+    })
+    this.getPhoneNumber.setData({
+      flag: false
     })
   }
 })

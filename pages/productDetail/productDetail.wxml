@@ -4,13 +4,13 @@
     <view class="info">
       <view class="title">{{frameDetail.frameName}}</view>
       <view class="subTitle">{{frameDetail.sketch}}</view>
-      <view class="cycle">预计发货：{{product.productionCycle}}天
+      <!-- <view class="cycle">预计发货：{{product.productionCycle}}天
         <image src="../../image/icon/question.png" mode="widthFix" style="width:24rpx;margin-left:4rpx;"/>
-      </view>
+      </view> -->
     </view>
 
     <view class="imgDiv">
-      <swiper class="swiperContainer" style="height:{{imgHeight}}px;"
+      <swiper class="swiperContainer" 
         indicator-dots="{{indicatorDots}}"
         autoplay="{{autoplay}}"
         interval="{{interval}}"
@@ -54,7 +54,7 @@
       <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />先行赔付
       <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />超时赔偿
       <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />顺丰包邮
-      <image class="moreIcon" src="../../image/icon/more.png" mode="widthFix" />
+      <!-- <image class="moreIcon" src="../../image/icon/more.png" mode="widthFix" /> -->
     </view>
   </view>
   
@@ -67,9 +67,13 @@
       <image class="cartIcon" src="../../image/icon/addCart.png" mode="widthFix"></image>
       购物车
     </view>   
-    <view class="footerBtn">
+    <view wx:if="{{userInfo!=null}}" class="footerBtn">
       <view class="leftBtn" style="width:{{btnWidth}}px;" bindtap="onAddCart">加入购物车</view>
       <view class="rightBtn" style="width:{{btnWidth}}px;" bindtap="onBuyNow">立即购买</view>
+    </view>
+    <view wx:else class="footerBtn">
+      <view class="leftBtn" style="width:{{btnWidth}}px;" bindtap="onLogin">加入购物车</view>
+      <view class="rightBtn" style="width:{{btnWidth}}px;" bindtap="onLogin">立即购买</view>
     </view>
   </view>
   
@@ -77,3 +81,6 @@
 
 <action-sheet id="addCart" addCart="0" colors="{{colors}}" />
 <action-sheet id="buyNow" addCart="1" colors="{{colors}}" frame="{{frameDetail}}"/>
+
+<grant-dialog id="getUserInfo" bindgetuserinfo="bindgetuserinfo"/>
+<login-dialog id="getPhoneNumber" binduserExist="binduserExist"/>

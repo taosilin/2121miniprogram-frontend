@@ -29,7 +29,11 @@ Component({
       type:Number,
       value:0
     },
-    optionItem:{
+    optionType:{
+      type:Number,
+      value:0
+    },
+    optionSpec:{
       type:Number,
       value:0
     },
@@ -62,7 +66,92 @@ Component({
     leftAstigmatism: 0.00,
     rightAstigmatism: 0.00,
     leftAxis: 0,
-    rightAxis: 0
+    rightAxis: 0,
+    enabledLens:[
+              {
+                  "lensName": "4K超清镜片",
+                  "description": "看书清晰度MAX，色彩完美还原，透光率高达99.4%。看得清才能记得牢，是日常看书和备战四六级的好帮手。",
+                  "specs":[
+                    {
+                      "lensID": "018",
+                      "lensName": "4K超清镜片",
+                      "price": 0.00,
+                      "refractiveIndex": "1.60性价比之王",
+                      "material": "PC",
+                      "radian": "非球面",
+                      "variety": "光学",
+                      "film": "绿膜",
+                      "design": "单光",
+                      "state": "1",
+                      "stock": 100,
+                      "description": "在2121星球又名：超加硬超防水UV400非球面绿膜镜片。"
+                    },
+                    {
+                      "lensID": "003",
+                      "lensName": "4K超清镜片",
+                      "price": 50.00,
+                      "refractiveIndex": "1.67经典精致款",
+                      "material": "PC",
+                      "radian": "非球面",
+                      "variety": "光学",
+                      "film": "绿膜",
+                      "design": "单光",
+                      "state": "1",
+                      "stock": 100,
+                      "description": "在2121星球又名：超加硬超防水UV400非球面绿膜镜片。"
+                    },
+                    {
+                      "lensID": "019",
+                      "lensName": "4K超清镜片",
+                      "price": 300.00,
+                      "refractiveIndex": "1.74高度数福利",
+                      "material": "PC",
+                      "radian": "非球面",
+                      "variety": "光学",
+                      "film": "绿膜",
+                      "design": "单光",
+                      "state": "1",
+                      "stock": 100,
+                      "description": "在2121星球又名：超加硬超防水UV400非球面绿膜镜片。"
+                    }
+                  ]
+              },
+      {
+                    "lensName": "电子防护镜片",
+                    "description": "不误砍柴功，有效过滤有害蓝光，阻挡99%+UVA、UVB紫外线。时刻守护长时间查资料写论文和编写代码的你。",
+                    "specs":[
+                      {
+                        "lensID": "020",
+                        "lensName": "电子防护镜片",
+                        "price": 0.00,
+                        "refractiveIndex": "1.60性价比之王",
+                        "material": "PC",
+                        "radian": "非球面",
+                        "variety": "光学",
+                        "film": "绿膜",
+                        "design": "单光",
+                        "state": "1",
+                        "stock": 100,
+                        "description": "在2121星球又名：符合新国标的具有专利ESPF15防晒功能的抗蓝光和防紫外线双效非球面镜片。"
+                      },
+                      {
+                        "lensID": "004",
+                        "lensName": "电子防护镜片",
+                        "price": 50.00,
+                        "refractiveIndex": "1.67经典精致款",
+                        "material": "PC",
+                        "radian": "非球面",
+                        "variety": "光学",
+                        "film": "绿膜",
+                        "design": "单光",
+                        "state": "1",
+                        "stock": 100,
+                        "description": "在2121星球又名：符合新国标的具有专利ESPF15防晒功能的抗蓝光和防紫外线双效非球面镜片。"
+                      }
+                    ]
+                }
+          ]
+      
   },
 
   /**
@@ -97,13 +186,18 @@ Component({
         selectTab:2
       })
     },
-    onItemChange:function(e){
+    onTypeChange:function(e){
       let id = e.currentTarget.dataset.id;
       this.setData({
-        optionItem:id
+        optionType:id
       })
     },
-
+    onSpecChange:function(e){
+      let id = e.currentTarget.dataset.id;
+      this.setData({
+        optionSpec:id
+      })
+    },
     // 添加到购物车
     onAddCart:function(){
       this.setData({

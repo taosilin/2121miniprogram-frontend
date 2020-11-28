@@ -28,6 +28,12 @@
       <view wx:if="{{coupon}}" class="rightText" style="font-size:24rpx;">-¥ {{coupon.discount}}<view class='arrow'></view></view>
       <view wx:else class="rightText" style="font-size:24rpx;">{{enabledCoupons.length}}张可用<view class='arrow'></view></view>
     </view>
+    <view class="remarkDiv">
+      <view class="remark">备注留言</view>
+      <input class="remarkInput" maxlength="100" placeholder="建议填写内容已与商家达成一致" placeholder-style="font-size:24rpx;color:#747474;" bind:change="onRemarkChange"/>
+    </view>
+
+
     <view class="divLine"></view>
     <view class="row">
       <view class="leftText">商品金额</view>
@@ -42,7 +48,11 @@
       <view class="leftText" style="font-size:34rpx;font-weight:bold;">合计</view>
       <view class="rightText" style="font-size:34rpx;font-weight:bold;color:black;">¥ {{actualAmount}}</view>
     </view>
-    <view class="payBtn" bindtap="onConfirm">立即支付</view>
+    <view class="btnDiv">
+      <view class="returnBtn" bindtap="onReturn">我再想想</view>
+      <view class="payBtn" bindtap="onConfirm">立即支付</view>
+    </view>
+    
   </view>
 
   <view class="productDiv">
@@ -55,13 +65,18 @@
         </view>
         <view class="contentDiv">
           <view>{{item.frame.frameName}}</view>
+          <view class="tabDiv">
+            <view class="tabItem">黑色</view>
+            <view class="tabItem">4K超清镜片</view>
+            <view class="tabItem">1.60性价比之王</view>
+          </view>
           <view class="contentRow">
-            <view style="color:#747474;">类型：近视</view>
-            <view class="customBtn" data-id="{{index}}" bindtap="openPopup">定制信息</view>
+            <view style="color:#747474;">类型：近视</view>  
           </view>
           <view class="contentRow">
             <view>¥ {{item.spec.price}}</view>
-            <view>数量：{{item.cart.num}}</view>
+            <view class="customBtn" data-id="{{index}}" bindtap="openPopup">定制信息</view>
+            <view class="productNum">数量：{{item.cart.num}}</view>
           </view>
         </view>
       </view>

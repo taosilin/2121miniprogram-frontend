@@ -14,12 +14,21 @@
               <image class="productImg" src="{{item.spec.specImage}}" mode="widthFix"></image>
             </view>
             <view class="contentDiv">
-              <view class="content">{{item.frame.frameName}}</view>
-              <view class="selectBtn" data-id="{{index}}" bindtap="openPopup">定制信息</view>
-              <view class="priceDiv">
-                ¥ {{item.spec.price}}
+              <view class="content">
+                <view class="nameDiv">{{item.frame.frameName}}</view>
+                <view class="priceDiv">¥ {{item.spec.price}}</view>
+              </view>
+                
+              <view class="tabDiv">
+                <view class="tabItem">黑色</view>
+                <view class="tabItem">4K超清镜片</view>
+                <view class="tabItem">1.60性价比之王</view>
+              </view>
+              <view class="bottomDiv">
+                <view class="selectBtn" data-id="{{index}}" bindtap="openPopup">定制信息</view>
                 <stepper class="stepper" num="{{item.cart.num}}" data-id="{{index}}" bindnumChange="onNumChange"/>
               </view>
+              
             </view>
           </view>
 

@@ -46,7 +46,7 @@
 .row{
   width: 100%;
   box-sizing: border-box;
-  padding: 32rpx 36rpx;
+  padding: 28rpx 36rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -55,6 +55,22 @@
 .leftText{
   font-size: 28rpx;
   color: black;
+}
+.remarkDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0rpx 36rpx 32rpx 36rpx;
+  box-sizing: border-box;
+}
+.remark{
+  color: #747474;
+  font-size: 28rpx;
+  margin-right: 39.8rpx;
+}
+.remarkInput{
+  width: 75%;
 }
 .rightText{
   font-size: 28rpx;
@@ -68,20 +84,50 @@
   width: 100%;
   height: 2rpx;
  }
-.payBtn{
-  font-size: 34rpx;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 2rpx;
-  background-color: #72C9FA;
-  width: 90.8%;
+.btnDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 62rpx;
+  margin-bottom: 64rpx;
+  box-sizing: border-box;
+  padding: 0rpx 36rpx 0rpx 36rpx;
+}
+.returnBtn{
+  width: 30%;
   height: 112rpx;
+
+  font-size: 34rpx;
+  /* font-weight: bold; */
+  color: #747474;
+  letter-spacing: 2rpx;
+
   border-radius: 56rpx;
+  border: 2rpx solid #747474;
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 62rpx;
-  margin-bottom: 64rpx;
+
+  margin-right: 32rpx;
+}
+.payBtn{
+  font-size: 34rpx;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2rpx;
+  background-color: #72C9FA;
+
+  width: 65%;
+  height: 112rpx;
+
+  border-radius: 56rpx;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 .productDiv{
   width: 100%;
@@ -120,19 +166,39 @@
   box-sizing: border-box;
   padding-left: 28rpx;
 }
+.tabDiv{
+  padding-top: 20rpx;
+  padding-bottom: 14rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.tabItem{
+  border: 1rpx solid #72C9FA;
+  border-radius: 6rpx;
+  color: #72C9FA;
+  font-size: 20rpx;
+  padding: 4rpx;
+  margin-right: 10rpx;
+}
 .customBtn{
   width: 164rpx;
   height: 72rpx;
   color: #72C9FA;
-  border: 2rpx solid #72C9FA;
-  border-radius: 36rpx;
+  /* border: 2rpx solid #72C9FA;
+  border-radius: 36rpx; */
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration:underline;
 }
 .contentRow{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  position: relative;
+}
+.productNum{
+  position: absolute;
+  right: 36rpx;
 }

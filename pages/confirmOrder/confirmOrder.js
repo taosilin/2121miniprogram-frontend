@@ -29,7 +29,8 @@ Page({
     discount: 0, // 优惠金额
     coupon: null, //选择的优惠券
     enabledCoupons:[],
-    disabledCoupons:[]
+    disabledCoupons:[],
+    remark: '' // 买家备注
   },
 
   /**
@@ -164,6 +165,14 @@ Page({
   onShareAppMessage: function () {
 
   },
+
+  // 用户输入订单备注
+  onRemarkChange:function(e){
+    this.setData({
+      remark:e.detail.value
+    })
+  },
+
   goToCouponChoose:function(){
     let coupons = {
       enabledCoupons:this.data.enabledCoupons,
@@ -225,7 +234,8 @@ Page({
       totalAmount: this.data.totalAmount,
       actualPayment: this.data.actualAmount,
       orderTime: (new Date()).getTime(),
-      state: "1"
+      state: "1",
+      remark: this.data.remark
     }
     let orderFrames = new Array();
     for (let i=0;i<this.data.buySpec.length;i++){
@@ -271,5 +281,11 @@ Page({
     })
 
   }
-  
+  ,
+  // 返回上一页
+  onReturn:function(){
+    wx.navigateBack({
+      delta: 1
+    })
+  }
 })

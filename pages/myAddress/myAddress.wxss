@@ -81,9 +81,9 @@
   align-items: center;
 }
 .noAddressImg{
-  width: 750rpx;
-  /* margin-top: 184rpx;
-  margin-bottom: 34rpx; */
+  width: 483.6rpx;
+  margin-top: 96rpx;
+  margin-bottom: 56rpx;
 }
 .noAddressInfo{
   font-size: 28rpx;

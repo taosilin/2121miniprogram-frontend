@@ -19,7 +19,8 @@
     "pages/productDetail/productDetail",
     "pages/confirmOrder/confirmOrder",
     "pages/couponChoose/couponChoose",
-    "pages/addressChoose/addressChoose"
+    "pages/addressChoose/addressChoose",
+    "pages/orderDetail/orderDetail"
   ],
   "tabBar": {
     "position": "bottom",

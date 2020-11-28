@@ -10,7 +10,7 @@
     </view>
     <!-- 有订单时内容 -->
     <block wx:if="{{ordersfilter.length!=0}}">
-      <view wx:for="{{ordersfilter}}" class="order">
+      <view wx:for="{{ordersfilter}}" class="order" bindtap="onOrderDetail" data-id="{{item.order.orderID}}">
         <view class="header">
           <view class="lefttext">{{item.order.orderTime}}</view>
           <view class="midtext">{{item.order.orderID}}</view>

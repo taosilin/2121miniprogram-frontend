@@ -4,8 +4,6 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     postHeight:504,
@@ -14,11 +12,7 @@ Page({
     interval: 2000,
     duration: 500,
     circular:true, //衔接滑动
-    postList:[
-      {imgUrl:'../../image/post.png'},
-      {imgUrl:'../../image/post.png'},
-      {imgUrl:'../../image/post.png'}
-    ],
+    postList:[],
     currentTab: 0,
     popupVisible: true,
     userInfo: null,
@@ -40,12 +34,28 @@ Page({
   },
   onLoad: function () {
 
-    //var _this = this;
+    var _this = this;
     if (app.globalData.phoneNumber!=null){  
       this.setData({phoneNumber: app.globalData.phoneNumber});
       this.setData({userInfo: app.globalData.userInfo});
     }
 
+    wx.request({
+      url: app.globalData.host+'/post/list',
+      data:{},
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          postList: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
     // if (app.globalData.userInfo) {
     //   this.setData({
     //     userInfo: app.globalData.userInfo,

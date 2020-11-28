@@ -78,17 +78,18 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   width: 186.6rpx;
 }
 .selectBtn{
-  width: 134rpx;
-  height: 50rpx;
+  /* width: 134rpx;
+  height: 50rpx; */
   font-size: 24rpx;
   color: #72C9FA;
-  border:1rpx solid #72C9FA;
-  border-radius: 27rpx;
-  position: relative;
-  bottom: 10rpx;
+  /* border:1rpx solid #72C9FA; */
+  /* border-radius: 27rpx; */
+  /* position: relative;
+  bottom: 10rpx; */
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration:underline;
 }
 .contentDiv{
   width: 460rpx;
@@ -100,14 +101,41 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
 .content{
   font-size: 28rpx;
   color: #000000;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.nameDiv{
+  font-size: 28rpx;
+  color: #000000;
 }
 .priceDiv{
   display: flex;
   flex-direction: row;
   font-size: 28rpx;
   color: #000000;
-  position: relative;
+  position: absolute;
+  right: 32rpx;
   height: 54rpx;
+}
+
+.tabDiv{
+  display: flex;
+  flex-direction: row;
+}
+.tabItem{
+  border: 1rpx solid #72C9FA;
+  border-radius: 6rpx;
+  color: #72C9FA;
+  font-size: 20rpx;
+  padding: 4rpx;
+  margin-right: 10rpx;
+}
+.bottomDiv{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .stepper{
   position: absolute;
