@@ -89,22 +89,22 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin-top: 62rpx;
   margin-bottom: 64rpx;
   box-sizing: border-box;
   padding: 0rpx 36rpx 0rpx 36rpx;
 }
 .returnBtn{
-  width: 30%;
-  height: 112rpx;
+  width: 222.8rpx;
+  height: 90rpx;
 
   font-size: 34rpx;
-  /* font-weight: bold; */
-  color: #747474;
+  color: #ACACAC;
   letter-spacing: 2rpx;
 
-  border-radius: 56rpx;
-  border: 2rpx solid #747474;
+  border-radius: 45rpx;
+  border: 2rpx solid #ACACAC;
   
   display: flex;
   align-items: center;
@@ -119,7 +119,7 @@
   letter-spacing: 2rpx;
   background-color: #72C9FA;
 
-  width: 65%;
+  width: 494.5rpx;
   height: 112rpx;
 
   border-radius: 56rpx;

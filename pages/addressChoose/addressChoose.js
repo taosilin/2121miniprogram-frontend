@@ -121,7 +121,19 @@ Page({
       url: '../addAddress/addAddress?info='+info,
     });
   },
-
+  // 选择地址
+  onSelectAddress:function(e){
+    let id = e.currentTarget.dataset.id
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1];  //当前页面
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    prevPage.setData({
+      address:this.data.addresses[id]
+    });
+    wx.navigateBack({
+      delta: 1
+    }) 
+  },
   // 选择地址
   radioChange:function(e){
     console.log(e)

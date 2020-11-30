@@ -20,9 +20,9 @@
               </view>
                 
               <view class="tabDiv">
-                <view class="tabItem">黑色</view>
-                <view class="tabItem">4K超清镜片</view>
-                <view class="tabItem">1.60性价比之王</view>
+                <view class="tabItem">{{item.color.colorName}}</view>
+                <view class="tabItem">{{item.lens.lensName}}</view>
+                <view class="tabItem">{{item.lens.refractiveIndex}}</view>
               </view>
               <view class="bottomDiv">
                 <view class="selectBtn" data-id="{{index}}" bindtap="openPopup">定制信息</view>

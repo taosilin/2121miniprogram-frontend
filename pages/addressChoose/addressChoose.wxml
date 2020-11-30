@@ -9,7 +9,7 @@
               <view class="radioDiv">
                 <radio value="{{index}}" checked="{{isDefault[index]}}" color="#72C9FA"/>
               </view>
-              <view bindtap="onChangeAddress" data-id="{{index}}">
+              <view bindtap="onSelectAddress" data-id="{{index}}">
                 <view class="importantInfo">{{item.receiver}}</view>
                 <view class="importantInfo">{{item.telephone}}</view>
                 <view class="addressDetail">{{item.province}} {{item.city}} {{item.district}}</view>

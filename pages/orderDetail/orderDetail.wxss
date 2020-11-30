@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: row;
   background-color: white;
+  align-items: center;
 }
 .iconDiv{
   width: 92.3rpx;
@@ -55,6 +56,8 @@
 .orderProductDiv{
   width: 100%;
   background-color: white;
+  padding: 36rpx 26rpx;
+  box-sizing: border-box;
 }
 .orderProductList{
   width: 100%;
@@ -64,6 +67,13 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  position: relative;
+  margin-bottom: 42rpx;
+}
+.productItemInfo{
+  font-size: 26rpx;
+  color: #3D3D3D;
+  margin-bottom: 16rpx;
 }
 .productImgDiv{
   display: flex;
@@ -76,6 +86,29 @@
 .orderProductImg{
   width: 186.6rpx;
 }
+.itemRightDiv{
+  height: 186.6rpx;
+  position: absolute;
+  right: 26rpx;
+}
+.itemRightText{
+  font-size: 26rpx;
+
+}
+.refundBtn{
+  color: #3D3D3D;
+  width: 150.3rpx;
+  height: 52.5rpx;
+  border: 2rpx solid #D5D5D5;
+  border-radius: 26.25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: 28rpx;
+}
 .priceDiv{
   width: 100%;
 }
@@ -83,11 +116,34 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  position: relative;
+  margin-bottom: 6rpx;
+}
+.leftText{
+  font-size: 26rpx;
+  color: #3D3D3D;
+}
+.rightText{
+  font-size: 26rpx;
+  color: #3D3D3D;
+  position: absolute;
+  right: 0px;
+}
+.leftText-bold{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.rightText-bold{
+  font-size: 28rpx;
+  font-weight: bold;
+  position: absolute;
+  right: 0px;
 }
 .btnDiv{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin-top: 54rpx;
 }
 .normalBtn{
   width: 150.3rpx;
@@ -98,6 +154,8 @@
   margin-right: 26rpx;
   border: 2rpx solid #D5D5D5;
   border-radius: 29rpx;
+  font-size: 28rpx;
+  letter-spacing: 4rpx;
 }
 .importantBtn{
   width: 150.3rpx;
@@ -105,8 +163,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 26rpx;
+  /* margin-right: 26rpx; */
   color: white;
   background-color: #72C9FA;
   border-radius: 29rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  letter-spacing: 4rpx;
 }

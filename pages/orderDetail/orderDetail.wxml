@@ -1,6 +1,6 @@
 <!--pages/orderDetail/orderDetail.wxml-->
 <view class="container">
-  <view class="orderStateDiv">
+  <view class="orderStateDiv" style="height:143.1rpx;">
     <view class="iconDiv">
       <image class="logisticsImg" src="../../image/icon/logistics.png" mode="widthFix"></image>
     </view>
@@ -11,13 +11,13 @@
     </view>
   </view>
 
-  <view class="orderStateDiv" style="margin-bottom:24rpx;">
+  <view class="orderStateDiv" style="height:146.7rpx;margin-bottom:24rpx;">
     <view class="iconDiv">
       <image class="logisticsImg" src="../../image/icon/orderAddress.png" mode="widthFix"></image>
     </view>
     <view>
-      <view class="orderState">订单地址需要改接口！</view>
-      <view class="orderTime">{{orderDetail.order.orderTime}}</view>
+      <view class="orderState">{{orderDetail.address.receiver}}<span class="orderTime" style="margin-left:34rpx;">{{orderDetail.address.telephone}}</span></view>
+      <view class="orderState">{{orderDetail.address.province}}{{orderDetail.address.city}}{{orderDetail.address.district}}{{orderDetail.address.detail}}</view>
     </view>
   </view>
 
@@ -26,7 +26,19 @@
     <view class="orderDetailInfo">订单编号：{{orderDetail.order.orderID}}</view>
     <view class="orderDetailInfo">提交时间：{{orderDetail.order.orderTime}}</view>
     <view class="orderDetailInfo">支付方式：微信小程序</view>
-    <view class="orderDetailInfo">订单状态：</view>
+    <view class="orderDetailInfo" wx:if="{{orderDetail.order.state=='1'}}">订单状态：待付款</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='2'}}">订单状态：已付款</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='3'}}">订单状态：已确认</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='4'}}">订单状态：待发货</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='5'}}">订单状态：待收货</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='6'}}">订单状态：待评价</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='7'}}">订单状态：已完成</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='8'}}">订单状态：已取消</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='9'}}">订单状态：退款申请</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='10'}}">订单状态：已退款</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='11'}}">订单状态：退货申请</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='12'}}">订单状态：退货中</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='13'}}">订单状态：已退货</view>
   </view>
 
   <view class="orderProductDiv">
@@ -40,10 +52,15 @@
             <image class="orderProductImg" src="{{item.specImage}}" mode="widthFix"></image>
           </view>
           <view class="productItemDiv">
-            <view class="">{{item.frameName}}</view>
-            <view>颜色：{{item.colorName}}</view>
-            <view>镜片类型：{{item.lensName}}</view>
-            <view>镜片规格：{{item.refractiveIndex}}</view>
+            <view class="productItemInfo">{{item.frameName}}</view>
+            <view class="productItemInfo">颜色：{{item.colorName}}</view>
+            <view class="productItemInfo">镜片类型：{{item.lensName}}</view>
+            <view class="productItemInfo">镜片规格：{{item.refractiveIndex}}</view>
+          </view>
+          <view class="itemRightDiv">
+            <view class="itemRightText" style="font-weight:bold;">¥{{item.price}}</view>
+            <view class="itemRightText" style="margin-left: 10rpx;color:#8B8B8B;">{{item.num}}件</view>
+            <view class="refundBtn">退货</view>
           </view>
         </view>
       </block>
@@ -51,27 +68,27 @@
 
     <view class="priceDiv">
       <view class="priceRow">
-        <view>商品总价</view>
-        <view>¥{{orderDetail.order.totalAmount}}</view>
+        <view class="leftText">商品总价</view>
+        <view class="rightText">¥ {{orderDetail.order.totalAmount}}</view>
       </view>
       <view class="priceRow">
-        <view>运费</view>
-        <view>¥{{orderDetail.order.totalAmount}}</view>
+        <view class="leftText">运费</view>
+        <view class="rightText">¥ 0</view>
       </view>
       <view class="priceRow">
-        <view>红包</view>
-        <view>¥{{orderDetail.order.totalAmount}}</view>
+        <view class="leftText">红包</view>
+        <view class="rightText">-¥ {{orderDetail.order.totalAmount-orderDetail.order.actualPayment}}</view>
       </view>
       <view class="priceRow">
-        <view>实付款</view>
-        <view>¥{{orderDetail.order.actualPayment}}</view>
+        <view class="leftText-bold">实付款</view>
+        <view class="rightText-bold">¥ {{orderDetail.order.actualPayment}}</view>
       </view>
     </view>
 
     <view class="btnDiv">
       <view class="normalBtn">删除订单</view>
       <view class="normalBtn">查看物流</view>
-      <view class="importantBtn">去评价</view>
+      <view class="importantBtn">去付款</view>
     </view>
 
   </view>

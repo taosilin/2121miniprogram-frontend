@@ -66,9 +66,9 @@
         <view class="contentDiv">
           <view>{{item.frame.frameName}}</view>
           <view class="tabDiv">
-            <view class="tabItem">黑色</view>
-            <view class="tabItem">4K超清镜片</view>
-            <view class="tabItem">1.60性价比之王</view>
+            <view class="tabItem">{{item.color.colorName}}</view>
+            <view class="tabItem">{{item.lens.lensName}}</view>
+            <view class="tabItem">{{item.lens.refractiveIndex}}</view>
           </view>
           <view class="contentRow">
             <view style="color:#747474;">类型：近视</view>  

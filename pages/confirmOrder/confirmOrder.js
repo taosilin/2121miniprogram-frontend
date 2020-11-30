@@ -219,66 +219,78 @@ Page({
   },
   // 立即支付
   onConfirm:function(){
-    let orderID = (new Date()).getTime().toString()+app.globalData.phoneNumber
-    console.log(orderID)
-    console.log(this.data.address)
-    console.log(this.data.coupon)
-    console.log(this.data.buySpec)
-    console.log(this.data.totalAmount)
-    console.log(this.data.actualAmount)
-    let order = {
-      orderID: orderID,
-      userID: app.globalData.phoneNumber,
-      addressID: this.data.address.addressID,
-      couponID: this.data.coupon.couponID,
-      totalAmount: this.data.totalAmount,
-      actualPayment: this.data.actualAmount,
-      orderTime: (new Date()).getTime(),
-      state: "1",
-      remark: this.data.remark
-    }
-    let orderFrames = new Array();
-    for (let i=0;i<this.data.buySpec.length;i++){
-      let orderFrame = {
+    if (this.data.address==null){
+      wx.showToast({
+        title: '请选择地址',
+        icon: 'none',
+        duration: 2000
+      })
+    }else{
+      let orderID = (new Date()).getTime().toString()+app.globalData.phoneNumber
+      console.log(orderID)
+      console.log(this.data.address)
+      console.log(this.data.coupon)
+      console.log(this.data.buySpec)
+      console.log(this.data.totalAmount)
+      console.log(this.data.actualAmount)
+      let order = {
         orderID: orderID,
-        frameID: this.data.buySpec[i].frame.frameID,
-        lensID: this.data.buySpec[i].cart.lensID,
-        specID: this.data.buySpec[i].spec.specID,
-        state:"1",
-        num: this.data.buySpec[i].cart.num,
-        price: this.data.buySpec[i].spec.price,
-        leftDegree: this.data.buySpec[i].cart.leftDegree,
-        rightDegree: this.data.buySpec[i].cart.rightDegree,
-        interpupillary: this.data.buySpec[i].cart.interpupillary,
-        leftAstigmatism: this.data.buySpec[i].cart.leftAstigmatism,
-        rightAstigmatism: this.data.buySpec[i].cart.rightAstigmatism,
-        leftAxis: this.data.buySpec[i].cart.leftAxis,
-        rightAxis: this.data.buySpec[i].cart.rightAxis
+        userID: app.globalData.phoneNumber,
+        addressID: this.data.address.addressID,
+        couponID: (this.data.coupon?this.data.coupon.couponID:null),
+        totalAmount: this.data.totalAmount,
+        actualPayment: this.data.actualAmount,
+        orderTime: (new Date()).getTime(),
+        state: "1",
+        remark: this.data.remark
       }
-      orderFrames.push(orderFrame);
+      let orderFrames = new Array();
+      for (let i=0;i<this.data.buySpec.length;i++){
+        let orderFrame = {
+          orderID: orderID,
+          frameID: this.data.buySpec[i].frame.frameID,
+          lensID: this.data.buySpec[i].cart.lensID,
+          specID: this.data.buySpec[i].spec.specID,
+          state:"1",
+          num: this.data.buySpec[i].cart.num,
+          price: this.data.buySpec[i].spec.price,
+          leftDegree: this.data.buySpec[i].cart.leftDegree,
+          rightDegree: this.data.buySpec[i].cart.rightDegree,
+          interpupillary: this.data.buySpec[i].cart.interpupillary,
+          leftAstigmatism: this.data.buySpec[i].cart.leftAstigmatism,
+          rightAstigmatism: this.data.buySpec[i].cart.rightAstigmatism,
+          leftAxis: this.data.buySpec[i].cart.leftAxis,
+          rightAxis: this.data.buySpec[i].cart.rightAxis
+        }
+        orderFrames.push(orderFrame);
+      }
+      wx.request({
+        url: app.globalData.host+'/order/add',
+        data:{
+          order:order,
+          orderFrames:orderFrames
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'//默认值
+        },
+        success: function (res) {
+          wx.navigateBack({
+            delta: 1
+          });
+          //处理添加订单
+          wx.showToast({
+            title: '已下单',
+            icon: 'success',
+            duration: 2000
+          });
+        },
+        fail: function (res) {
+          console.log("请求失败");
+        }
+      })
     }
-    wx.request({
-      url: app.globalData.host+'/order/add',
-      data:{
-        order:order,
-        orderFrames:orderFrames
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/json'//默认值
-      },
-      success: function (res) {
-        //处理添加订单
-        wx.showToast({
-          title: '已下单',
-          icon: 'success',
-          duration: 2000
-        });
-      },
-      fail: function (res) {
-        console.log("请求失败");
-      }
-    })
+    
 
   }
   ,
