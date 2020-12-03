@@ -20,7 +20,8 @@
     "pages/confirmOrder/confirmOrder",
     "pages/couponChoose/couponChoose",
     "pages/addressChoose/addressChoose",
-    "pages/orderDetail/orderDetail"
+    "pages/orderDetail/orderDetail",
+    "pages/optometrySheet/optometrySheet"
   ],
   "tabBar": {
     "position": "bottom",

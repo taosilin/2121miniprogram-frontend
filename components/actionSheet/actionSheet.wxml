@@ -9,7 +9,7 @@
       <view class="info">
         <view class="price">¥ {{colors[selectedColor].price}}</view>
         <!-- <text class="originalPrice">¥ {{originalPrice}}</text> -->
-        <view wx:if="{{selectTab==2}}" class="cycle">预计发货：3天</view>
+        <view wx:if="{{selectTab==2}}" class="cycle">预计发货：24小时</view>
       </view>
       <view class="btnDiv">
         <view class="btn1 {{selectTab==0?'selectBtn':'btn1-after'}}" bindtap="onBtn1">1.选择镜框和镜腿</view>
@@ -44,8 +44,12 @@
             <view class="degreeRow">
               轴位：<option-box placeholderText="左眼轴位" options="{{axiss}}" bindoptionChange="onLeftAxisChange"/><option-box style="margin-left:25rpx;" placeholderText="右眼轴位" options="{{axiss}}" bindoptionChange="onRightAxisChange"/>
             </view>
-            <view class="bottomText">验光单怎么看？</view>
-            <view class="bottomBtn" bindtap="onConfirm">购买平光</view>
+            <view class="bottomDiv">
+              <view class="bottomBtn" bindtap="onConfirm">购买平光</view>
+              <view class="bottomText" bindtap="optometrySheet">验光单怎么看？</view>
+            </view>
+            
+            
           </view>
         </block>
         <block wx:else>

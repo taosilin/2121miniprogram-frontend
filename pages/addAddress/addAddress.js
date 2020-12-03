@@ -7,10 +7,10 @@ Page({
    */
   data: {
     addressID: "",
-    receiver: "",
-    telephone: "",
+    receiver: null,
+    telephone: null,
     region: [],
-    detail: "",
+    detail: null,
     isNew: true
   },
 
@@ -103,37 +103,47 @@ Page({
 
   // 提交新增地址
   onAdd: function(){
-    wx.request({
-      url: app.globalData.host + '/address/add',
-      data:{
-        addressID: (new Date()).getTime().toString(),
-        userID: app.globalData.phoneNumber,
-        receiver: this.data.receiver,
-        telephone: this.data.telephone,
-        province: this.data.region[0],
-        city: this.data.region[1],
-        district: this.data.region[2],
-        detail: this.data.detail,
-        defaultAdd: "0"
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/json'//默认值
-      },
-      success: function (res) {
-        wx.navigateBack({
-          delta:1,
-        });
-        wx.showToast({
-          title: '保存成功',
-          icon: 'success',
-          duration: 2000
-        });
-      },
-      fail: function (res) {
-        console.log("请求失败");
-      }
-    })
+    if (this.data.receiver&&this.data.telephone&&this.data.region[0]&&this.data.region[1]&&this.data.region[2]&&this.data.detail){
+      wx.request({
+        url: app.globalData.host + '/address/add',
+        data:{
+          addressID: (new Date()).getTime().toString(),
+          userID: app.globalData.phoneNumber,
+          receiver: this.data.receiver,
+          telephone: this.data.telephone,
+          province: this.data.region[0],
+          city: this.data.region[1],
+          district: this.data.region[2],
+          detail: this.data.detail,
+          defaultAdd: "0"
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'//默认值
+        },
+        success: function (res) {
+          wx.navigateBack({
+            delta:1,
+          });
+          wx.showToast({
+            title: '保存成功',
+            icon: 'success',
+            duration: 2000
+          });
+        },
+        fail: function (res) {
+          console.log("请求失败");
+        }
+      })
+    }
+    else{
+      wx.showToast({
+        title: '请填写必要信息',
+        icon: 'none',
+        duration: 2000
+      });
+    }
+    
   },
 
   // 编辑地址

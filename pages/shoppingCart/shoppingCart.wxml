@@ -60,7 +60,7 @@
     <view class="nothingDiv">
       <image class="noProductImg" src="../../image/noProduct.png" mode="widthFix"></image>
       <view class="promptText">您的购物车空空如也~</view>
-      <view class="shopBtn">去逛逛</view>
+      <view class="shopBtn" bindtap="onShop">去逛逛</view>
     </view>
   </block>
   

@@ -1,5 +1,5 @@
 // components/loginDialog/loginDialog.js
-const app = getApp()
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -40,7 +40,7 @@ Component({
         success: function (res) {
           console.log(res.data.data)
           app.globalData.phoneNumber = res.data.data
-
+          console.log(app.globalData.userInfo)
           wx.request({
             url: app.globalData.host+'/user/add',
             data: {

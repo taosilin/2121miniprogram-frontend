@@ -23,6 +23,7 @@
     <view class="nothingDiv">
       <image class="noLikeImg" src="../../image/noLike.png" mode="widthFix"></image>
       <view class="promptText">收藏夹空空如也~</view>
+      <view class="shopBtn" bindtap="onShop">去逛逛</view>
     </view>
   </block>
 </view>

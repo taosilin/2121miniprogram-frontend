@@ -1,0 +1,4 @@
+<!--pages/optometrySheet/optometrySheet.wxml-->
+<view class="container">
+  <image class="optometrySheetImg" src="https://from2121.com/pictures/optometrySheet.jpg" mode="widthFix"></image>
+</view>

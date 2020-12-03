@@ -1,0 +1,10 @@
+/* pages/optometrySheet/optometrySheet.wxss */
+.container{
+  margin: 0rpx;
+  padding: 0rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+.optometrySheetImg{
+  width: 100%;
+}

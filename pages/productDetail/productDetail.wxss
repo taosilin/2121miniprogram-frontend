@@ -3,7 +3,9 @@
   margin:0px;
   padding: 0px;
   width: 100%;
+  height: 100%;
   position: absolute;
+  background-color: #F2F2F2;
   /* z-index: 1; */
 }
 .content{
@@ -14,6 +16,7 @@
   width: 100%;
   box-sizing: border-box;
   padding-left: 32rpx;
+  background-color: white;
 }
 .title{
   font-size: 40rpx;
@@ -35,6 +38,7 @@
 .imgDiv{
   width: 100%;
   height: 674rpx;
+  background-color: white;
 }
 /* 滑块容器 */
 .swiperContainer{
@@ -81,7 +85,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  
+  background-color: white;
 }
 .specSelected{
   width: 118rpx;
@@ -89,6 +93,7 @@
   display: flex;
   align-items: center;
   border: 2rpx solid #979797;
+  box-sizing: border-box;
 }
 
 .specNormal{
@@ -108,6 +113,7 @@
   position: relative;
   padding: 30rpx 36rpx 0rpx 46rpx;
   box-sizing: border-box;
+  background-color: white;
 }
 .parameter{
   font-size: 24rpx;
@@ -141,6 +147,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  background-color: white;
 }
 .price{
   font-size: 56rpx;
@@ -161,15 +168,24 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
+  background-color: white;
+  margin-top: 8rpx;
+  margin-bottom: 8rpx;
 }
 .smallIcon{
-  width: 24rpx;
+  width: 22rpx;
   margin-left: 36rpx;/*36rpx*/
   margin-right: 6rpx;/**12rpx*/
 }
-.moreIcon{
-  width: 36rpx;
-  margin-left: 18rpx;/*****36rpx****/
+.arrow{
+  width: 13rpx;
+  height: 13rpx;
+  border-top: 1.6rpx solid #7F7F7F;
+  border-right: 1.6rpx solid #7F7F7F;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 26rpx;
 }
 
 /* 商品底部导航栏 */
@@ -207,7 +223,7 @@
   flex-direction: row;
 }
 .leftBtn{
-  width: 266rpx;
+  width: 240.9rpx;
   height: 102rpx;
   color: #72C9FA;
   font-size: 26rpx;
@@ -221,7 +237,7 @@
   box-sizing: border-box;
 }
 .rightBtn{
-  width: 266rpx;
+  width: 240.9rpx;
   height: 102rpx;
   background-color: #72C9FA;
   color: white;
@@ -232,5 +248,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.commentDiv{
+  width: 100%;
+  background-color: white;
+}
+.commentHeader{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 85.1rpx;
+}
+.commentTitle{
+  font-size: 24rpx;
+  color: #7F7F7F;
+  margin-left: 36rpx;
+}
+.commentRate{
+  font-size: 24rpx;
+  color: #000000;
+  font-weight: bold;
+  position: absolute;
+  right: 66rpx;
+}
+.divContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.divLine{
+  background: #F2F2F2;
+  width: 695.6rpx;
+  height: 2rpx;
+ }
+.commentContent{
+
 }
 

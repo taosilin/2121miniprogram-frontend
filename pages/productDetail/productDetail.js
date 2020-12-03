@@ -31,7 +31,6 @@ Page({
     duration: 500,
     circular:true, //衔接滑动
     windowWidth:414,
-    btnWidth:133,
     actionSheetOpen:false
   },
 
@@ -42,8 +41,7 @@ Page({
     var _this = this;
     const sysInfo = wx.getSystemInfoSync();
     this.setData({
-      windowWidth:sysInfo.windowWidth,
-      btnWidth:sysInfo.windowWidth*0.32125  
+      windowWidth:sysInfo.windowWidth
     })
     if (app.globalData.phoneNumber!=null){  
       this.setData({phoneNumber: app.globalData.phoneNumber});

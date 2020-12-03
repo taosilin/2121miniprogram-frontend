@@ -45,17 +45,35 @@
         <image class="shareIcon" src="../../image/icon/share.png" mode="widthFix"></image>分享
       </view>  
     </view>
+
     <view class="priceDiv">
       <text class="price">¥ {{frameDetail.price}}</text>
       <!-- <text class="originalPrice">¥ {{product.originalPrice}}</text> -->
     </view>
+
     <view class="bottomDiv">
       <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />15天无忧退货
       <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />先行赔付
       <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />超时赔偿
       <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />顺丰包邮
+      <view class='arrow'></view>
       <!-- <image class="moreIcon" src="../../image/icon/more.png" mode="widthFix" /> -->
     </view>
+
+    <view class="commentDiv">
+      <view class="commentHeader">
+        <view class="commentTitle">评价（30+）</view>
+        <view class="commentRate">好评<span style="color:#72C9FA;">100%</span></view>
+        <view class='arrow'></view>
+      </view>
+      <view class="divContainer">
+        <view class="divLine"></view>
+      </view>
+      <view class="commentContent">
+      评论内容
+      </view>
+    </view>
+
   </view>
   
   <view class="footer">
@@ -68,12 +86,12 @@
       购物车
     </view>   
     <view wx:if="{{userInfo!=null}}" class="footerBtn">
-      <view class="leftBtn" style="width:{{btnWidth}}px;" bindtap="onAddCart">加入购物车</view>
-      <view class="rightBtn" style="width:{{btnWidth}}px;" bindtap="onBuyNow">立即购买</view>
+      <view class="leftBtn" bindtap="onAddCart">加入购物车</view>
+      <view class="rightBtn" bindtap="onBuyNow">立即购买</view>
     </view>
     <view wx:else class="footerBtn">
-      <view class="leftBtn" style="width:{{btnWidth}}px;" bindtap="onLogin">加入购物车</view>
-      <view class="rightBtn" style="width:{{btnWidth}}px;" bindtap="onLogin">立即购买</view>
+      <view class="leftBtn" bindtap="onLogin">加入购物车</view>
+      <view class="rightBtn" bindtap="onLogin">立即购买</view>
     </view>
   </view>
   

@@ -124,6 +124,12 @@ Page({
   onShareAppMessage: function () {
 
   },
+  // 去逛逛
+  onShop:function(e){
+    wx.switchTab({
+      url: '../shoppingMall/shoppingMall'
+    });
+  },
   // 多选框选项变化
   checkboxChange: function(e) {
     console.log(e.detail.value);
@@ -213,7 +219,7 @@ Page({
     customInfo.leftEyeAxis = this.data.productList[index].cart.leftAxis;
     customInfo.rightEyeAxis = this.data.productList[index].cart.rightAxis;
     this.setData({
-      customInfo:customInfo
+      customInfo: customInfo
     })
     this.popup.showPopup();
   },
@@ -227,21 +233,28 @@ Page({
     this.setData({
       productList: tmp
     });
-
     wx.request({
       url: app.globalData.host+'/cart/update',
       data:{
         userID: app.globalData.phoneNumber,
         productID: this.data.productList[id].spec.productID,
         specID: this.data.productList[id].spec.specID,
-        num: e.detail
+        num: e.detail,
+        lensID: this.data.productList[id].lens.lensID,
+        leftDegree: this.data.productList[id].cart.leftDegree,
+        rightDegree: this.data.productList[id].cart.rightDegree,
+        interpupillary: this.data.productList[id].cart.interpupillary,
+        leftAstigmatism: this.data.productList[id].cart.leftAstigmatism,
+        rightAstigmatism: this.data.productList[id].cart.rightAstigmatism,
+        leftAxis:  this.data.productList[id].cart.leftAxis,
+        rightAxis: this.data.productList[id].cart.rightAxis
       },
       method: 'POST',
       header: {
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        
+
       },
       fail: function (res) {
         console.log("请求失败");
@@ -370,7 +383,15 @@ Page({
              data:{
               userID: app.globalData.phoneNumber,
               productID: _this.data.productList[id].spec.productID,
-              specID: _this.data.productList[id].spec.specID
+              specID: _this.data.productList[id].spec.specID,
+              lensID: _this.data.productList[id].lens.lensID,
+              leftDegree: _this.data.productList[id].cart.leftDegree,
+              rightDegree: _this.data.productList[id].cart.rightDegree,
+              interpupillary: _this.data.productList[id].cart.interpupillary,
+              leftAstigmatism: _this.data.productList[id].cart.leftAstigmatism,
+              rightAstigmatism: _this.data.productList[id].cart.rightAstigmatism,
+              leftAxis: _this.data.productList[id].cart.leftAxis,
+              rightAxis:_this.data.productList[id].cart.rightAxis
             },
             method: 'POST',
             header: {

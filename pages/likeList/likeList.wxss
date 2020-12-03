@@ -67,3 +67,16 @@
   letter-spacing: 4rpx;
   color: #585858;
 }
+.shopBtn{
+  width: 100rpx;
+  height: 50rpx;
+  border-bottom: solid 2rpx #585858;
+  font-size: 28rpx;
+  color: #585858;
+  letter-spacing: 2rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 62rpx;
+}

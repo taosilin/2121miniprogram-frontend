@@ -212,14 +212,15 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   margin-bottom: 44rpx;
 }
 .shopBtn{
-  width: 162rpx;
-  height: 76rpx;
-  border: solid 2rpx #585858;
-  border-radius: 38rpx;
+  width: 100rpx;
+  height: 50rpx;
+  border-bottom: solid 2rpx #585858;
+  /* border-radius: 38rpx; */
   font-size: 28rpx;
   color: #585858;
   letter-spacing: 2rpx;
   font-weight: bold;
+  /* text-decoration: underline; */
   display: flex;
   align-items: center;
   justify-content: center;

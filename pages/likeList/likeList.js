@@ -90,7 +90,12 @@ Page({
   onShareAppMessage: function () {
 
   },
-
+  // 去逛逛
+  onShop:function(e){
+    wx.switchTab({
+      url: '../shoppingMall/shoppingMall'
+    });
+  },
   // 跳转到镜框详情
   onFrameDetail(e){
     console.log(e)

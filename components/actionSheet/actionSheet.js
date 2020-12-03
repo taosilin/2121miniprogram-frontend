@@ -260,6 +260,15 @@ Component({
           productID: this.data.colors[this.data.selectedColor].productID,
           price: this.data.colors[this.data.selectedColor].price,
           specImage: this.data.colors[this.data.selectedColor].specImage,
+        },
+        lens:{
+          lensID: this.data.enabledLens[0].specs[0].lensID,
+          lensName: this.data.enabledLens[0].specs[0].lensName,
+          refractiveIndex: this.data.enabledLens[0].specs[0].refractiveIndex
+        },
+        color:{
+          colorID: this.data.colors[this.data.selectedColor].colorID,
+          colorName: this.data.colors[this.data.selectedColor].colorName
         }
       }]);
       wx.navigateTo({
@@ -309,8 +318,11 @@ Component({
         rightAxis: e.detail
       })
     },
-
-
+    optometrySheet:function(){
+      wx.navigateTo({
+        url: '../optometrySheet/optometrySheet',
+      })
+    },
 
     onConfirm:function(e){
       console.log(e);
