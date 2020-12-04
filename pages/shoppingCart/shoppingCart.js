@@ -43,13 +43,20 @@ Page({
       },
       success: function (res) {
         console.log(res.data.data)
-        _this.setData({
-          productList: res.data.data
-        });
+
         var checkboxBool = new Array();
         for (let i=0;i<res.data.data.length;i++){
           checkboxBool.push(false);
         }
+
+        _this.setData({
+          productList: res.data.data,
+          checkboxBool: checkboxBool,
+          checkbox: []
+        });
+
+        _this.computeTotal();
+        
       },
       fail: function (res) {
         console.log("请求失败");
@@ -80,9 +87,18 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
+        var checkboxBool = new Array();
+        for (let i=0;i<res.data.data.length;i++){
+          checkboxBool.push(false);
+        }
+
         _this.setData({
-          productList: res.data.data
+          productList: res.data.data,
+          checkboxBool: checkboxBool,
+          checkbox: []
         })
+
+        _this.computeTotal();
       },
       fail: function (res) {
         console.log("请求失败");
@@ -284,7 +300,7 @@ Page({
     }
     buySpec = JSON.stringify(buySpec);
     wx.navigateTo({
-      url: '../../pages/confirmOrder/confirmOrder?buySpec='+buySpec,
+      url: '../../pages/confirmOrder/confirmOrder?buySpec='+buySpec+'&fromCart=true',
     })
   },
 

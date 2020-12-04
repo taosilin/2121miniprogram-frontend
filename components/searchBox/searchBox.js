@@ -6,7 +6,7 @@ Component({
   properties: {
     historyItem:{
       type:Array,
-      value:['隐形眼镜','圆框眼镜','眼镜布','太阳眼镜']
+      value:['土星','碳纤维','太阳眼镜']
     }
   },
 
@@ -14,8 +14,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    searchInput:'',
-    flag:true
+    searchInput: '',
+    flag: true
   },
 
   /**

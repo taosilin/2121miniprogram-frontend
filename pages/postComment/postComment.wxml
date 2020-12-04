@@ -1,0 +1,90 @@
+<!--pages/postComment/postComment.wxml-->
+<view class="container" style="height:{{windowHeight}}px;">
+  <block wx:for="{{orderDetail.frames}}">
+    <view class="cardDiv">
+      <view class="productDiv">
+        <image class="productImg" src="{{item.specImage}}" mode="widthFix"></image>
+        <view class="productName">{{item.frameName}}</view>
+        <view class="productSpec">{{item.colorName}}-{{item.lensName}}-{{item.refractiveIndex}}</view>
+      </view>
+      
+      <view class="evaluationDiv" wx:if="{{evaluation[index]=='5'}}">
+        <view class="commentTitle">整体评价</view>
+        <view class="starDiv">
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:32rpx;" bindtap="onOneStar" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:32rpx;" bindtap="onTwoStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" bindtap="onThreeStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-left:32rpx;" bindtap="onFourStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-left:32rpx;" bindtap="onFiveStars" data-id="{{index}}"></image>
+        </view>
+        <view class="evaluationText">
+          优无止境，继续进步！
+        </view>
+      </view>
+
+      <view class="evaluationDiv" wx:elif="{{evaluation[index]=='4'}}">
+        <view class="commentTitle">整体评价</view>
+        <view class="starDiv">
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:32rpx;" bindtap="onOneStar" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:32rpx;" bindtap="onTwoStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" bindtap="onThreeStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-left:32rpx;" bindtap="onFourStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:32rpx;" bindtap="onFiveStars" data-id="{{index}}"></image>
+        </view>
+        <view class="evaluationText">
+          差一点点，争取满分！
+        </view>
+      </view>
+
+      <view class="evaluationDiv" wx:elif="{{evaluation[index]=='3'}}">
+        <view class="commentTitle">整体评价</view>
+        <view class="starDiv">
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:32rpx;" bindtap="onOneStar" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:32rpx;" bindtap="onTwoStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" bindtap="onThreeStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:32rpx;" bindtap="onFourStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:32rpx;" bindtap="onFiveStars" data-id="{{index}}"></image>
+        </view>
+        <view class="evaluationText">
+          仍需努力，感谢指点！
+        </view>
+      </view>
+
+      <view class="evaluationDiv" wx:elif="{{evaluation[index]=='2'}}">
+        <view class="commentTitle">整体评价</view>
+        <view class="starDiv">
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:32rpx;" bindtap="onOneStar" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:32rpx;" bindtap="onTwoStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" bindtap="onThreeStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:32rpx;" bindtap="onFourStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:32rpx;" bindtap="onFiveStars" data-id="{{index}}"></image>
+        </view>
+        <view class="evaluationText">
+          您不满意，我就再改！
+        </view>
+      </view>
+
+      <view class="evaluationDiv" wx:elif="{{evaluation[index]=='1'}}">
+        <view class="commentTitle">整体评价</view>
+        <view class="starDiv">
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:32rpx;" bindtap="onOneStar" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-right:32rpx;" bindtap="onTwoStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" bindtap="onThreeStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:32rpx;" bindtap="onFourStars" data-id="{{index}}"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:32rpx;" bindtap="onFiveStars" data-id="{{index}}"></image>
+        </view>
+        <view class="evaluationText">
+          严肃反省，立即改正！
+        </view>
+      </view>
+
+      <view class="commentDiv">
+        <view class="commentTitle">其他要说的</view>
+        <view class="inputDiv">
+          <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入您的评论，有可能会被精选哦" placeholder-style="color:#747474;font-size:24rpx;" maxlength="100" style="font-size:24rpx;"/>
+        </view>
+      </view>
+    </view>
+  </block>
+  
+</view>

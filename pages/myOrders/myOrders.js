@@ -184,5 +184,11 @@ Page({
     wx.navigateTo({
       url: '../orderDetail/orderDetail?orderID='+e.currentTarget.dataset.id,
     });
+  },
+  // 去评价
+  postComment:function(e){
+    wx.navigateTo({
+      url: '../postComment/postComment?orderID='+e.currentTarget.dataset.id,
+    });
   }
 })

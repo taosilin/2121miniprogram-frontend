@@ -30,7 +30,8 @@ Page({
     coupon: null, //选择的优惠券
     enabledCoupons:[],
     disabledCoupons:[],
-    remark: '' // 买家备注
+    remark: '', // 买家备注
+    fromCart: false
   },
 
   /**
@@ -42,7 +43,11 @@ Page({
     this.setData({
       buySpec:JSON.parse(options.buySpec)
     });
-
+    if (options.fromCart){
+      this.setData({
+        fromCart: true
+      })
+    }
     // 计算总价
     let total = 0;
     for (let i=0;i<this.data.buySpec.length;i++){
@@ -227,12 +232,12 @@ Page({
       })
     }else{
       let orderID = (new Date()).getTime().toString()+app.globalData.phoneNumber
-      console.log(orderID)
-      console.log(this.data.address)
-      console.log(this.data.coupon)
-      console.log(this.data.buySpec)
-      console.log(this.data.totalAmount)
-      console.log(this.data.actualAmount)
+      // console.log(orderID)
+      // console.log(this.data.address)
+      // console.log(this.data.coupon)
+      // console.log(this.data.buySpec)
+      // console.log(this.data.totalAmount)
+      // console.log(this.data.actualAmount)
       let order = {
         orderID: orderID,
         userID: app.globalData.phoneNumber,
@@ -264,6 +269,9 @@ Page({
         }
         orderFrames.push(orderFrame);
       }
+
+      var _this = this;
+
       wx.request({
         url: app.globalData.host+'/order/add',
         data:{
@@ -284,6 +292,37 @@ Page({
             icon: 'success',
             duration: 2000
           });
+
+          //从购物车中删除
+          for (let i=0;i<_this.data.buySpec.length;i++){
+            wx.request({
+              url: app.globalData.host+'/cart/delete',
+              data:{
+               userID: app.globalData.phoneNumber,
+               productID: _this.data.buySpec[i].spec.productID,
+               specID: _this.data.buySpec[i].spec.specID,
+               lensID: _this.data.buySpec[i].lens.lensID,
+               leftDegree: _this.data.buySpec[i].cart.leftDegree,
+               rightDegree: _this.data.buySpec[i].cart.rightDegree,
+               interpupillary: _this.data.buySpec[i].cart.interpupillary,
+               leftAstigmatism: _this.data.buySpec[i].cart.leftAstigmatism,
+               rightAstigmatism: _this.data.buySpec[i].cart.rightAstigmatism,
+               leftAxis: _this.data.buySpec[i].cart.leftAxis,
+               rightAxis: _this.data.buySpec[i].cart.rightAxis
+             },
+             method: 'POST',
+             header: {
+               'content-type': 'application/json'//默认值
+             },
+             success: function (res) {
+               
+             },
+             fail: function (res) {
+               console.log("请求失败");
+             }
+            })
+          }
+
         },
         fail: function (res) {
           console.log("请求失败");

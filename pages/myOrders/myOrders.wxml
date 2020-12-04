@@ -53,7 +53,7 @@
             <view class="normal-btn">查看详情</view>
           </view>
           <view wx:elif="{{item.order.state=='6'}}" class="btnDiv">
-            <view class="normal-btn">去评价</view>
+            <view class="normal-btn" bindtap="postComment" data-id="{{item.order.orderID}}">去评价</view>
           </view>
           <view wx:elif="{{item.order.state=='7'}}" class="btnDiv">
             <view class="normal-btn">订单详情</view>

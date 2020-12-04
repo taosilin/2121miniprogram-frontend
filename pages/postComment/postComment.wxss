@@ -1,0 +1,80 @@
+/* pages/postComment/postComment.wxss */
+.container{
+  margin: 0px;
+  padding: 0px;
+  background-color: #F2F2F2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cardDiv{
+  width: 710.1rpx;
+  min-height: 1032.6rpx;
+  background-color: white;
+  margin-top: 26rpx;
+  border-radius: 26rpx; /*???*/
+}
+.productDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.productImg{
+  width: 184.7rpx;/**???**/
+  margin-top: 12rpx;
+}
+.productName{
+  font-size: 28rpx;
+  margin-bottom: 14rpx;
+}
+.productSpec{
+  font-size: 24rpx;
+  color: #747474;
+  margin-bottom: 52rpx;
+}
+.evaluationDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.commentTitle{
+  font-size: 28rpx;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 3rpx;
+  margin-left: 28rpx;
+}
+.starDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40rpx;
+  margin-bottom: 36rpx;
+}
+.starImg{
+  width: 40rpx;
+}
+.evaluationText{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24rpx;
+  color: #747474;
+}
+.commentDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.inputDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30rpx;
+}

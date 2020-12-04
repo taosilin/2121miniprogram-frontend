@@ -21,7 +21,8 @@
     "pages/couponChoose/couponChoose",
     "pages/addressChoose/addressChoose",
     "pages/orderDetail/orderDetail",
-    "pages/optometrySheet/optometrySheet"
+    "pages/optometrySheet/optometrySheet",
+    "pages/postComment/postComment"
   ],
   "tabBar": {
     "position": "bottom",
