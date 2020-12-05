@@ -47,7 +47,7 @@ Component({
     },
     astigmatisms:{
       type: Array,
-      value: [0.00,-0.25,-0.50,-0.75,-1.00,-1.25,-1.50,-1.75,-2.00]
+      value: ["-0.25","-0.50","-0.75","-1.00","-1.25","-1.50","-1.75","-2.00"]
     },
     axiss:{
       type: Array,
@@ -60,13 +60,13 @@ Component({
    */
   data: {
     flag:true,
-    leftDegree: 0.00,
-    rightDegree: 0.00,
-    interpupillary: 0,
-    leftAstigmatism: 0.00,
-    rightAstigmatism: 0.00,
-    leftAxis: 0,
-    rightAxis: 0,
+    leftDegree: null,
+    rightDegree: null,
+    interpupillary: null,
+    leftAstigmatism: null,
+    rightAstigmatism: null,
+    leftAxis: null,
+    rightAxis: null,
     enabledLens:[
               {
                   "lensName": "4K超清镜片",
@@ -181,11 +181,51 @@ Component({
         selectTab:1
       })
     },
+ 
     onBtn3:function(){
-      this.setData({
-        selectTab:2
-      })
+      //检查第二步是否填写完整
+      console.log(this.data)
+      if (this.data.leftDegree==null&&this.data.rightDegree==null){
+        // 未选择度数
+        wx.showToast({
+          title: '请选择度数',
+          icon: 'none',
+          duration: 2000
+        });
+      }
+      else if(this.data.leftDegree==0.00&&this.data.rightDegree==0.00){
+        // 购买平光
+        wx.showToast({
+          title: '您选择的度数为0，如需购买平光镜，请直接选择【购买平光】',
+          icon: 'none',
+          duration: 2000
+        });
+      }
+      else if ((this.data.leftDegree!=null||this.data.rightDegree!=null)&&(this.data.interpupillary==null)){
+        // 未选择瞳距
+        wx.showToast({
+          title: '请选择瞳距',
+          icon: 'none',
+          duration: 2000
+        });
+      }
+      else if ((this.data.leftAstigmatism!=null&&this.data.leftAxis==null)||(this.data.rightAstigmatism!=null&&this.data.rightAxis==null)){
+        // 散光未选择轴位
+        wx.showToast({
+          title: '请选择轴位',
+          icon: 'none',
+          duration: 2000
+        });
+      }
+      else{
+        // 条件全部满足，跳转到下一步
+        this.setData({
+          selectTab:2
+        })
+      }
+      
     },
+
     onTypeChange:function(e){
       let id = e.currentTarget.dataset.id;
       this.setData({
@@ -204,6 +244,41 @@ Component({
         flag: !this.data.flag
       });
 
+      if (this.data.leftDegree==null){
+        this.setData({
+          leftDegree: 0.00
+        })
+      }
+      if (this.data.rightDegree==null){
+        this.setData({
+          rightDegree: 0.00
+        })
+      }
+      if (this.data.interpupillary==null){
+        this.setData({
+          interpupillary: 0
+        })
+      }
+      if (this.data.leftAstigmatism==null){
+        this.setData({
+          leftAstigmatism: 0.00
+        })
+      }
+      if (this.data.rightAstigmatism==null){
+        this.setData({
+          rightAstigmatism: 0.00
+        })
+      }
+      if (this.data.leftAxis==null){
+        this.setData({
+          leftAxis: 0
+        })
+      }
+      if (this.data.rightAxis==null){
+        this.setData({
+          rightAxis: 0
+        })
+      }
       wx.request({
         url: app.globalData.host+'/cart/add',
         data:{
@@ -318,15 +393,27 @@ Component({
         rightAxis: e.detail
       })
     },
+
+    // 验光单怎么看
     optometrySheet:function(){
       wx.navigateTo({
         url: '../optometrySheet/optometrySheet',
       })
     },
 
-    onConfirm:function(e){
-      console.log(e);
-      console.log(this.data)
+    // 购买平光
+    buyPlain:function(){
+      this.setData({
+        leftDegree:0.00,
+        rightDegree:0.00,
+        interpupillary: 0,
+        leftAstigmatism: 0.00,
+        rightAstigmatism: 0.00,
+        leftAxis: 0,
+        rightAxis: 0,
+        selectTab:2
+      });
+      
     }
   }
 })

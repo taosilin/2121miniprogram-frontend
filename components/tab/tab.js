@@ -91,7 +91,7 @@ Component({
    * 组件的初始数据，私有数据
    */
   data: {
-    itemWidth:128,
+    itemWidth:115.9,
     isScroll:true,
     scrollStyle:'border-bootom:1px solid #EAEAEA;',
     left:'0',

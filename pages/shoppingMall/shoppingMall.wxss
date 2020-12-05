@@ -1,20 +1,21 @@
 /* pages/shoppingMall/shoppingMall.wxss */
 .container{
   margin: 0px;
+  padding: 0px;
   /* padding-bottom: 201rpx; */
   width: 100%;
 }
 .labelbar{
   width: 100%;
   box-sizing: border-box;
-  /* padding-top:26rpx;
+  /* padding-top:26rpx;*/
   padding-left: 52rpx;
-  padding-right: 52rpx; */
+  padding-right: 52rpx; 
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
+  
 }
 .classification{
   width: 100%;

@@ -1,6 +1,6 @@
 <!--pages/myOrders/myOrders.wxml-->
 
-<view class="container">
+<view class="container" style="min-height:{{windowHeight}}px;">
     <!-- 标签页 -->
     <view class="labelbar">
       <label-bar tabs="{{tabs}}" selected="{{selectTab}}" selectColor="#72C9FA" selectTextColor="#000000" textColor="#000000" letterSpacing="1" textSize="28" height="78" binditemtap="onTabChange">
@@ -10,7 +10,7 @@
     </view>
     <!-- 有订单时内容 -->
     <block wx:if="{{ordersfilter.length!=0}}">
-      <view wx:for="{{ordersfilter}}" class="order" bindtap="onOrderDetail" data-id="{{item.order.orderID}}">
+      <view wx:for="{{ordersfilter}}" class="order">
         <view class="header">
           <view class="lefttext">{{item.order.orderTime}}</view>
           <view class="midtext">{{item.order.orderID}}</view>
@@ -28,20 +28,24 @@
           <view class="righttext" wx:elif="{{item.order.state=='12'}}">退货中</view>
           <view class="righttext" wx:elif="{{item.order.state=='13'}}">已退货</view>
         </view>
-        <view wx:for="{{item.frames}}" class="content">
-          <view class="imgDiv">
-            <image class="orderpicture" src="{{item.specImage}}" mode="widthFix"></image>
-          </view>
-          <view class="info">
-            <text class="infotext">{{item.frameName}}</text>
-            <text class="infotext">颜色：{{item.colorName}}</text>
-            <text>度数：{{item.leftDegree}}|{{item.rightDegree}}</text>
-          </view>
-          <view class="rightinfo">
-            <text>¥ {{item.price}}</text>
-            <text style="color:#929292;">{{item.num}}件</text>
+
+        <view bindtap="onOrderDetail" data-id="{{item.order.orderID}}">
+          <view wx:for="{{item.frames}}" class="content">
+            <view class="imgDiv">
+              <image class="orderpicture" src="{{item.specImage}}" mode="widthFix"></image>
+            </view>
+            <view class="info">
+              <text class="infotext">{{item.frameName}}</text>
+              <text class="infotext">颜色：{{item.colorName}}</text>
+              <text>度数：{{item.leftDegree}}|{{item.rightDegree}}</text>
+            </view>
+            <view class="rightinfo">
+              <text>¥ {{item.price}}</text>
+              <text style="color:#929292;">{{item.num}}件</text>
+            </view>
           </view>
         </view>
+        
         <view class="footer">
           <view class="total">合计：¥{{item.order.totalAmount}}</view>
           <view wx:if="{{item.order.state=='1'}}" class="btnDiv">

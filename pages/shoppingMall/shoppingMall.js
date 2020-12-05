@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    classes: ['通勤','运动','恋爱','职场'],
+    classes: ['学习考证','游戏看剧','吃喝玩乐','实习求职','太阳镜'],
     frameList: null,
     selectTab: 0,
     page: 0,

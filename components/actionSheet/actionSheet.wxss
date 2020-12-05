@@ -210,7 +210,7 @@
   box-sizing: border-box;
 }
 .bottomText{
-  width: 100%;
+  /* width: 100%; */
   font-size: 26rpx;
   color: #747474;
   text-align: right;
@@ -222,12 +222,13 @@
 .bottomBtn{
   /* display: flex;
   align-items: center;
-  justify-content: center;
-  width: 224rpx;
-  height: 64rpx; */
+  justify-content: center;*/
+  width: 112rpx;
+  height: 45rpx; /*???*/ 
   font-size: 26rpx;
   color: #747474;
-  text-decoration:underline;
+  border-bottom: 2rpx solid #747474;
+  /* text-decoration:underline; */
 }
 
 .content3{

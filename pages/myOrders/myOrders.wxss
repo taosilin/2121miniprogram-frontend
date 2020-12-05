@@ -2,9 +2,11 @@
 .container{
   display: flex;
   flex-direction: column;
+  justify-content: start;
   margin: 0px;
-  padding: 0px;
+  padding: 0px 0px 46rpx 0px;
   background-color: #F2F2F2;
+  box-sizing: border-box;
 }
 .labelbar{
   width: 100%;
@@ -134,11 +136,9 @@
 }
 
 .noOrderContainer{
-  position: relative;
+  /* position: relative; */
   width: 100%;
-  background-color: white;
-  /* height: 700px;  */
-  /*需要判断机型，动态设置高度*/
+  
 }
 .noOrderImgDiv{
   display: flex;
@@ -149,6 +149,8 @@
   width: 100%;
   padding-top: 64rpx;
   padding-bottom: 48rpx;
+  background-color: white;
+  box-sizing: border-box;
 }
 .noOrderImg{
   width: 224rpx;
@@ -160,12 +162,14 @@
   font-size: 28rpx;
   letter-spacing:4rpx;/*字间距*/
   color: #585858;
+  background-color: white;
+  padding-bottom: 112rpx;
 }
 .recommendDiv{
-  position: absolute;
-  height:626rpx;
-  margin-top: 60rpx; /*??????????????*/
+  width: 100%;
+  margin-top: 27.1rpx; 
   box-sizing: border-box;
+  background-color: white;
 }
 .rcmdHeader{
   display: flex;

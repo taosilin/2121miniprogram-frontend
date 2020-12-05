@@ -9,7 +9,7 @@ Page({
     orders:[],
     ordersfilter:[],
     recommend:[],
-    // windowHeight:700,
+    windowHeight:896,
     tabs:['全部订单', '待付款', '待收货', '待评价', '售后'],
     selectTab:0
   },
@@ -21,7 +21,8 @@ Page({
     const sysInfo = wx.getSystemInfoSync();
     var _this = this;
     this.setData({
-      selectTab:options.index
+      selectTab:options.index,
+      windowHeight: sysInfo.windowHeight
     })
     wx.request({
       url: app.globalData.host + '/order/userlist',
@@ -33,7 +34,7 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        //console.log(res.data.data)
+        console.log(res.data.data)
         let orders = res.data.data;
         for (let i=0;i<orders.length;i++){
           orders[i].order.orderTime = orders[i].order.orderTime.slice(0,10)
