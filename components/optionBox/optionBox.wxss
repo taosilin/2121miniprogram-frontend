@@ -44,3 +44,14 @@
 .optionItem{
 
 }
+/* .btnDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.cancelBtn{
+
+}
+.confirmBtn{
+
+} */

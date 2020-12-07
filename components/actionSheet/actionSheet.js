@@ -185,7 +185,8 @@ Component({
     onBtn3:function(){
       //检查第二步是否填写完整
       console.log(this.data)
-      if (this.data.leftDegree==null&&this.data.rightDegree==null){
+      var _this = this;
+      if (this.data.leftDegree==null||this.data.rightDegree==null){
         // 未选择度数
         wx.showToast({
           title: '请选择度数',
@@ -221,6 +222,43 @@ Component({
         // 条件全部满足，跳转到下一步
         this.setData({
           selectTab:2
+        })
+
+        if (this.data.leftAstigmatism==null){
+          this.setData({
+            leftAstigmatism: 0.00,
+            leftAxis: 0
+          })
+        }
+        if (this.data.rightAstigmatism==null){
+          this.setData({
+            rightAstigmatism: 0.00,
+            rightAxis: 0
+          })
+        }
+
+        wx.request({
+          url: app.globalData.host+'/framelens/enabledLens',
+          data:{
+            frameID: this.data.colors[this.data.selectedColor].productID,
+            leftDegree: this.data.leftDegree,
+            rightDegree: this.data.rightDegree,
+            leftAstigmatism: this.data.leftAstigmatism,
+            rightAstigmatism: this.data.rightAstigmatism
+          },
+          method: 'POST',
+          header: {
+            'content-type': 'application/json'//默认值
+          },
+          success: function (res) {
+            console.log(res.data.data);
+            _this.setData({
+              enabledLens:res.data.data
+            });
+          },
+          fail: function (res) {
+            console.log("请求失败");
+          }
         })
       }
       
@@ -261,24 +299,17 @@ Component({
       }
       if (this.data.leftAstigmatism==null){
         this.setData({
-          leftAstigmatism: 0.00
+          leftAstigmatism: 0.00,
+          leftAxis: 0
         })
       }
       if (this.data.rightAstigmatism==null){
         this.setData({
-          rightAstigmatism: 0.00
-        })
-      }
-      if (this.data.leftAxis==null){
-        this.setData({
-          leftAxis: 0
-        })
-      }
-      if (this.data.rightAxis==null){
-        this.setData({
+          rightAstigmatism: 0.00,
           rightAxis: 0
         })
       }
+      
       wx.request({
         url: app.globalData.host+'/cart/add',
         data:{
@@ -286,7 +317,7 @@ Component({
           productID: this.data.colors[this.data.selectedColor].productID,
           specID: this.data.colors[this.data.selectedColor].specID,
           num: 1,
-          lensID: "Lens001",
+          lensID: this.properties.enabledLens[this.properties.optionType].specs[this.properties.optionSpec].lensID,
           leftDegree: this.data.leftDegree,
           rightDegree: this.data.rightDegree,
           interpupillary: this.data.interpupillary,
@@ -317,9 +348,38 @@ Component({
       this.setData({
         flag: !this.data.flag
       });
+
+      if (this.data.leftDegree==null){
+        this.setData({
+          leftDegree: 0.00
+        })
+      }
+      if (this.data.rightDegree==null){
+        this.setData({
+          rightDegree: 0.00
+        })
+      }
+      if (this.data.interpupillary==null){
+        this.setData({
+          interpupillary: 0
+        })
+      }
+      if (this.data.leftAstigmatism==null){
+        this.setData({
+          leftAstigmatism: 0.00,
+          leftAxis: 0
+        })
+      }
+      if (this.data.rightAstigmatism==null){
+        this.setData({
+          rightAstigmatism: 0.00,
+          rightAxis: 0
+        })
+      }
+
       let buySpec = JSON.stringify([{
         cart:{
-          lensID: "Lens001",
+          lensID: this.properties.enabledLens[this.properties.optionType].specs[this.properties.optionSpec].lensID,
           num: 1,
           leftDegree: this.data.leftDegree,
           rightDegree: this.data.rightDegree,
@@ -337,9 +397,9 @@ Component({
           specImage: this.data.colors[this.data.selectedColor].specImage,
         },
         lens:{
-          lensID: this.data.enabledLens[0].specs[0].lensID,
-          lensName: this.data.enabledLens[0].specs[0].lensName,
-          refractiveIndex: this.data.enabledLens[0].specs[0].refractiveIndex
+          lensID: this.data.enabledLens[this.properties.optionType].specs[this.properties.optionSpec].lensID,
+          lensName: this.data.enabledLens[this.properties.optionType].specs[this.properties.optionSpec].lensName,
+          refractiveIndex: this.data.enabledLens[this.properties.optionType].specs[this.properties.optionSpec].refractiveIndex
         },
         color:{
           colorID: this.data.colors[this.data.selectedColor].colorID,
@@ -403,9 +463,10 @@ Component({
 
     // 购买平光
     buyPlain:function(){
+      var _this = this;
       this.setData({
-        leftDegree:0.00,
-        rightDegree:0.00,
+        leftDegree: 0.00,
+        rightDegree: 0.00,
         interpupillary: 0,
         leftAstigmatism: 0.00,
         rightAstigmatism: 0.00,
@@ -413,6 +474,30 @@ Component({
         rightAxis: 0,
         selectTab:2
       });
+
+      wx.request({
+        url: app.globalData.host+'/framelens/enabledLens',
+        data:{
+          frameID: this.data.colors[this.data.selectedColor].productID,
+          leftDegree: this.data.leftDegree,
+          rightDegree: this.data.rightDegree,
+          leftAstigmatism: this.data.leftAstigmatism,
+          rightAstigmatism: this.data.rightAstigmatism
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'//默认值
+        },
+        success: function (res) {
+          console.log(res.data.data);
+          _this.setData({
+            enabledLens:res.data.data
+          });
+        },
+        fail: function (res) {
+          console.log("请求失败");
+        }
+      })
       
     }
   }

@@ -10,5 +10,10 @@
     <picker-view-column>
       <view class="optionItem" wx:for="{{options}}" wx:key="{{options}}" data-id="{{index}}" style="line-height: 50px; text-align: center;" bindtap="onSelect">{{item}}</view>
     </picker-view-column>
+    <!-- <view class="btnDiv">
+      <view class="cancelBtn">取消</view>
+      <view class="confirmBtn">确定</view>
+    </view> -->
   </picker-view>
+  
 </view>

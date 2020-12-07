@@ -9,7 +9,7 @@
       <view class="info">
         <view class="price">¥ {{colors[selectedColor].price}}</view>
         <!-- <text class="originalPrice">¥ {{originalPrice}}</text> -->
-        <view wx:if="{{selectTab==2}}" class="cycle">预计发货：24小时</view>
+        <view wx:if="{{selectTab==2}}" class="cycle">预计发货：{{enabledLens[optionType].specs[optionSpec].deliveryTime}}小时</view>
       </view>
       <view class="btnDiv">
         <view class="btn1 {{selectTab==0?'selectBtn':'btn1-after'}}" bindtap="onBtn1">1.选择镜框和镜腿</view>
@@ -64,7 +64,7 @@
               <text class="description">
                 {{enabledLens[optionType].description}}
                 <br/>
-                {{enabledLens[optionType].specs[optionSpec].description}}
+                {{enabledLens[optionType].specs[optionSpec].descriptionB}}
               </text>
             </view>
 
