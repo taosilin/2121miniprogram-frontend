@@ -1,0 +1,38 @@
+<!--components/servicePopup/servicePopup.wxml-->
+<view class="container" hidden="{{flag}}" bindtap="hidePopup">
+  <view class="background">
+    <view class="z-height">
+      <view class="serviceTitle">
+        服务说明
+      </view>
+      <view class="divContainer">
+        <view class="divLine"></view>
+      </view>
+
+      <view class="serviceItem">
+        <view class="titleDiv">
+          <image class="serviceImg" src="../../image/icon/tick.png" mode="widthFix"></image>
+          <view class="serviceText">15天无忧退货</view>
+        </view>
+        <view class="serviceInfo">2121所有的镜片、镜架都提供15天超长试戴服务期，让您在网上也能放心购买眼镜</view>
+      </view>
+
+      <view class="serviceItem">
+        <view class="titleDiv">
+          <image class="serviceImg" src="../../image/icon/tick.png" mode="widthFix"></image>
+          <view class="serviceText">管家式服务</view>
+        </view>
+        <view class="serviceInfo">全程关爱服务，验光单读取、个人推荐、试戴期跟踪、售后维修的VVVVIP体验，既方便，又安心</view>
+      </view>
+
+      <view class="serviceItem" style="margin-bottom:140rpx">
+        <view class="titleDiv">
+          <image class="serviceImg" src="../../image/icon/tick.png" mode="widthFix"></image>
+          <view class="serviceText">顺丰包邮</view>
+        </view>
+        <view class="serviceInfo">服务有快递界的劳斯莱斯，运费有2121</view>
+      </view>      
+      
+    </view>
+  </view>
+</view>

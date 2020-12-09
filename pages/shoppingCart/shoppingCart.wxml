@@ -16,7 +16,7 @@
             <view class="contentDiv">
               <view class="content">
                 <view class="nameDiv">{{item.frame.frameName}}</view>
-                <view class="priceDiv">¥ {{item.spec.price}}</view>
+                <view class="priceDiv">¥ {{item.spec.price + item.lens.price}}</view>
               </view>
                 
               <view class="tabDiv">

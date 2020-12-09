@@ -67,104 +67,22 @@ Component({
     rightAstigmatism: null,
     leftAxis: null,
     rightAxis: null,
-    enabledLens:[
-              {
-                  "lensName": "4K超清镜片",
-                  "description": "看书清晰度MAX，色彩完美还原，透光率高达99.4%。看得清才能记得牢，是日常看书和备战四六级的好帮手。",
-                  "specs":[
-                    {
-                      "lensID": "018",
-                      "lensName": "4K超清镜片",
-                      "price": 0.00,
-                      "refractiveIndex": "1.60性价比之王",
-                      "material": "PC",
-                      "radian": "非球面",
-                      "variety": "光学",
-                      "film": "绿膜",
-                      "design": "单光",
-                      "state": "1",
-                      "stock": 100,
-                      "description": "在2121星球又名：超加硬超防水UV400非球面绿膜镜片。"
-                    },
-                    {
-                      "lensID": "003",
-                      "lensName": "4K超清镜片",
-                      "price": 50.00,
-                      "refractiveIndex": "1.67经典精致款",
-                      "material": "PC",
-                      "radian": "非球面",
-                      "variety": "光学",
-                      "film": "绿膜",
-                      "design": "单光",
-                      "state": "1",
-                      "stock": 100,
-                      "description": "在2121星球又名：超加硬超防水UV400非球面绿膜镜片。"
-                    },
-                    {
-                      "lensID": "019",
-                      "lensName": "4K超清镜片",
-                      "price": 300.00,
-                      "refractiveIndex": "1.74高度数福利",
-                      "material": "PC",
-                      "radian": "非球面",
-                      "variety": "光学",
-                      "film": "绿膜",
-                      "design": "单光",
-                      "state": "1",
-                      "stock": 100,
-                      "description": "在2121星球又名：超加硬超防水UV400非球面绿膜镜片。"
-                    }
-                  ]
-              },
-      {
-                    "lensName": "电子防护镜片",
-                    "description": "不误砍柴功，有效过滤有害蓝光，阻挡99%+UVA、UVB紫外线。时刻守护长时间查资料写论文和编写代码的你。",
-                    "specs":[
-                      {
-                        "lensID": "020",
-                        "lensName": "电子防护镜片",
-                        "price": 0.00,
-                        "refractiveIndex": "1.60性价比之王",
-                        "material": "PC",
-                        "radian": "非球面",
-                        "variety": "光学",
-                        "film": "绿膜",
-                        "design": "单光",
-                        "state": "1",
-                        "stock": 100,
-                        "description": "在2121星球又名：符合新国标的具有专利ESPF15防晒功能的抗蓝光和防紫外线双效非球面镜片。"
-                      },
-                      {
-                        "lensID": "004",
-                        "lensName": "电子防护镜片",
-                        "price": 50.00,
-                        "refractiveIndex": "1.67经典精致款",
-                        "material": "PC",
-                        "radian": "非球面",
-                        "variety": "光学",
-                        "film": "绿膜",
-                        "design": "单光",
-                        "state": "1",
-                        "stock": 100,
-                        "description": "在2121星球又名：符合新国标的具有专利ESPF15防晒功能的抗蓝光和防紫外线双效非球面镜片。"
-                      }
-                    ]
-                }
-          ]
-      
+    enabledLens:[] 
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    //隐藏菜单
+
+    // 隐藏菜单
     hideSheet: function () {
       this.setData({
         flag: !this.data.flag
       })
     },
-    //展示菜单
+
+    // 展示菜单
     showSheet () {
       this.setData({
         flag: !this.data.flag
@@ -176,6 +94,7 @@ Component({
         selectTab:0
       })
     },
+
     onBtn2:function(){
       this.setData({
         selectTab:1
@@ -184,7 +103,7 @@ Component({
  
     onBtn3:function(){
       //检查第二步是否填写完整
-      console.log(this.data)
+
       var _this = this;
       if (this.data.leftDegree==null||this.data.rightDegree==null){
         // 未选择度数
@@ -264,12 +183,16 @@ Component({
       
     },
 
+    // 选择镜片类型
     onTypeChange:function(e){
       let id = e.currentTarget.dataset.id;
       this.setData({
-        optionType:id
+        optionType:id,
+        optionSpec: 0
       })
     },
+
+    // 选择镜片规格
     onSpecChange:function(e){
       let id = e.currentTarget.dataset.id;
       this.setData({
@@ -399,7 +322,8 @@ Component({
         lens:{
           lensID: this.data.enabledLens[this.properties.optionType].specs[this.properties.optionSpec].lensID,
           lensName: this.data.enabledLens[this.properties.optionType].specs[this.properties.optionSpec].lensName,
-          refractiveIndex: this.data.enabledLens[this.properties.optionType].specs[this.properties.optionSpec].refractiveIndex
+          refractiveIndex: this.data.enabledLens[this.properties.optionType].specs[this.properties.optionSpec].refractiveIndex,
+          price: this.data.enabledLens[this.properties.optionType].specs[this.properties.optionSpec].price
         },
         color:{
           colorID: this.data.colors[this.data.selectedColor].colorID,

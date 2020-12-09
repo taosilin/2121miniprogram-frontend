@@ -22,7 +22,9 @@
     "pages/addressChoose/addressChoose",
     "pages/orderDetail/orderDetail",
     "pages/optometrySheet/optometrySheet",
-    "pages/postComment/postComment"
+    "pages/postComment/postComment",
+    "pages/commentList/commentList",
+    "pages/paymentSuccessful/paymentSuccessful"
   ],
   "tabBar": {
     "position": "bottom",

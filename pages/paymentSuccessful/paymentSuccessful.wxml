@@ -1,0 +1,39 @@
+<!--pages/paymentSuccessful/paymentSuccessful.wxml-->
+<view class="container">
+  <view class="successDiv">
+    <image class="successImg" src="https://from2121.com/pictures/illustration/paymentSuccessful.jpg" mode="widthFix"></image>
+    <view class="successText">
+      <image class="tickIcon" src="../../image/icon/tick_selected.png" mode="widthFix"></image>
+      支付成功
+    </view>
+    <view class="successInfo">您的包裹已蓄势待发</view>
+    <view class="btnDiv">
+      <view class="normalBtn">继续购物</view>
+      <view class="importantBtn">查看订单</view>
+    </view>
+  </view>
+  <view class="recommendDiv">
+          <view class="rcmdHeader">
+            <view class="titleText">为你推荐</view>
+          </view>
+          <view class="productList">
+            <block wx:for="{{recommend}}">
+              <view class="productItem">
+                <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
+                <view class="productImgDiv">
+                  <image class="productImg" src="{{item.coverImage}}" mode="widthFix"></image>
+                </view>    
+                <view class="title">{{item.frameName}}</view>
+                <view class="priceDiv">
+                  <view wx:if="{{item.isSaled}}">
+                    <text class="saledPrice">¥{{item.price}}</text>
+                    <text class="originalPrice">¥899</text>
+                  </view>
+                  <view wx:else class="price">¥{{item.price}}</view>
+                  <view class="comments">1128条好评</view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+</view>

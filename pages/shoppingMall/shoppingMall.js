@@ -11,7 +11,14 @@ Page({
     selectTab: 0,
     page: 0,
     isHideLoadMore: true,
-    isHideEnd: true
+    isHideEnd: true,
+    classesDescription:[
+      ["论文小组","蹲图书馆","复习"],
+      ["2-1","2-2","2-3"],
+      ["3-1","3-2","3-3"],
+      ["4-1","4-2","4-3"],
+      ["5-1","5-2","5-3"]
+    ]
     // types:[
     //   {
     //     typename:"框型",
@@ -46,6 +53,7 @@ Page({
     wx.request({
       url: app.globalData.host+'/frame/class',
       data: {
+        userID: "1",
         sortedBy: this.data.classes[this.data.selectTab],
         page: this.data.page,
         size: 6
@@ -150,6 +158,7 @@ Page({
       wx.request({
         url: app.globalData.host+'/frame/class',
         data: {
+          userID: "1",
           sortedBy: this.data.classes[this.data.selectTab],
           page: this.data.page,
           size: 6
@@ -206,6 +215,7 @@ Page({
     wx.request({
       url: app.globalData.host+'/frame/class',
       data: {
+        userID: "1",
         sortedBy: this.data.classes[this.data.selectTab],
         page: this.data.page,
         size: 6

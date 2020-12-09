@@ -7,12 +7,7 @@ Page({
    */
   data: {
     address:{},
-    product:{
-      name:"开普勒钛架全框眼镜",
-      price:299,
-      num:1,
-      imgUrl:"../../image/glasses.jpg"
-    },
+    product:{},
     buySpec:[],
     customInfo: {
       glassesType:'近视',
@@ -51,7 +46,7 @@ Page({
     // 计算总价
     let total = 0;
     for (let i=0;i<this.data.buySpec.length;i++){
-      total = total + this.data.buySpec[i].cart.num*this.data.buySpec[i].spec.price;
+      total = total + this.data.buySpec[i].cart.num*(this.data.buySpec[i].spec.price+this.data.buySpec[i].lens.price);
     }
     this.setData({
       totalAmount:total
@@ -258,7 +253,7 @@ Page({
           specID: this.data.buySpec[i].spec.specID,
           state:"1",
           num: this.data.buySpec[i].cart.num,
-          price: this.data.buySpec[i].spec.price,
+          price: (this.data.buySpec[i].spec.price+this.data.buySpec[i].lens.price),
           leftDegree: this.data.buySpec[i].cart.leftDegree,
           rightDegree: this.data.buySpec[i].cart.rightDegree,
           interpupillary: this.data.buySpec[i].cart.interpupillary,
@@ -283,6 +278,7 @@ Page({
           'content-type': 'application/json'//默认值
         },
         success: function (res) {
+
           wx.navigateBack({
             delta: 1
           });
@@ -292,6 +288,8 @@ Page({
             icon: 'success',
             duration: 2000
           });
+
+          
 
           //从购物车中删除
           for (let i=0;i<_this.data.buySpec.length;i++){
@@ -338,5 +336,13 @@ Page({
     wx.navigateBack({
       delta: 1
     })
+  },
+
+  // 测试支付成功
+  paymentSuccessful:function(e){
+    wx.redirectTo({
+      url: '../paymentSuccessful/paymentSuccessful'
+    })
   }
 })
+

@@ -51,16 +51,15 @@
       <!-- <text class="originalPrice">¥ {{product.originalPrice}}</text> -->
     </view>
 
-    <view class="bottomDiv">
+    <view class="bottomDiv" bindtap="openServicePopup">
       <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />15天无忧退货
-      <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />先行赔付
-      <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />超时赔偿
+      <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />管家式服务
       <image class="smallIcon" src="../../image/icon/tick.png" mode="widthFix" />顺丰包邮
       <view class='arrow'></view>
       <!-- <image class="moreIcon" src="../../image/icon/more.png" mode="widthFix" /> -->
     </view>
 
-    <view class="commentDiv">
+    <view wx:if="{{newComment}}" class="commentDiv" bindtap="goCommentList">
       <view class="commentHeader">
         <view class="commentTitle">评价（30+）</view>
         <view class="commentRate">好评<span style="color:#72C9FA;">100%</span></view>
@@ -70,7 +69,57 @@
         <view class="divLine"></view>
       </view>
       <view class="commentContent">
-      评论内容
+        <view class="userDiv">
+          <image class="avatarImg" src="{{newComment.user.avatarUrl}}" mode="widthFix"></image>
+          <view class="userName">{{newComment.user.nickname}}</view>
+
+          <view wx:if="{{newComment.comment.evaluation==5}}" class="starDiv">
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix"></image>
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-left:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-left:8rpx;"></image>
+          </view>
+          <view wx:elif="{{newComment.comment.evaluation==4}}" class="starDiv">
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix"></image>
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-left:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>
+          </view>
+          <view wx:elif="{{newComment.comment.evaluation==3}}" class="starDiv">
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix"></image>
+            <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>
+          </view>
+          <view wx:elif="{{newComment.comment.evaluation==2}}" class="starDiv">
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix"></image>
+            <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>
+          </view>
+          <view wx:elif="{{newComment.comment.evaluation==1}}" class="starDiv">
+            <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-right:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix"></image>
+            <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>
+            <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>
+          </view>
+
+        </view>
+        <view class="commentText">{{newComment.comment.commentContent}}</view>
+        <view class="commentPhotoDiv">
+          <view class="commentPhoto" wx:for="{{newComment.comment.commentPhoto}}">
+            <image class="commentImg" src="{{item}}" mode="aspectFill"></image>
+          </view>
+        </view>
+        <view class="lensDiv">
+          <view class="lensName" style="margin-right:46rpx">镜框：{{newComment.color.colorName}}</view>
+          <view class="lensName">镜片：{{newComment.lens.lensName}} {{newComment.lens.refractiveIndex}}</view>  
+        </view>
       </view>
     </view>
 
@@ -102,3 +151,4 @@
 
 <grant-dialog id="getUserInfo" bindgetuserinfo="bindgetuserinfo"/>
 <login-dialog id="getPhoneNumber" binduserExist="binduserExist"/>
+<service-popup id="servicePopup"></service-popup>

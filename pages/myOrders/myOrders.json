@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "label-bar": "../../components/tab/tab"
+    "label-bar": "../../components/tab/tab",
+    "popup":"../../components/popup/popup"
   },
   "navigationBarTitleText": "我的订单"
 }

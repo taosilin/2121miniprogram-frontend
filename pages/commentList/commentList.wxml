@@ -1,0 +1,75 @@
+<!--pages/commentList/commentList.wxml-->
+<view class="container">
+  <view class="header"></view>
+  <view class="commentList">
+    <block wx:for="{{commentList}}">
+      <view class="commentItem">
+        <view class="userDiv">
+          <image class="avatarImg" src="{{item.user.avatarUrl}}" mode="widthFix"></image>
+          <view class="userName">{{item.user.nickname}}</view>
+          <view class="commentTime">{{item.comment.commentTime}}</view>
+        </view>
+
+        <view class="divContainer">
+          <view class="divLine"></view>
+        </view>
+
+        <view wx:if="{{item.comment.evaluation==5}}" class="starDiv">
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-left:8rpx;"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-left:8rpx;"></image>
+        </view>
+
+        <view wx:elif="{{item.comment.evaluation==4}}" class="starDiv">
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-left:8rpx;"></image>            
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>
+        </view>
+
+        <view wx:elif="{{item.comment.evaluation==3}}" class="starDiv">
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>            
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>
+        </view>
+
+        <view wx:elif="{{item.comment.evaluation==2}}" class="starDiv">
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>            
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>
+        </view>
+
+        <view wx:elif="{{item.comment.evaluation==1}}" class="starDiv">
+          <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-right:8rpx;"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix"></image>
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>            
+          <image class="starImg" src="../../image/icon/star_normal.png" mode="widthFix" style="margin-left:8rpx;"></image>
+        </view>
+
+        <view class="commentText">
+          {{item.comment.commentContent}}
+        </view>
+
+        <view class="commentPhotoDiv">
+          <view class="commentPhoto" wx:for="{{item.comment.commentPhoto}}">
+            <image class="commentImg" src="{{item}}" mode="aspectFill"></image>
+          </view>
+        </view>
+
+        <view class="lensDiv">
+          <view class="lensName" style="margin-right:46rpx">镜框：{{item.color.colorName}}</view>
+          <view class="lensName">镜片：{{item.lens.lensName}} {{item.lens.refractiveIndex}}</view>  
+        </view>
+
+      </view>
+    </block>
+  </view>
+</view>

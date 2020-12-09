@@ -1,0 +1,68 @@
+/* components/servicePopup/servicePopup.wxss */
+.container{
+  width: 100%;
+}
+.background{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 19;
+}
+.z-height{
+  width: 100%;
+  background: white;
+  position: absolute;
+  z-index: 20;
+  bottom: 0px;
+  border-radius: 38rpx 38rpx 0px 0px;
+}
+
+.serviceTitle{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 54rpx 0px 40rpx 0px;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.divContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.divLine{
+  background: #F2F2F2;
+  width: 695.6rpx;
+  height: 2rpx;
+ }
+
+ .serviceItem{
+  width: 100%;
+  padding: 64rpx 44rpx 0px 62rpx;
+  box-sizing: border-box;
+}
+ .titleDiv{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+ .serviceImg{
+   width: 28rpx;
+ }
+ .serviceText{
+  font-size: 30rpx;
+  color: #333333;
+  margin-left: 12rpx;
+ }
+ .serviceInfo{
+   font-size: 26rpx;
+   color: #7F7F7F;
+   margin-left: 44rpx;
+   margin-top: 8rpx;
+ }

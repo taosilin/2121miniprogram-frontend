@@ -137,8 +137,27 @@
   bottom: 0px;
 }
 
-
-
+.tabDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16rpx 32rpx;
+  box-sizing: border-box;
+}
+.tabItem{
+  width: 126.8rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid #72C9FA;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  color: #72C9FA;
+  margin-right: 16rpx;
+}
 
 
 .productList{

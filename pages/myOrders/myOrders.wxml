@@ -1,6 +1,9 @@
 <!--pages/myOrders/myOrders.wxml-->
 
 <view class="container" style="min-height:{{windowHeight}}px;">
+
+  <popup id="popup" customInfo="{{customInfo}}"/>
+
     <!-- 标签页 -->
     <view class="labelbar">
       <label-bar tabs="{{tabs}}" selected="{{selectTab}}" selectColor="#72C9FA" selectTextColor="#000000" textColor="#000000" letterSpacing="1" textSize="28" height="78" binditemtap="onTabChange">
@@ -10,57 +13,92 @@
     </view>
     <!-- 有订单时内容 -->
     <block wx:if="{{ordersfilter.length!=0}}">
-      <view wx:for="{{ordersfilter}}" class="order">
-        <view class="header">
+      <view wx:for="{{ordersfilter}}" wx:key="index" class="order">
+        <view class="header" bindtap="onOrderDetail" data-id="{{item.order.orderID}}">
           <view class="lefttext">{{item.order.orderTime}}</view>
           <view class="midtext">{{item.order.orderID}}</view>
           <view class="righttext" wx:if="{{item.order.state=='1'}}">待付款</view>
-          <view class="righttext" wx:elif="{{item.order.state=='2'}}">已付款</view>
-          <view class="righttext" wx:elif="{{item.order.state=='3'}}">已确认</view>
+          <view class="righttext" wx:elif="{{item.order.state=='2'}}">待发货</view>
+          <view class="righttext" wx:elif="{{item.order.state=='3'}}">待发货</view>
           <view class="righttext" wx:elif="{{item.order.state=='4'}}">待发货</view>
-          <view class="righttext" wx:elif="{{item.order.state=='5'}}">待收货</view>
-          <view class="righttext" wx:elif="{{item.order.state=='6'}}">待评价</view>
-          <view class="righttext" wx:elif="{{item.order.state=='7'}}">已完成</view>
-          <view class="righttext" wx:elif="{{item.order.state=='8'}}">已取消</view>
-          <view class="righttext" wx:elif="{{item.order.state=='9'}}">退款申请</view>
-          <view class="righttext" wx:elif="{{item.order.state=='10'}}">已退款</view>
-          <view class="righttext" wx:elif="{{item.order.state=='11'}}">退货申请</view>
-          <view class="righttext" wx:elif="{{item.order.state=='12'}}">退货中</view>
-          <view class="righttext" wx:elif="{{item.order.state=='13'}}">已退货</view>
+          <view class="righttext" wx:elif="{{item.order.state=='5'}}">已发货</view>
+          <view class="righttext" wx:elif="{{item.order.state=='6'}}">已签收</view>
+          <view class="righttext" wx:elif="{{item.order.state=='7'}}">交易完成</view>
+          <view class="righttext" wx:elif="{{item.order.state=='8'}}">交易关闭</view>
+          <view class="righttext" wx:elif="{{item.order.state=='9'}}">退款中</view>
+          <view class="righttext" wx:elif="{{item.order.state=='10'}}">退款成功</view>
+          <view class="righttext" wx:elif="{{item.order.state=='11'}}">请退货</view>
+          <view class="righttext" wx:elif="{{item.order.state=='12'}}">已退货</view>
+          <view class="righttext" wx:elif="{{item.order.state=='13'}}">退货成功</view>
         </view>
 
-        <view bindtap="onOrderDetail" data-id="{{item.order.orderID}}">
-          <view wx:for="{{item.frames}}" class="content">
+        <view data-id="{{item.order.orderID}}">
+          <view wx:for="{{item.frames}}" wx:for-index="childindex" class="content">
             <view class="imgDiv">
               <image class="orderpicture" src="{{item.specImage}}" mode="widthFix"></image>
             </view>
             <view class="info">
-              <text class="infotext">{{item.frameName}}</text>
-              <text class="infotext">颜色：{{item.colorName}}</text>
-              <text>度数：{{item.leftDegree}}|{{item.rightDegree}}</text>
+              <text class="frameName">{{item.frameName}}</text>
+              <text class="infotext">{{item.colorName}}【{{item.lensName}},{{item.refractiveIndex}}】</text>
+              <view class="customBtn" data-i="{{index}}" data-j="{{childindex}}" bindtap="openPopup">定制信息</view>
             </view>
             <view class="rightinfo">
-              <text>¥ {{item.price}}</text>
-              <text style="color:#929292;">{{item.num}}件</text>
+              <text class="priceText">¥ {{item.price}}</text>
+              <text class="numText">{{item.num}}件</text>
             </view>
           </view>
         </view>
         
         <view class="footer">
           <view class="total">合计：¥{{item.order.totalAmount}}</view>
+
           <view wx:if="{{item.order.state=='1'}}" class="btnDiv">
-            <view class="normal-btn">关闭订单</view>
+            <view class="normal-btn">取消订单</view>
             <view class="important-btn">去付款</view>
           </view>
+
+          <view wx:elif="{{item.order.state=='2'}}" class="btnDiv">
+            <view class="normal-btn">联系客服</view>
+            <view class="normal-btn">申请退款</view>
+          </view>
+
+          <view wx:elif="{{(item.order.state=='3')||(item.order.state=='4')}}" class="btnDiv">
+            <view class="normal-btn">联系客服</view>
+            <view class="normal-btn">申请退款</view>
+          </view>
+
           <view wx:elif="{{item.order.state=='5'}}" class="btnDiv">
             <view class="normal-btn">查看物流</view>
-            <view class="normal-btn">查看详情</view>
           </view>
+
           <view wx:elif="{{item.order.state=='6'}}" class="btnDiv">
-            <view class="normal-btn" bindtap="postComment" data-id="{{item.order.orderID}}">去评价</view>
+            <view class="normal-btn">申请退货</view>
+            <view class="important-btn">确认收货</view>
           </view>
+
           <view wx:elif="{{item.order.state=='7'}}" class="btnDiv">
-            <view class="normal-btn">订单详情</view>
+            <view class="normal-btn">申请开票</view>
+            <view class="normal-btn">申请售后</view>
+            <view class="important-btn" bindtap="postComment" data-id="{{item.order.orderID}}">评价</view>
+          </view>
+
+          <view wx:elif="{{item.order.state=='8'}}" class="btnDiv">
+            <view class="normal-btn">加入购物车</view>
+          </view>
+          <view wx:elif="{{item.order.state=='9'}}" class="btnDiv">
+            <view class="normal-btn">联系客服</view>
+          </view>
+          <view wx:elif="{{item.order.state=='10'}}" class="btnDiv">
+            <view class="normal-btn">删除订单</view>
+          </view>
+          <view wx:elif="{{item.order.state=='11'}}" class="btnDiv">
+            <view class="normal-btn">已寄出</view>
+          </view>
+          <view wx:elif="{{item.order.state=='12'}}" class="btnDiv">
+            <view class="normal-btn">联系客服</view>
+          </view>
+          <view wx:elif="{{item.order.state=='13'}}" class="btnDiv">
+            <view class="normal-btn">删除订单</view>
           </view>
         </view>
       </view>

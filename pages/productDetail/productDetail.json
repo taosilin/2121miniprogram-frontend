@@ -2,7 +2,8 @@
   "usingComponents": {
     "action-sheet":"../../components/actionSheet/actionSheet",
     "grant-dialog":"../../components/grantDialog/grantDialog",
-    "login-dialog":"../../components/loginDialog/loginDialog"
+    "login-dialog":"../../components/loginDialog/loginDialog",
+    "service-popup":"../../components/servicePopup/servicePopup"
   },
   "navigationBarTitleText": "2121眼镜"
 }

@@ -284,7 +284,7 @@ Page({
     let total = 0;
     for (let i=0;i<this.data.checkbox.length;i++){
       let index = Number(this.data.checkbox[i]);
-      total = total + this.data.productList[index].spec.price*this.data.productList[index].cart.num;
+      total = total + (this.data.productList[index].spec.price + this.data.productList[index].lens.price)*this.data.productList[index].cart.num;
     }
     this.setData({
       total: total

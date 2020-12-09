@@ -6,24 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // product:{
-    //   name:"开普勒·钛架-全框（含镜片）",
-    //   subTitle:'选用高端航空专用钛 设计优雅',
-    //   productionCycle:3,
-    //   smallImgList:[
-    //     '../../image/glasses2.jpg',
-    //     '../../image/glasses2.jpg',
-    //     '../../image/glasses2.jpg'
-    //   ],
-    //   originalPrice:899
-    // },
     userInfo: null,
     phoneNumber: null,
 
     frameDetail: null,
     specs: null,
     colors: null,
-    selectSpec:0,
+    selectSpec: 0,
+
+    newComment: null, // 最新一条评论
 
     indicatorDots: true,//显示指示点
     autoplay: false,//自动播放
@@ -71,6 +62,29 @@ Page({
         console.log("请求失败");
       }
     })
+    wx.request({
+      url: app.globalData.host+'/comment/latest',
+      data: {
+        productID: options.frameID
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        //console.log(res.data.data);
+        let newComment = res.data.data;
+        let commentPhoto = newComment.comment.commentPhoto.split(',');
+        newComment.comment.commentPhoto = commentPhoto;
+        _this.setData({
+          newComment: newComment
+        });
+        console.log(_this.data.newComment);
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   },
 
   /**
@@ -83,6 +97,7 @@ Page({
     //获得dialog组件
     this.getUserInfo = this.selectComponent("#getUserInfo");
     this.getPhoneNumber = this.selectComponent("#getPhoneNumber");
+    this.servicePopup = this.selectComponent("#servicePopup");
   },
 
   /**
@@ -190,6 +205,20 @@ Page({
       userInfo: e.detail
     })
     this.getPhoneNumber.setData({
+      flag: false
+    })
+  },
+
+  // 跳转商品评论列表页
+  goCommentList:function(){
+    wx.navigateTo({
+      url: '../commentList/commentList?frameID=' + this.data.frameDetail.frameID,
+    })
+  },
+
+  // 打开服务说明
+  openServicePopup:function(e){
+    this.servicePopup.setData({
       flag: false
     })
   }

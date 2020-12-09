@@ -27,18 +27,18 @@
     <view class="orderDetailInfo">提交时间：{{orderDetail.order.orderTime}}</view>
     <view class="orderDetailInfo">支付方式：微信小程序</view>
     <view class="orderDetailInfo" wx:if="{{orderDetail.order.state=='1'}}">订单状态：待付款</view>
-    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='2'}}">订单状态：已付款</view>
-    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='3'}}">订单状态：已确认</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='2'}}">订单状态：待发货</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='3'}}">订单状态：待发货</view>
     <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='4'}}">订单状态：待发货</view>
-    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='5'}}">订单状态：待收货</view>
-    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='6'}}">订单状态：待评价</view>
-    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='7'}}">订单状态：已完成</view>
-    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='8'}}">订单状态：已取消</view>
-    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='9'}}">订单状态：退款申请</view>
-    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='10'}}">订单状态：已退款</view>
-    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='11'}}">订单状态：退货申请</view>
-    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='12'}}">订单状态：退货中</view>
-    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='13'}}">订单状态：已退货</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='5'}}">订单状态：已发货</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='6'}}">订单状态：已签收</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='7'}}">订单状态：交易完成</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='8'}}">订单状态：交易关闭</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='9'}}">订单状态：退款中</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='10'}}">订单状态：退款成功</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='11'}}">订单状态：请退货</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='12'}}">订单状态：已退货</view>
+    <view class="orderDetailInfo" wx:elif="{{orderDetail.order.state=='13'}}">订单状态：退货成功</view>
   </view>
 
   <view class="orderProductDiv">

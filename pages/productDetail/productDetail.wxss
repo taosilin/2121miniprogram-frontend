@@ -285,6 +285,66 @@
   height: 2rpx;
  }
 .commentContent{
-
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 36rpx;
 }
-
+.userDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  padding: 26rpx 0px;
+  box-sizing: border-box;
+}
+.avatarImg{
+  width: 50rpx;
+  border-radius: 25rpx;
+}
+.userName{
+  margin-left: 14rpx;
+  font-size: 24rpx;
+  color: #7F7F7F;
+}
+.starDiv{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 26rpx;
+}
+.starImg{
+  width: 20rpx;
+}
+.commentText{
+  font-size: 28rpx;
+}
+.commentPhotoDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.commentPhoto{
+  margin-top: 14rpx;
+  margin-right: 14rpx;
+}
+.commentImg{
+  width: 157.6rpx;
+  height: 157.6rpx;
+  border-radius: 10rpx;
+}
+.lensDiv{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 16rpx 0px;
+  box-sizing: border-box;
+}
+.lensName{
+  font-size: 24rpx;
+  color: #7F7F7F;
+}

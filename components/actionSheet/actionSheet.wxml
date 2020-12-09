@@ -7,7 +7,8 @@
           <image class="productImg" src="{{colors[selectedColor].specImage}}" mode="widthFix"></image>
       </view>
       <view class="info">
-        <view class="price">¥ {{colors[selectedColor].price}}</view>
+        <view wx:if="{{selectTab==2}}" class="price">¥ {{colors[selectedColor].price + enabledLens[optionType].specs[optionSpec].price}}</view>
+        <view wx:else class="price">¥ {{colors[selectedColor].price}}</view>
         <!-- <text class="originalPrice">¥ {{originalPrice}}</text> -->
         <view wx:if="{{selectTab==2}}" class="cycle">预计发货：{{enabledLens[optionType].specs[optionSpec].deliveryTime}}小时</view>
       </view>

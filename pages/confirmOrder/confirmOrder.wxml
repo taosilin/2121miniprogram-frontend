@@ -35,22 +35,26 @@
 
 
     <view class="divLine"></view>
-    <view class="row">
-      <view class="leftText">商品金额</view>
-      <view class="rightText" style="color:black;">¥ {{totalAmount}}</view>
+    <view class="row" style="margin-top:32rpx;">
+      <view class="leftText" style="color:#747474;">商品金额</view>
+      <view class="rightText">¥ {{totalAmount}}</view>
     </view>
     <view class="row">
-      <view class="leftText">优惠</view>
+      <view class="leftText" style="color:#747474;">运费</view>
+      <view class="rightText">¥ 0</view>
+    </view>
+    <view class="row">
+      <view class="leftText" style="color:#747474;">优惠</view>
       <view wx:if="{{coupon}}" class="rightText" style="color:#D30E26;">-¥ {{coupon.discount}}</view>
       <view wx:else class="rightText">¥ {{discount}}</view>
     </view>
-    <view class="row">
-      <view class="leftText" style="font-size:34rpx;font-weight:bold;">合计</view>
-      <view class="rightText" style="font-size:34rpx;font-weight:bold;color:black;">¥ {{actualAmount}}</view>
+    <view class="row" style="font-size:34rpx;font-weight:bold;">
+      <view class="leftText">合计</view>
+      <view class="rightText" style="color:black;">¥ {{actualAmount}}</view>
     </view>
     <view class="btnDiv">
       <view class="returnBtn" bindtap="onReturn">我再想想</view>
-      <view class="payBtn" bindtap="onConfirm">立即支付</view>
+      <view class="payBtn" bindtap="paymentSuccessful">立即支付</view>
     </view>
     
   </view>
@@ -74,7 +78,7 @@
             <view style="color:#747474;">类型：近视</view>  
           </view>
           <view class="contentRow">
-            <view>¥ {{item.spec.price}}</view>
+            <view>¥ {{item.spec.price+item.lens.price}}</view>
             <view class="customBtn" data-id="{{index}}" bindtap="openPopup">定制信息</view>
             <view class="productNum">数量：{{item.cart.num}}</view>
           </view>

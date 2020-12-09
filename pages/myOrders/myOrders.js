@@ -75,6 +75,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    //获得popup组件
+    this.popup = this.selectComponent("#popup");
   },
 
   /**
@@ -117,6 +119,34 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  // 打开定制信息弹窗
+  openPopup:function(e){
+    console.log(e);
+    let i = e.currentTarget.dataset.i;
+    let j = e.currentTarget.dataset.j;
+    let customInfo = {
+      glassesType:'近视',
+      leftEyeDegree:0.00,
+      rightEyeDegree:0.00,
+      interpupillaryDistance:0,
+      leftEyeAstigmatism:null,
+      rightEyeAstigmatism:null,
+      leftEyeAxis:null,
+      rightEyeAxis:null
+    };
+    customInfo.leftEyeDegree = this.data.ordersfilter[i].frames[j].leftDegree;
+    customInfo.rightEyeDegree = this.data.ordersfilter[i].frames[j].rightDegree;
+    customInfo.interpupillaryDistance = this.data.ordersfilter[i].frames[j].interpupillary;
+    customInfo.leftEyeAstigmatism = this.data.ordersfilter[i].frames[j].leftAstigmatism;
+    customInfo.rightEyeAstigmatism = this.data.ordersfilter[i].frames[j].rightAstigmatism;
+    customInfo.leftEyeAxis = this.data.ordersfilter[i].frames[j].leftAxis;
+    customInfo.rightEyeAxis = this.data.ordersfilter[i].frames[j].rightAxis;
+    this.setData({
+      customInfo: customInfo
+    })
+    this.popup.showPopup();
   },
 
   //tab选项改变

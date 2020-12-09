@@ -33,7 +33,11 @@
       </view>
     </view>  
   </block>  -->
-  
+  <view class="tabDiv">
+    <block wx:for="{{classesDescription[selectTab]}}">
+      <view class="tabItem">{{item}}</view>
+    </block>
+  </view>
   <view class="productList">
     <block wx:for="{{frameList}}">
       <view class="productItem" bindtap="goToProductDetail" data-id="{{item.frameID}}">
