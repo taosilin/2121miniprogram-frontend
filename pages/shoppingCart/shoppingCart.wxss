@@ -52,13 +52,13 @@
 checkbox .wx-checkbox-input {
   width: 40rpx;
   height: 40rpx;
-  border-radius: 20rpx;
+  border-radius: 22rpx;
 }
 /*checkbox选中后样式  */
 checkbox .wx-checkbox-input.wx-checkbox-input-checked {
   width: 40rpx;
   height: 40rpx;
-  border-radius: 20rpx;
+  border-radius: 22rpx;
   background: #72C9FA;
   border: 2rpx solid transparent;
 }

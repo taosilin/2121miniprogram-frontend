@@ -103,7 +103,6 @@ Component({
  
     onBtn3:function(){
       //检查第二步是否填写完整
-
       var _this = this;
       if (this.data.leftDegree==null||this.data.rightDegree==null){
         // 未选择度数
@@ -139,10 +138,6 @@ Component({
       }
       else{
         // 条件全部满足，跳转到下一步
-        this.setData({
-          selectTab:2
-        })
-
         if (this.data.leftAstigmatism==null){
           this.setData({
             leftAstigmatism: 0.00,
@@ -170,10 +165,23 @@ Component({
             'content-type': 'application/json'//默认值
           },
           success: function (res) {
+            
             console.log(res.data.data);
-            _this.setData({
-              enabledLens:res.data.data
-            });
+            // 判断是否有可选镜片
+            if (res.data.data.length>0){
+              _this.setData({
+                selectTab:2,
+                enabledLens:res.data.data
+              });
+            }
+            else{
+              wx.showToast({
+                title: '根据您选择的度数，无对应的镜片',
+                icon: 'none',
+                duration: 2000
+              });
+            }
+            
           },
           fail: function (res) {
             console.log("请求失败");

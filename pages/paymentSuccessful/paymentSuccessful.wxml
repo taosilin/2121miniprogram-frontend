@@ -8,8 +8,8 @@
     </view>
     <view class="successInfo">您的包裹已蓄势待发</view>
     <view class="btnDiv">
-      <view class="normalBtn">继续购物</view>
-      <view class="importantBtn">查看订单</view>
+      <view class="normalBtn" bindtap="goShoppingMall">继续购物</view>
+      <view class="importantBtn" bindtap="goMyOrder">查看订单</view>
     </view>
   </view>
   <view class="recommendDiv">

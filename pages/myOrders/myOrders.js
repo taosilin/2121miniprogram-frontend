@@ -167,7 +167,7 @@ Page({
     else if(this.data.selectTab==1){
       let orders = [];
       for (let i=0;i<this.data.orders.length;i++){
-        if (this.data.orders[i].order.state=='1'){
+        if (this.data.orders[i].order.state=='1'||this.data.orders[i].order.state=='8'){
           orders.push(this.data.orders[i]);
         }
       } 
@@ -178,7 +178,7 @@ Page({
     else if (this.data.selectTab==2){
       let orders = [];
       for (let i=0;i<this.data.orders.length;i++){
-        if (this.data.orders[i].order.state=='5'){
+        if (this.data.orders[i].order.state=='2'||this.data.orders[i].order.state=='3'||this.data.orders[i].order.state=='4'||this.data.orders[i].order.state=='5'){
           orders.push(this.data.orders[i]);
         }
       } 
@@ -189,7 +189,7 @@ Page({
     else if (this.data.selectTab==3){
       let orders = [];
       for (let i=0;i<this.data.orders.length;i++){
-        if (this.data.orders[i].order.state=='6'){
+        if (this.data.orders[i].order.state=='6'||this.data.orders[i].order.state=='7'){
           orders.push(this.data.orders[i]);
         }
       } 
@@ -210,16 +210,24 @@ Page({
       console.log(this.data.ordersfilter.length)
     }
   },
+
   // 订单详情
   onOrderDetail:function(e){
     wx.navigateTo({
       url: '../orderDetail/orderDetail?orderID='+e.currentTarget.dataset.id,
     });
   },
+
+  // 确认收货
+  confirmReceive:function(e){
+    
+  },
+
   // 去评价
   postComment:function(e){
     wx.navigateTo({
       url: '../postComment/postComment?orderID='+e.currentTarget.dataset.id,
     });
   }
+
 })

@@ -52,14 +52,15 @@
             <image class="orderProductImg" src="{{item.specImage}}" mode="widthFix"></image>
           </view>
           <view class="productItemDiv">
-            <view class="productItemInfo">{{item.frameName}}</view>
-            <view class="productItemInfo">颜色：{{item.colorName}}</view>
-            <view class="productItemInfo">镜片类型：{{item.lensName}}</view>
-            <view class="productItemInfo">镜片规格：{{item.refractiveIndex}}</view>
+            <view class="frameName">{{item.frameName}}</view>
+            <view class="productItemInfo">{{item.colorName}}【{{item.lensName}},{{item.refractiveIndex}}】</view>
+            <view class="customInfo">度数：{{item.leftDegree}}|{{item.rightDegree}}瞳距：{{item.interpupillary}}</view>
+            <view class="customInfo">散光：{{item.leftAstigmatism}}|{{item.rightAstigmatism}}</view>
+            <view class="customInfo">轴位：{{item.leftAxis}}|{{item.rightAxis}}</view>
           </view>
           <view class="itemRightDiv">
-            <view class="itemRightText" style="font-weight:bold;">¥{{item.price}}</view>
-            <view class="itemRightText" style="margin-left: 10rpx;color:#8B8B8B;">{{item.num}}件</view>
+            <view class="itemPrice">¥{{item.price}}</view>
+            <view class="itemNum">{{item.num}}件</view>
             <view class="refundBtn">退货</view>
           </view>
         </view>

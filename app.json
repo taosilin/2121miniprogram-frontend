@@ -24,7 +24,9 @@
     "pages/optometrySheet/optometrySheet",
     "pages/postComment/postComment",
     "pages/commentList/commentList",
-    "pages/paymentSuccessful/paymentSuccessful"
+    "pages/paymentSuccessful/paymentSuccessful",
+    "pages/applyService/applyService",
+    "pages/applyRefund/applyRefund"
   ],
   "tabBar": {
     "position": "bottom",

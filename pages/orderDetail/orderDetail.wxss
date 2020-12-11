@@ -70,10 +70,23 @@
   position: relative;
   margin-bottom: 42rpx;
 }
-.productItemInfo{
+.productItemDiv{
+  width: 333.3rpx;
+}
+.frameName{
   font-size: 26rpx;
-  color: #3D3D3D;
-  margin-bottom: 16rpx;
+  color: #333333;
+  margin-bottom: 4rpx;
+}
+.productItemInfo{
+  font-size: 24rpx;
+  color: #999999;
+  margin-bottom: 12rpx;
+}
+.customInfo{
+  font-size: 26rpx;
+  color: #666666;
+  margin-bottom: 4rpx;
 }
 .productImgDiv{
   display: flex;
@@ -87,13 +100,21 @@
   width: 186.6rpx;
 }
 .itemRightDiv{
-  height: 186.6rpx;
+  height: 232.4rpx;
   position: absolute;
   right: 26rpx;
 }
-.itemRightText{
+.itemPrice{
   font-size: 26rpx;
-
+  color: #000000;
+  margin-bottom: 2rpx;
+}
+.itemNum{
+  font-size: 24rpx;
+  letter-spacing: 1.84rpx;
+  color: #8B8B8B;
+  position: absolute;
+  right: 0px;
 }
 .refundBtn{
   color: #3D3D3D;
@@ -146,28 +167,29 @@
   margin-top: 54rpx;
 }
 .normalBtn{
-  width: 150.3rpx;
-  height: 58rpx;
+  width: 164rpx;
+  height: 56rpx;
+  border-radius: 28rpx;
+  font-size: 28rpx;
+  letter-spacing: 4rpx;
+  color: #3D3D3D;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 26rpx;
   border: 2rpx solid #D5D5D5;
-  border-radius: 29rpx;
-  font-size: 28rpx;
-  letter-spacing: 4rpx;
 }
 .importantBtn{
-  width: 150.3rpx;
-  height: 58rpx;
+  width: 164rpx;
+  height: 56rpx;
+  border-radius: 28rpx;
+  font-size: 28rpx;
+  letter-spacing: 4rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   /* margin-right: 26rpx; */
   color: white;
   background-color: #72C9FA;
-  border-radius: 29rpx;
-  font-size: 28rpx;
-  font-weight: bold;
-  letter-spacing: 4rpx;
+ 
 }

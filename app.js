@@ -23,7 +23,8 @@ App({
           },
           success:(res) => {
             console.log(res)
-            _app.globalData.session_key = res.data.data
+            _app.globalData.session_key = res.data.data.session_key
+            _app.globalData.openid = res.data.data.openid
           }
         }) 
       }
@@ -64,6 +65,7 @@ App({
     host: 'https://from2121.com:8443',
     navHeight: 0,
     session_key: null,
+    openid: null,
     phoneNumber: null
   }
 })

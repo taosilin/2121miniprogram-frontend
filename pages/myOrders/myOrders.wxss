@@ -148,8 +148,8 @@
   margin-left: 24rpx;
 }
 .normal-btn{
-  width:164rpx;
-  height:56rpx;
+  width: 164rpx;
+  height: 56rpx;
   border-radius: 28rpx;
   font-size: 28rpx;
   color: #3D3D3D;

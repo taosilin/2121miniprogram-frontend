@@ -73,7 +73,7 @@
 
           <view wx:elif="{{item.order.state=='6'}}" class="btnDiv">
             <view class="normal-btn">申请退货</view>
-            <view class="important-btn">确认收货</view>
+            <view class="important-btn" bindtap="confirmReceive" data-id="{{item.order.orderID}}">确认收货</view>
           </view>
 
           <view wx:elif="{{item.order.state=='7'}}" class="btnDiv">

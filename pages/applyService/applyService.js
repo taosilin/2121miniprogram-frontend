@@ -1,38 +1,17 @@
-// pages/paymentSuccessful/paymentSuccessful.js
-const app = getApp();
+// pages/applyService/applyService.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    recommend:[]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var _this = this;
-    wx.request({
-      url: app.globalData.host+'/frame/list',
-      data: {
-        page: 0,
-        size: 20
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/json'//默认值
-      },
-      success: function (res) {
-        _this.setData({
-          recommend: res.data.data
-        })
-      },
-      fail: function (res) {
-        console.log("请求失败");
-      }
-    })
 
   },
 
@@ -83,17 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  // 继续购物
-  goShoppingMall:function(e){
-    wx.switchTab({
-      url: '../shoppingMall/shoppingMall'
-    });
-  },
-  // 查看订单
-  goMyOrder:function(e){
-    wx.navigateTo({
-      url: '../myOrders/myOrders?index=0',
-    })
   }
 })
