@@ -1,2 +1,41 @@
 <!--pages/applyRefund/applyRefund.wxml-->
-<text>pages/applyRefund/applyRefund.wxml</text>
+<view class="container" style="height:{{windowHeight}}px;">
+  <view class="cardDiv">
+    <view class="serviceTitle">退款商品</view>
+    <view class="productDiv">
+      <block wx:for="{{orderDetail.frames}}">
+        <view class="productItem">
+          <view class="productImgDiv">
+            <image class="productImg" src="{{item.specImage}}" mode="widthFix"></image>
+          </view>
+          <view class="productContent">
+            <view class="frameName">{{item.frameName}}</view>
+            <view class="customInfo">{{item.colorName}}【{{item.lensName}},{{item.refractiveIndex}}】</view>
+            <view class="customBtn">定制信息</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="cardDiv">
+    <view class="serviceTitle">退款信息</view>
+    <view class="refundInfoDiv">
+      <view class="refundInfo">退款原因<span style="color:#72C9FA;">*</span>
+        <view class="rightText">
+          请选择<view class='arrow'></view>
+        </view>
+      </view>
+      <view class="refundInfo">退款金额<span style="color:#72C9FA;">*</span></view>
+    </view>
+  </view>
+
+  <view class="cardDiv">
+    <view class="serviceTitle">补充描述和凭证</view>
+  </view>
+
+  <view class="footer">
+    <view class="footerBtn">提交</view>
+  </view>
+
+</view>

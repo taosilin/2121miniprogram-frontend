@@ -218,6 +218,40 @@ Page({
     });
   },
 
+  // 取消订单
+  cancelOrder:function(e){
+    wx.request({
+      url: app.globalData.host+'/order/updatestate',
+      data: {
+        orderID: e.currentTarget.dataset.id,
+        state: "8"
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          recommend: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
+  },
+  // 申请退款
+  applyRefund:function(e){
+    wx.navigateTo({
+      url: '../applyRefund/applyRefund?orderID='+e.currentTarget.dataset.id,
+    });
+  },
+
+  // 申请退货
+  applyReturn:function(e){
+
+  },
+
   // 确认收货
   confirmReceive:function(e){
     

@@ -53,18 +53,13 @@
           <view class="total">合计：¥{{item.order.totalAmount}}</view>
 
           <view wx:if="{{item.order.state=='1'}}" class="btnDiv">
-            <view class="normal-btn">取消订单</view>
+            <view class="normal-btn" bindtap="cancelOrder" data-id="{{item.order.orderID}}">取消订单</view>
             <view class="important-btn">去付款</view>
           </view>
 
-          <view wx:elif="{{item.order.state=='2'}}" class="btnDiv">
+          <view wx:elif="{{(item.order.state=='2')||(item.order.state=='3')||(item.order.state=='4')}}" class="btnDiv">
             <view class="normal-btn">联系客服</view>
-            <view class="normal-btn">申请退款</view>
-          </view>
-
-          <view wx:elif="{{(item.order.state=='3')||(item.order.state=='4')}}" class="btnDiv">
-            <view class="normal-btn">联系客服</view>
-            <view class="normal-btn">申请退款</view>
+            <view class="normal-btn" bindtap="applyRefund" data-id="{{item.order.orderID}}">申请退款</view>
           </view>
 
           <view wx:elif="{{item.order.state=='5'}}" class="btnDiv">
@@ -72,7 +67,7 @@
           </view>
 
           <view wx:elif="{{item.order.state=='6'}}" class="btnDiv">
-            <view class="normal-btn">申请退货</view>
+            <view class="normal-btn" bindtap="applyReturn" data-id="{{item.order.orderID}}">申请退货</view>
             <view class="important-btn" bindtap="confirmReceive" data-id="{{item.order.orderID}}">确认收货</view>
           </view>
 

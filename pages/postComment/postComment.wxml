@@ -87,4 +87,8 @@
     </view>
   </block>
   
+
+  <view class="footer">
+    <view class="footerBtn">发表评价</view>
+  </view>
 </view>

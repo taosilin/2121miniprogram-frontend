@@ -1,1 +1,115 @@
 /* pages/applyRefund/applyRefund.wxss */
+.container{
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cardDiv{
+  background-color: white;
+  width: 713.7rpx;
+  box-sizing: border-box;
+  border-radius: 24rpx;
+  margin-top: 26rpx;
+}
+.serviceTitle{
+  font-size: 32rpx;
+  letter-spacing: 2rpx;
+  width: 100%;
+  padding: 24rpx 30rpx;
+}
+.productDiv{
+
+}
+.productItem{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.productImgDiv{
+  width: 206.5rpx;
+  height: 179.3rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30rpx;
+}
+.productImg{
+  width: 206.5rpx;
+}
+.productContent{
+  height: 179.3rpx;
+  margin-left: 12rpx;
+}
+.frameName{
+  font-size: 26rpx;
+  color: #333333;
+}
+.customInfo{
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 4rpx;
+}
+.customBtn{
+  font-size: 24rpx;
+  color: #72C9FA;
+  width: 96rpx;
+  border-bottom: 2rpx solid #72C9FA;
+  margin-top: 24rpx;
+}
+.refundInfoDiv{
+  width: 100%;
+  padding: 0px, 38rpx,0px,54rpx;
+  box-sizing: border-box;
+}
+.refundInfo{
+  width: 100%;
+  padding: 0px, 38rpx,0px,54rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.rightText{
+  position: absolute;
+  right: 38rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #8B8B8B;
+}
+.arrow{
+  width: 14rpx;
+  height: 14rpx;
+  border-top: 1.6rpx solid #8B8B8B;
+  border-right: 1.6rpx solid #8B8B8B;
+  transform: rotate(45deg);
+  margin-left: 26rpx;
+} 
+
+.footer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14rpx;
+}
+.footerBtn{
+  width: 681.1rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  font-size: 34rpx;
+  letter-spacing: 2.14rpx;
+  color: #FFFFFF;
+  background-color: #72C9FA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

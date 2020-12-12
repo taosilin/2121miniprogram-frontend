@@ -21,10 +21,9 @@
 .order{
   width: 710.1rpx;
   border-radius: 20rpx;
-  margin-top: 46rpx;
+  margin-top: 24rpx;
   overflow: hidden;
-  position: relative;
-  
+  position: relative; 
 }
 .header{
   font-size: 24rpx;
@@ -91,9 +90,9 @@
   margin-bottom: 16rpx;
 }
 .customBtn{
-  width: 96rpx;
   color: #72C9FA;
   font-size: 24rpx;
+  width: 96rpx;
   border-bottom: 2rpx solid #72C9FA;
 }
 .rightinfo{

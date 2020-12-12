@@ -95,7 +95,8 @@ Page({
         _this.setData({
           productList: res.data.data,
           checkboxBool: checkboxBool,
-          checkbox: []
+          checkbox: [],
+          selectAll: false
         })
 
         _this.computeTotal();

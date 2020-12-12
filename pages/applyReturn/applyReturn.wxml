@@ -1,0 +1,4 @@
+<!--pages/applyReturn/applyReturn.wxml-->
+<view class="container">
+  申请退货
+</view>

@@ -1,18 +1,44 @@
 // pages/applyRefund/applyRefund.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    windowHeight: 896,
+    orderDetail: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const sysInfo = wx.getSystemInfoSync();
+    this.setData({
+      windowHeight: sysInfo.windowHeight
+    })
+    var _this = this;
+    wx.request({
+      url: app.globalData.host+'/order/detail',
+      data:{
+        orderID: options.orderID
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        console.log(res.data.data)
 
+        _this.setData({
+          orderDetail: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   },
 
   /**

@@ -1,4 +1,4 @@
-// pages/applyService/applyService.js
+// pages/applyReturn/applyReturn.js
 Page({
 
   /**
