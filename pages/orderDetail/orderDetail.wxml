@@ -87,7 +87,6 @@
     </view>
 
     <view class="btnDiv">
-      <view class="normalBtn">删除订单</view>
       <view class="normalBtn">查看物流</view>
       <view class="importantBtn">去付款</view>
     </view>

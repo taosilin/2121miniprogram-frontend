@@ -30,7 +30,7 @@
     </view>
     <view class="remarkDiv">
       <view class="remark">备注留言</view>
-      <input class="remarkInput" maxlength="100" placeholder="建议填写内容已与商家达成一致" placeholder-style="font-size:24rpx;color:#747474;" bind:change="onRemarkChange" style="font-size:24rpx;"/>
+      <textarea class="remarkInput" maxlength="100" placeholder="建议填写内容已与商家达成一致" placeholder-style="font-size:24rpx;color:#747474;" bind:change="onRemarkChange" style="font-size:24rpx;" auto-height="true"></textarea>
     </view>
 
 

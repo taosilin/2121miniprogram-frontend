@@ -7,6 +7,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  position: absolute;
 }
 .cardDiv{
   background-color: white;
@@ -62,18 +64,18 @@
 }
 .refundInfoDiv{
   width: 100%;
-  padding: 0px, 38rpx,0px,54rpx;
   box-sizing: border-box;
 }
 .refundInfo{
   width: 100%;
-  padding: 0px, 38rpx,0px,54rpx;
+  padding-left: 54rpx;
   box-sizing: border-box;
   font-size: 28rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
   position: relative;
+  margin-bottom: 48rpx;
 }
 .rightText{
   position: absolute;
@@ -82,6 +84,7 @@
   flex-direction: row;
   align-items: center;
   color: #8B8B8B;
+  font-size: 24rpx;
 }
 .arrow{
   width: 14rpx;
@@ -91,14 +94,22 @@
   transform: rotate(45deg);
   margin-left: 26rpx;
 } 
-
+.descriptionDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.descriptionInput{
+  width: 632.2rpx;
+}
 .footer{
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14rpx;
+  margin-top: 14rpx;
 }
 .footerBtn{
   width: 681.1rpx;

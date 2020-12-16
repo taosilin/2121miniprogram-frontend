@@ -1,0 +1,84 @@
+/* components/refundReason/refundReason.wxss */
+.container{
+  width: 100%;
+}
+.background{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 19;
+}
+.z-height{
+  width: 100%;
+  height: 797.1rpx;
+  background: white;
+  position: absolute;
+  z-index: 20;
+  bottom: 0px;
+  border-radius: 38rpx 38rpx 0px 0px;
+}
+.reasonTitle{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #333333;
+  padding-top: 42rpx;
+  padding-bottom: 24rpx;
+}
+.reasonList{
+  width: 100%;
+}
+.lineDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.divLine{
+  background-color: #F2F2F2;
+  width: 695.6rpx;
+  height: 2rpx;
+ }
+.radioCell{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24rpx 52rpx 20rpx 52rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.reasonText{
+
+}
+.radioDiv{
+  position: absolute;
+  right: 52rpx;
+}
+.footer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14rpx;
+}
+.footerBtn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #72C9FA;
+  color: #FFFFFF;
+  width: 681.1rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  font-size: 34rpx;
+  letter-spacing: 2.14rpx;
+}

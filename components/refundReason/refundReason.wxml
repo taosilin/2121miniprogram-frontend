@@ -1,0 +1,28 @@
+<!--components/refundReason/refundReason.wxml-->
+<view class="container" hidden="{{flag}}">
+  <view class="background">
+    <view class="z-height">
+      <view class="reasonTitle">退款原因</view>
+      <view class="reasonList">
+        <radio-group bindchange="radioChange">
+          
+          <block wx:for="{{reasons}}">
+            <view class="lineDiv">
+              <view class="divLine"></view>
+            </view>
+            <view class="radioCell">           
+              <view class="reasonText">{{item}}</view>
+              <view class="radioDiv">
+                <radio value="{{item}}" color="#72C9FA"/>
+              </view>
+            </view>
+          </block>
+          
+        </radio-group>
+      </view>
+      <view class="footer">
+        <view class="footerBtn" bindtap="onConfirm">确认</view>
+      </view>
+    </view>
+  </view>
+</view>
