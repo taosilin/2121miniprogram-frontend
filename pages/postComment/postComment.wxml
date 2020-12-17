@@ -87,6 +87,7 @@
     </view>
   </block>
   
+  <!-- <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" /> -->
 
   <view class="footer">
     <view class="footerBtn">发表评价</view>

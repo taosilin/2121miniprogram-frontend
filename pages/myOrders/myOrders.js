@@ -249,7 +249,9 @@ Page({
 
   // 申请退货
   applyReturn:function(e){
-
+    wx.navigateTo({
+      url: '../applyReturn/applyReturn?orderID='+e.currentTarget.dataset.id,
+    });
   },
 
   // 确认收货
