@@ -101,3 +101,11 @@
   align-items: center;
   justify-content: center;
 }
+.commentPhoto{
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 78rpx;
+  padding-left: 54rpx;
+  padding-right: 54rpx;
+  margin-bottom: 46rpx;
+}

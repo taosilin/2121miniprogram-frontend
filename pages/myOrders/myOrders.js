@@ -242,8 +242,10 @@ Page({
   },
   // 申请退款
   applyRefund:function(e){
+    var id = e.currentTarget.dataset.id;
+    var info = JSON.stringify(this.data.ordersfilter[id]);
     wx.navigateTo({
-      url: '../applyRefund/applyRefund?orderID='+e.currentTarget.dataset.id,
+      url: '../applyRefund/applyRefund?orderDetail='+info,
     });
   },
 

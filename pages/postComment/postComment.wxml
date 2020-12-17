@@ -81,15 +81,21 @@
       <view class="commentDiv">
         <view class="commentTitle">其他要说的</view>
         <view class="inputDiv">
-          <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入您的评论，有可能会被精选哦" placeholder-style="color:#747474;font-size:24rpx;" maxlength="100" style="font-size:24rpx;"/>
+          <textarea bindinput="onContentChange" data-id="{{index}}" auto-height placeholder="请输入您的评论，有可能会被精选哦" placeholder-style="color:#747474;font-size:24rpx;" maxlength="200" style="font-size:24rpx;"/>
+        </view>
+        <view class="commentPhoto">
+          <van-uploader
+            data-id="{{index}}"
+            file-list="{{ fileList[index] }}" 
+            bind:after-read="afterRead" 
+            max-count="3"/>
         </view>
       </view>
     </view>
   </block>
   
-  <!-- <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" /> -->
 
   <view class="footer">
-    <view class="footerBtn">发表评价</view>
+    <view class="footerBtn" bindtap="onPostComment">发表评价</view>
   </view>
 </view>

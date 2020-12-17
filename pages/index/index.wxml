@@ -29,7 +29,7 @@
 
 <view class="popup" hidden="{{popupVisible}}">
   <view class="z-height">
-    <image class="popupImg" src="../../image/couponPopup.png" mode="widthFix" bindtap="onGetCoupon"></image>
+    <image class="popupImg" src="https://from2121.com/pictures/illustration/couponPopup.png" mode="widthFix" bindtap="onGetCoupon"></image>
     <!-- <image class="closeIcon" src="../../image/closeIcon.png" mode="widthFix" bindtap="onPopup"></image> -->
   </view>
 </view>

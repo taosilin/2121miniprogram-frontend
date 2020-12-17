@@ -27,30 +27,33 @@ Page({
    */
   onLoad: function (options) {
     const sysInfo = wx.getSystemInfoSync();
+    var orderDetail = JSON.parse(options.orderDetail);
     this.setData({
-      windowHeight: sysInfo.windowHeight
+      windowHeight: sysInfo.windowHeight,
+      orderDetail: orderDetail
     })
-    var _this = this;
-    wx.request({
-      url: app.globalData.host+'/order/detail',
-      data:{
-        orderID: options.orderID
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/json'//默认值
-      },
-      success: function (res) {
-        console.log(res.data.data)
+    
+    // var _this = this;
+    // wx.request({
+    //   url: app.globalData.host+'/order/detail',
+    //   data:{
+    //     orderID: options.orderID
+    //   },
+    //   method: 'POST',
+    //   header: {
+    //     'content-type': 'application/json'//默认值
+    //   },
+    //   success: function (res) {
+    //     console.log(res.data.data)
 
-        _this.setData({
-          orderDetail: res.data.data
-        })
-      },
-      fail: function (res) {
-        console.log("请求失败");
-      }
-    })
+    //     _this.setData({
+    //       orderDetail: res.data.data
+    //     })
+    //   },
+    //   fail: function (res) {
+    //     console.log("请求失败");
+    //   }
+    // })
   },
 
   /**

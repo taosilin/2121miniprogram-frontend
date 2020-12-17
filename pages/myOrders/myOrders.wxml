@@ -59,7 +59,7 @@
 
           <view wx:elif="{{(item.order.state=='2')||(item.order.state=='3')||(item.order.state=='4')}}" class="btnDiv">
             <view class="normal-btn">联系客服</view>
-            <view class="normal-btn" bindtap="applyRefund" data-id="{{item.order.orderID}}">申请退款</view>
+            <view class="normal-btn" bindtap="applyRefund" data-id="{{index}}">申请退款</view>
           </view>
 
           <view wx:elif="{{item.order.state=='5'}}" class="btnDiv">

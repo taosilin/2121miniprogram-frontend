@@ -1,0 +1,26 @@
+{
+  "name": "2121miniprogram-frontend",
+  "version": "1.0.0",
+  "description": "2121miniprogram-frontend",
+  "main": "app.js",
+  "dependencies": {
+    "@vant/weapp": "^1.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taosilin/2121miniprogram-frontend.git"
+  },
+  "keywords": [
+    "2121Eyewear"
+  ],
+  "author": "Taocelyn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taosilin/2121miniprogram-frontend/issues"
+  },
+  "homepage": "https://github.com/taosilin/2121miniprogram-frontend#readme"
+}

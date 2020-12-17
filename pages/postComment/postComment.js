@@ -9,7 +9,8 @@ Page({
     windowHeight: 896,
     orderDetail: {},
     evaluation: [],
-    fileList:[]
+    fileList:[],
+    commentContent:[]
   },
 
   /**
@@ -33,18 +34,25 @@ Page({
       success: function (res) {
         console.log(res.data.data)
         let evaluation = [];
+        let fileList = [];
+        let commentContent = [];
         for (let i=0;i<res.data.data.frames.length;i++){
           evaluation.push("5");
+          fileList.push(new Array());
+          commentContent.push("");
         }
         _this.setData({
           orderDetail: res.data.data,
-          evaluation: evaluation
+          evaluation: evaluation,
+          fileList: fileList,
+          commentContent: commentContent
         })
       },
       fail: function (res) {
         console.log("请求失败");
       }
     })
+
   },
 
   /**
@@ -145,25 +153,85 @@ Page({
     });
   },
   
-  bindTextAreaBlur: function(e) {
-    console.log(e.detail.value)
+  // 用户输入评论内容
+  onContentChange:function(e){
+    console.log(e);
+    let id = e.currentTarget.dataset.id;
+    let commentContent = this.data.commentContent;
+    commentContent[id] = e.detail.value;
+    this.setData({
+      commentContent: commentContent
+    });
   },
 
-  // // 上传评价图片的回调
-  // afterRead(event) {
-  //   const { file } = event.detail;
-  //   // 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式
-  //   wx.uploadFile({
-  //     url: 'https://example.weixin.qq.com/upload', // 仅为示例，非真实的接口地址
-  //     filePath: file.url,
-  //     name: 'file',
-  //     formData: { user: 'test' },
-  //     success(res) {
-  //       // 上传完成需要更新 fileList
-  //       const { fileList = [] } = this.data;
-  //       fileList.push({ ...file, url: res.data });
-  //       this.setData({ fileList });
-  //     },
-  //   });
-  // }
+  // 上传评价图片的回调
+  afterRead(event) {
+    var id = event.currentTarget.dataset.id;
+    const { file } = event.detail;
+    var _this = this;
+    // 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式
+    wx.uploadFile({
+      url: app.globalData.host+'/comment/uploadImage', 
+      filePath: file.url,
+      name: 'imageFile',
+      formData: { imageFile: file.url },
+      success(res) {
+        // console.log(res);
+        //上传完成需要更新 fileList
+        let fileList = _this.data.fileList;
+        fileList[id].push({ ...file, url: res.data });
+        _this.setData({ fileList:fileList });
+      },
+    });
+  },
+
+  // 发表评价
+  onPostComment:function(e){
+    console.log(this.data.fileList)
+    var _this = this;
+    for (let i=0;i<this.data.orderDetail.frames.length;i++){
+      let commentPhoto = new Array();
+      if (this.data.fileList[i].length>0){
+        for (let j=0;j<this.data.fileList[i].length;j++){
+          commentPhoto.push(this.data.fileList[i][j].url);
+        }
+      }
+      
+      let commentID = (new Date()).getTime().toString()+(Math.floor((Math.random()*10000000)+1000000)).toString();
+      wx.request({
+        url: app.globalData.host+'/comment/add',
+        data:{
+          commentID: commentID,
+          orderID: this.data.orderDetail.order.orderID,
+          productID: this.data.orderDetail.frames[i].frameID,
+          userID: app.globalData.phoneNumber,
+          commentTime: (new Date()).getTime(),
+          commentContent: this.data.commentContent[i],
+          evaluation: this.data.evaluation[i],
+          commentPhoto: commentPhoto.join(","),
+          state: "0",
+          specID: this.data.orderDetail.frames[i].specID,
+          lensID: this.data.orderDetail.frames[i].lensID
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'//默认值
+        },
+        success: function (res) {
+          //console.log("评论成功！");
+          wx.showToast({
+            title: '评论成功！',
+            icon: 'success',
+            duration: 2000
+          });
+        },
+        fail: function (res) {
+          console.log("请求失败");
+        }
+      })
+    }
+    wx.navigateBack({
+      delta: 1
+    })
+  }
 })

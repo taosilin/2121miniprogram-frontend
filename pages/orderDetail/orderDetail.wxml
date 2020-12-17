@@ -61,7 +61,8 @@
           <view class="itemRightDiv">
             <view class="itemPrice">¥{{item.price}}</view>
             <view class="itemNum">{{item.num}}件</view>
-            <view class="refundBtn">退货</view>
+            <view wx:if="{{orderDetail.order.state=='2'||orderDetail.order.state=='3'||orderDetail.order.state=='4'}}" class="refundBtn">退款</view>
+            <view wx:elif="{{orderDetail.order.state=='6'}}" class="refundBtn">退货</view>
           </view>
         </view>
       </block>
@@ -86,10 +87,10 @@
       </view>
     </view>
 
-    <view class="btnDiv">
+    <!-- <view class="btnDiv">
       <view class="normalBtn">查看物流</view>
       <view class="importantBtn">去付款</view>
-    </view>
+    </view> -->
 
   </view>
 
