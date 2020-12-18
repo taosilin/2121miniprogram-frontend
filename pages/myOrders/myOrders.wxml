@@ -50,7 +50,7 @@
         </view>
         
         <view class="footer">
-          <view class="total">合计：¥{{item.order.totalAmount}}</view>
+          <view class="total">合计：¥{{item.order.totalAmount}}  实付款：¥{{item.order.actualPayment}}</view>
 
           <view wx:if="{{item.order.state=='1'}}" class="btnDiv">
             <view class="normal-btn" bindtap="cancelOrder" data-id="{{item.order.orderID}}">取消订单</view>

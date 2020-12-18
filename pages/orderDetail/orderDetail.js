@@ -82,5 +82,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  // 申请退款
+  applyRefund:function(e){
+    let id = e.currentTarget.dataset.id;
+    
   }
 })

@@ -218,114 +218,114 @@ Page({
     })
   },
   // 立即支付
-  onConfirm:function(){
-    if (this.data.address==null){
-      wx.showToast({
-        title: '请选择地址',
-        icon: 'none',
-        duration: 2000
-      })
-    }else{
-      let orderID = (new Date()).getTime().toString()+(Math.floor((Math.random()*10000000)+1000000)).toString();
+  // onConfirm:function(){
+  //   if (this.data.address==null){
+  //     wx.showToast({
+  //       title: '请选择地址',
+  //       icon: 'none',
+  //       duration: 2000
+  //     })
+  //   }else{
+  //     let orderID = (new Date()).getTime().toString()+(Math.floor((Math.random()*10000000)+1000000)).toString();
 
-      let order = {
-        orderID: orderID,
-        userID: app.globalData.phoneNumber,
-        addressID: this.data.address.addressID,
-        couponID: (this.data.coupon?this.data.coupon.couponID:null),
-        totalAmount: this.data.totalAmount,
-        actualPayment: this.data.actualAmount,
-        orderTime: (new Date()).getTime(),
-        state: "1",
-        remark: this.data.remark
-      }
-      let orderFrames = new Array();
-      for (let i=0;i<this.data.buySpec.length;i++){
-        let orderFrame = {
-          orderID: orderID,
-          frameID: this.data.buySpec[i].frame.frameID,
-          lensID: this.data.buySpec[i].cart.lensID,
-          specID: this.data.buySpec[i].spec.specID,
-          state:"1",
-          num: this.data.buySpec[i].cart.num,
-          price: (this.data.buySpec[i].spec.price+this.data.buySpec[i].lens.price),
-          leftDegree: this.data.buySpec[i].cart.leftDegree,
-          rightDegree: this.data.buySpec[i].cart.rightDegree,
-          interpupillary: this.data.buySpec[i].cart.interpupillary,
-          leftAstigmatism: this.data.buySpec[i].cart.leftAstigmatism,
-          rightAstigmatism: this.data.buySpec[i].cart.rightAstigmatism,
-          leftAxis: this.data.buySpec[i].cart.leftAxis,
-          rightAxis: this.data.buySpec[i].cart.rightAxis
-        }
-        orderFrames.push(orderFrame);
-      }
+  //     let order = {
+  //       orderID: orderID,
+  //       userID: app.globalData.phoneNumber,
+  //       addressID: this.data.address.addressID,
+  //       couponID: (this.data.coupon?this.data.coupon.couponID:null),
+  //       totalAmount: this.data.totalAmount,
+  //       actualPayment: this.data.actualAmount,
+  //       orderTime: (new Date()).getTime(),
+  //       state: "1",
+  //       remark: this.data.remark
+  //     }
+  //     let orderFrames = new Array();
+  //     for (let i=0;i<this.data.buySpec.length;i++){
+  //       let orderFrame = {
+  //         orderID: orderID,
+  //         frameID: this.data.buySpec[i].frame.frameID,
+  //         lensID: this.data.buySpec[i].cart.lensID,
+  //         specID: this.data.buySpec[i].spec.specID,
+  //         state:"1",
+  //         num: this.data.buySpec[i].cart.num,
+  //         price: (this.data.buySpec[i].spec.price+this.data.buySpec[i].lens.price),
+  //         leftDegree: this.data.buySpec[i].cart.leftDegree,
+  //         rightDegree: this.data.buySpec[i].cart.rightDegree,
+  //         interpupillary: this.data.buySpec[i].cart.interpupillary,
+  //         leftAstigmatism: this.data.buySpec[i].cart.leftAstigmatism,
+  //         rightAstigmatism: this.data.buySpec[i].cart.rightAstigmatism,
+  //         leftAxis: this.data.buySpec[i].cart.leftAxis,
+  //         rightAxis: this.data.buySpec[i].cart.rightAxis
+  //       }
+  //       orderFrames.push(orderFrame);
+  //     }
 
-      var _this = this;
+  //     var _this = this;
 
-      wx.request({
-        url: app.globalData.host+'/order/add',
-        data:{
-          order:order,
-          orderFrames:orderFrames
-        },
-        method: 'POST',
-        header: {
-          'content-type': 'application/json'//默认值
-        },
-        success: function (res) {
+  //     wx.request({
+  //       url: app.globalData.host+'/order/add',
+  //       data:{
+  //         order:order,
+  //         orderFrames:orderFrames
+  //       },
+  //       method: 'POST',
+  //       header: {
+  //         'content-type': 'application/json'//默认值
+  //       },
+  //       success: function (res) {
 
-          wx.navigateBack({
-            delta: 1
-          });
-          //处理添加订单
-          wx.showToast({
-            title: '已下单',
-            icon: 'success',
-            duration: 2000
-          });
+  //         wx.navigateBack({
+  //           delta: 1
+  //         });
+  //         //处理添加订单
+  //         wx.showToast({
+  //           title: '已下单',
+  //           icon: 'success',
+  //           duration: 2000
+  //         });
 
           
 
-          //从购物车中删除
-          for (let i=0;i<_this.data.buySpec.length;i++){
-            wx.request({
-              url: app.globalData.host+'/cart/delete',
-              data:{
-               userID: app.globalData.phoneNumber,
-               productID: _this.data.buySpec[i].spec.productID,
-               specID: _this.data.buySpec[i].spec.specID,
-               lensID: _this.data.buySpec[i].lens.lensID,
-               leftDegree: _this.data.buySpec[i].cart.leftDegree,
-               rightDegree: _this.data.buySpec[i].cart.rightDegree,
-               interpupillary: _this.data.buySpec[i].cart.interpupillary,
-               leftAstigmatism: _this.data.buySpec[i].cart.leftAstigmatism,
-               rightAstigmatism: _this.data.buySpec[i].cart.rightAstigmatism,
-               leftAxis: _this.data.buySpec[i].cart.leftAxis,
-               rightAxis: _this.data.buySpec[i].cart.rightAxis
-             },
-             method: 'POST',
-             header: {
-               'content-type': 'application/json'//默认值
-             },
-             success: function (res) {
+  //         //从购物车中删除
+  //         for (let i=0;i<_this.data.buySpec.length;i++){
+  //           wx.request({
+  //             url: app.globalData.host+'/cart/delete',
+  //             data:{
+  //              userID: app.globalData.phoneNumber,
+  //              productID: _this.data.buySpec[i].spec.productID,
+  //              specID: _this.data.buySpec[i].spec.specID,
+  //              lensID: _this.data.buySpec[i].lens.lensID,
+  //              leftDegree: _this.data.buySpec[i].cart.leftDegree,
+  //              rightDegree: _this.data.buySpec[i].cart.rightDegree,
+  //              interpupillary: _this.data.buySpec[i].cart.interpupillary,
+  //              leftAstigmatism: _this.data.buySpec[i].cart.leftAstigmatism,
+  //              rightAstigmatism: _this.data.buySpec[i].cart.rightAstigmatism,
+  //              leftAxis: _this.data.buySpec[i].cart.leftAxis,
+  //              rightAxis: _this.data.buySpec[i].cart.rightAxis
+  //            },
+  //            method: 'POST',
+  //            header: {
+  //              'content-type': 'application/json'//默认值
+  //            },
+  //            success: function (res) {
                
-             },
-             fail: function (res) {
-               console.log("请求失败");
-             }
-            })
-          }
+  //            },
+  //            fail: function (res) {
+  //              console.log("请求失败");
+  //            }
+  //           })
+  //         }
 
-        },
-        fail: function (res) {
-          console.log("请求失败");
-        }
-      })
-    }
+  //       },
+  //       fail: function (res) {
+  //         console.log("请求失败");
+  //       }
+  //     })
+  //   }
     
 
-  }
-  ,
+  // }
+  // ,
   // 返回上一页
   onReturn:function(){
     wx.navigateBack({
@@ -378,7 +378,7 @@ Page({
                 totalAmount: _this.data.totalAmount,
                 actualPayment: _this.data.actualAmount,
                 orderTime: (new Date()).getTime(),
-                state: "1",
+                state: "2",
                 remark: _this.data.remark
               }
               let orderFrames = new Array();
@@ -391,6 +391,7 @@ Page({
                   state:"2",
                   num: _this.data.buySpec[i].cart.num,
                   price: (_this.data.buySpec[i].spec.price+_this.data.buySpec[i].lens.price),
+                  actualPayment: (_this.data.actualAmount/_this.data.totalAmount)*(_this.data.buySpec[i].spec.price+_this.data.buySpec[i].lens.price),
                   leftDegree: _this.data.buySpec[i].cart.leftDegree,
                   rightDegree: _this.data.buySpec[i].cart.rightDegree,
                   interpupillary: _this.data.buySpec[i].cart.interpupillary,
@@ -420,8 +421,6 @@ Page({
                     icon: 'success',
                     duration: 2000
                   });
-        
-                  
         
                   //从购物车中删除
                   for (let i=0;i<_this.data.buySpec.length;i++){
@@ -479,11 +478,7 @@ Page({
           console.log("请求失败");
         }
       })
-  
-
     }
-
-    
   }
 })
 
