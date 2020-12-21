@@ -18,7 +18,7 @@ Page({
     wx.request({
       url: app.globalData.host+'/address/list',
       data:{
-        userID: app.globalData.phoneNumber
+        userID: app.globalData.openid
       },
       method: 'POST',
       header: {
@@ -51,7 +51,7 @@ Page({
     wx.request({
       url: app.globalData.host+'/address/list',
       data:{
-        userID: app.globalData.phoneNumber
+        userID: app.globalData.openid
       },
       method: 'POST',
       header: {
@@ -128,7 +128,7 @@ Page({
       url: app.globalData.host+'/address/modifyDefaultAdd',
       data:{
         addressID: e.detail.value,
-        userID: app.globalData.phoneNumber
+        userID: app.globalData.openid
       },
       method: 'POST',
       header: {

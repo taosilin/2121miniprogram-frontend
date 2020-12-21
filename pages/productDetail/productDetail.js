@@ -171,7 +171,7 @@ Page({
     wx.request({
       url: app.globalData.host + '/like/add',
       data: {
-        userID: app.globalData.phoneNumber,
+        userID: app.globalData.openid,
         productID: this.data.frameDetail.frameID
       },
       method: 'POST',

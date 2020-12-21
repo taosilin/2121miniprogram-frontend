@@ -3,7 +3,6 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/shoppingMall/shoppingMall",
-    "pages/optometry/optometry",
     "pages/shoppingCart/shoppingCart",
     "pages/userCenter/userCenter",
     "pages/myOrders/myOrders",

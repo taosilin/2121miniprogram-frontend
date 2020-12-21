@@ -22,7 +22,7 @@ Page({
        wx.request({
         url: app.globalData.host+'/user/detail',
         data:{
-          userID: app.globalData.phoneNumber
+          userID: app.globalData.openid
         },
         method: 'POST',
         header: {
@@ -173,7 +173,7 @@ Page({
        wx.request({
         url: app.globalData.host+'/user/detail',
         data:{
-          userID: app.globalData.phoneNumber
+          userID: app.globalData.openid
         },
         method: 'POST',
         header: {
@@ -260,7 +260,7 @@ Page({
     wx.request({
       url: app.globalData.host+'/user/detail',
       data:{
-        userID: app.globalData.phoneNumber
+        userID: app.globalData.openid
       },
       method: 'POST',
       header: {

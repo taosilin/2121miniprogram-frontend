@@ -1,7 +1,6 @@
 {
   "usingComponents": {
     "stepper":"../../components/stepper/stepper",
-    "tabbar":"../../components/tabbar/tabbar",
     "popup":"../../components/popup/popup"
   },
   "navigationBarTitleText":"购物车"

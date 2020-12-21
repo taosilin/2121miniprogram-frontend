@@ -46,28 +46,6 @@ Page({
       description: description,
       fileList: fileList
     })
-    
-    // var _this = this;
-    // wx.request({
-    //   url: app.globalData.host+'/order/detail',
-    //   data:{
-    //     orderID: options.orderID
-    //   },
-    //   method: 'POST',
-    //   header: {
-    //     'content-type': 'application/json'//默认值
-    //   },
-    //   success: function (res) {
-    //     console.log(res.data.data)
-
-    //     _this.setData({
-    //       orderDetail: res.data.data
-    //     })
-    //   },
-    //   fail: function (res) {
-    //     console.log("请求失败");
-    //   }
-    // })
   },
 
   /**
@@ -216,7 +194,7 @@ Page({
           productID: this.data.orderDetail.frames[i].frameID,
           specID: this.data.orderDetail.frames[i].specID,    
           lensID: this.data.orderDetail.frames[i].lensID,
-          applicant: app.globalData.phoneNumber,
+          applicant: app.globalData.openid,
           amount: this.data.orderDetail.frames[i].actualPayment,
           reason: this.data.refundReason[i],
           description: this.data.description[i],

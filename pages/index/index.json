@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "tabbar":"../../components/tabbar/tabbar",
     "grant-dialog":"../../components/grantDialog/grantDialog",
     "login-dialog":"../../components/loginDialog/loginDialog"
   },

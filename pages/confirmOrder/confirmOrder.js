@@ -68,7 +68,7 @@ Page({
     wx.request({
       url: app.globalData.host+'/address/default',
       data:{
-        userID: app.globalData.phoneNumber
+        userID: app.globalData.openid
       },
       method: 'POST',
       header: {
@@ -87,7 +87,7 @@ Page({
     wx.request({
       url: app.globalData.host+'/usercoupon/enable',
       data:{
-        userID: app.globalData.phoneNumber,
+        userID: app.globalData.openid,
         totalAmount: this.data.totalAmount
       },
       method: 'POST',
@@ -372,7 +372,7 @@ Page({
               // 处理添加订单
               let order = {
                 orderID: orderID,
-                userID: app.globalData.phoneNumber,
+                userID: app.globalData.openid,
                 addressID: _this.data.address.addressID,
                 couponID: (_this.data.coupon?_this.data.coupon.couponID:null),
                 totalAmount: _this.data.totalAmount,
@@ -427,7 +427,7 @@ Page({
                     wx.request({
                       url: app.globalData.host+'/cart/delete',
                       data:{
-                       userID: app.globalData.phoneNumber,
+                       userID: app.globalData.openid,
                        productID: _this.data.buySpec[i].spec.productID,
                        specID: _this.data.buySpec[i].spec.specID,
                        lensID: _this.data.buySpec[i].lens.lensID,

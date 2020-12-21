@@ -204,7 +204,7 @@ Page({
           commentID: commentID,
           orderID: this.data.orderDetail.order.orderID,
           productID: this.data.orderDetail.frames[i].frameID,
-          userID: app.globalData.phoneNumber,
+          userID: app.globalData.openid,
           commentTime: (new Date()).getTime(),
           commentContent: this.data.commentContent[i],
           evaluation: this.data.evaluation[i],

@@ -108,7 +108,7 @@ Page({
         url: app.globalData.host + '/address/add',
         data:{
           addressID: (new Date()).getTime().toString(),
-          userID: app.globalData.phoneNumber,
+          userID: app.globalData.openid,
           receiver: this.data.receiver,
           telephone: this.data.telephone,
           province: this.data.region[0],

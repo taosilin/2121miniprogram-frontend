@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "tabbar":"../../components/tabbar/tabbar",
-    "filter":"../../components/filter/filter"
-  },
-  "navigationBarTitleText":"验光狮"
-}

@@ -18,7 +18,7 @@ Page({
     wx.request({
       url: app.globalData.host+'/like/frame',
       data:{
-        userID: app.globalData.phoneNumber
+        userID: app.globalData.openid
       },
       method: 'POST',
       header: {
@@ -119,7 +119,7 @@ Page({
       wx.request({
         url: app.globalData.host + '/like/delete',
         data:{
-          userID: app.globalData.phoneNumber,
+          userID: app.globalData.openid,
           productID: _this.data.likeList[id].frameID
         },
         method: 'POST',

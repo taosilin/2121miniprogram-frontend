@@ -27,7 +27,7 @@ Page({
     wx.request({
       url: app.globalData.host + '/order/userlist',
       data:{
-        userID: app.globalData.phoneNumber
+        userID: app.globalData.openid
       },
       method: 'POST',
       header: {
@@ -251,8 +251,10 @@ Page({
 
   // 申请退货
   applyReturn:function(e){
+    var id = e.currentTarget.dataset.id;
+    var info = JSON.stringify(this.data.ordersfilter[id]);
     wx.navigateTo({
-      url: '../applyReturn/applyReturn?orderID='+e.currentTarget.dataset.id,
+      url: '../applyReturn/applyReturn?orderDetail='+info,
     });
   },
 

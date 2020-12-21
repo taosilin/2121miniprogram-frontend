@@ -35,7 +35,7 @@ Page({
     wx.request({
       url: app.globalData.host + '/cart/user',
       data:{
-        userID: app.globalData.phoneNumber
+        userID: app.globalData.openid
       },
       method: 'POST',
       header: {
@@ -80,7 +80,7 @@ Page({
     wx.request({
       url: app.globalData.host + '/cart/user',
       data:{
-        userID: app.globalData.phoneNumber
+        userID: app.globalData.openid
       },
       method: 'POST',
       header: {
@@ -253,7 +253,7 @@ Page({
     wx.request({
       url: app.globalData.host+'/cart/update',
       data:{
-        userID: app.globalData.phoneNumber,
+        userID: app.globalData.openid,
         productID: this.data.productList[id].spec.productID,
         specID: this.data.productList[id].spec.specID,
         num: e.detail,
@@ -398,7 +398,7 @@ Page({
            wx.request({
              url: app.globalData.host+'/cart/delete',
              data:{
-              userID: app.globalData.phoneNumber,
+              userID: app.globalData.openid,
               productID: _this.data.productList[id].spec.productID,
               specID: _this.data.productList[id].spec.specID,
               lensID: _this.data.productList[id].lens.lensID,

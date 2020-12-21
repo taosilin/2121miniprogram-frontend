@@ -56,6 +56,12 @@ Page({
         console.log("请求失败");
       }
     })
+
+    const sysInfo = wx.getSystemInfoSync();
+    this.setData({
+      postHeight:sysInfo.windowWidth*1.2174
+    })
+    
     // if (app.globalData.userInfo) {
     //   this.setData({
     //     userInfo: app.globalData.userInfo,
@@ -119,10 +125,6 @@ Page({
     //     }
     //   })
     // }
-    const sysInfo = wx.getSystemInfoSync();
-    this.setData({
-      postHeight:sysInfo.windowWidth*1.2174
-    })
     
   },
 
@@ -154,7 +156,7 @@ Page({
     wx.request({
       url: app.globalData.host+'/usercoupon/add',
       data:{
-        userID: app.globalData.phoneNumber,
+        userID: app.globalData.openid,
         couponID:"4"
       },
       method: 'POST',
@@ -170,7 +172,7 @@ Page({
     wx.request({
       url: app.globalData.host+'/usercoupon/add',
       data:{
-        userID: app.globalData.phoneNumber,
+        userID: app.globalData.openid,
         couponID:"5"
       },
       method: 'POST',

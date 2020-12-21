@@ -44,7 +44,8 @@ Component({
           wx.request({
             url: app.globalData.host+'/user/add',
             data: {
-              userID: app.globalData.phoneNumber,
+              userID: app.globalData.openid,
+              phoneNumber: app.globalData.phoneNumber,
               nickname: app.globalData.userInfo.nickName,
               gender: app.globalData.userInfo.gender,
               avatarUrl: app.globalData.userInfo.avatarUrl
@@ -58,7 +59,7 @@ Component({
                 wx.request({
                   url: app.globalData.host+'/user/detail',
                   data:{
-                    userID: app.globalData.phoneNumber
+                    userID: app.globalData.openid
                   },
                   method: 'POST',
                   header: {

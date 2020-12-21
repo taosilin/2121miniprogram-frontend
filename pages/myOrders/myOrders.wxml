@@ -67,7 +67,7 @@
           </view>
 
           <view wx:elif="{{item.order.state=='6'}}" class="btnDiv">
-            <view class="normal-btn" bindtap="applyReturn" data-id="{{item.order.orderID}}">申请退货</view>
+            <view class="normal-btn" bindtap="applyReturn" data-id="{{index}}">申请退货</view>
             <view class="important-btn" bindtap="confirmReceive" data-id="{{item.order.orderID}}">确认收货</view>
           </view>
 

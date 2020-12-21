@@ -1,8 +1,0 @@
-<!--pages/optometry/optometry.wxml-->
-<!-- <text>pages/optometry/optometry.wxml</text> -->
-<view>
-  <filter />
-  <view class="tabbarDiv">
-    <tabbar currentTab="2" />
-  </view>
-</view>

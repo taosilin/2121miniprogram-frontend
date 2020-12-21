@@ -244,7 +244,7 @@ Component({
       wx.request({
         url: app.globalData.host+'/cart/add',
         data:{
-          userID: app.globalData.phoneNumber,
+          userID: app.globalData.openid,
           productID: this.data.colors[this.data.selectedColor].productID,
           specID: this.data.colors[this.data.selectedColor].specID,
           num: 1,

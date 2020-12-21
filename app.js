@@ -11,22 +11,59 @@ App({
       success: res => {
         console.log(res)
         var _app = this
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        wx.request({
-          url: this.globalData.host + '/app/initWxLogin',
-          data:{
-            jsCode: res.code
+        this.globalData.code = res.code
+
+        // 从缓存获取openid
+        wx.getStorage({
+          key: 'openid',
+          success: function(res) {
+            console.log(res.data)
+            _app.globalData.openid = res.data
+            wx.request({
+              url: _app.globalData.host+'/user/detail',
+              data:{
+                userID: _app.globalData.openid
+              },
+              method: 'POST',
+              header: {
+                'content-type': 'application/json'//默认值
+              },
+              success: function (res) {
+                if (res.data.data!=null){
+                  _app.globalData.userInfo = res.data.data
+                  _app.globalData.phoneNumber = res.data.data.phoneNumber
+                }
+                
+              },
+              fail: function (res) {
+                console.log("请求失败");
+              }
+            })
           },
-          method: 'POST',
-          header:{
-            'content-type':'application/json'
-          },
-          success:(res) => {
-            console.log(res)
-            _app.globalData.session_key = res.data.data.session_key
-            _app.globalData.openid = res.data.data.openid
+          fail:function(e){
+            console.log(e)
+            // 发送 res.code 到后台换取 openId, sessionKey, unionId
+            wx.request({
+              url: _app.globalData.host + '/app/initWxLogin',
+              data:{
+                jsCode: res.code
+              },
+              method: 'POST',
+              header:{
+                'content-type':'application/json'
+              },
+              success:(res) => {
+                console.log(res)
+                _app.globalData.session_key = res.data.data.session_key
+                _app.globalData.openid = res.data.data.openid
+                wx.setStorage({
+                  key:"openid",
+                  data:res.data.data.openid
+                })
+              }
+            }) 
           }
-        }) 
+        })
       }
     })
     // 获取用户信息
@@ -66,6 +103,7 @@ App({
     navHeight: 0,
     session_key: null,
     openid: null,
-    phoneNumber: null
+    phoneNumber: null,
+    code: null
   }
 })

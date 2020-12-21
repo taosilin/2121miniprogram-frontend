@@ -46,7 +46,7 @@ Page({
     wx.request({
       url: app.globalData.host+'/usercoupon/list',
       data: {
-        userID: app.globalData.phoneNumber
+        userID: app.globalData.openid
       },
       method: 'POST',
       header: {

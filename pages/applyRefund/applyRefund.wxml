@@ -1,5 +1,5 @@
 <!--pages/applyRefund/applyRefund.wxml-->
-<view class="container" style="height:{{windowHeight}}px;">
+<view class="container" style="min-height:{{windowHeight}}px;">
   <block wx:for="{{orderDetail.frames}}">
     <view class="cardDiv">
       <view class="serviceTitle">退款商品</view>
@@ -21,7 +21,7 @@
       <view class="serviceTitle">退款信息</view>
       <view class="refundInfoDiv">
         <view class="refundInfo">退款原因<span style="color:#72C9FA;">*</span>
-          <view wx:if="{{refundReason[index]}}" class="rightText" bindtap="openRefundReason">
+          <view wx:if="{{refundReason[index]}}" class="rightText" bindtap="openRefundReason" data-id="{{index}}">
             {{refundReason[index]}}<view class='arrow'></view>
           </view>
           <view wx:else class="rightText" bindtap="openRefundReason" data-id="{{index}}">

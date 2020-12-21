@@ -8,8 +8,8 @@
       <input class="input" name="input" value="{{telephone}}" bind:change="onTelChange"/>
     </view>
     <view class="formItem">所在地区：
-      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
-        <view wx:if="{{region.length!=0}}" class="picker">
+      <picker class="picker" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view wx:if="{{region.length!=0}}">
           {{region[0]}}-{{region[1]}}-{{region[2]}}
         </view>
         <view wx:else>省-市-区
