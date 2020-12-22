@@ -25,7 +25,8 @@
     "pages/commentList/commentList",
     "pages/paymentSuccessful/paymentSuccessful",
     "pages/applyRefund/applyRefund",
-    "pages/applyReturn/applyReturn"
+    "pages/applyReturn/applyReturn",
+    "pages/logisticsDetail/logisticsDetail"
   ],
   "tabBar": {
     "position": "bottom",

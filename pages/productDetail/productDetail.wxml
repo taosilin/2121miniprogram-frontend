@@ -61,8 +61,8 @@
 
     <view wx:if="{{newComment}}" class="commentDiv" bindtap="goCommentList">
       <view class="commentHeader">
-        <view class="commentTitle">评价（30+）</view>
-        <view class="commentRate">好评<span style="color:#72C9FA;">100%</span></view>
+        <view class="commentTitle">评价（{{goodRating.commentCout}}）</view>
+        <view class="commentRate">好评<span style="color:#72C9FA;">{{goodRating.approvalRatingStr2}}</span></view>
         <view class='arrow'></view>
       </view>
       <view class="divContainer">
@@ -71,7 +71,7 @@
       <view class="commentContent">
         <view class="userDiv">
           <image class="avatarImg" src="{{newComment.user.avatarUrl}}" mode="widthFix"></image>
-          <view class="userName">{{newComment.user.nickname}}</view>
+          <view class="userName">{{newComment.user.nickName}}</view>
 
           <view wx:if="{{newComment.comment.evaluation==5}}" class="starDiv">
             <image class="starImg" src="../../image/icon/star_selected.png" mode="widthFix" style="margin-right:8rpx;"></image>
@@ -123,13 +123,18 @@
       </view>
     </view>
 
+    <view class="description">
+      <image wx:for="{{frameDetail.description}}" class="descriptionImg" src="{{item}}" mode="widthFix"></image>
+    </view>
   </view>
   
   <view class="footer">
-    <view class="navDiv">
-      <image class="serviceIcon" src="../../image/icon/service_normal.png" mode="widthFix"></image>
-      客服
-    </view>
+    <button open-type="contact" bindcontact="handleContact" style="width:80rpx;height:100rpx;padding:0px;margin:0px;font-weight:normal;background-color:#FFFFFF;">
+      <view class="navDiv">
+        <image class="serviceIcon" src="../../image/icon/service_normal.png" mode="widthFix"></image>
+        客服
+      </view>
+    </button>
     <view class="navDiv" bindtap="goToShoppingCart">
       <image class="cartIcon" src="../../image/icon/addCart.png" mode="widthFix"></image>
       购物车

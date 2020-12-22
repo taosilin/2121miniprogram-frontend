@@ -1,0 +1,18 @@
+<!--pages/logisticsDetail/logisticsDetail.wxml-->
+<view class="container">
+  <view class="title">
+    顺丰速运  {{logisticsDetail.nu}}
+  </view>
+  <view class="stepList">
+    <block wx:for="{{logisticsDetail.data}}">
+      <view wx:if="{{index>0}}" class="divLine"></view>
+      <view class="stepItem">
+        <view class="stepTime">{{item.time}}</view>
+        <view wx:if="{{index===0}}" class="stepPoint" style="border: 1px solid #72C9FA;"></view>
+        <view wx:else class="stepPoint"></view>
+        <view class="stepContext">{{item.context}}</view>
+      </view>
+    </block>
+    
+  </view>
+</view>

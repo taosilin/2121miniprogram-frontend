@@ -1,0 +1,47 @@
+/* pages/logisticsDetail/logisticsDetail.wxss */
+.container{
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+.title{
+  width: 100%;
+  font-size: 28rpx;
+  color: #3D3D3D;
+  letter-spacing: 1rpx;
+}
+.stepList{
+  width: 100%;
+  padding:18rpx 0px;
+  box-sizing: border-box;
+}
+.divLine{
+  width: 2rpx;
+  height: 70rpx;
+  background-color: #9B9B9B;
+  position: relative;
+  left: 232rpx;
+}
+.stepItem{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.stepTime{
+  font-size: 20rpx;
+  color: #9B9B9B;
+  width: 120rpx;
+  margin-left: 74rpx;
+}
+.stepPoint{
+  width: 20rpx;
+  height: 20rpx;
+  border: 2rpx solid #CECECE;
+  border-radius: 10rpx;
+  margin: 0px 28rpx;
+}
+.stepContext{
+  font-size: 24rpx;
+  color: #3D3D3D;
+  width: 406rpx;
+}

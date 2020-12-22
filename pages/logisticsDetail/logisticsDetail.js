@@ -1,4 +1,4 @@
-// pages/orderDetail/orderDetail.js
+// pages/logisticsDetail/logisticsDetail.js
 const app = getApp();
 Page({
 
@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    orderDetail:{}
+    logisticsDetail:null
   },
 
   /**
@@ -15,18 +15,21 @@ Page({
   onLoad: function (options) {
     var _this = this;
     wx.request({
-      url: app.globalData.host+'/order/detail',
-      data:{
-        orderID:options.orderID
+      url: app.globalData.host+'/logistics',
+      data: {
+        "com":"ems",
+        "num":"9881171496554",
+        "phone":"13774247249"
       },
       method: 'POST',
       header: {
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        console.log(res.data.data)
+        console.log(JSON.parse(res.data.data))
+        let logistics = JSON.parse(res.data.data);
         _this.setData({
-          orderDetail: res.data.data
+          logisticsDetail: logistics
         })
       },
       fail: function (res) {
@@ -82,31 +85,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  // 申请退款
-  applyRefund:function(e){
-    let id = e.currentTarget.dataset.id;
-    let item = this.data.orderDetail.frames[id];
-    let frames = new Array();
-    frames.push(item);
-    let info = this.data.orderDetail;
-    info.frames = frames;
-    info = JSON.stringify(info);
-    wx.navigateTo({
-      url: '../applyRefund/applyRefund?orderDetail='+info,
-    });
-  },
-  // 申请退货
-  applyReturn:function(e){
-    let id = e.currentTarget.dataset.id;
-    let item = this.data.orderDetail.frames[id];
-    let frames = new Array();
-    frames.push(item);
-    let info = this.data.orderDetail;
-    info.frames = frames;
-    info = JSON.stringify(info);
-    wx.navigateTo({
-      url: '../applyReturn/applyReturn?orderDetail='+info,
-    });
   }
 })

@@ -6,7 +6,7 @@
       <view class="commentItem">
         <view class="userDiv">
           <image class="avatarImg" src="{{item.user.avatarUrl}}" mode="widthFix"></image>
-          <view class="userName">{{item.user.nickname}}</view>
+          <view class="userName">{{item.user.nickName}}</view>
           <view class="commentTime">{{item.comment.commentTime}}</view>
         </view>
 
@@ -69,6 +69,11 @@
           <view class="lensName">镜片：{{item.lens.lensName}} {{item.lens.refractiveIndex}}</view>  
         </view>
 
+        <view class="replyDiv" wx:if="{{item.comment.reply}}">
+          <view class="replyTitle">商家回复</view>
+          <view class="replyContent">{{item.comment.reply}}</view>
+        </view>
+        
       </view>
     </block>
   </view>

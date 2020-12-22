@@ -29,6 +29,7 @@ App({
                 'content-type': 'application/json'//默认值
               },
               success: function (res) {
+                console.log(res.data.data)
                 if (res.data.data!=null){
                   _app.globalData.userInfo = res.data.data
                   _app.globalData.phoneNumber = res.data.data.phoneNumber

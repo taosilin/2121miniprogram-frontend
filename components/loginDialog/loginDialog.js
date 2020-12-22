@@ -38,15 +38,13 @@ Component({
           'content-type': 'application/json'//默认值
         },
         success: function (res) {
-          console.log(res.data.data)
           app.globalData.phoneNumber = res.data.data
-          console.log(app.globalData.userInfo)
           wx.request({
             url: app.globalData.host+'/user/add',
             data: {
               userID: app.globalData.openid,
               phoneNumber: app.globalData.phoneNumber,
-              nickname: app.globalData.userInfo.nickName,
+              nickName: app.globalData.userInfo.nickName,
               gender: app.globalData.userInfo.gender,
               avatarUrl: app.globalData.userInfo.avatarUrl
             },

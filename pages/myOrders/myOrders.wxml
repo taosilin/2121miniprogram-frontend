@@ -58,12 +58,15 @@
           </view>
 
           <view wx:elif="{{(item.order.state=='2')||(item.order.state=='3')||(item.order.state=='4')}}" class="btnDiv">
-            <view class="normal-btn">联系客服</view>
+            <button open-type="contact" bindcontact="handleContact" style="width:192rpx;height:60rpx;padding:0px;font-weight:normal;background-color:#FFFFFF;">
+              <view class="normal-btn">联系客服</view>
+            </button>
+            
             <view class="normal-btn" bindtap="applyRefund" data-id="{{index}}">申请退款</view>
           </view>
 
           <view wx:elif="{{item.order.state=='5'}}" class="btnDiv">
-            <view class="normal-btn">查看物流</view>
+            <view class="normal-btn" bindtap="logisticsDetail" data-id="{{item.order.orderID}}">查看物流</view>
           </view>
 
           <view wx:elif="{{item.order.state=='6'}}" class="btnDiv">
@@ -72,8 +75,12 @@
           </view>
 
           <view wx:elif="{{item.order.state=='7'}}" class="btnDiv">
-            <view class="normal-btn">申请开票</view>
-            <view class="normal-btn">申请售后</view>
+            <button open-type="contact" bindcontact="handleContact" style="width:192rpx;height:60rpx;padding:0px;font-weight:normal;background-color:#FFFFFF;">
+              <view class="normal-btn">申请开票</view>
+            </button>
+            <button open-type="contact" bindcontact="handleContact" style="width:192rpx;height:60rpx;padding:0px;font-weight:normal;background-color:#FFFFFF;">
+              <view class="normal-btn">申请售后</view>
+            </button>
             <view class="important-btn" bindtap="postComment" data-id="{{item.order.orderID}}">评价</view>
           </view>
 
@@ -81,7 +88,9 @@
             <view class="normal-btn">加入购物车</view>
           </view>
           <view wx:elif="{{item.order.state=='9'}}" class="btnDiv">
-            <view class="normal-btn">联系客服</view>
+            <button open-type="contact" bindcontact="handleContact" style="width:192rpx;height:60rpx;padding:0px;font-weight:normal;background-color:#FFFFFF;">
+              <view class="normal-btn">联系客服</view>
+            </button>
           </view>
           <view wx:elif="{{item.order.state=='10'}}" class="btnDiv">
             <view class="normal-btn">删除订单</view>
@@ -90,7 +99,9 @@
             <view class="normal-btn">已寄出</view>
           </view>
           <view wx:elif="{{item.order.state=='12'}}" class="btnDiv">
-            <view class="normal-btn">联系客服</view>
+            <button open-type="contact" bindcontact="handleContact" style="width:192rpx;height:60rpx;padding:0px;font-weight:normal;background-color:#FFFFFF;">
+              <view class="normal-btn">联系客服</view>
+            </button>
           </view>
           <view wx:elif="{{item.order.state=='13'}}" class="btnDiv">
             <view class="normal-btn">删除订单</view>
@@ -114,7 +125,7 @@
           </view>
           <view class="productList">
             <block wx:for="{{recommend}}">
-              <view class="productItem">
+              <view class="productItem" data-id="{{item.frameID}}" bindtap="goToProductDetail">
                 <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
                 <view class="productImgDiv">
                   <image class="productImg" src="{{item.coverImage}}" mode="widthFix"></image>

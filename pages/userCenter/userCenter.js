@@ -71,77 +71,6 @@ Page({
 
   },
 
-  // // 获取用户手机号
-  // bindgetphonenumber: function(e){
-  //   var _this = this;
-
-  //   if (e.detail.errMsg == "getPhoneNumber:fail user deny") return;
-
-  //   wx.request({
-  //     url: app.globalData.host+'/app/decodeUserInfo',
-  //     data: {
-  //       encryptedData: e.detail.encryptedData,
-  //       iv: e.detail.iv,
-  //       sessionKey: app.globalData.session_key
-  //     },
-  //     method: 'POST',
-  //     header: {
-  //       'content-type': 'application/json'//默认值
-  //     },
-  //     success: function (res) {
-  //       console.log(res.data.data)
-  //       app.globalData.phoneNumber = res.data.data
-  //       _this.setData({
-  //         phoneNumber: res.data.data
-  //       })
-
-  //       wx.request({
-  //         url: app.globalData.host+'/user/add',
-  //         data: {
-  //           userID: app.globalData.phoneNumber,
-  //           nickname: app.globalData.userInfo.nickName,
-  //           gender: app.globalData.userInfo.gender,
-  //           avatarUrl: app.globalData.userInfo.avatarUrl
-  //         },
-  //         method: 'POST',
-  //         header: {
-  //           'content-type': 'application/json'//默认值
-  //         },
-  //         success: function (res) {
-  //           if (res.data.data == "该用户已存在！"){
-              // wx.request({
-              //   url: app.globalData.host+'/user/detail',
-              //   data:{
-              //     userID: app.globalData.phoneNumber
-              //   },
-              //   method: 'POST',
-              //   header: {
-              //     'content-type': 'application/json'//默认值
-              //   },
-              //   success: function (res) {
-              //     let days = _this.getDaysBetween(res.data.data.registrationTime);
-              //     _this.setData({
-              //       registrationTime: days
-              //     });
-              //   },
-              //   fail: function (res) {
-              //     console.log("请求失败");
-              //   }
-              // })
-  //           }
-  //         },
-  //         fail: function (res) {
-  //           console.log("请求失败");
-  //         }
-  //       });
-
-  //     },
-  //     fail: function (res) {
-  //       console.log("请求失败");
-  //     }
-  //   })
-  // },
-
   // 获取用户微信信息
   bindgetuserinfo: function(e){
     // var _this = this;
@@ -290,5 +219,10 @@ Page({
     }
     var days = (endDate - startDate)/(1*24*60*60*1000);
     return Math.floor(days)+1;
+  },
+  // 联系客服
+  handleContact (e) {
+    console.log(e.detail.path)
+    console.log(e.detail.query)
   }
 })

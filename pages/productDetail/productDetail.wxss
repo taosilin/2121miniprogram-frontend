@@ -253,6 +253,7 @@
 .commentDiv{
   width: 100%;
   background-color: white;
+  margin-bottom: 8rpx;
 }
 .commentHeader{
   display: flex;
@@ -347,4 +348,10 @@
 .lensName{
   font-size: 24rpx;
   color: #7F7F7F;
+}
+.description{
+  width: 750rpx;
+}
+.descriptionImg{
+  width: 750rpx;
 }

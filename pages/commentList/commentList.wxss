@@ -15,7 +15,7 @@
   margin-top: 18rpx;
   width: 100%;
   box-sizing: border-box;
-  padding: 0px 36rpx;
+  padding: 0px 36rpx 24rpx 36rpx;
   background-color: white;
 }
 
@@ -96,4 +96,21 @@
 .lensName{
   font-size: 24rpx;
   color: #7F7F7F;
+}
+.replyDiv{
+  width: 682rpx;
+  border-radius: 20rpx;
+  background-color: #F2F2F2;
+  opacity: 0.6;
+  padding: 16rpx 28rpx;
+  box-sizing: border-box;
+}
+.replyTitle{
+  font-size: 24rpx;
+  color: #333333;
+  margin-bottom: 2rpx;
+}
+.replyContent{
+  font-size: 24rpx;
+  color: #666666;
 }

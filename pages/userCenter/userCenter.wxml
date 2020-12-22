@@ -78,7 +78,9 @@
       <view class="iconborder">
         <image class="othericon-service" src="../../image/icon/service.png" mode="widthFix"></image>
       </view>
-      <text class="functext">联系客服</text>
+      <view class="functext">
+        <button open-type="contact" bindcontact="handleContact" style="font-size:28rpx;color:#5B5B5B;width:120rpx;padding:0px;margin:0px;background-color:#FFFFFF;font-weight:normal;">联系客服</button>
+      </view>
       <view class='arrow1'></view>
     </view>
     <view class="function" bindtap="goToPolicy">
@@ -96,8 +98,9 @@
       <text>更多精彩</text>
       <text>尽在2121公众号</text>
     </view>
-    <view class="follow-btn">去关注></view>
+    <view class="follow-btn">去关注><official-account></official-account></view>
   </view>
+  
   </view>
 </view>
 

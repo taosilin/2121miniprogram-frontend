@@ -268,6 +268,26 @@ Page({
     wx.navigateTo({
       url: '../postComment/postComment?orderID='+e.currentTarget.dataset.id,
     });
-  }
+  },
 
+  // 查看物流
+  logisticsDetail:function(e){
+    wx.navigateTo({
+      url: '../logisticsDetail/logisticsDetail?orderID='+e.currentTarget.dataset.id,
+    });
+  },
+
+  //前往商品详情页
+  goToProductDetail:function(e){
+    let id = e.currentTarget.dataset.id;
+    //待修改
+    wx.navigateTo({
+      url: '../productDetail/productDetail?frameID='+id,
+    })
+  },
+  // 联系客服
+  handleContact (e) {
+    console.log(e.detail.path)
+    console.log(e.detail.query)
+  }
 })

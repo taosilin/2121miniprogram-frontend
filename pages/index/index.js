@@ -15,6 +15,7 @@ Page({
     postList:[],
     currentTab: 0,
     popupVisible: true,
+    popupVisible1: true,
     userInfo: null,
     phoneNumber: null
   },
@@ -35,10 +36,68 @@ Page({
   onLoad: function () {
 
     var _this = this;
-    if (app.globalData.phoneNumber!=null){  
-      this.setData({phoneNumber: app.globalData.phoneNumber});
-      this.setData({userInfo: app.globalData.userInfo});
-    }
+    
+    // 登录
+    wx.login({
+      success: res => {
+        console.log(res)
+        app.globalData.code = res.code
+
+        // 从缓存获取openid
+        wx.getStorage({
+          key: 'openid',
+          success: function(res) {
+            app.globalData.openid = res.data
+            wx.request({
+              url: app.globalData.host+'/user/detail',
+              data:{
+                userID: app.globalData.openid
+              },
+              method: 'POST',
+              header: {
+                'content-type': 'application/json'//默认值
+              },
+              success: function (res) {
+                if (res.data.data!=null){
+                  app.globalData.userInfo = res.data.data
+                  app.globalData.phoneNumber = res.data.data.phoneNumber
+                  _this.setData({
+                    userInfo:res.data.data,
+                    phoneNumber:res.data.data.phoneNumber
+                  })
+                }
+                
+              },
+              fail: function (res) {
+                console.log("请求失败");
+              }
+            })
+          },
+          fail:function(e){
+            console.log(e)
+            // 发送 res.code 到后台换取 openId, sessionKey, unionId
+            wx.request({
+              url: app.globalData.host + '/app/initWxLogin',
+              data:{
+                jsCode: res.code
+              },
+              method: 'POST',
+              header:{
+                'content-type':'application/json'
+              },
+              success:(res) => {
+                app.globalData.session_key = res.data.data.session_key
+                app.globalData.openid = res.data.data.openid
+                wx.setStorage({
+                  key:"openid",
+                  data:res.data.data.openid
+                })
+              }
+            }) 
+          }
+        })
+      }
+    })
 
     wx.request({
       url: app.globalData.host+'/post/list',
@@ -62,70 +121,6 @@ Page({
       postHeight:sysInfo.windowWidth*1.2174
     })
     
-    // if (app.globalData.userInfo) {
-    //   this.setData({
-    //     userInfo: app.globalData.userInfo,
-    //     hasUserInfo: true
-    //   })
-    //   wx.request({
-    //     url: app.globalData.host+'/user/add',
-    //     data: {
-    //       userID:'18916273661',
-    //       nickname:app.globalData.userInfo.nickName,
-    //       gender:app.globalData.userInfo.gender,
-    //       avatarUrl:app.globalData.userInfo.avatarUrl
-    //     },
-    //     method: 'POST',
-    //     header: {
-    //       'content-type': 'application/json'//默认值
-    //     },
-    //     success: function (res) {
-    //       console.log(res.data);
-    //     },
-    //     fail: function (res) {
-    //       console.log("用户已存在");
-    //     }
-    //   });
-    // } else if (this.data.canIUse){
-    //   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-    //   // 所以此处加入 callback 以防止这种情况
-    //   app.userInfoReadyCallback = res => {
-    //     this.setData({
-    //       userInfo: res.userInfo,
-    //       hasUserInfo: true
-    //     })
-    //     wx.request({
-    //       url: app.globalData.host+'/user/add',
-    //       data: {
-    //         nickname:app.globalData.userInfo.nickName,
-    //         gender:app.globalData.userInfo.gender,
-    //         avatarUrl:app.globalData.userInfo.avatarUrl
-    //       },
-    //       method: 'POST',
-    //       header: {
-    //         'content-type': 'application/json'//默认值
-    //       },
-    //       success: function (res) {
-    //         console.log(res.data);
-    //       },
-    //       fail: function (res) {
-    //         console.log("用户已存在");
-    //       }
-    //     });
-    //   }
-    // } else {
-    //   // 在没有 open-type=getUserInfo 版本的兼容处理
-    //   wx.getUserInfo({
-    //     success: res => {
-    //       app.globalData.userInfo = res.userInfo
-    //       this.setData({
-    //         userInfo: res.userInfo,
-    //         hasUserInfo: true
-    //       })
-    //     }
-    //   })
-    // }
-    
   },
 
   /**
@@ -143,16 +138,9 @@ Page({
     var postId = event.detail.current; 
     // console.log(postId);
   },
+
   onPopup:function(){
-    this.setData({
-      popupVisible: !this.data.popupVisible
-    })
-  },
-  onGetCoupon:function(){
-    //var _this = this;
-    this.setData({
-      popupVisible: !this.data.popupVisible
-    });
+    var _this = this;
     wx.request({
       url: app.globalData.host+'/usercoupon/add',
       data:{
@@ -180,10 +168,34 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
+        console.log(res)
+        if (res.data.code===200){
+          _this.setData({
+            popupVisible: !_this.data.popupVisible
+          })
+        }
+        else{
+          _this.setData({
+            popupVisible1: !_this.data.popupVisible1
+          })
+        }
       },
       fail: function (res) {
         console.log("请求失败");
       }
+    });
+    
+  },
+
+  onGetCoupon:function(){
+    this.setData({
+      popupVisible: !this.data.popupVisible
+    });
+  },
+
+  onGetCoupon1:function(){
+    this.setData({
+      popupVisible1: !this.data.popupVisible1
     });
   },
 

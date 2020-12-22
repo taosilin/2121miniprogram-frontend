@@ -21,16 +21,20 @@
   </view>
   
   <view class="couponDiv">
-    <image wx:if="{{userInfo!=null}}" class="couponImg" src="../../image/couponIndex.png" mode="widthFix" bindtap="onPopup"></image>
+    <image wx:if="{{userInfo}}" class="couponImg" src="../../image/couponIndex.png" mode="widthFix" bindtap="onPopup"></image>
     <image wx:else class="couponImg" src="../../image/couponIndex.png" mode="widthFix" bindtap="onLogin"></image>
   </view>
-  
 </view>
 
 <view class="popup" hidden="{{popupVisible}}">
   <view class="z-height">
     <image class="popupImg" src="https://from2121.com/pictures/illustration/couponPopup.png" mode="widthFix" bindtap="onGetCoupon"></image>
-    <!-- <image class="closeIcon" src="../../image/closeIcon.png" mode="widthFix" bindtap="onPopup"></image> -->
+  </view>
+</view>
+
+<view class="popup" hidden="{{popupVisible1}}">
+  <view class="z-height">
+    <image class="popupImg" src="https://from2121.com/pictures/illustration/hasCoupon.png" mode="widthFix" bindtap="onGetCoupon1"></image>
   </view>
 </view>
 

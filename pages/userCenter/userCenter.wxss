@@ -181,8 +181,13 @@
 .othericon-policy{
   width: 40rpx;
 }
+.serviceDiv{
+  margin-left: 20rpx;
+}
 .functext{
   margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #5B5B5B;
 }
 .arrow1{
   position: absolute;

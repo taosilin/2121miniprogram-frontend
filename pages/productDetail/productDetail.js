@@ -13,7 +13,7 @@ Page({
     specs: null,
     colors: null,
     selectSpec: 0,
-
+    goodRating: null,
     newComment: null, // 最新一条评论
 
     indicatorDots: true,//显示指示点
@@ -49,19 +49,35 @@ Page({
       },
       success: function (res) {
         let imageList = res.data.data.frame.imageList.split(",");
+        let description = res.data.data.frame.description.split(",");
         let frameDetail = res.data.data.frame;
         frameDetail.imageList = imageList;
+        frameDetail.description = description;
         _this.setData({
           frameDetail: frameDetail,
           specs: res.data.data.specs,
           colors: res.data.data.colors
-        })
-        console.log(res);
+        })      
       },
       fail: function (res) {
         console.log("请求失败");
       }
     })
+
+    wx.request({
+      url: app.globalData.host+'/comment/productCommentByProductID/'+options.frameID,
+      method: 'GET',
+      success: function (res) {
+        console.log(res.data.data)
+        _this.setData({
+          goodRating: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
+
     wx.request({
       url: app.globalData.host+'/comment/latest',
       data: {
@@ -72,14 +88,15 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        //console.log(res.data.data);
-        let newComment = res.data.data;
-        let commentPhoto = newComment.comment.commentPhoto.split(',');
-        newComment.comment.commentPhoto = commentPhoto;
-        _this.setData({
-          newComment: newComment
-        });
-        console.log(_this.data.newComment);
+        if (res.data.data!=null){
+          let newComment = res.data.data;
+          let commentPhoto = newComment.comment.commentPhoto.split(',');
+          newComment.comment.commentPhoto = commentPhoto;
+          _this.setData({
+            newComment: newComment
+          });
+          console.log(_this.data.newComment);
+        }
       },
       fail: function (res) {
         console.log("请求失败");
@@ -221,5 +238,10 @@ Page({
     this.servicePopup.setData({
       flag: false
     })
+  },
+  // 联系客服
+  handleContact (e) {
+    console.log(e.detail.path)
+    console.log(e.detail.query)
   }
 })
