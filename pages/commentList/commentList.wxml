@@ -2,7 +2,7 @@
 <view class="container">
   <view class="header"></view>
   <view class="commentList">
-    <block wx:for="{{commentList}}">
+    <block wx:for="{{commentList}}" wx:key="index">
       <view class="commentItem">
         <view class="userDiv">
           <image class="avatarImg" src="{{item.user.avatarUrl}}" mode="widthFix"></image>
@@ -59,8 +59,8 @@
         </view>
 
         <view class="commentPhotoDiv">
-          <view class="commentPhoto" wx:for="{{item.comment.commentPhoto}}">
-            <image class="commentImg" src="{{item}}" mode="aspectFill"></image>
+          <view class="commentPhoto" wx:for="{{item.comment.commentPhoto}}" wx:for-index="childindex">
+            <image class="commentImg" src="{{item}}" mode="aspectFill" bindtap="preview" data-src="{{item}}" data-id="{{index}}"></image>
           </view>
         </view>
 

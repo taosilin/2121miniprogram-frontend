@@ -17,16 +17,15 @@ Page({
     wx.request({
       url: app.globalData.host+'/logistics',
       data: {
-        "com":"ems",
-        "num":"9881171496554",
-        "phone":"13774247249"
+        "com":"shunfeng",
+        "num":options.courierID
       },
       method: 'POST',
       header: {
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        console.log(JSON.parse(res.data.data))
+        console.log(res)
         let logistics = JSON.parse(res.data.data);
         _this.setData({
           logisticsDetail: logistics

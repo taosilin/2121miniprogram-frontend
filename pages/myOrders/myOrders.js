@@ -59,6 +59,7 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
+        console.log(res.data.data)
         _this.setData({
           recommend: res.data.data
         })
@@ -83,7 +84,31 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var _this = this;
+    wx.request({
+      url: app.globalData.host + '/order/userlist',
+      data:{
+        userID: app.globalData.openid
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        console.log(res.data.data)
+        let orders = res.data.data;
+        for (let i=0;i<orders.length;i++){
+          orders[i].order.orderTime = orders[i].order.orderTime.slice(0,10)
+        }
+        _this.setData({
+          orders: orders
+        })
+        _this.orderFilter();
+      },
+      fail: function (res) {
+        console.log("请求失败");
+      }
+    })
   },
 
   /**
@@ -220,30 +245,48 @@ Page({
 
   // 取消订单
   cancelOrder:function(e){
-    wx.request({
-      url: app.globalData.host+'/order/updatestate',
-      data: {
-        orderID: e.currentTarget.dataset.id,
-        state: "8"
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/json'//默认值
-      },
-      success: function (res) {
-        _this.setData({
-          recommend: res.data.data
-        })
-      },
-      fail: function (res) {
-        console.log("请求失败");
+    var _this = this;
+
+    wx.showModal({
+      title: '警告',
+      content: '确定取消该订单？此操作不可恢复',
+      success(res) {
+        if (res.confirm) {
+          console.log('确定取消');
+          wx.request({
+            url: app.globalData.host+'/order/updatestate',
+            data: {
+              orderID: e.currentTarget.dataset.id,
+              state: "8"
+            },
+            method: 'POST',
+            header: {
+              'content-type': 'application/json'//默认值
+            },
+            success: function (res) {
+              _this.onShow();
+              wx.showToast({ title: '已取消订单', icon: 'none' });
+            },
+            fail: function (res) {
+              console.log("请求失败");
+            }
+          })
+        } else if (res.cancel) {
+          console.log('取消取消')
+        }
       }
-    })
+    });
+
   },
   // 申请退款
   applyRefund:function(e){
     var id = e.currentTarget.dataset.id;
-    var info = JSON.stringify(this.data.ordersfilter[id]);
+    var info = JSON.stringify({
+      order:{
+        orderID:this.data.ordersfilter[id].order.orderID
+      },
+      frames:this.data.ordersfilter[id].frames
+    });
     wx.navigateTo({
       url: '../applyRefund/applyRefund?orderDetail='+info,
     });
@@ -252,7 +295,12 @@ Page({
   // 申请退货
   applyReturn:function(e){
     var id = e.currentTarget.dataset.id;
-    var info = JSON.stringify(this.data.ordersfilter[id]);
+    var info = JSON.stringify({
+      order:{
+        orderID:this.data.ordersfilter[id].order.orderID
+      },
+      frames:this.data.ordersfilter[id].frames
+    });
     wx.navigateTo({
       url: '../applyReturn/applyReturn?orderDetail='+info,
     });
@@ -273,7 +321,7 @@ Page({
   // 查看物流
   logisticsDetail:function(e){
     wx.navigateTo({
-      url: '../logisticsDetail/logisticsDetail?orderID='+e.currentTarget.dataset.id,
+      url: '../logisticsDetail/logisticsDetail?courierID='+e.currentTarget.dataset.id,
     });
   },
 
@@ -289,5 +337,50 @@ Page({
   handleContact (e) {
     console.log(e.detail.path)
     console.log(e.detail.query)
+  },
+  // 去付款
+  goToPay:function(e){
+    console.log(e)
+    var orderID = e.currentTarget.dataset.orderid;
+    var prepayID = JSON.parse(e.currentTarget.dataset.prepayid);
+
+    //  调用微信支付
+    wx.requestPayment({
+      'timeStamp': prepayID.timeStamp,
+      'nonceStr': prepayID.nonceStr,
+      'package': prepayID.package,
+      'signType': 'MD5',
+      'paySign': prepayID.sign,
+      'success':function(res){
+        // 支付成功
+        console.log(res)
+        wx.request({
+          url: app.globalData.host+'/order/updatestate',
+          data:{
+            orderID: orderID,
+            state: "2"
+          },
+          method: 'POST',
+          header: {
+            'content-type': 'application/json'//默认值
+          },
+          success: function (response) {
+            
+          },
+          fail: function (error) {
+            console.log("请求失败");
+          }
+        })
+        // 跳转到支付成功页面
+        wx.redirectTo({
+          url: '../paymentSuccessful/paymentSuccessful'
+        })
+      },
+      fail: function (res) {
+        // 支付失败
+        console.log(res)
+        console.log("支付失败")
+      },
+    })
   }
 })

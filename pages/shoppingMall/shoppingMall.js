@@ -63,6 +63,7 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
+        console.log(res.data.data)
         _this.setData({
           frameList: res.data.data
         })

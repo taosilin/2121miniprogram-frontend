@@ -335,7 +335,6 @@ Page({
 
   // 测试支付成功
   paymentSuccessful:function(e){
-
     if (this.data.address==null){
       wx.showToast({
         title: '请选择地址',
@@ -344,124 +343,151 @@ Page({
       })
     }
     else{
-
       var orderID = (new Date()).getTime().toString()+(Math.floor((Math.random()*10000000)+1000000)).toString();
       var _this = this;
-
+      console.log({
+        openid: app.globalData.openid,
+        orderID: orderID,
+        actualAmount: (this.data.actualAmount*100).toString()
+      })
       wx.request({
         url: app.globalData.host+'/order/wx',
         data:{
           openid: app.globalData.openid,
-          orderID: orderID
+          orderID: orderID,
+          actualAmount: (this.data.actualAmount*100).toString()
         },
         method: 'POST',
         header: {
           'content-type': 'application/json'//默认值
         },
         success: function (res) {
+          //下单成功
           console.log(res.data);
-          //  调用微信支付
-          wx.requestPayment({
-            'timeStamp': res.data.timeStamp,
-            'nonceStr': res.data.nonceStr,
-            'package': res.data.package,
-            'signType': 'MD5',
-            'paySign': res.data.sign,
-            'success':function(res){
-              console.log(res)
-              // 处理添加订单
-              let order = {
-                orderID: orderID,
-                userID: app.globalData.openid,
-                addressID: _this.data.address.addressID,
-                couponID: (_this.data.coupon?_this.data.coupon.couponID:null),
-                totalAmount: _this.data.totalAmount,
-                actualPayment: _this.data.actualAmount,
-                orderTime: (new Date()).getTime(),
-                state: "2",
-                remark: _this.data.remark
-              }
-              let orderFrames = new Array();
+
+          // 处理添加订单
+          let order = {
+            orderID: orderID,
+            userID: app.globalData.openid,
+            addressID: _this.data.address.addressID,
+            couponID: (_this.data.coupon?_this.data.coupon.couponID:null),
+            totalAmount: _this.data.totalAmount,
+            actualPayment: _this.data.actualAmount,
+            orderTime: (new Date()).getTime(),
+            state: "1",
+            remark: _this.data.remark,
+            prepayID: JSON.stringify(res.data)
+          }
+          let orderFrames = new Array();
+          for (let i=0;i<_this.data.buySpec.length;i++){
+            let orderFrame = {
+              orderID: orderID,
+              frameID: _this.data.buySpec[i].frame.frameID,
+              lensID: _this.data.buySpec[i].cart.lensID,
+              specID: _this.data.buySpec[i].spec.specID,
+              state:"1",
+              num: _this.data.buySpec[i].cart.num,
+              price: (_this.data.buySpec[i].spec.price+_this.data.buySpec[i].lens.price),
+              actualPayment: (_this.data.actualAmount/_this.data.totalAmount)*(_this.data.buySpec[i].spec.price+_this.data.buySpec[i].lens.price),
+              leftDegree: _this.data.buySpec[i].cart.leftDegree,
+              rightDegree: _this.data.buySpec[i].cart.rightDegree,
+              interpupillary: _this.data.buySpec[i].cart.interpupillary,
+              leftAstigmatism: _this.data.buySpec[i].cart.leftAstigmatism,
+              rightAstigmatism: _this.data.buySpec[i].cart.rightAstigmatism,
+              leftAxis: _this.data.buySpec[i].cart.leftAxis,
+              rightAxis: _this.data.buySpec[i].cart.rightAxis
+            }
+            orderFrames.push(orderFrame);
+          }
+          wx.request({
+            url: app.globalData.host+'/order/add',
+            data:{
+              order:order,
+              orderFrames:orderFrames
+            },
+            method: 'POST',
+            header: {
+              'content-type': 'application/json'//默认值
+            },
+            success: function (response) {
+              //处理添加订单
+              wx.showToast({
+                title: '已下单',
+                icon: 'success',
+                duration: 2000
+              });
+              //从购物车中删除
               for (let i=0;i<_this.data.buySpec.length;i++){
-                let orderFrame = {
-                  orderID: orderID,
-                  frameID: _this.data.buySpec[i].frame.frameID,
-                  lensID: _this.data.buySpec[i].cart.lensID,
-                  specID: _this.data.buySpec[i].spec.specID,
-                  state:"2",
-                  num: _this.data.buySpec[i].cart.num,
-                  price: (_this.data.buySpec[i].spec.price+_this.data.buySpec[i].lens.price),
-                  actualPayment: (_this.data.actualAmount/_this.data.totalAmount)*(_this.data.buySpec[i].spec.price+_this.data.buySpec[i].lens.price),
-                  leftDegree: _this.data.buySpec[i].cart.leftDegree,
-                  rightDegree: _this.data.buySpec[i].cart.rightDegree,
-                  interpupillary: _this.data.buySpec[i].cart.interpupillary,
-                  leftAstigmatism: _this.data.buySpec[i].cart.leftAstigmatism,
-                  rightAstigmatism: _this.data.buySpec[i].cart.rightAstigmatism,
-                  leftAxis: _this.data.buySpec[i].cart.leftAxis,
-                  rightAxis: _this.data.buySpec[i].cart.rightAxis
-                }
-                orderFrames.push(orderFrame);
-              }
-        
-              wx.request({
-                url: app.globalData.host+'/order/add',
-                data:{
-                  order:order,
-                  orderFrames:orderFrames
-                },
-                method: 'POST',
-                header: {
-                  'content-type': 'application/json'//默认值
-                },
-                success: function (res) {
-        
-                  //处理添加订单
-                  wx.showToast({
-                    title: '已下单',
-                    icon: 'success',
-                    duration: 2000
-                  });
-        
-                  //从购物车中删除
-                  for (let i=0;i<_this.data.buySpec.length;i++){
-                    wx.request({
-                      url: app.globalData.host+'/cart/delete',
-                      data:{
-                       userID: app.globalData.openid,
-                       productID: _this.data.buySpec[i].spec.productID,
-                       specID: _this.data.buySpec[i].spec.specID,
-                       lensID: _this.data.buySpec[i].lens.lensID,
-                       leftDegree: _this.data.buySpec[i].cart.leftDegree,
-                       rightDegree: _this.data.buySpec[i].cart.rightDegree,
-                       interpupillary: _this.data.buySpec[i].cart.interpupillary,
-                       leftAstigmatism: _this.data.buySpec[i].cart.leftAstigmatism,
-                       rightAstigmatism: _this.data.buySpec[i].cart.rightAstigmatism,
-                       leftAxis: _this.data.buySpec[i].cart.leftAxis,
-                       rightAxis: _this.data.buySpec[i].cart.rightAxis
-                     },
-                     method: 'POST',
-                     header: {
-                       'content-type': 'application/json'//默认值
-                     },
-                     success: function (res) {
-                       
-                     },
-                     fail: function (res) {
-                       console.log("请求失败");
-                     }
-                    })
+                wx.request({
+                  url: app.globalData.host+'/cart/delete',
+                  data:{
+                    userID: app.globalData.openid,
+                    productID: _this.data.buySpec[i].spec.productID,
+                    specID: _this.data.buySpec[i].spec.specID,
+                    lensID: _this.data.buySpec[i].lens.lensID,
+                    leftDegree: _this.data.buySpec[i].cart.leftDegree,
+                    rightDegree: _this.data.buySpec[i].cart.rightDegree,
+                    interpupillary: _this.data.buySpec[i].cart.interpupillary,
+                    leftAstigmatism: _this.data.buySpec[i].cart.leftAstigmatism,
+                    rightAstigmatism: _this.data.buySpec[i].cart.rightAstigmatism,
+                    leftAxis: _this.data.buySpec[i].cart.leftAxis,
+                    rightAxis: _this.data.buySpec[i].cart.rightAxis
+                  },
+                  method: 'POST',
+                  header: {
+                    'content-type': 'application/json'//默认值
+                  },
+                  success: function (response) {
+                    
+                  },
+                  fail: function (error) {
+                    console.log("请求失败");
                   }
-        
+                })
+              }
+
+              //  调用微信支付
+              wx.requestPayment({
+                'timeStamp': res.data.timeStamp,
+                'nonceStr': res.data.nonceStr,
+                'package': res.data.package,
+                'signType': 'MD5',
+                'paySign': res.data.sign,
+                'success':function(res){
+                  // 支付成功
+                  console.log(res)
+                  wx.request({
+                    url: app.globalData.host+'/order/updatestate',
+                    data:{
+                      orderID: orderID,
+                      state: "2"
+                    },
+                    method: 'POST',
+                    header: {
+                      'content-type': 'application/json'//默认值
+                    },
+                    success: function (response) {
+                      
+                    },
+                    fail: function (error) {
+                      console.log("请求失败");
+                    }
+                  })
+
+                  // 跳转到支付成功页面
+                  wx.redirectTo({
+                    url: '../paymentSuccessful/paymentSuccessful'
+                  })
                 },
                 fail: function (res) {
-                  console.log("请求失败");
-                }
-              })
-
-              // 跳转到支付成功页面
-              wx.redirectTo({
-                url: '../paymentSuccessful/paymentSuccessful'
-              })
+                  // 支付失败
+                  console.log(res)
+                  console.log("支付失败")
+                  wx.redirectTo({
+                    url: '../myOrders/myOrders?index=0',
+                  })
+                },
+              })         
             },
             'fail':function(res){
               console.log(res)

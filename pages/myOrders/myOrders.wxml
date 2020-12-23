@@ -54,7 +54,7 @@
 
           <view wx:if="{{item.order.state=='1'}}" class="btnDiv">
             <view class="normal-btn" bindtap="cancelOrder" data-id="{{item.order.orderID}}">取消订单</view>
-            <view class="important-btn">去付款</view>
+            <view class="important-btn" bindtap="goToPay" data-orderid="{{item.order.orderID}}" data-prepayid="{{item.order.prepayID}}">去付款</view>
           </view>
 
           <view wx:elif="{{(item.order.state=='2')||(item.order.state=='3')||(item.order.state=='4')}}" class="btnDiv">
@@ -66,7 +66,7 @@
           </view>
 
           <view wx:elif="{{item.order.state=='5'}}" class="btnDiv">
-            <view class="normal-btn" bindtap="logisticsDetail" data-id="{{item.order.orderID}}">查看物流</view>
+            <view class="normal-btn" bindtap="logisticsDetail" data-id="{{item.order.courierID}}">查看物流</view>
           </view>
 
           <view wx:elif="{{item.order.state=='6'}}" class="btnDiv">
@@ -137,7 +137,7 @@
                     <text class="originalPrice">¥899</text>
                   </view>
                   <view wx:else class="price">¥{{item.price}}</view>
-                  <view class="comments">1128条好评</view>
+                  <view class="comments">{{item.commmentCout}}条好评</view>
                 </view>
               </view>
             </block>

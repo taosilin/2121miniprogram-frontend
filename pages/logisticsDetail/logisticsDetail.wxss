@@ -9,6 +9,7 @@
   font-size: 28rpx;
   color: #3D3D3D;
   letter-spacing: 1rpx;
+  margin-left: 60rpx;
 }
 .stepList{
   width: 100%;

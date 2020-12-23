@@ -87,5 +87,15 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  // 放大预览图片
+  preview:function(e){
+    console.log(e)
+    let currentUrl = e.currentTarget.dataset.src;
+    let id = e.currentTarget.dataset.id;
+    wx.previewImage({
+      current:currentUrl,
+      urls: this.data.commentList[id].comment.commentPhoto,
+    })
   }
 })

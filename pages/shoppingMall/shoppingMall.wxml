@@ -52,7 +52,7 @@
             <text class="originalPrice">¥{{item.originalPrice}}</text>
           </view>
           <view wx:else class="price">¥{{item.price}}</view>
-          <view class="comments">666条好评</view>
+          <view class="comments">{{item.commmentCout}}条好评</view>
         </view>
       </view>
     </block>
