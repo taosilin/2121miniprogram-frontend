@@ -34,7 +34,6 @@ Page({
    */
   onLoad: function (options) {
     const sysInfo = wx.getSystemInfoSync();
-    console.log(JSON.parse(options.buySpec));
     this.setData({
       buySpec:JSON.parse(options.buySpec)
     });
@@ -80,7 +79,7 @@ Page({
         })
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
 
@@ -101,7 +100,7 @@ Page({
         })
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
@@ -185,7 +184,6 @@ Page({
   openPopup:function(e){
     let index = e.currentTarget.dataset.id;
     let customInfo = {
-      glassesType:'近视',
       leftEyeDegree:0.00,
       rightEyeDegree:0.00,
       interpupillaryDistance:0,
@@ -194,11 +192,11 @@ Page({
       leftEyeAxis:null,
       rightEyeAxis:null
     };
-    customInfo.leftEyeDegree = this.data.buySpec[index].cart.leftDegree;
-    customInfo.rightEyeDegree = this.data.buySpec[index].cart.rightDegree;
+    customInfo.leftEyeDegree = this.data.buySpec[index].cart.leftDegree.toFixed(2).toString();
+    customInfo.rightEyeDegree = this.data.buySpec[index].cart.rightDegree.toFixed(2).toString();
     customInfo.interpupillaryDistance = this.data.buySpec[index].cart.interpupillary;
-    customInfo.leftEyeAstigmatism = this.data.buySpec[index].cart.leftAstigmatism;
-    customInfo.rightEyeAstigmatism = this.data.buySpec[index].cart.rightAstigmatism;
+    customInfo.leftEyeAstigmatism = this.data.buySpec[index].cart.leftAstigmatism.toFixed(2).toString();
+    customInfo.rightEyeAstigmatism = this.data.buySpec[index].cart.rightAstigmatism.toFixed(2).toString();
     customInfo.leftEyeAxis = this.data.buySpec[index].cart.leftAxis;
     customInfo.rightEyeAxis = this.data.buySpec[index].cart.rightAxis;
     this.setData({
@@ -311,14 +309,14 @@ Page({
                
   //            },
   //            fail: function (res) {
-  //              console.log("请求失败");
+  //              console.log(res);
   //            }
   //           })
   //         }
 
   //       },
   //       fail: function (res) {
-  //         console.log("请求失败");
+  //         console.log(res);
   //       }
   //     })
   //   }
@@ -345,11 +343,6 @@ Page({
     else{
       var orderID = (new Date()).getTime().toString()+(Math.floor((Math.random()*10000000)+1000000)).toString();
       var _this = this;
-      console.log({
-        openid: app.globalData.openid,
-        orderID: orderID,
-        actualAmount: (this.data.actualAmount*100).toString()
-      })
       wx.request({
         url: app.globalData.host+'/order/wx',
         data:{
@@ -363,7 +356,7 @@ Page({
         },
         success: function (res) {
           //下单成功
-          console.log(res.data);
+          //console.log(res.data);
 
           // 处理添加订单
           let order = {
@@ -441,7 +434,7 @@ Page({
                     
                   },
                   fail: function (error) {
-                    console.log("请求失败");
+                    console.log(error);
                   }
                 })
               }
@@ -455,7 +448,7 @@ Page({
                 'paySign': res.data.sign,
                 'success':function(res){
                   // 支付成功
-                  console.log(res)
+                  //console.log(res)
                   wx.request({
                     url: app.globalData.host+'/order/updatestate',
                     data:{
@@ -470,7 +463,7 @@ Page({
                       
                     },
                     fail: function (error) {
-                      console.log("请求失败");
+                      console.log(error);
                     }
                   })
 
@@ -501,7 +494,7 @@ Page({
   
         },
         fail: function (res) {
-          console.log("请求失败");
+          console.log(res);
         }
       })
     }

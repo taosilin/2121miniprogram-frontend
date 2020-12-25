@@ -28,7 +28,7 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        console.log(res.data.data)
+        //console.log(res.data.data)
         _this.setData({
           orderDetail: res.data.data
         })
@@ -44,15 +44,18 @@ Page({
               'content-type': 'application/json'//默认值
             },
             success: function (res) {
-              console.log(res)
+              //console.log(res)
               let logistics = JSON.parse(res.data.data);
-              _this.setData({
-                logisticsDetail: logistics,
-                latestLogistics: logistics.data[0].context.substr(0,15)
-              })
+              if (logistics.message=="ok"){
+                _this.setData({
+                  logisticsDetail: logistics,
+                  latestLogistics: logistics.data[0].context.substr(0,15)
+                })
+              }
+
             },
             fail: function (res) {
-              console.log("请求失败");
+              console.log(res);
             }
           })
         }
@@ -96,7 +99,7 @@ Page({
         }
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },

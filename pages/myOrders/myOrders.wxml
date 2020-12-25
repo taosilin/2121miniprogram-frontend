@@ -85,7 +85,7 @@
           </view>
 
           <view wx:elif="{{item.order.state=='8'}}" class="btnDiv">
-            <view class="normal-btn">加入购物车</view>
+            <view class="normal-btn" bindtap="addCart" data-id="{{index}}">加入购物车</view>
           </view>
           <view wx:elif="{{item.order.state=='9'}}" class="btnDiv">
             <button open-type="contact" bindcontact="handleContact" style="width:192rpx;height:60rpx;padding:0px;font-weight:normal;background-color:#FFFFFF;">
@@ -93,10 +93,12 @@
             </button>
           </view>
           <view wx:elif="{{item.order.state=='10'}}" class="btnDiv">
-            <view class="normal-btn">删除订单</view>
+            <view class="normal-btn" bindtap="addCart" data-id="{{index}}">加入购物车</view>
           </view>
           <view wx:elif="{{item.order.state=='11'}}" class="btnDiv">
-            <view class="normal-btn">已寄出</view>
+            <button open-type="contact" bindcontact="handleContact" style="width:192rpx;height:60rpx;padding:0px;font-weight:normal;background-color:#FFFFFF;">
+              <view class="normal-btn">已寄出</view>
+            </button>
           </view>
           <view wx:elif="{{item.order.state=='12'}}" class="btnDiv">
             <button open-type="contact" bindcontact="handleContact" style="width:192rpx;height:60rpx;padding:0px;font-weight:normal;background-color:#FFFFFF;">
@@ -104,7 +106,7 @@
             </button>
           </view>
           <view wx:elif="{{item.order.state=='13'}}" class="btnDiv">
-            <view class="normal-btn">删除订单</view>
+            <view class="normal-btn" bindtap="addCart" data-id="{{index}}">加入购物车</view>
           </view>
         </view>
       </view>

@@ -67,19 +67,19 @@ Component({
                     _this.triggerEvent("userExist",res.data.data)
                   },
                   fail: function (res) {
-                    console.log("请求失败");
+                    console.log(res);
                   }
                 })
               }
             },
             fail: function (res) {
-              console.log("请求失败");
+              console.log(res);
             }
           });
 
         },
         fail: function (res) {
-          console.log("请求失败");
+          console.log(res);
         }
       })
       this.setData({

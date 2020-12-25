@@ -47,7 +47,6 @@ Component({
     selectItem:function(e){
       var selectId=e.target.dataset.id;
       var selectName=e.target.dataset.model;
-      console.log(selectId,selectName)
       this.setData({
         selectId:selectId,
         selectName:selectName

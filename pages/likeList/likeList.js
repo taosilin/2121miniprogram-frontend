@@ -37,7 +37,7 @@ Page({
         });
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
@@ -98,7 +98,7 @@ Page({
   },
   // 跳转到镜框详情
   onFrameDetail(e){
-    console.log(e)
+    //console.log(e)
     let id = e.currentTarget.dataset.id
     wx.navigateTo({
       url: '../productDetail/productDetail?frameID=' + id
@@ -107,7 +107,7 @@ Page({
 
   // 取消收藏
   onDeleteLike(e){
-    console.log(e);
+    //console.log(e);
     var _this = this;
     let id = e.currentTarget.dataset.id;
     let likeIcon = this.data.likeIcon;
@@ -127,7 +127,7 @@ Page({
           'content-type': 'application/json'//默认值
         },
         success: function (res) {
-          console.log(res)
+          //console.log(res)
           let likeList = _this.data.likeList;
           let likeIcon = _this.data.likeIcon;
           likeList.splice(id,1);
@@ -138,7 +138,7 @@ Page({
           })
         },
         fail: function (res) {
-          console.log("请求失败");
+          console.log(res);
         }
       })
     },500)

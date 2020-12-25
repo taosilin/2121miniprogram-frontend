@@ -36,7 +36,7 @@ Page({
       windowHeight:sysInfo.windowHeight
     });
 
-console.log(coupons); 
+    //console.log(coupons); 
     let enableList = coupons.enabledCoupons;
     let disableList = coupons.disabledCoupons;
     for (let i=0;i<enableList.length;i++){
@@ -131,7 +131,7 @@ console.log(coupons);
     })
   },
   onDetail:function(e){
-    console.log(e)
+    //console.log(e)
     let id = e.currentTarget.dataset.id;
     let items = this.data.couponList;
     items[id].openDetail = !items[id].openDetail;
@@ -145,13 +145,13 @@ console.log(coupons);
     })
   },
   onExchange:function(e){
-    console.log(this.data.inputCode)
+    //console.log(this.data.inputCode)
     wx.showModal({
       title: '确认兑换',
       content: '您确认兑换优惠券？',
       success (res) {
         if (res.confirm) {
-          console.log('用户点击确定')
+          //console.log('用户点击确定')
           //此处填写领取优惠券逻辑
           wx.showToast({
             title: "      优惠券码不正确      ",
@@ -159,7 +159,7 @@ console.log(coupons);
             duration: 2000
           })
         } else if (res.cancel) {
-          console.log('用户点击取消')
+          //console.log('用户点击取消')
           //
         }
       }

@@ -3,7 +3,7 @@
   <block wx:for="{{orderDetail.frames}}">
     <view class="cardDiv">
       <view class="productDiv">
-        <image class="productImg" src="{{item.specImage}}" mode="widthFix"></image>
+        <image wx:if="{{item.specImage}}" class="productImg" src="{{item.specImage}}" mode="widthFix"></image>
         <view class="productName">{{item.frameName}}</view>
         <view class="productSpec">{{item.colorName}}-{{item.lensName}}-{{item.refractiveIndex}}</view>
       </view>

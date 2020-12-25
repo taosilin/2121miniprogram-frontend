@@ -25,13 +25,13 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        console.log(res.data);
+        //console.log(res.data);
         _this.setData({
           addresses: res.data.data
         });
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
@@ -58,13 +58,13 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        console.log(res.data);
+        //console.log(res.data);
         _this.setData({
           addresses: res.data.data
         });
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
@@ -113,10 +113,9 @@ Page({
 
   // 修改地址
   onChangeAddress:function(e){
-    console.log(e.currentTarget.dataset.id);
     var id = e.currentTarget.dataset.id;
     var info = JSON.stringify(this.data.addresses[id]);
-    console.log(info);
+    //console.log(info);
     wx.navigateTo({
       url: '../addAddress/addAddress?info='+info,
     });
@@ -136,7 +135,7 @@ Page({
   },
   // 选择地址
   radioChange:function(e){
-    console.log(e)
+    //console.log(e)
     let id = Number(e.detail.value)
     var pages = getCurrentPages();
     var currPage = pages[pages.length - 1];  //当前页面

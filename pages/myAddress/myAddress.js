@@ -25,13 +25,12 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        console.log(res.data);
         _this.setData({
           addresses: res.data.data
         });
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
@@ -58,13 +57,12 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        console.log(res.data);
         _this.setData({
           addresses: res.data.data
         });
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
@@ -113,10 +111,9 @@ Page({
 
   // 修改地址
   onChangeAddress:function(e){
-    console.log(e.currentTarget.dataset.id);
     var id = e.currentTarget.dataset.id;
     var info = JSON.stringify(this.data.addresses[id]);
-    console.log(info);
+    //console.log(info);
     wx.navigateTo({
       url: '../addAddress/addAddress?info='+info,
     });
@@ -142,7 +139,7 @@ Page({
         });
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   }

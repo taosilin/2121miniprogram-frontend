@@ -7,7 +7,6 @@ Component({
     customInfo:{
       type:Object,
       value:{
-        glassesType:'近视',
         leftEyeDegree:'-2.75',
         rightEyeDegree:'-4.50',
         interpupillaryDistance:'72',

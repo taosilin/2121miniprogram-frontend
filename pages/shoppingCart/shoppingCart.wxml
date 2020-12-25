@@ -21,8 +21,6 @@
                 
               <view class="tabDiv">
                 <view class="tabItem">{{item.color.colorName}}</view>
-              </view>
-              <view class="tabDiv">
                 <view class="tabItem">{{item.lens.lensName}}</view>
                 <view class="tabItem">{{item.lens.refractiveIndex}}</view>
               </view>

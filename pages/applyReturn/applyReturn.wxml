@@ -60,7 +60,8 @@
         <van-uploader
           data-id="{{index}}"
           file-list="{{ fileList[index] }}" 
-          bind:after-read="afterRead" 
+          bind:after-read="afterRead"
+          bind:delete="afterDelete"  
           max-count="3"/>
       </view>
     </view>

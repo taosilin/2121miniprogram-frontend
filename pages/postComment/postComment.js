@@ -32,7 +32,7 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        console.log(res.data.data)
+        //console.log(res.data.data)
         let evaluation = [];
         let fileList = [];
         let commentContent = [];
@@ -49,7 +49,7 @@ Page({
         })
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
 
@@ -155,7 +155,7 @@ Page({
   
   // 用户输入评论内容
   onContentChange:function(e){
-    console.log(e);
+    //console.log(e);
     let id = e.currentTarget.dataset.id;
     let commentContent = this.data.commentContent;
     commentContent[id] = e.detail.value;
@@ -187,7 +187,7 @@ Page({
 
   // 发表评价
   onPostComment:function(e){
-    console.log(this.data.fileList)
+    //console.log(this.data.fileList)
     var _this = this;
     for (let i=0;i<this.data.orderDetail.frames.length;i++){
       let commentPhoto = new Array();
@@ -226,7 +226,7 @@ Page({
           });
         },
         fail: function (res) {
-          console.log("请求失败");
+          console.log(res);
         }
       })
     }

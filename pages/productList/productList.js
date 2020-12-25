@@ -33,7 +33,7 @@ Page({
         })
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
@@ -89,7 +89,6 @@ Page({
   //前往商品详情页
   goToProductDetail:function(e){
     let id = e.currentTarget.dataset.id;
-    console.log(e);
     //待修改
     wx.navigateTo({
       url: '../productDetail/productDetail?frameID='+id,

@@ -42,7 +42,7 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        console.log(res.data.data)
+        //console.log(res.data.data)
 
         var checkboxBool = new Array();
         for (let i=0;i<res.data.data.length;i++){
@@ -59,7 +59,7 @@ Page({
         
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
@@ -102,7 +102,7 @@ Page({
         _this.computeTotal();
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
@@ -149,7 +149,7 @@ Page({
   },
   // 多选框选项变化
   checkboxChange: function(e) {
-    console.log(e.detail.value);
+    //console.log(e.detail.value);
     let checkboxBool = this.data.checkboxBool;
 
     if (e.detail.value.length==this.data.productList.length){
@@ -219,7 +219,6 @@ Page({
   openPopup:function(e){
     let index = e.currentTarget.dataset.id;
     let customInfo = {
-      glassesType:'近视',
       leftEyeDegree:0.00,
       rightEyeDegree:0.00,
       interpupillaryDistance:0,
@@ -228,11 +227,11 @@ Page({
       leftEyeAxis:null,
       rightEyeAxis:null
     };
-    customInfo.leftEyeDegree = this.data.productList[index].cart.leftDegree;
-    customInfo.rightEyeDegree = this.data.productList[index].cart.rightDegree;
+    customInfo.leftEyeDegree = this.data.productList[index].cart.leftDegree.toFixed(2).toString();
+    customInfo.rightEyeDegree = this.data.productList[index].cart.rightDegree.toFixed(2).toString();
     customInfo.interpupillaryDistance = this.data.productList[index].cart.interpupillary;
-    customInfo.leftEyeAstigmatism = this.data.productList[index].cart.leftAstigmatism;
-    customInfo.rightEyeAstigmatism = this.data.productList[index].cart.rightAstigmatism;
+    customInfo.leftEyeAstigmatism = this.data.productList[index].cart.leftAstigmatism.toFixed(2).toString();
+    customInfo.rightEyeAstigmatism = this.data.productList[index].cart.rightAstigmatism.toFixed(2).toString();
     customInfo.leftEyeAxis = this.data.productList[index].cart.leftAxis;
     customInfo.rightEyeAxis = this.data.productList[index].cart.rightAxis;
     this.setData({
@@ -274,7 +273,7 @@ Page({
 
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
     this.computeTotal();
@@ -386,7 +385,7 @@ Page({
 
    //删除购物车
    onDelete: function (e) {
-     console.log(e)
+     //console.log(e)
      var id = e.currentTarget.dataset.index;
      var _this = this;
      wx.showModal({
@@ -394,7 +393,7 @@ Page({
        content: '确定从购物车中删除？此操作不可恢复',
        success(res) {
          if (res.confirm) {
-           console.log('确定删除');
+           //console.log('确定删除');
            wx.request({
              url: app.globalData.host+'/cart/delete',
              data:{
@@ -424,11 +423,11 @@ Page({
               wx.showToast({ title: '删除成功', icon: 'none' });
             },
             fail: function (res) {
-              console.log("请求失败");
+              console.log(res);
             }
            })
          } else if (res.cancel) {
-           console.log('取消删除')
+           //console.log('取消删除')
          }
        }
      }); 

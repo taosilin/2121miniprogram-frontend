@@ -1,6 +1,6 @@
 <!--pages/orderDetail/orderDetail.wxml-->
 <view class="container">
-  <view wx:if="{{orderDetail.order.state!='8'&&orderDetail.order.state!='10'}}" class="orderStateDiv" style="height:143.1rpx;">
+  <view wx:if="{{orderDetail.order.state!='8'&&orderDetail.order.state!='9'&&orderDetail.order.state!='10'&&latestLogistics}}" class="orderStateDiv" style="height:143.1rpx;">
     <view class="iconDiv">
       <image class="logisticsImg" src="../../image/icon/logistics.png" mode="widthFix"></image>
     </view>

@@ -95,7 +95,7 @@ Page({
     })
   },
   bindRegionChange:function(e){
-    console.log("picker值变为",e.detail.value)
+    //console.log("picker值变为",e.detail.value)
     this.setData({
       region:e.detail.value
     })
@@ -132,7 +132,7 @@ Page({
           });
         },
         fail: function (res) {
-          console.log("请求失败");
+          console.log(res);
         }
       })
     }
@@ -174,7 +174,7 @@ Page({
         });
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
@@ -201,7 +201,7 @@ Page({
         });
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   }

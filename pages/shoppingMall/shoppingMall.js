@@ -63,13 +63,13 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        console.log(res.data.data)
+        //console.log(res.data.data)
         _this.setData({
           frameList: res.data.data
         })
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
@@ -148,7 +148,7 @@ Page({
 
   //加载更多
   onReachBottom: function () {
-    console.log('加载更多')
+    //console.log('加载更多')
     this.setData({
       isHideLoadMore: false,
       isHideEnd: true,
@@ -185,7 +185,7 @@ Page({
           
         },
         fail: function (res) {
-          console.log("请求失败");
+          console.log(res);
         }
       })
     }, 1000)
@@ -231,7 +231,7 @@ Page({
         })
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   }

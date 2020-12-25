@@ -75,9 +75,6 @@
             <view class="tabItem">{{item.lens.refractiveIndex}}</view>
           </view>
           <view class="contentRow">
-            <view style="color:#747474;">类型：近视</view>  
-          </view>
-          <view class="contentRow">
             <view>¥ {{item.spec.price+item.lens.price}}</view>
             <view class="customBtn" data-id="{{index}}" bindtap="openPopup">定制信息</view>
             <view class="productNum">数量：{{item.cart.num}}</view>

@@ -40,7 +40,7 @@ Page({
     // 登录
     wx.login({
       success: res => {
-        console.log(res)
+        //console.log(res)
         app.globalData.code = res.code
 
         // 从缓存获取openid
@@ -69,7 +69,7 @@ Page({
                 
               },
               fail: function (res) {
-                console.log("请求失败");
+                console.log(res);
               }
             })
           },
@@ -112,7 +112,7 @@ Page({
         })
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
 
@@ -136,7 +136,6 @@ Page({
 
   onSlideChange: function (event) { 
     var postId = event.detail.current; 
-    // console.log(postId);
   },
 
   onPopup:function(){
@@ -154,7 +153,7 @@ Page({
       success: function (res) {
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     });
     wx.request({
@@ -168,7 +167,7 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        console.log(res)
+        //console.log(res)
         if (res.data.code===200){
           _this.setData({
             popupVisible: !_this.data.popupVisible
@@ -181,7 +180,7 @@ Page({
         }
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     });
     
@@ -208,7 +207,7 @@ Page({
   // 获取用户微信信息
   bindgetuserinfo: function(e){
     // var _this = this;
-    console.log(e)
+    //console.log(e)
     // app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail

@@ -25,14 +25,14 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        console.log(res)
+        //console.log(res)
         let logistics = JSON.parse(res.data.data);
         _this.setData({
           logisticsDetail: logistics
         })
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },

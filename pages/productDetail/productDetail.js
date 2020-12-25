@@ -22,7 +22,9 @@ Page({
     duration: 500,
     circular:true, //衔接滑动
     windowWidth:414,
-    actionSheetOpen:false
+    actionSheetOpen:false,
+    isLike: false,
+    likeVisible: true
   },
 
   /**
@@ -60,7 +62,7 @@ Page({
         })      
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
 
@@ -68,13 +70,13 @@ Page({
       url: app.globalData.host+'/comment/productCommentByProductID/'+options.frameID,
       method: 'GET',
       success: function (res) {
-        console.log(res.data.data)
+        //console.log(res.data.data)
         _this.setData({
           goodRating: res.data.data
         })
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
 
@@ -95,11 +97,31 @@ Page({
           _this.setData({
             newComment: newComment
           });
-          console.log(_this.data.newComment);
+          //console.log(_this.data.newComment);
         }
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
+      }
+    })
+
+    wx.request({
+      url: app.globalData.host+'/like/findUserIsLike',
+      data: {
+        userID: app.globalData.openid,
+        productID: options.frameID
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          isLike: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log(res);
       }
     })
   },
@@ -185,6 +207,7 @@ Page({
   },
   // 添加到收藏夹
   onAddLike: function(){
+    var _this = this;
     wx.request({
       url: app.globalData.host + '/like/add',
       data: {
@@ -196,17 +219,51 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
+        _this.setData({
+          isLike: true,
+          likeVisible: false
+        })
+        setTimeout(function(){
+          _this.setData({
+            likeVisible: true
+          })
+        },1500)
+      },
+      fail: function (res) {
+        console.log(res);
+      }
+    })
+  },
+
+  // 取消收藏
+  onDeleteLike: function(){
+    var _this = this;
+    wx.request({
+      url: app.globalData.host + '/like/delete',
+      data: {
+        userID: app.globalData.openid,
+        productID: this.data.frameDetail.frameID
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        _this.setData({
+          isLike: false
+        })
         wx.showToast({
-          title: '已收藏',
-          icon: 'success',
+          title: '取消收藏',
+          icon: 'none',
           duration: 2000
         });
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
+
   // 登录
   onLogin:function(){
     this.getUserInfo.setData({
@@ -216,7 +273,7 @@ Page({
   // 获取用户微信信息
   bindgetuserinfo: function(e){
     // var _this = this;
-    console.log(e)
+    //console.log(e)
     // app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail
@@ -243,5 +300,14 @@ Page({
   handleContact (e) {
     console.log(e.detail.path)
     console.log(e.detail.query)
+  },
+  // 放大预览图片
+  preview:function(e){
+    //console.log(e)
+    let currentUrl = e.currentTarget.dataset.src;
+    wx.previewImage({
+      current:currentUrl,
+      urls: this.data.frameDetail.imageList,
+    })
   }
 })

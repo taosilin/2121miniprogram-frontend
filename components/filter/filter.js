@@ -62,7 +62,7 @@ Component({
     filterChange:function(e){
       let i = e.currentTarget.dataset.i;
       let j = e.target.dataset.j;
-      console.log(i,j);
+      //console.log(i,j);
       if (j!=undefined){
         let items = this.data.filterList;
         items[i].selectItem = j;

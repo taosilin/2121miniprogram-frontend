@@ -32,10 +32,10 @@ Page({
         _this.setData({
           commentList: commentList
         });
-        console.log(_this.data.commentList);
+        //console.log(_this.data.commentList);
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
@@ -90,7 +90,7 @@ Page({
   },
   // 放大预览图片
   preview:function(e){
-    console.log(e)
+    //console.log(e)
     let currentUrl = e.currentTarget.dataset.src;
     let id = e.currentTarget.dataset.id;
     wx.previewImage({

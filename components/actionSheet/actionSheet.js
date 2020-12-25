@@ -166,7 +166,7 @@ Component({
           },
           success: function (res) {
             
-            console.log(res.data.data);
+            //console.log(res.data.data);
             // 判断是否有可选镜片
             if (res.data.data.length>0){
               _this.setData({
@@ -184,7 +184,7 @@ Component({
             
           },
           fail: function (res) {
-            console.log("请求失败");
+            console.log(res);
           }
         })
       }
@@ -269,7 +269,7 @@ Component({
           });
         },
         fail: function (res) {
-          console.log("请求失败");
+          console.log(res);
         }
       })
     },
@@ -421,13 +421,13 @@ Component({
           'content-type': 'application/json'//默认值
         },
         success: function (res) {
-          console.log(res.data.data);
+          //console.log(res.data.data);
           _this.setData({
             enabledLens:res.data.data
           });
         },
         fail: function (res) {
-          console.log("请求失败");
+          console.log(res);
         }
       })
       

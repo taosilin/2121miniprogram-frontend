@@ -39,6 +39,9 @@
   width: 100%;
   height: 674rpx;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 /* 滑块容器 */
 .swiperContainer{
@@ -91,8 +94,10 @@
   width: 118rpx;
   height: 118rpx;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  border: 2rpx solid #979797;
+  justify-content: center;
+  border: 1.6rpx solid #979797;
   box-sizing: border-box;
 }
 
@@ -100,18 +105,20 @@
   width: 118rpx;
   height: 118rpx;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .smallImg{
-  width: 116rpx;
+  width: 114rpx;
 }
 .otherDiv{
   width: 100%;
   display: flex;
   flex-direction: row;
   position: relative;
-  padding: 30rpx 36rpx 0rpx 46rpx;
+  padding: 30rpx 36rpx 0rpx 36rpx;
   box-sizing: border-box;
   background-color: white;
 }
@@ -142,8 +149,8 @@
   width: 100%;
   box-sizing: border-box;
   padding-left: 36rpx;
-  padding-top: 50rpx;
-  padding-bottom: 86rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -354,4 +361,26 @@
 }
 .descriptionImg{
   width: 750rpx;
+}
+.likeToast{
+  position: absolute;
+  z-index: 19;
+  width: 240rpx;
+  height: 232rpx;
+  background-color: #000000;
+  opacity: 0.6;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 255rpx;
+  top: 510rpx;
+}
+.likeImg{
+  width: 116rpx;
+  margin-bottom: 24rpx;
+}
+.likeText{
+  color: #FFFFFF;
 }

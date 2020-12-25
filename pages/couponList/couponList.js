@@ -6,24 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // couponList:[
-    //   {
-    //     name:"20元抵用券",
-    //     restriction:"无门槛",
-    //     description:"特例商品不支持使用优惠券",
-    //     discount:20,
-    //     selected:false,
-    //     openDetail:false
-    //   },
-    //   {
-    //     name:"150元抵用券",
-    //     restriction:"无门槛",
-    //     description:"特例商品不支持使用优惠券",
-    //     discount:150,
-    //     selected:false,
-    //     openDetail:false
-    //   }
-    // ],
     couponList:[],
     selectCouponIndex: null,
     inputCode:"",
@@ -63,7 +45,7 @@ Page({
         })
       },
       fail: function (res) {
-        console.log("请求失败");
+        console.log(res);
       }
     })
   },
@@ -141,13 +123,13 @@ Page({
   },
 
   onExchange:function(e){
-    console.log(this.data.inputCode)
+    //console.log(this.data.inputCode)
     wx.showModal({
       title: '确认兑换',
       content: '您确认兑换优惠券？',
       success (res) {
         if (res.confirm) {
-          console.log('用户点击确定')
+          //console.log('用户点击确定')
           //此处填写领取优惠券逻辑
           wx.showToast({
             title: "      优惠券码不正确      ",
@@ -155,7 +137,7 @@ Page({
             duration: 2000
           })
         } else if (res.cancel) {
-          console.log('用户点击取消')
+          //console.log('用户点击取消')
           //
         }
       }
@@ -164,7 +146,7 @@ Page({
 
   // 选择优惠券
   radioChange:function(e){
-    console.log(e)
+    //console.log(e)
     this.setData({
       selectCouponIndex:Number(e.detail.value)
     })

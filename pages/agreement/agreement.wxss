@@ -33,12 +33,16 @@
   color: #404040;
   letter-spacing: 0.5px;
   margin-top: 8px;
+  text-align:justify;
+  text-justify:inter-ideograph;
 }
 .small_title{
   font-size: 14px;
   color: black;
   letter-spacing: 0.5px;
   margin-top: 8px;
+  text-align:justify;
+  text-justify:inter-ideograph;
 }
 .bold_text{
   font-weight: bold;

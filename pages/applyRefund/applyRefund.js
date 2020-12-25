@@ -30,7 +30,7 @@ Page({
   onLoad: function (options) {
     const sysInfo = wx.getSystemInfoSync();
     var orderDetail = JSON.parse(options.orderDetail);
-    console.log(orderDetail);
+    //console.log(orderDetail);
     let refundReason = [];
     let description = [];
     let fileList = [];
@@ -173,9 +173,39 @@ Page({
     });
   },
 
+  // 删除图片的回调
+  afterDelete(event) {
+    var id = event.currentTarget.dataset.id;
+    var index = event.detail.index;
+    var fileList = this.data.fileList;
+
+    fileList[id].splice(index,1);
+    this.setData({
+      fileList: fileList
+    })
+  },
+
   // 申请退款
   onConfirm:function(e){
     var _this = this;
+
+    wx.request({
+      url: app.globalData.host+'/order/updatestate',
+      data: {
+        orderID: this.data.orderDetail.order.orderID,
+        state: "9"
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+      
+      },
+      fail: function (res) {
+        console.log(res);
+      }
+    })
 
     for (let i=0;i<this.data.orderDetail.frames.length;i++){
       let refundImage = new Array();
@@ -223,7 +253,7 @@ Page({
           });
         },
         fail: function (res) {
-          console.log("请求失败");
+          console.log(res);
         }
       })
     }
