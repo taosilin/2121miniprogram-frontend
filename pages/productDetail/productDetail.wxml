@@ -41,8 +41,15 @@
     <view class="otherDiv">
       <text class="parameter">颜色：{{colors[selectSpec].colorName}}</text>
       <view class="iconDiv">
-        <image wx:if="{{isLike}}" class="likeIcon" src="../../image/icon/favorites.png" mode="widthFix" bindtap="onDeleteLike"></image>
-        <image wx:else class="likeIcon" src="../../image/icon/favorites_normal.png" mode="widthFix" bindtap="onAddLike"></image>收藏
+
+        <view wx:if="{{isLike}}" bindtap="onDeleteLike">
+          <image class="likeIcon" src="../../image/icon/favorites.png" mode="widthFix"></image>收藏
+        </view>
+
+        <view wx:else bindtap="onAddLike">
+          <image class="likeIcon" src="../../image/icon/favorites_normal.png" mode="widthFix"></image>收藏
+        </view>
+
         <image class="shareIcon" src="../../image/icon/share.png" mode="widthFix"></image>分享
       </view>  
     </view>

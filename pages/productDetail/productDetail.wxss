@@ -358,9 +358,14 @@
 }
 .description{
   width: 750rpx;
+  display: flex;
+  flex-direction: column;
 }
 .descriptionImg{
   width: 750rpx;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
 }
 .likeToast{
   position: absolute;

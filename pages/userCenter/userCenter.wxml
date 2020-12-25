@@ -98,7 +98,7 @@
       <text>更多精彩</text>
       <text>尽在2121公众号</text>
     </view>
-    <view class="follow-btn">去关注><official-account></official-account></view>
+    <view class="follow-btn" bindtap="bindload">去关注></view>
   </view>
   
   </view>

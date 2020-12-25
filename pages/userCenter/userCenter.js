@@ -224,5 +224,11 @@ Page({
   handleContact (e) {
     console.log(e.detail.path)
     console.log(e.detail.query)
-  }
+  },
+  // 关注公众号
+  bindload: function () {
+    wx.navigateTo({
+      url: '../webView/webView',
+    })
+  },
 })
