@@ -26,10 +26,10 @@
 }
 .productItem{
   position: relative;
-  padding-top: 60rpx;
+  padding-top: 20rpx;
   padding-bottom: 44rpx;
   box-sizing: border-box;
-  height: 471rpx;
+  height: 472rpx;
   border: 1rpx solid #F5F5F5;
   width: 375rpx;
 }
@@ -52,7 +52,7 @@
   font-size: 24rpx;
   color: #000000;
   letter-spacing: 1rpx;
-  margin-top: 40rpx;
+  margin-top: 20rpx;
   margin-left: 28rpx;
   margin-bottom: 2rpx;
 }
