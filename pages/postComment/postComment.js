@@ -185,6 +185,18 @@ Page({
     });
   },
 
+  // 删除图片的回调
+  afterDelete(event) {
+    var id = event.currentTarget.dataset.id;
+    var index = event.detail.index;
+    var fileList = this.data.fileList;
+
+    fileList[id].splice(index,1);
+    this.setData({
+      fileList: fileList
+    })
+  },
+
   // 发表评价
   onPostComment:function(e){
     //console.log(this.data.fileList)

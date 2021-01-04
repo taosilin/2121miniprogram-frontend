@@ -2,6 +2,7 @@
 .container{
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 .background{
   width: 100%;
@@ -13,12 +14,14 @@
 }
 .z-height{
   width: 100%;
-  height: 832rpx;
+  min-height: 432rpx;
   background: white;
   position: absolute;
   z-index: 20;
   bottom: 0px;
   border-radius: 38rpx 38rpx 0px 0px;
+  padding-bottom: 14rpx;
+  box-sizing: border-box;
 }
 .reasonTitle{
   width: 100%;

@@ -22,7 +22,7 @@
           <image class="serviceImg" src="../../image/icon/tick.png" mode="widthFix"></image>
           <view class="serviceText">管家式服务</view>
         </view>
-        <view class="serviceInfo">全程关爱服务，验光单读取、个人推荐、试戴期跟踪、售后维修的VVVVIP体验，既方便，又安心</view>
+        <view class="serviceInfo">专属特派员团队，验光单读取，个人推荐，试戴期跟踪，售后问题的VVVIP体验，既方便，又安心</view>
       </view>
 
       <view class="serviceItem" style="margin-bottom:140rpx">

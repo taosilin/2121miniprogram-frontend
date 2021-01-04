@@ -10,7 +10,7 @@ Page({
     selectCouponIndex: null,
     inputCode:"",
     windowWidth:414,
-    couponListHeight: 896-54-89,
+    couponListHeight: 896-54,
     couponWidth:378
   },
 
@@ -23,7 +23,7 @@ Page({
     this.setData({
       windowWidth:sysInfo.windowWidth,
       couponWidth:sysInfo.windowWidth*0.913,
-      couponListHeight:sysInfo.windowHeight-54-89
+      couponListHeight:sysInfo.windowHeight-54
     })
     wx.request({
       url: app.globalData.host+'/usercoupon/list',

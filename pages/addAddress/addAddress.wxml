@@ -2,10 +2,10 @@
 <view class="container">
   <view class="formList">
     <view class="formItem">收货人姓名：
-      <input class="input" name="input" value="{{receiver}}" bind:change="onReceiverChange"/>
+      <input class="input" name="input" value="{{receiver}}" bind:change="onReceiverChange" type="text"/>
     </view>
     <view class="formItem">联系电话：
-      <input class="input" name="input" value="{{telephone}}" bind:change="onTelChange"/>
+      <input class="input" name="input" value="{{telephone}}" bind:change="onTelChange" type="number"/>
     </view>
     <view class="formItem">所在地区：
       <picker class="picker" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">

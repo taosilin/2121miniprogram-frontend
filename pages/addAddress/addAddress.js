@@ -103,7 +103,30 @@ Page({
 
   // 提交新增地址
   onAdd: function(){
-    if (this.data.receiver&&this.data.telephone&&this.data.region[0]&&this.data.region[1]&&this.data.region[2]&&this.data.detail){
+    var r = /^[·\-\s\w\u4e00-\u9fa5]*$/
+
+    if (!r.test(this.data.receiver)||this.data.receiver.length<2||this.data.receiver.length>25) {
+      wx.showToast({
+        title: '收货人长度需要在2-25个汉字或字符之间，不能包含特殊字符',
+        icon: 'none',
+        duration: 2000
+      });
+    }
+    else if (this.data.telephone.length!=11) {
+      wx.showToast({
+        title: '请输入11位手机号码',
+        icon: 'none',
+        duration: 2000
+      });
+    }
+    else if (!r.test(this.data.detail)||this.data.detail.length<5||this.data.detail.length>120){
+      wx.showToast({
+        title: '详细地址长度需要在5-120个汉字或字符之间，不能包含特殊字符',
+        icon: 'none',
+        duration: 2000
+      });
+    }
+    else if (this.data.receiver&&this.data.telephone&&this.data.region[0]&&this.data.region[1]&&this.data.region[2]&&this.data.detail){
       wx.request({
         url: app.globalData.host + '/address/add',
         data:{
@@ -138,7 +161,7 @@ Page({
     }
     else{
       wx.showToast({
-        title: '请填写必要信息',
+        title: '请完善地址信息',
         icon: 'none',
         duration: 2000
       });
@@ -147,36 +170,68 @@ Page({
   },
 
   // 编辑地址
-  onUpdate: function(){
-    wx.request({
-      url: app.globalData.host + '/address/update',
-      data: {
-        addressID: this.data.addressID,
-        receiver: this.data.receiver,
-        telephone: this.data.telephone,
-        province: this.data.region[0],
-        city: this.data.region[1],
-        district: this.data.region[2],
-        detail: this.data.detail
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/json'//默认值
-      },
-      success: function (res) {
-        wx.navigateBack({
-          delta:1,
-        });
-        wx.showToast({
-          title: '保存成功',
-          icon: 'success',
-          duration: 2000
-        });
-      },
-      fail: function (res) {
-        console.log(res);
-      }
-    })
+  onUpdate: function(){   
+    var r = /^[·\-\s\w\u4e00-\u9fa5]*$/
+
+    if (!r.test(this.data.receiver)||this.data.receiver.length<2||this.data.receiver.length>25){
+      wx.showToast({
+        title: '收货人长度需要在2-25个汉字或字符之间，不能包含特殊字符',
+        icon: 'none',
+        duration: 2000
+      });
+    }
+    else if (this.data.telephone.length!=11) {
+      wx.showToast({
+        title: '请输入11位手机号码',
+        icon: 'none',
+        duration: 2000
+      });
+    }
+    else if (!r.test(this.data.detail)||this.data.detail.length<5||this.data.detail.length>120){
+      wx.showToast({
+        title: '详细地址长度需要在5-120个汉字或字符之间，不能包含特殊字符',
+        icon: 'none',
+        duration: 2000
+      });
+    }
+    else if (this.data.receiver&&this.data.telephone&&this.data.region[0]&&this.data.region[1]&&this.data.region[2]&&this.data.detail){
+      wx.request({
+        url: app.globalData.host + '/address/update',
+        data: {
+          addressID: this.data.addressID,
+          receiver: this.data.receiver,
+          telephone: this.data.telephone,
+          province: this.data.region[0],
+          city: this.data.region[1],
+          district: this.data.region[2],
+          detail: this.data.detail
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'//默认值
+        },
+        success: function (res) {
+          wx.navigateBack({
+            delta:1,
+          });
+          wx.showToast({
+            title: '保存成功',
+            icon: 'success',
+            duration: 2000
+          });
+        },
+        fail: function (res) {
+          console.log(res);
+        }
+      })
+    }
+    else{
+      wx.showToast({
+        title: '请完善地址信息',
+        icon: 'none',
+        duration: 2000
+      });
+    }
   },
 
   // 删除地址

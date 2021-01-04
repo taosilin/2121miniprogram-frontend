@@ -4,6 +4,8 @@
   padding: 0px;
   /* padding-bottom: 201rpx; */
   width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 .labelbar{
   width: 100%;

@@ -15,7 +15,7 @@
               </view>
               
               <view class="radioDiv">
-                <radio class="defaultAdd" value="{{item.addressID}}" checked="{{isDefault[index]}}" color="#72C9FA"/>设为默认地址
+                <radio class="defaultAdd" value="{{item.addressID}}" checked="{{isDefault[index]}}" color="#72C9FA"/>默认地址
               </view>
             </view>
             <view class='arrow' bindtap="onChangeAddress" data-id="{{index}}"></view>     

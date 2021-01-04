@@ -21,7 +21,8 @@ Page({
       rightEyeAstigmatism:null,
       leftEyeAxis:null,
       rightEyeAxis:null
-    }
+    },
+    reasons:['多拍/错拍/需要重拍','我不想要了','大小/尺寸描述与实物不符','材质与实物不符','质量/有瑕疵','发错了','朋友/网上评价不好']
   },
 
   /**

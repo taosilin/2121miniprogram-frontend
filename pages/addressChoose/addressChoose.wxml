@@ -16,7 +16,9 @@
                 <view class="addressDetail">{{item.detail}}</view>
               </view>
             </view>
-            <view class='arrow' bindtap="onChangeAddress" data-id="{{index}}"></view>     
+            <view class="arrowDiv" bindtap="onChangeAddress" data-id="{{index}}">
+              <view class='arrow'></view> 
+            </view>  
           </view>
           <view class="divContainer">
             <view class="divLine"></view>

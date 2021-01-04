@@ -10,7 +10,7 @@ Page({
     ordersfilter:[],
     recommend:[],
     windowHeight:896,
-    tabs:['全部订单', '待付款', '待收货', '待评价', '售后'],
+    tabs:['全部', '待付款', '待收货', '待评价', '售后'],
     selectTab:0
   },
 

@@ -35,10 +35,10 @@
           </block>
         </radio-group>
       </view>  
-      <view class="footer">
+      <!-- <view class="footer">
         <view wx:if="{{selectCouponIndex!=null}}" class="useBtn">去使用</view>
         <view wx:else class="useBtn-disabled">去使用</view>
-      </view>
+      </view> -->
   </block>
   <!-- 无优惠券时 -->
   <block wx:else>

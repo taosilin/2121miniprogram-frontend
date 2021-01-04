@@ -176,7 +176,9 @@ Page({
     let frames = new Array();
     frames.push(item);
     let info = {
-      order: this.data.orderDetail.order,
+      order: {
+        orderID: this.data.orderDetail.order.orderID
+      },
       frames: frames
     }
     info = JSON.stringify(info);

@@ -72,4 +72,4 @@
   </view>
   <popup id="popup" customInfo="{{customInfo}}"/>
 </view>
-<refund-popup id="refund" bindreasonConfirm="chooseReason"/>
+<refund-popup id="refund" bindreasonConfirm="chooseReason" reasons="{{reasons}}"/>

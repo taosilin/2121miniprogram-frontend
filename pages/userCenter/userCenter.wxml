@@ -95,8 +95,8 @@
   <view class="more">
     <image class="moreicon" src="../../image/icon/source.png" mode="widthFix"></image>
     <view class="moretext">
-      <text>更多精彩</text>
-      <text>尽在2121公众号</text>
+      <text>更多故事</text>
+      <text>通往2121星球</text>
     </view>
     <view class="follow-btn" bindtap="bindload">去关注></view>
   </view>

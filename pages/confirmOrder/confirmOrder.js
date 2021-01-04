@@ -326,9 +326,21 @@ Page({
   // ,
   // 返回上一页
   onReturn:function(){
-    wx.navigateBack({
-      delta: 1
-    })
+
+    wx.showModal({
+      title: '提示',
+      content: '确认放弃订单？',
+      success(res) {
+        if (res.confirm) {
+          //console.log('放弃');
+          wx.navigateBack({
+            delta: 1
+          })
+        } else if (res.cancel) {
+          //console.log('否')
+        }
+      }
+    }); 
   },
 
   // 测试支付成功

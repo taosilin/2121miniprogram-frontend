@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: flex-start;
   position: absolute;
+  overflow-x: hidden;
 }
 .cardDiv{
   background-color: white;
@@ -110,6 +111,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 14rpx;
+  margin-bottom: 14rpx;
 }
 .footerBtn{
   width: 681.1rpx;

@@ -20,6 +20,7 @@
 .infoDiv{
   display: flex;
   flex-direction: row;
+  width: 575rpx;
 }
 .radioDiv{
   font-size: 24rpx;
@@ -29,6 +30,9 @@
   align-items: center;
   padding-left: 24rpx;
   padding-right: 24rpx;
+}
+.arrowDiv{
+  width: 175rpx;
 }
 .arrow{
   width: 17rpx;
