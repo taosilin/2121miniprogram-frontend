@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 52rpx 0rpx;
+  padding: 26rpx 0rpx;
   box-sizing: border-box;
 }
 

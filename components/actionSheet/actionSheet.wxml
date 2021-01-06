@@ -37,20 +37,18 @@
               度数：<option-box placeholderText="左眼度数" bindoptionChange="onLeftDegreeChange" optionValue="{{leftDegree}}"/><option-box style="margin-left:25rpx;" placeholderText="右眼度数" bindoptionChange="onRightDegreeChange" optionValue="{{rightDegree}}"/>
             </view>
             <view class="degreeRow">
-              瞳距：<option-box boxWidth="620" placeholderText="请选择瞳距" options="{{interpupillarys}}" bindoptionChange="onInterpupillaryChange" optionValue="{{interpupillary}}"/>
+              瞳距：<option-box boxWidth="610" placeholderText="请选择瞳距" options="{{interpupillarys}}" bindoptionChange="onInterpupillaryChange" optionValue="{{interpupillary}}" defaultValue="[0]"/>
             </view>
             <view class="degreeRow">
-              散光：<option-box placeholderText="左眼散光" options="{{astigmatisms}}" bindoptionChange="onLeftAstigmatismChange" optionValue="{{leftAstigmatism}}"/><option-box style="margin-left:25rpx;" placeholderText="右眼散光" options="{{astigmatisms}}" bindoptionChange="onRightAstigmatismChange" optionValue="{{rightAstigmatism}}"/>
+              散光：<option-box placeholderText="左眼散光" options="{{astigmatisms}}" bindoptionChange="onLeftAstigmatismChange" optionValue="{{leftAstigmatism}}" defaultValue="[0]"/><option-box style="margin-left:25rpx;" placeholderText="右眼散光" options="{{astigmatisms}}" bindoptionChange="onRightAstigmatismChange" optionValue="{{rightAstigmatism}}"  defaultValue="[0]"/>
             </view>
             <view class="degreeRow">
-              轴位：<option-box placeholderText="左眼轴位" options="{{axiss}}" bindoptionChange="onLeftAxisChange" optionValue="{{leftAxis}}"/><option-box style="margin-left:25rpx;" placeholderText="右眼轴位" options="{{axiss}}" bindoptionChange="onRightAxisChange" optionValue="{{rightAxis}}"/>
+              轴位：<option-box placeholderText="左眼轴位" options="{{axiss}}" bindoptionChange="onLeftAxisChange" optionValue="{{leftAxis}}" defaultValue="[0]"/><option-box style="margin-left:25rpx;" placeholderText="右眼轴位" options="{{axiss}}" bindoptionChange="onRightAxisChange" optionValue="{{rightAxis}}" defaultValue="[0]"/>
             </view>
             <view class="bottomDiv">
               <view class="bottomBtn" bindtap="buyPlain">购买平光</view>
               <view class="bottomText" bindtap="optometrySheet">验光单怎么看？</view>
             </view>
-            
-            
           </view>
         </block>
         <block wx:else>

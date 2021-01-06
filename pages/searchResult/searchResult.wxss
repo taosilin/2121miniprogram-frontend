@@ -123,7 +123,7 @@
 .titleText{
   font-size: 32rpx;
   color: #000000;
-  letter-spacing: 4rpx;
+  /* letter-spacing: 4rpx; */
 }
 .promptDiv{
   width: 100%;

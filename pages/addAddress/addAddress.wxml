@@ -22,7 +22,7 @@
   </view>
   <view wx:if="{{isNew}}" class="btnDiv">
     <view class="importantBtn" style="margin-bottom:24rpx;" bindtap="onAdd">保存</view>
-    <view class="normalBtn">从微信获取地址</view>
+    <view class="normalBtn" bindtap="getFromWX">从微信获取地址</view>
   </view>
   <view wx:else class="btnDiv">
     <view class="importantBtn" style="margin-bottom:24rpx;" bindtap="onUpdate">修改</view>

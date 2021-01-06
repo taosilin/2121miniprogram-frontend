@@ -8,7 +8,7 @@
         <view class="productDiv" wx:for="{{productList}}">
           <view class="productItem" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{txtStyle[index]}}" data-index="{{index}}">
             <view class="selectDiv" data-id="{{index}}">
-              <checkbox class="selectProduct" value="{{index}}" checked="{{checkboxBool[index]}}"></checkbox>
+              <checkbox value="{{index}}" checked="{{checkboxBool[index]}}"></checkbox>
             </view>
             <view class="imgDiv">
               <image class="productImg" src="{{item.spec.specImage}}" mode="widthFix"></image>
@@ -19,12 +19,16 @@
                 <view class="priceDiv">¥ {{item.spec.price + item.lens.price}}</view>
               </view>
                 
-              <view class="tabDiv">
+              <!-- <view class="tabDiv">
                 <view class="tabItem">{{item.color.colorName}}</view>
                 <view class="tabItem">{{item.lens.lensName}}</view>
                 <view class="tabItem">{{item.lens.refractiveIndex}}</view>
-              </view>
+              </view> -->
 
+              <view class="infotext">
+                {{item.color.colorName}}【{{item.lens.lensName}},{{item.lens.refractiveIndex}}】
+              </view>
+              
               <view class="bottomDiv">
                 <view class="selectBtn" data-id="{{index}}" bindtap="openPopup">定制信息</view>
                 <stepper class="stepper" num="{{item.cart.num}}" data-id="{{index}}" bindnumChange="onNumChange"/>

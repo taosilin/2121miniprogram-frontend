@@ -211,7 +211,7 @@
   border-radius: 20rpx;
 }
 .moreicon{
-    width: 88rpx;
+  width: 88rpx;
 }
 .moreinfo{
   display: flex;

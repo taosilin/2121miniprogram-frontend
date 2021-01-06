@@ -37,6 +37,14 @@ Component({
       this.setData({
         selectedReason: e.detail.value
       })   
+    },
+    onClose:function(e){
+      this.setData({
+        flag: !this.data.flag
+      })
+    },
+    onOpen:function(e){
+      
     }
   }
 })

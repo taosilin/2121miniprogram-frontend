@@ -50,6 +50,7 @@
   font-size: 32rpx;
 }
 .input{
+  width: 540rpx;
   height: 150rpx;
 }
 .picker{

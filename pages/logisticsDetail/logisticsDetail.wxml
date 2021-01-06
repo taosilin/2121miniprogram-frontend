@@ -8,9 +8,10 @@
       <view wx:if="{{index>0}}" class="divLine"></view>
       <view class="stepItem">
         <view class="stepTime">{{item.time}}</view>
-        <view wx:if="{{index===0}}" class="stepPoint" style="border: 1px solid #72C9FA;"></view>
+        <view wx:if="{{index===0}}" class="stepPoint" style="border: 1px solid #72C9FA; background-color:#72C9FA;"></view>
         <view wx:else class="stepPoint"></view>
-        <view class="stepContext">{{item.context}}</view>
+        <view wx:if="{{index===0}}" class="stepContext" style="font-weight:bold;">{{item.context}}</view>
+        <view wx:else class="stepContext">{{item.context}}</view>
       </view>
     </block>
     

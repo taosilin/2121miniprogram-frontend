@@ -69,10 +69,13 @@
         </view>
         <view class="contentDiv">
           <view>{{item.frame.frameName}}</view>
-          <view class="tabDiv">
+          <!-- <view class="tabDiv">
             <view class="tabItem">{{item.color.colorName}}</view>
             <view class="tabItem">{{item.lens.lensName}}</view>
             <view class="tabItem">{{item.lens.refractiveIndex}}</view>
+          </view> -->
+          <view class="infotext">
+            {{item.color.colorName}}【{{item.lens.lensName}},{{item.lens.refractiveIndex}}】
           </view>
           <view class="contentRow">
             <view>¥ {{item.spec.price+item.lens.price}}</view>

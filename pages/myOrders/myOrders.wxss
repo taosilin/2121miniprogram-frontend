@@ -136,28 +136,28 @@
   width:164rpx;
   height:56rpx;
   border-radius: 28rpx;
-  font-size: 28rpx;
+  font-size: 24rpx;
   background-color: #72C9FA;
   color: white;
   display: flex;
   align-items: center;
   vertical-align: center;
   justify-content: center;
-  letter-spacing:4rpx; /*字间距*/
+  letter-spacing:4rpx;
   margin-left: 24rpx;
 }
 .normal-btn{
   width: 164rpx;
   height: 56rpx;
   border-radius: 28rpx;
-  font-size: 28rpx;
+  font-size: 24rpx;
   color: #3D3D3D;
   border: solid #D5D5D5 2rpx;
   display: flex;
   align-items: center;
   vertical-align: center;
   justify-content: center;
-  letter-spacing:4rpx;/*字间距*/
+  letter-spacing:4rpx;
   margin-left: 24rpx;
 }
 
@@ -210,7 +210,7 @@
 .titleText{
   font-size: 32rpx;
   color: #000000;
-  letter-spacing: 4rpx;
+  /* letter-spacing: 4rpx; */
 }
 .productList{
   width: 100%;

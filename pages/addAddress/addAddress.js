@@ -259,6 +259,29 @@ Page({
         console.log(res);
       }
     })
-  }
+  },
 
+  // 从微信获取地址
+  getFromWX: function(){
+    var _this = this;
+    wx.chooseAddress({
+      success(res) {
+        var region = new Array(res.provinceName,res.cityName,res.countyName)
+        _this.setData({
+          receiver: res.userName,
+          telephone: res.telNumber,
+          region: region,
+          detail: res.detailInfo
+        })
+      // console.log(res.userName)//收货人姓名
+      // console.log(res.postalCode)//邮编
+      // console.log(res.provinceName)//国标收货地址第一级地址
+      // console.log(res.cityName)//国标收货地址第二级地址
+      // console.log(res.countyName)//国标收货地址第三级地址
+      // console.log(res.detailInfo)//详细收货地址信息
+      // console.log(res.nationalCode)//收货地址国家码
+      // console.log(res.telNumber)//收货人手机号码
+      }
+    })
+  }
 })

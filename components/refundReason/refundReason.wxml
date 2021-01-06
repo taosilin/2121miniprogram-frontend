@@ -1,7 +1,7 @@
 <!--components/refundReason/refundReason.wxml-->
 <view class="container" hidden="{{flag}}">
-  <view class="background">
-    <view class="z-height">
+  <view class="background" bindtap="onClose">
+    <view class="z-height" catchtap="onOpen">
       <view class="reasonTitle">退款原因</view>
       <view class="reasonList">
         <radio-group bindchange="radioChange">
