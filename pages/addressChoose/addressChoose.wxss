@@ -14,13 +14,13 @@
   flex-direction: row;
   box-sizing: border-box;
   padding-top: 38rpx;
-  padding-right: 40rpx;
+  /* padding-right: 40rpx; */
   padding-bottom: 38rpx;
 }
 .infoDiv{
   display: flex;
   flex-direction: row;
-  width: 575rpx;
+  width: 600rpx;
 }
 .radioDiv{
   font-size: 24rpx;
@@ -32,7 +32,7 @@
   padding-right: 24rpx;
 }
 .arrowDiv{
-  width: 175rpx;
+  width: 150rpx;
 }
 .arrow{
   width: 17rpx;

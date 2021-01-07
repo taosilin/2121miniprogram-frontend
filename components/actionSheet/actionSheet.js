@@ -367,7 +367,69 @@ const degreeList=[
     degree:"+6.00"
   }
 ]
-
+const astigmatismList=[
+  {
+    id:0,
+    content:"散光25度(-0.25)",
+    degree:"-0.25"
+  },
+  {
+    id:1,
+    content:"散光50度(-0.50)",
+    degree:"-0.50"
+  },
+  {
+    id:2,
+    content:"散光75度(-0.75)",
+    degree:"-0.75"
+  },
+  {
+    id:3,
+    content:"散光100度(-1.00)",
+    degree:"-1.00"
+  },
+  {
+    id:4,
+    content:"散光125度(-1.25)",
+    degree:"-1.25"
+  },
+  {
+    id:5,
+    content:"散光150度(-1.50)",
+    degree:"-1.50"
+  },
+  {
+    id:6,
+    content:"散光175度(-1.75)",
+    degree:"-1.75"
+  },
+  {
+    id:7,
+    content:"散光200度(-2.00)",
+    degree:"-2.00"
+  },
+]
+const interpupillarys=[
+  {
+    frameID:"4B01_1",
+    myopia:[56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80],
+    hyperopia:[62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80]
+  },
+  {
+    frameID:"4B01_3",
+    myopia:[56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80],
+    hyperopia:[62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80]
+  },
+  {
+    frameID:"4B01_4",
+    myopia:[56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80],
+    hyperopia:[62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80]
+  },
+  {
+    frameID:"4C01_1",
+    interpupillary:[49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80]
+  }
+]
 Component({
   /**
    * 组件的属性列表
@@ -415,7 +477,7 @@ Component({
     },
     astigmatisms:{
       type: Array,
-      value: ["-0.25","-0.50","-0.75","-1.00","-1.25","-1.50","-1.75","-2.00"]
+      value: ["散光25度(-0.25)","散光50度(-0.50)","散光75度(-0.75)","散光100度(-1.00)","散光125度(-1.25)","散光150度(-1.50)","散光175度(-1.75)","散光200度(-2.00)"]
     },
     axiss:{
       type: Array,
@@ -719,17 +781,19 @@ Component({
     },
     onLeftDegreeChange:function(e){
       console.log(e.detail)
-      var degree = degreeList.filter(item=>{
+      var degree = degreeList.filter(item => {
         return item.content==e.detail
       })
-      
       this.setData({
         leftDegree: degree[0].degree
       })
     },
     onRightDegreeChange:function(e){
+      var degree = degreeList.filter(item => {
+        return item.content==e.detail
+      })
       this.setData({
-        rightDegree: e.detail
+        rightDegree: degree[0].degree
       })
     },
     onInterpupillaryChange:function(e){
@@ -739,13 +803,19 @@ Component({
     },
 
     onLeftAstigmatismChange:function(e){
+      var astigmatism = astigmatismList.filter(item => {
+        return item.content==e.detail
+      })
       this.setData({
-        leftAstigmatism: e.detail
+        leftAstigmatism: astigmatism[0].degree
       })
     },
     onRightAstigmatismChange:function(e){
+      var astigmatism = astigmatismList.filter(item => {
+        return item.content==e.detail
+      })
       this.setData({
-        rightAstigmatism: e.detail
+        rightAstigmatism: astigmatism[0].degree
       })
     },
     onLeftAxisChange:function(e){

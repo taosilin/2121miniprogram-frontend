@@ -236,29 +236,42 @@ Page({
 
   // 删除地址
   onDelete: function(){
-    wx.request({
-      url: app.globalData.host + '/address/delete',
-      data: {
-        addressID: this.data.addressID
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/json'//默认值
-      },
-      success: function (res) {
-        wx.navigateBack({
-          delta:1,
-        });
-        wx.showToast({
-          title: '删除成功',
-          icon: 'success',
-          duration: 2000
-        });
-      },
-      fail: function (res) {
-        console.log(res);
+    var _this = this;
+
+    wx.showModal({
+      title: '警告',
+      content: '确定删除该地址？此操作不可恢复',
+      success(res) {
+        if (res.confirm) {
+          //console.log('确定删除');
+          wx.request({
+            url: app.globalData.host + '/address/delete',
+            data: {
+              addressID: _this.data.addressID
+            },
+            method: 'POST',
+            header: {
+              'content-type': 'application/json'//默认值
+            },
+            success: function (res) {
+              wx.navigateBack({
+                delta:1,
+              });
+              wx.showToast({
+                title: '删除成功',
+                icon: 'success',
+                duration: 2000
+              });
+            },
+            fail: function (res) {
+              console.log(res);
+            }
+          })
+        } else if (res.cancel) {
+          //console.log('取消删除')
+        }
       }
-    })
+    });
   },
 
   // 从微信获取地址

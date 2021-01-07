@@ -21,6 +21,9 @@
 .infoDiv{
 
 }
+.addressInfo{
+  width: 700rpx;
+}
 .radioDiv{
   font-size: 24rpx;
 }

@@ -66,8 +66,7 @@
                 {{enabledLens[optionType].specs[optionSpec].descriptionB}}
               </text>
             </view>
-
-            
+     
             <view class="lensTitle">镜片规格</view>
             <view class="optionList">
               <block wx:for="{{enabledLens[optionType].specs}}">
