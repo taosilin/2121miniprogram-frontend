@@ -209,7 +209,7 @@ Page({
 
   // 计算注册天数
   getDaysBetween:function(dateString){
-    var startDate = Date.parse(dateString);
+    var startDate = new Date(Date.parse(dateString.replace(/-/g,'/')));
     var endDate = new Date();
     if (startDate>endDate){
       return 1;

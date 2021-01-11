@@ -124,6 +124,7 @@ Page({
 
   onExchange:function(e){
     //console.log(this.data.inputCode)
+    var _this = this;
     wx.showModal({
       title: '确认兑换',
       content: '您确认兑换优惠券？',
@@ -131,14 +132,40 @@ Page({
         if (res.confirm) {
           //console.log('用户点击确定')
           //此处填写领取优惠券逻辑
-          wx.showToast({
-            title: "      优惠券码不正确      ",
-            icon:'none',
-            duration: 2000
+          wx.request({
+            url: app.globalData.host+'/usercoupon/getByCouponCode',
+            data: {
+              userID: app.globalData.openid,
+              sortedBy: _this.data.inputCode
+            },
+            method: 'POST',
+            header: {
+              'content-type': 'application/json'//默认值
+            },
+            success: function (res) {
+              console.log(res);
+              if (res.data.code===200){
+                _this.onLoad();
+                wx.showToast({
+                  title: "      领取成功！      ",
+                  icon:'success',
+                  duration: 2000
+                })
+              }
+              else{
+                wx.showToast({
+                  title: "      优惠券码不正确      ",
+                  icon:'none',
+                  duration: 2000
+                })
+              }
+            },
+            fail: function (res) {
+              console.log(res);
+            }
           })
         } else if (res.cancel) {
           //console.log('用户点击取消')
-          //
         }
       }
     })
