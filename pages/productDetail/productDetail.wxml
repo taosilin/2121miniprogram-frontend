@@ -119,7 +119,7 @@
 
         </view>
         <view class="commentText">{{newComment.comment.commentContent}}</view>
-        <view class="commentPhotoDiv">
+        <view wx:if="{{newComment.comment.commentPhoto}}" class="commentPhotoDiv">
           <view class="commentPhoto" wx:for="{{newComment.comment.commentPhoto}}">
             <image class="commentImg" src="{{item}}" mode="aspectFill"></image>
           </view>

@@ -4,11 +4,11 @@
     <view class="tabItem {{isEnable?'selectTab':'normalTab'}}" bindtap="onEnable">可用（{{enableList.length}}）</view>
     <view class="tabItem {{isEnable?'normalTab':'selectTab'}}" bindtap="onDisable">不可用（{{disableList.length}}）</view>
   </view>
-  <view class="header">
+  <!-- <view class="header">
     <input class="inputDiv" placeholder="请输入优惠券码" value="{{inputCode}}" bindinput="onInputChange"></input>
     <view wx:if="{{inputCode==''}}" class="disableBtn">兑换</view>
     <view wx:else class="exchangeBtn" bindtap="onExchange">兑换</view>
-  </view>
+  </view> -->
   <!-- 有优惠券时 -->
   <block wx:if="{{couponList.length!=0}}">
     <view class="couponList">

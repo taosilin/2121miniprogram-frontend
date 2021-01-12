@@ -8,14 +8,14 @@
   <!-- 有优惠券时 -->
   <block wx:if="{{couponList.length!=0}}">  
       <view class="couponList" style="height:{{couponListHeight}}px;">
-        <radio-group class="radioGroup" bindchange="radioChange">
+        <!-- <radio-group class="radioGroup" bindchange="radioChange"> -->
           <block wx:for="{{couponList}}">
             <view class="couponItem">
               <image class="couponImg" src="../../image/coupon.png" mode="widthFix"></image>
               <view class="contentDiv">
                 <view class="leftDiv">
                   <view class="topDiv">
-                    <radio class="selectCoupon" value="{{index}}" color="#72C9FA" bindtap="selectCoupon" data-id="{{index}}"/>
+                    <!-- <radio class="selectCoupon" value="{{index}}" color="#72C9FA" bindtap="selectCoupon" data-id="{{index}}"/> -->
                     <view class="couponName">{{item.couponName}}</view>
                   </view>                          
                   <view class="bottomDiv">
@@ -33,7 +33,7 @@
             </view>
             <view wx:if="{{item.openDetail}}" class="detailDiv">{{item.description}}</view>      
           </block>
-        </radio-group>
+        <!-- </radio-group> -->
       </view>  
       <!-- <view class="footer">
         <view wx:if="{{selectCouponIndex!=null}}" class="useBtn">去使用</view>

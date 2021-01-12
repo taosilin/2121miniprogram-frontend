@@ -92,12 +92,16 @@ Page({
       success: function (res) {
         if (res.data.data!=null){
           let newComment = res.data.data;
-          let commentPhoto = newComment.comment.commentPhoto.split(',');
-          newComment.comment.commentPhoto = commentPhoto;
+          if (newComment.comment.commentPhoto!=""){
+            let commentPhoto = newComment.comment.commentPhoto.split(',');
+            newComment.comment.commentPhoto = commentPhoto;
+          }
+          else{
+            newComment.comment.commentPhoto = null
+          }
           _this.setData({
             newComment: newComment
           });
-          //console.log(_this.data.newComment);
         }
       },
       fail: function (res) {

@@ -98,15 +98,15 @@ Page({
   onShareAppMessage: function () {
 
   },
-  selectCoupon(e) {
-    // console.log('radio发生change事件，携带value值为：', e.currentTarget.dataset.id);
-    let id = e.currentTarget.dataset.id;
-    let items = this.data.couponList;
-    items[id].selected = !items[id].selected
-    this.setData({
-      couponList:items
-    })
-  },
+  // selectCoupon(e) {
+  //   // console.log('radio发生change事件，携带value值为：', e.currentTarget.dataset.id);
+  //   let id = e.currentTarget.dataset.id;
+  //   let items = this.data.couponList;
+  //   items[id].selected = !items[id].selected
+  //   this.setData({
+  //     couponList:items
+  //   })
+  // },
   onDetail:function(e){
     let id = e.currentTarget.dataset.id;
     let items = this.data.couponList;
@@ -171,12 +171,12 @@ Page({
     })
   },
 
-  // 选择优惠券
-  radioChange:function(e){
-    //console.log(e)
-    this.setData({
-      selectCouponIndex:Number(e.detail.value)
-    })
-  }
+  // // 选择优惠券
+  // radioChange:function(e){
+  //   //console.log(e)
+  //   this.setData({
+  //     selectCouponIndex:Number(e.detail.value)
+  //   })
+  // }
 
 })

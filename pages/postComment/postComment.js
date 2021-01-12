@@ -201,8 +201,16 @@ Page({
   onPostComment:function(e){
     //console.log(this.data.fileList)
     var _this = this;
+    
     for (let i=0;i<this.data.orderDetail.frames.length;i++){
       let commentPhoto = new Array();
+      if (!this.data.commentContent[i]){
+        let commentContent = this.data.commentContent
+        commentContent[i] = "此用户没有填写评价。"
+        this.setData({
+          commentContent:commentContent
+        })
+      }
       if (this.data.fileList[i].length>0){
         for (let j=0;j<this.data.fileList[i].length;j++){
           commentPhoto.push(this.data.fileList[i][j].url);

@@ -58,7 +58,7 @@
           {{item.comment.commentContent}}
         </view>
 
-        <view class="commentPhotoDiv">
+        <view wx:if="{{item.comment.commentPhoto[0]!=''}}" class="commentPhotoDiv">
           <view class="commentPhoto" wx:for="{{item.comment.commentPhoto}}" wx:for-index="childindex">
             <image class="commentImg" src="{{item}}" mode="aspectFill" bindtap="preview" data-src="{{item}}" data-id="{{index}}"></image>
           </view>
