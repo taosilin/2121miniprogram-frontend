@@ -1,11 +1,11 @@
 <!--pages/orderDetail/orderDetail.wxml-->
 <view class="container">
-  <view wx:if="{{orderDetail.order.state!='8'&&orderDetail.order.state!='9'&&orderDetail.order.state!='10'&&latestLogistics}}" class="orderStateDiv" style="height:143.1rpx;">
+  <view wx:if="{{orderDetail.order.state!='8'&&orderDetail.order.state!='9'&&orderDetail.order.state!='10'}}" class="orderStateDiv" style="height:143.1rpx;">
     <view class="iconDiv">
       <image class="logisticsImg" src="../../image/icon/logistics.png" mode="widthFix"></image>
     </view>
     
-    <view wx:if="{{orderDetail.order.state>='5'}}" bindtap="logisticsDetail">
+    <view wx:if="{{orderDetail.order.state>='5'&&latestLogistics}}" bindtap="logisticsDetail">
       <view class="orderState">{{latestLogistics}}...</view>
       <view class="orderTime">{{logisticsDetail.data[0].time}}</view>
     </view>

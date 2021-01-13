@@ -23,7 +23,8 @@ Page({
     this.setData({
       windowWidth:sysInfo.windowWidth,
       couponWidth:sysInfo.windowWidth*0.913,
-      couponListHeight:sysInfo.windowHeight-54
+      couponListHeight:sysInfo.windowHeight-54,
+      inputCode:""
     })
     wx.request({
       url: app.globalData.host+'/usercoupon/list',

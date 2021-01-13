@@ -159,7 +159,7 @@
   
 </view>
 
-<action-sheet id="addCart" addCart="0" colors="{{colors}}" />
+<action-sheet id="addCart" addCart="0" colors="{{colors}}" frame="{{frameDetail}}"/>
 <action-sheet id="buyNow" addCart="1" colors="{{colors}}" frame="{{frameDetail}}"/>
 
 <grant-dialog id="getUserInfo" bindgetuserinfo="bindgetuserinfo"/>

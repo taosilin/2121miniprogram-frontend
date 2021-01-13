@@ -59,7 +59,7 @@ Page({
           frameDetail: frameDetail,
           specs: res.data.data.specs,
           colors: res.data.data.colors
-        })      
+        }) 
       },
       fail: function (res) {
         console.log(res);
