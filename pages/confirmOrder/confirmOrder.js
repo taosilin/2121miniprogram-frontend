@@ -360,7 +360,7 @@ Page({
         data:{
           openid: app.globalData.openid,
           orderID: orderID,
-          actualAmount: (this.data.actualAmount*100).toString()
+          actualAmount: (this.data.actualAmount*100).toString()
         },
         method: 'POST',
         header: {
@@ -393,7 +393,7 @@ Page({
               state:"1",
               num: _this.data.buySpec[i].cart.num,
               price: (_this.data.buySpec[i].spec.price+_this.data.buySpec[i].lens.price),
-              actualPayment: (_this.data.actualAmount/_this.data.totalAmount)*(_this.data.buySpec[i].spec.price+_this.data.buySpec[i].lens.price),
+              actualPayment: (_this.data.actualAmount/_this.data.totalAmount)*(_this.data.buySpec[i].spec.price+_this.data.buySpec[i].lens.price),
               leftDegree: _this.data.buySpec[i].cart.leftDegree,
               rightDegree: _this.data.buySpec[i].cart.rightDegree,
               interpupillary: _this.data.buySpec[i].cart.interpupillary,
@@ -460,7 +460,7 @@ Page({
                 'paySign': res.data.sign,
                 'success':function(res){
                   // 支付成功
-                  //console.log(res)
+                  console.log(res)
                   wx.request({
                     url: app.globalData.host+'/order/updatestate',
                     data:{
@@ -499,7 +499,7 @@ Page({
               console.log("支付失败")
             },
             'complete':function(res){
-              console.log(res)
+              //console.log(res)
               console.log("操作完成")
             }
           })

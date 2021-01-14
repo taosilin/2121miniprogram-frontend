@@ -384,7 +384,7 @@ Page({
       'paySign': prepayID.sign,
       'success':function(res){
         // 支付成功
-        //console.log(res)
+        console.log(res)
         wx.request({
           url: app.globalData.host+'/order/updatestate',
           data:{

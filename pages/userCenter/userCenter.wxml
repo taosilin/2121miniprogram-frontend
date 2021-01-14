@@ -55,28 +55,37 @@
   <view class="others">
     <view class="function" bindtap="goToLikeList">
       <view class="iconborder">
-        <image class="othericon-favorites" src="../../image/icon/favorites.png" mode="widthFix"></image>
+        <image class="othericon" src="../../image/icon/favorites.png" mode="widthFix"></image>
       </view>
       <text class="functext">收藏夹</text>
       <view class='arrow1'></view>
     </view>
     <view class="function" bindtap="goToMyAddress">
       <view class="iconborder">
-        <image class="othericon-address" src="../../image/icon/address.png" mode="widthFix"></image>
+        <image class="othericon" src="../../image/icon/address.png" mode="widthFix"></image>
       </view>
       <text class="functext">我的地址</text>
       <view class='arrow1'></view>
     </view>
+
+    <!-- <view class="function">
+      <view class="iconborder">
+        <image class="othericon" src="../../image/icon/sheet.png" mode="widthFix"></image>
+      </view>
+      <text class="functext">我的验光单</text>
+      <view class='arrow1'></view>
+    </view> -->
+
     <view class="function" bindtap="goToCouponList">
       <view class="iconborder">
-        <image class="othericon-coupon" src="../../image/icon/coupon.png" mode="widthFix"></image>
+        <image class="othericon" src="../../image/icon/coupon.png" mode="widthFix"></image>
       </view>
       <text class="functext">优惠券</text>
       <view class='arrow1'></view>
     </view>
     <view class="function">
       <view class="iconborder">
-        <image class="othericon-service" src="../../image/icon/service.png" mode="widthFix"></image>
+        <image class="othericon" src="../../image/icon/service.png" mode="widthFix"></image>
       </view>
       <view class="functext">
         <button open-type="contact" bindcontact="handleContact" style="font-size:28rpx;color:#5B5B5B;width:120rpx;padding:0px;margin:0px;background-color:#FFFFFF;font-weight:normal;">联系客服</button>
@@ -85,7 +94,7 @@
     </view>
     <view class="function" bindtap="goToPolicy">
       <view class="iconborder">
-        <image class="othericon-policy" src="../../image/icon/policy.png" mode="widthFix"></image>
+        <image class="othericon" src="../../image/icon/policy.png" mode="widthFix"></image>
       </view>
       <text class="functext">相关政策</text>
       <view class='arrow1'></view> 
@@ -104,7 +113,7 @@
   </view>
 </view>
 
-<dialog id="getPhoneNumber" binduserExist="binduserExist"/>
+<dialog id="getPhoneNumber" binduserExist="binduserExist" />
 
 <!-- <view class="tabbarDiv">
     <tabbar currentTab="4" />
