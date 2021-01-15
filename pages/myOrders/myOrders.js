@@ -52,7 +52,7 @@ Page({
       url: app.globalData.host+'/frame/list',
       data: {
         page: 0,
-        size: 20
+        size: 4
       },
       method: 'POST',
       header: {
