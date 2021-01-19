@@ -71,12 +71,13 @@ Component({
                   }
                 })
               }
+              
             },
             fail: function (res) {
               console.log(res);
             }
           });
-
+          _this.triggerEvent("getphoneNumber",res.data.data)
         },
         fail: function (res) {
           console.log(res);

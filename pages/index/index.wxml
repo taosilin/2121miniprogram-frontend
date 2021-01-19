@@ -21,7 +21,8 @@
   </view>
   
   <view class="couponDiv">
-    <image wx:if="{{userInfo}}" class="couponImg" src="../../image/couponIndex.png" mode="widthFix" bindtap="onPopup"></image>
+    <image wx:if="{{phoneNumber}}" class="couponImg" src="../../image/couponIndex.png" mode="widthFix" bindtap="onPopup"></image>
+    <image wx:elif="{{userInfo}}" class="couponImg" src="../../image/couponIndex.png" mode="widthFix" bindtap="onGetPhoneNumber"></image>
     <image wx:else class="couponImg" src="../../image/couponIndex.png" mode="widthFix" bindtap="onLogin"></image>
   </view>
 </view>
@@ -39,7 +40,7 @@
 </view>
 
 <grant-dialog id="getUserInfo" bindgetuserinfo="bindgetuserinfo"/>
-<login-dialog id="getPhoneNumber" binduserExist="binduserExist"/>
+<login-dialog id="getPhoneNumber" binduserExist="binduserExist" bindgetphoneNumber="bindgetphoneNumber"/>
 
 <!-- <view class="tabbarDiv">
   <tabbar currentTab="0" />

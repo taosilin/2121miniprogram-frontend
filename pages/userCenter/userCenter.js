@@ -231,4 +231,16 @@ Page({
       url: '../webView/webView',
     })
   },
+  // 打开获取手机号弹窗
+  onGetPhoneNumber:function(e){
+    this.getPhoneNumber.setData({
+      flag: false
+    })
+  },
+  // 获取手机号成功的回调
+  bindgetphoneNumber:function(e){
+    this.setData({
+      phoneNumber:e.detail
+    })
+  }
 })

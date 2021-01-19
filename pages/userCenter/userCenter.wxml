@@ -4,7 +4,7 @@
   <view class="card">
     <image class="cardBkg" src='../../image/myCard.png' mode="widthFix"></image>
 
-    <view class="userInfo" wx:if="{{userInfo}}">
+    <view class="userInfo" wx:if="{{phoneNumber}}">
       <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
       <view class="content">
         <text class="username">{{userInfo.nickName}}</text>
@@ -14,9 +14,15 @@
       </view>
     </view>
 
-    <view class="loginDiv" wx:else>
+    <view class="loginDiv" wx:elif="{{userInfo}}" bindtap="onGetPhoneNumber">
       <image class="loginAvatar" src="../../image/login.png" mode="widthFix"></image>
-      <button class="authorizedLogin" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">点击授权用户信息</button>
+      <button class="authorizedLogin">点击授权手机号</button>
+    </view>
+    <view class="loginDiv" wx:else>
+      <button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo" style="padding:0px;margin:0px;background-color:transparent;font-weight:normal;">
+        <image class="loginAvatar" src="../../image/login.png" mode="widthFix"></image>
+        <button class="authorizedLogin">点击授权用户信息</button>
+      </button>
     </view>
 
   </view>
@@ -88,7 +94,7 @@
         <image class="othericon" src="../../image/icon/service.png" mode="widthFix"></image>
       </view>
       <view class="functext">
-        <button open-type="contact" bindcontact="handleContact" style="font-size:28rpx;color:#5B5B5B;width:120rpx;padding:0px;margin:0px;background-color:#FFFFFF;font-weight:normal;">联系客服</button>
+        <button open-type="contact" bindcontact="handleContact" style="font-size:28rpx;color:#5B5B5B;width:600rpx;height:100rpx;padding:0px;margin:0px;background-color:#FFFFFF;font-weight:normal;text-align:left;display:flex;flex-direction:column;justify-content: center;">联系客服</button>
       </view>
       <view class='arrow1'></view>
     </view>
@@ -113,7 +119,7 @@
   </view>
 </view>
 
-<dialog id="getPhoneNumber" binduserExist="binduserExist" />
+<dialog id="getPhoneNumber" binduserExist="binduserExist" bindgetphoneNumber="bindgetphoneNumber" />
 
 <!-- <view class="tabbarDiv">
     <tabbar currentTab="4" />

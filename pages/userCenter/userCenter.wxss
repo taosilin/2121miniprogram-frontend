@@ -139,7 +139,8 @@
   width:50rpx;
 }
 .statetext{
-  font-size: 28rpx;
+  font-size: 26rpx;
+  margin-top: 6rpx;
 }
 .others{
   width: 100%;

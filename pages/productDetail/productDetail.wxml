@@ -147,9 +147,13 @@
       <image class="cartIcon" src="../../image/icon/addCart.png" mode="widthFix"></image>
       购物车
     </view>   
-    <view wx:if="{{userInfo!=null}}" class="footerBtn">
+    <view wx:if="{{phoneNumber}}" class="footerBtn">
       <view class="leftBtn" bindtap="onAddCart">加入购物车</view>
       <view class="rightBtn" bindtap="onBuyNow">立即购买</view>
+    </view>
+    <view wx:elif="{{userInfo}}" class="footerBtn">
+      <view class="leftBtn" bindtap="onGetPhoneNumber">加入购物车</view>
+      <view class="rightBtn" bindtap="onGetPhoneNumber">立即购买</view>
     </view>
     <view wx:else class="footerBtn">
       <view class="leftBtn" bindtap="onLogin">加入购物车</view>
@@ -163,7 +167,7 @@
 <action-sheet id="buyNow" addCart="1" colors="{{colors}}" frame="{{frameDetail}}"/>
 
 <grant-dialog id="getUserInfo" bindgetuserinfo="bindgetuserinfo"/>
-<login-dialog id="getPhoneNumber" binduserExist="binduserExist"/>
+<login-dialog id="getPhoneNumber" binduserExist="binduserExist" bindgetphoneNumber="bindgetphoneNumber" />
 <service-popup id="servicePopup"></service-popup>
 
 <view class="likeToast" hidden="{{likeVisible}}">
