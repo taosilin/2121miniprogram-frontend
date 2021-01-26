@@ -25,14 +25,16 @@ Page({
         'content-type': 'application/json'//默认值
       },
       success: function (res) {
-        _this.setData({
-          likeList: res.data.data
-        });
+        console.log(res.data.data)
+        
         let likeIcon = new Array();
-        for (let i=0;i<_this.data.likeList.length;i++){
+        for (let i=0;i<res.data.data.length;i++){
+          let imageList = res.data.data[i].imageList.split(',');
+          res.data.data[i].imageList = imageList;
           likeIcon.push(true);
         }
         _this.setData({
+          likeList: res.data.data,
           likeIcon: likeIcon
         });
       },

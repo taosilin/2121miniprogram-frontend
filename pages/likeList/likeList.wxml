@@ -6,7 +6,7 @@
       <block wx:for="{{likeList}}">
         <view class="likeItem" data-id="{{item.frameID}}">
           <view class="imgDiv" data-id="{{item.frameID}}" bindtap="onFrameDetail">
-            <image class="itemImg" src="{{item.coverImage}}" mode="widthFix"></image>
+            <image class="itemImg" src="{{item.imageList[0]}}" mode="widthFix"></image>
           </view>
           <view class="content" data-id="{{item.frameID}}" bindtap="onFrameDetail">
             <view class="name">{{item.frameName}}</view>

@@ -128,7 +128,7 @@
           <view class="productList">
             <block wx:for="{{recommend}}">
               <view class="productItem" data-id="{{item.frameID}}" bindtap="goToProductDetail">
-                <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
+                <!-- <image wx:if="{{item.isNew}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image> -->
                 <view class="productImgDiv">
                   <image class="productImg" src="{{item.coverImage}}" mode="widthFix"></image>
                 </view>    

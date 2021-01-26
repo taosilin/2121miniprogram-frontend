@@ -171,10 +171,10 @@
 }
 .productItem{
   position: relative;
-  padding-top: 20rpx;
+  padding-top: 44rpx;
   padding-bottom: 44rpx;
   box-sizing: border-box;
-  height: 472rpx;
+  height: 412rpx;
   border: 1rpx solid #F5F5F5;
   width: 375rpx;
 }
@@ -185,7 +185,7 @@
   align-items: center;
 }
 .productImg{
-  width: 372rpx;
+  width: 371rpx;
 }
 .newIcon{
   width: 88rpx;

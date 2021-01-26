@@ -41,7 +41,7 @@
   <view class="productList">
     <block wx:for="{{frameList}}">
       <view class="productItem" bindtap="goToProductDetail" data-id="{{item.frameID}}">
-        <image wx:if="{{item.tab.indexOf('New')!=-1}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image>
+        <!-- <image wx:if="{{item.tab.indexOf('New')!=-1}}" class="newIcon" src="../../image/icon/new.png" mode="widthFix"></image> -->
         <view class="productImgDiv">
           <image class="productImg" src="{{item.coverImage}}" mode="widthFix"></image>
         </view>
