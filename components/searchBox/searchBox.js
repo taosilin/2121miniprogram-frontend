@@ -6,7 +6,7 @@ Component({
   properties: {
     historyItem:{
       type:Array,
-      value:['土星','碳纤维','太阳眼镜']
+      value:['[Si] 查令','[N] 墨新','[Ag] 栀风']
     }
   },
 
@@ -45,32 +45,44 @@ Component({
       })
     },
 
+    // 搜索
     onSearch:function(e){
       if (this.data.searchInput!=''){
         wx.navigateTo({
           url: '../searchResult/searchResult?searchInput='+this.data.searchInput,
         })
+        wx.setStorage({
+          key:"historyItem",
+          data: new Array(this.data.searchInput).concat(this.properties.historyItem)
+        })
       }
     },
 
+    // 清除历史记录
     onClearHistory:function(e){
       this.setData({
         historyItem:[]
+      })
+      wx.setStorage({
+        key:"historyItem",
+        data:[]
       })
     },
 
     //隐藏
     hideBox: function () {
       this.setData({
-        flag: !this.data.flag
+        flag: !this.data.flag,
+        searchInput: ''
       })
     },
     //展示
-    showBox () {
+    showBox: function () {
       this.setData({
         flag: !this.data.flag
       })
-    }
+    },
+    move: function(){}
 
   }
 })

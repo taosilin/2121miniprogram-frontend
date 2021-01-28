@@ -18,28 +18,9 @@ Page({
       ["#吃","#喝","#玩","#乐"],
       ["#一本正经","#前程似锦","#赚钱填坑"],
       ["#学车上路","#出门杀菌","#毕业旅行"]
-    ]
-    // types:[
-    //   {
-    //     typename:"框型",
-    //     types:[
-    //       {typename:"圆框",imgUrl:"../../image/glasses.jpg"},
-    //       {typename:"方框",imgUrl:"../../image/glasses.jpg"},
-    //       {typename:"半框",imgUrl:"../../image/glasses.jpg"},
-    //       {typename:"大框",imgUrl:"../../image/glasses.jpg"},
-    //       {typename:"飞行员款",imgUrl:"../../image/glasses.jpg"}
-    //     ]
-    //   },
-    //   {
-    //     typename:"风格",
-    //     types:[
-    //       {typename:"商务",imgUrl:"../../image/glasses.jpg"},
-    //       {typename:"休闲",imgUrl:"../../image/glasses.jpg"},
-    //       {typename:"复古",imgUrl:"../../image/glasses.jpg"},
-    //       {typename:"学生",imgUrl:"../../image/glasses.jpg"}
-    //     ]
-    //   }
-    // ]
+    ],
+    historyItem:['[Si] 查令','[N] 墨新','[Ag] 栀风']
+    
   },
 
   /**
@@ -50,6 +31,7 @@ Page({
       navH: app.globalData.navHeight
     });
     var _this = this;
+
     wx.request({
       url: app.globalData.host+'/frame/class',
       data: {
@@ -90,7 +72,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.search.hideBox();
+    var _this = this;
+    wx.getStorage({
+      key: 'historyItem',
+      success (res) {
+        _this.setData({
+          historyItem:res.data
+        })
+      }
+    })
   },
 
   /**

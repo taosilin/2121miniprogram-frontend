@@ -80,6 +80,7 @@
   top: 0;
   left: 0;
   z-index: 10;
+  background-color: #FFFFFF;
 }
 .navTitle{
   width: 100%;
@@ -132,11 +133,6 @@
 }
 .search{
   width: 100%;
-}
-.tabbarDiv{
-  width: 100%;
-  position: fixed;
-  bottom: 0px;
 }
 
 .tabDiv{

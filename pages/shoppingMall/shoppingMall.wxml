@@ -10,7 +10,7 @@
     </view>
   </view>
 
-  <search class="search" id="search"/>
+  <search class="search" id="search" historyItem="{{historyItem}}"/>
 
   <view class="labelbar">
     <label-bar id="labelBar" tabs="{{classes}}" selectTextColor="#000000" textColor="#BEBEBE" selectColor="#FFFFFF" letterSpacing="1.6" textSize="25.3" selectBold="bold" binditemtap="onTabChange">
@@ -64,6 +64,3 @@
     我是有底线的~
   </view>
 </view>
-<!-- <view class="tabbarDiv">
-  <tabbar currentTab="1" />
-</view> -->
