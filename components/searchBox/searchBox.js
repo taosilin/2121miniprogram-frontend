@@ -72,14 +72,14 @@ Component({
     //隐藏
     hideBox: function () {
       this.setData({
-        flag: !this.data.flag,
+        flag: true,
         searchInput: ''
       })
     },
     //展示
     showBox: function () {
       this.setData({
-        flag: !this.data.flag
+        flag: false
       })
     },
     move: function(){}

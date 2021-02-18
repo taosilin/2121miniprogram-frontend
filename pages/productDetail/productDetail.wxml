@@ -130,7 +130,7 @@
         </view>
       </view>
     </view>
-
+    <view class="divider"></view>
     <view class="description">
       <image wx:for="{{frameDetail.description}}" class="descriptionImg" src="{{item}}" mode="widthFix"></image>
     </view>
