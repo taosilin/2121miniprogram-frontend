@@ -48,6 +48,7 @@
       <view wx:if="{{coupon}}" class="rightText" style="color:#D30E26;">-¥ {{coupon.discount}}</view>
       <view wx:else class="rightText">¥ {{discount}}</view>
     </view>
+    
     <view class="row" style="font-size:34rpx;font-weight:bold;">
       <view class="leftText">合计</view>
       <view class="rightText" style="color:black;">¥ {{actualAmount}}</view>

@@ -59,36 +59,104 @@
   </view>
 
   <view class="others">
-    <view class="function" bindtap="goToLikeList">
+    <!-- 判断登录 -->
+    <view class="function" wx:if="{{phoneNumber}}" bindtap="goToLikeList">
       <view class="iconborder">
         <image class="othericon" src="../../image/icon/favorites.png" mode="widthFix"></image>
       </view>
       <text class="functext">收藏夹</text>
       <view class='arrow1'></view>
     </view>
-    <view class="function" bindtap="goToMyAddress">
+    <view class="function" wx:elif="{{userInfo}}" bindtap="onGetPhoneNumber">
+      <view class="iconborder">
+        <image class="othericon" src="../../image/icon/favorites.png" mode="widthFix"></image>
+      </view>
+      <text class="functext">收藏夹</text>
+      <view class='arrow1'></view>
+    </view>
+    <view class="function" wx:else>
+      <view class="iconborder">
+        <image class="othericon" src="../../image/icon/favorites.png" mode="widthFix"></image>
+      </view>
+      <view class="functext">
+        <button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo" style="font-size:28rpx;color:#5B5B5B;width:600rpx;height:100rpx;padding:0px;margin:0px;background-color:#FFFFFF;font-weight:normal;text-align:left;display:flex;flex-direction:column;justify-content: center;">收藏夹</button>
+      </view>
+      <view class='arrow1'></view>
+    </view>
+    <!-- 判断登录 -->
+    <view class="function" wx:if="{{phoneNumber}}" bindtap="goToMyAddress">
       <view class="iconborder">
         <image class="othericon" src="../../image/icon/address.png" mode="widthFix"></image>
       </view>
       <text class="functext">我的地址</text>
       <view class='arrow1'></view>
     </view>
-
-    <!-- <view class="function">
+    <view class="function" wx:elif="{{userInfo}}" bindtap="onGetPhoneNumber">
+      <view class="iconborder">
+        <image class="othericon" src="../../image/icon/address.png" mode="widthFix"></image>
+      </view>
+      <text class="functext">我的地址</text>
+      <view class='arrow1'></view>
+    </view>
+    <view class="function" wx:else>
+      <view class="iconborder">
+        <image class="othericon" src="../../image/icon/address.png" mode="widthFix"></image>
+      </view>
+      <view class="functext">
+        <button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo" style="font-size:28rpx;color:#5B5B5B;width:600rpx;height:100rpx;padding:0px;margin:0px;background-color:#FFFFFF;font-weight:normal;text-align:left;display:flex;flex-direction:column;justify-content: center;">我的地址</button>
+      </view>
+      <view class='arrow1'></view>
+    </view>
+    <!-- 判断登录 -->
+    <view class="function" wx:if="{{phoneNumber}}" bindtap="goToMyPrescription">
       <view class="iconborder">
         <image class="othericon" src="../../image/icon/sheet.png" mode="widthFix"></image>
       </view>
       <text class="functext">我的验光单</text>
       <view class='arrow1'></view>
-    </view> -->
+    </view>
+    <view class="function" wx:elif="{{userInfo}}" bindtap="onGetPhoneNumber">
+      <view class="iconborder">
+        <image class="othericon" src="../../image/icon/sheet.png" mode="widthFix"></image>
+      </view>
+      <text class="functext">我的验光单</text>
+      <view class='arrow1'></view>
+    </view>
+    <view class="function" wx:else>
+      <view class="iconborder">
+        <image class="othericon" src="../../image/icon/sheet.png" mode="widthFix"></image>
+      </view>
+      <view class="functext">
+        <button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo" style="font-size:28rpx;color:#5B5B5B;width:600rpx;height:100rpx;padding:0px;margin:0px;background-color:#FFFFFF;font-weight:normal;text-align:left;display:flex;flex-direction:column;justify-content: center;">我的验光单</button>
+      </view>
+      <view class='arrow1'></view>
+    </view>
 
-    <view class="function" bindtap="goToCouponList">
+    <!-- 判断登录 -->
+    <view class="function" wx:if="{{phoneNumber}}" bindtap="goToCouponList">
       <view class="iconborder">
         <image class="othericon" src="../../image/icon/coupon.png" mode="widthFix"></image>
       </view>
       <text class="functext">优惠券</text>
       <view class='arrow1'></view>
     </view>
+    <view class="function" wx:elif="{{userInfo}}" bindtap="onGetPhoneNumber">
+      <view class="iconborder">
+        <image class="othericon" src="../../image/icon/coupon.png" mode="widthFix"></image>
+      </view>
+      <text class="functext">优惠券</text>
+      <view class='arrow1'></view>
+    </view>
+    <view class="function" wx:else>
+      <view class="iconborder">
+        <image class="othericon" src="../../image/icon/coupon.png" mode="widthFix"></image>
+      </view>
+      <view class="functext">
+        <button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo" style="font-size:28rpx;color:#5B5B5B;width:600rpx;height:100rpx;padding:0px;margin:0px;background-color:#FFFFFF;font-weight:normal;text-align:left;display:flex;flex-direction:column;justify-content: center;">优惠券</button>
+      </view>
+      <view class='arrow1'></view>
+    </view>
+
     <view class="function">
       <view class="iconborder">
         <image class="othericon" src="../../image/icon/service.png" mode="widthFix"></image>

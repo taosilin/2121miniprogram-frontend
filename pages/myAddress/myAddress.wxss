@@ -46,6 +46,8 @@
 .addressDetail{
   font-size: 28rpx;
   color: #838383;
+  width: 600rpx;
+  word-break:break-all;
 }
 .divContainer{
   display: flex;

@@ -29,6 +29,8 @@
   font-size: 28rpx;
   color: #000000;
   letter-spacing: 1rpx;
+  width: 600rpx;
+  word-break:break-all;
 }
 .orderTime{
   font-size: 24rpx;

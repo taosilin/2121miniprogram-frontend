@@ -15,13 +15,13 @@
     </view>
   </view>
 
-  <view class="orderStateDiv" style="height:146.7rpx;margin-bottom:24rpx;">
+  <view class="orderStateDiv" style="min-height:146.7rpx;margin-bottom:24rpx;">
     <view class="iconDiv">
       <image class="logisticsImg" src="../../image/icon/orderAddress.png" mode="widthFix"></image>
     </view>
-    <view>
+    <view style="width:600rpx;">
       <view class="orderState">{{orderDetail.address.receiver}}<span class="orderTime" style="margin-left:34rpx;">{{orderDetail.address.telephone}}</span></view>
-      <view class="orderState">{{orderDetail.address.province}}{{orderDetail.address.city}}{{orderDetail.address.district}}{{orderDetail.address.detail}}</view>
+      <view class="orderState">{{orderDetail.address.province}} {{orderDetail.address.city}} {{orderDetail.address.district}} {{orderDetail.address.detail}}</view>
     </view>
   </view>
 

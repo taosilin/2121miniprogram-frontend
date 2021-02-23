@@ -172,6 +172,11 @@ Page({
       url: '../myAddress/myAddress',
     })
   },
+  goToMyPrescription:function(){
+    wx.navigateTo({
+      url: '../myPrescription/myPrescription',
+    })
+  },
   goToCouponList:function(){
     wx.navigateTo({
       url: '../couponList/couponList',

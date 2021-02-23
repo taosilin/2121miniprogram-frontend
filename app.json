@@ -27,7 +27,8 @@
     "pages/applyRefund/applyRefund",
     "pages/applyReturn/applyReturn",
     "pages/logisticsDetail/logisticsDetail",
-    "pages/webView/webView"
+    "pages/webView/webView",
+    "pages/myPrescription/myPrescription"
   ],
   "tabBar": {
     "position": "bottom",
