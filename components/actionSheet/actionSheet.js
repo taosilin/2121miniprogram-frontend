@@ -723,7 +723,10 @@ Component({
     rightAstigmatism: null,
     leftAxis: null,
     rightAxis: null,
-    enabledLens:[] 
+    enabledLens:[],
+    prescriptions:[],
+    prescriptionID: null,
+    prescriptionName: null
   },
   
   /**
@@ -753,6 +756,25 @@ Component({
     onBtn2:function(){
       this.setData({
         selectTab:1
+      })
+      var _this = this;
+      wx.request({
+        url: app.globalData.host+'/prescription/list',
+        data:{
+          userID: app.globalData.openid
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'//默认值
+        },
+        success: function (res) {
+          _this.setData({
+            prescriptions: res.data.data
+          });
+        },
+        fail: function (res) {
+          console.log(res);
+        }
       })
     },
  
@@ -792,6 +814,10 @@ Component({
         });
       }
       else{
+        if (this.data.prescriptionID==null){
+          this.saveDialog = this.selectComponent("#saveDialog");
+          this.saveDialog.showDialog(this.data.leftDegree,this.data.rightDegree,this.data.interpupillary,this.data.leftAstigmatism,this.data.rightAstigmatism,this.data.leftAxis,this.data.rightAxis);
+        }
         // 条件全部满足，跳转到下一步
         if (this.data.leftAstigmatism==null){
           this.setData({
@@ -836,7 +862,6 @@ Component({
                 duration: 2000
               });
             }
-            
           },
           fail: function (res) {
             console.log(res);
@@ -1019,7 +1044,8 @@ Component({
         })
         this.setData({
           interpupillarys: interpupillary[0].hyperopia,
-          interpupillary: null
+          interpupillary: null,
+          prescriptionID: null
         })
       }else{
         var interpupillary = interpupillarys.filter(item => {
@@ -1027,7 +1053,8 @@ Component({
         })
         this.setData({
           interpupillarys: interpupillary[0].myopia,
-          interpupillary: null
+          interpupillary: null,
+          prescriptionID: null
         })
       }
     },
@@ -1044,20 +1071,24 @@ Component({
         })
         this.setData({
           interpupillarys: interpupillary[0].hyperopia,
-          interpupillary: null
+          interpupillary: null,
+          prescriptionID: null
         })
       }else{
         var interpupillary = interpupillarys.filter(item => {
           return item.frameID==this.properties.frame.frameID
         })
         this.setData({
-          interpupillarys: interpupillary[0].myopia
+          interpupillarys: interpupillary[0].myopia,
+          interpupillary: null,
+          prescriptionID: null
         })
       }
     },
     onInterpupillaryChange:function(e){
       this.setData({
-        interpupillary: e.detail
+        interpupillary: e.detail,
+        prescriptionID: null
       })
     },
 
@@ -1066,7 +1097,8 @@ Component({
         return item.content==e.detail
       })
       this.setData({
-        leftAstigmatism: astigmatism[0].degree
+        leftAstigmatism: astigmatism[0].degree,
+        prescriptionID: null
       })
     },
     onRightAstigmatismChange:function(e){
@@ -1074,17 +1106,20 @@ Component({
         return item.content==e.detail
       })
       this.setData({
-        rightAstigmatism: astigmatism[0].degree
+        rightAstigmatism: astigmatism[0].degree,
+        prescriptionID: null
       })
     },
     onLeftAxisChange:function(e){
       this.setData({
-        leftAxis: e.detail
+        leftAxis: e.detail,
+        prescriptionID: null
       })
     },
     onRightAxisChange:function(e){
       this.setData({
-        rightAxis: e.detail
+        rightAxis: e.detail,
+        prescriptionID: null
       })
     },
 
@@ -1094,7 +1129,12 @@ Component({
         url: '../optometrySheet/optometrySheet',
       })
     },
-
+    // 选择验光单
+    goToChoosePrescription: function(){
+      wx.navigateTo({
+        url: '../prescriptionChoose/prescriptionChoose',
+      })
+    },
     // 购买平光
     buyPlain:function(){
       var _this = this;

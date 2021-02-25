@@ -1,0 +1,55 @@
+/* pages/addPrescription/addPrescription.wxss */
+.container{
+  margin: 0px;
+  padding: 0px;
+}
+.prescriptionList{
+  width: 100%;
+  padding: 56rpx 26rpx;
+}
+.degreeRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx; /*26rpx*/
+  margin-bottom: 44rpx;
+}
+.inputName{
+  width: 610rpx;
+  height: 68rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  border: 2rpx #CECECE solid;
+}
+.btnDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 72rpx;
+}
+.importantBtn{
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+  width: 412rpx;
+  height: 98rpx;
+  border-radius: 49rpx;
+  background-color: #72C9FA;
+  color: white;
+  font-size: 32rpx;
+  margin-bottom: 24rpx;
+}
+.normalBtn{
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+  width: 412rpx;
+  height: 98rpx;
+  border-radius: 49rpx;
+  color: #72C9FA;
+  border:#72C9FA solid 2rpx;
+  font-size: 32rpx;
+}

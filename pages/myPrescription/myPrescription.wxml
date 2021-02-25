@@ -1,2 +1,59 @@
 <!--pages/myPrescription/myPrescription.wxml-->
-<text>pages/myPrescription/myPrescription.wxml</text>
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<view class="container">
+  <view class="prescriptionDiv">
+    <view wx:if="{{prescriptions.length>0}}">
+      <block wx:for="{{prescriptions}}">
+        <view class="prescriptionItem" bindtap="onChangePrescription" data-id="{{index}}">
+          <view class="prescriptionName">
+            <span style="font-weight:bold;">{{item.prescriptionName}}</span>的验光单
+          </view>
+          <view class="prescriptionContent">
+              <view class="form">
+              
+                <view class="formCol">
+                  <view class="formCell"></view>
+                  <view class="formCell">右眼（R）</view>
+                  <view class="formCell">左眼（L）</view>
+                </view>
+
+                <view class="formCol">
+                  <view class="formCell">度数</view>
+                  <view class="formCell">{{filters.toFix(item.rightDegree)}}</view>
+                  <view class="formCell">{{filters.toFix(item.leftDegree)}}</view>
+                </view>
+
+                <view class="formCol">
+                  <view class="formCell">散光</view>
+                  <view wx:if="{{item.rightAstigmatism}}" class="formCell">{{filters.toFix(item.rightAstigmatism)}}</view>
+                  <view wx:else class="formCell">-</view>
+                  <view wx:if="{{item.leftAstigmatism}}" class="formCell">{{filters.toFix(item.leftAstigmatism)}}</view>
+                  <view wx:else class="formCell">-</view>
+                </view>
+
+                <view class="formCol">
+                  <view class="formCell">轴位</view>
+                  <view wx:if="{{item.rightAxis}}" class="formCell">{{item.rightAxis}}</view>
+                  <view wx:else class="formCell">-</view>
+                  <view wx:if="{{item.leftAxis}}" class="formCell">{{item.leftAxis}}</view>
+                  <view wx:else class="formCell">-</view>
+                </view>
+
+                <view class="formCol">
+                  <view class="formCell">瞳距</view>
+                  <view class="formCell" style="height:98rpx;">{{item.interpupillary}}</view>
+                </view>
+
+              </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:else class="noPrescriptionDiv">
+      <view class="noPrescriptionInfo">还没有添加验光单</view>
+    </view>
+  </view>
+  <view class="btnDiv">
+    <view class="addBtn" bindtap="goToAddPrescription">+ 新增验光单</view>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<!--pages/addPrescription/addPrescription.wxml-->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<view class="container">
+  <view class="prescriptionList">
+    <view class="degreeRow">
+      名称：<input class="inputName" maxlength="25" placeholder="光度主人" value="{{prescriptionName}}" bind:change="onPrescriptionNameChange"/>
+    </view>
+    <view class="degreeRow">
+      度数：<option-box placeholderText="左眼度数" bindoptionChange="onLeftDegreeChange" optionValue="{{filters.toFix(leftDegree)}}"/><option-box style="margin-left:25rpx;" placeholderText="右眼度数" bindoptionChange="onRightDegreeChange" optionValue="{{filters.toFix(rightDegree)}}"/>
+    </view>
+    <view class="degreeRow">
+      瞳距：<option-box boxWidth="610" placeholderText="请选择瞳距" options="{{interpupillarys}}" bindoptionChange="onInterpupillaryChange" optionValue="{{interpupillary}}" defaultValue="[0]"/>
+    </view>
+    <view class="degreeRow">
+      散光：<option-box placeholderText="左眼散光" options="{{astigmatisms}}" bindoptionChange="onLeftAstigmatismChange" optionValue="{{filters.toFix(leftAstigmatism)}}" defaultValue="[0]"/><option-box style="margin-left:25rpx;" placeholderText="右眼散光" options="{{astigmatisms}}" bindoptionChange="onRightAstigmatismChange" optionValue="{{filters.toFix(rightAstigmatism)}}"  defaultValue="[0]"/>
+    </view>
+    <view class="degreeRow">
+      轴位：<option-box placeholderText="左眼轴位" options="{{axiss}}" bindoptionChange="onLeftAxisChange" optionValue="{{leftAxis}}" defaultValue="[0]"/><option-box style="margin-left:25rpx;" placeholderText="右眼轴位" options="{{axiss}}" bindoptionChange="onRightAxisChange" optionValue="{{rightAxis}}" defaultValue="[0]"/>
+    </view>
+  </view>
+  <view wx:if="{{isNew}}" class="btnDiv">
+    <view class="importantBtn" bindtap="onAdd">保存</view>
+  </view>
+  <view wx:else class="btnDiv">
+    <view class="importantBtn" bindtap="onUpdate">修改</view>
+    <view class="normalBtn" bindtap="onDelete">删除</view>
+  </view>
+</view>

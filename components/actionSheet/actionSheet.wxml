@@ -1,4 +1,5 @@
 <!--components/actionSheet/actionSheet.wxml-->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
 <view class="container" hidden="{{flag}}">
   <view class="action-sheet">  
     <view class="z-height">
@@ -11,6 +12,7 @@
         <view wx:else class="price">¥ {{colors[selectedColor].price}}</view>
         <!-- <text class="originalPrice">¥ {{originalPrice}}</text> -->
         <view wx:if="{{selectTab==2}}" class="cycle">预计发货：{{enabledLens[optionType].specs[optionSpec].deliveryTime}}小时</view>
+        <view wx:elif="{{selectTab==1&&prescriptionName}}" class="cycle">光度主人：{{prescriptionName}}</view>
       </view>
       <view class="btnDiv">
         <view class="btn1 {{selectTab==0?'selectBtn':'btn1-after'}}" bindtap="onBtn1">1.选择镜框和镜腿</view>
@@ -34,13 +36,13 @@
         <block wx:elif="{{selectTab==1}}">
           <view class="content2">
             <view class="degreeRow">
-              度数：<option-box placeholderText="左眼度数" bindoptionChange="onLeftDegreeChange" optionValue="{{leftDegree}}"/><option-box style="margin-left:25rpx;" placeholderText="右眼度数" bindoptionChange="onRightDegreeChange" optionValue="{{rightDegree}}"/>
+              度数：<option-box placeholderText="左眼度数" bindoptionChange="onLeftDegreeChange" optionValue="{{filters.toFix(leftDegree)}}"/><option-box style="margin-left:25rpx;" placeholderText="右眼度数" bindoptionChange="onRightDegreeChange" optionValue="{{filters.toFix(rightDegree)}}"/>
             </view>
             <view class="degreeRow">
               瞳距：<option-box boxWidth="610" placeholderText="请选择瞳距" options="{{interpupillarys}}" bindoptionChange="onInterpupillaryChange" optionValue="{{interpupillary}}" defaultValue="[0]"/>
             </view>
             <view class="degreeRow">
-              散光：<option-box placeholderText="左眼散光" options="{{astigmatisms}}" bindoptionChange="onLeftAstigmatismChange" optionValue="{{leftAstigmatism}}" defaultValue="[0]"/><option-box style="margin-left:25rpx;" placeholderText="右眼散光" options="{{astigmatisms}}" bindoptionChange="onRightAstigmatismChange" optionValue="{{rightAstigmatism}}"  defaultValue="[0]"/>
+              散光：<option-box placeholderText="左眼散光" options="{{astigmatisms}}" bindoptionChange="onLeftAstigmatismChange" optionValue="{{filters.toFix(leftAstigmatism)}}" defaultValue="[0]"/><option-box style="margin-left:25rpx;" placeholderText="右眼散光" options="{{astigmatisms}}" bindoptionChange="onRightAstigmatismChange" optionValue="{{filters.toFix(rightAstigmatism)}}"  defaultValue="[0]"/>
             </view>
             <view class="degreeRow">
               轴位：<option-box placeholderText="左眼轴位" options="{{axiss}}" bindoptionChange="onLeftAxisChange" optionValue="{{leftAxis}}" defaultValue="[0]"/><option-box style="margin-left:25rpx;" placeholderText="右眼轴位" options="{{axiss}}" bindoptionChange="onRightAxisChange" optionValue="{{rightAxis}}" defaultValue="[0]"/>
@@ -49,6 +51,8 @@
               <view class="bottomBtn" bindtap="buyPlain">购买平光</view>
               <view class="bottomText" bindtap="optometrySheet">验光单怎么看？</view>
             </view>
+            <view wx:if="{{prescriptions.length>0}}" class="choosePrescription" bindtap="goToChoosePrescription">选择已有验光单</view>
+            <view wx:else class="noPrescription">无可选验光单</view>
           </view>
         </block>
         <block wx:else>
@@ -86,3 +90,4 @@
     </view>
   </view>
 </view>
+<save-dialog id="saveDialog"/>

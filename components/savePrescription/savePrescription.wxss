@@ -1,0 +1,96 @@
+/* components/savePrescription/savePrescription.wxss */
+.container{
+  width: 100%;
+}
+.background{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 19;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.z-height{
+  width: 578rpx;
+  height: 344rpx;
+  border-radius: 20rpx;
+  overflow-y: scroll;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  overflow: visible;
+  z-index: 20;
+}
+.infoDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btnDiv{
+  display: flex;
+  flex-direction: row;
+}
+.title{
+  font-size: 28rpx;
+  letter-spacing: 1rpx;
+  margin-top: 60rpx;
+  margin-bottom: 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.inputName{
+  width: 279rpx;
+  height: 60rpx;
+  box-sizing: border-box;
+  padding-left: 16rpx;
+  border: 2rpx #CECECE solid;
+  margin-left: 16rpx;
+  font-size: 24rpx;
+  color: #B6B6B6;
+  letter-spacing: 0.83rpx;
+}
+.content{
+  color: #9F9E9E;
+  font-size: 28rpx;
+  letter-spacing: 1rpx;
+  margin-bottom: 4rpx;
+}
+.info{
+  color: #BCBCBC;
+  font-size: 24rpx;
+  letter-spacing: 0.86rpx;
+  margin-bottom: 44rpx;
+}
+.saveBtn{
+  color: #000000;
+  font-size: 28rpx;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 289rpx;
+  height: 92rpx;
+}
+.cancelBtn{
+  color: #9F9E9E;
+  font-size: 28rpx;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 289rpx;
+  height: 92rpx;
+}
+.hr{
+  width: 100%;
+  height: 2rpx;
+  background-color: #E7E7E7;
+}

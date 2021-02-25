@@ -206,7 +206,7 @@
   display: flex;
   flex-direction: row;
   position: relative;
-  padding: 52rpx 40rpx;
+  padding: 16rpx 40rpx;
   box-sizing: border-box;
 }
 .bottomText{
@@ -230,7 +230,31 @@
   border-bottom: 2rpx solid #747474;
   /* text-decoration:underline; */
 }
-
+.choosePrescription{
+  width: 260rpx;
+  height: 68rpx;
+  color: white;
+  background-color: #72C9FA;
+  border-radius: 34rpx;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.noPrescription{
+  width: 260rpx;
+  height: 68rpx;
+  color: #999999;
+  background-color: #EEEEEE;
+  border: 2rpx solid #FFFFFF;
+  border-radius: 34rpx;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .content3{
   display: flex;
   flex-direction: column;

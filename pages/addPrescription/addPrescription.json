@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "option-box":"../../components/optionBox/optionBox"
+  },
+  "navigationBarTitleText":"验光单管理"
+}

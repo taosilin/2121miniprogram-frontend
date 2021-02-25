@@ -1,4 +1,4 @@
-/* pages/myPrescription/myPrescription.wxss */
+/* pages/prescriptionChoose/prescriptionChoose.wxss */
 .container{
   margin: 0px;
   padding: 0px;
@@ -19,8 +19,12 @@
   width: 100%;
   border-bottom: #EFEFEF 2rpx solid;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+}
+.checkedRadio{
+  margin-right: 16rpx;
 }
 .form{
   display: flex;
@@ -57,7 +61,7 @@
   margin-top: 62rpx;
   margin-bottom: 62rpx;
 }
-.addBtn{
+.confirmBtn{
   width: 412rpx;
   height: 98rpx;
   background-color: #72C9FA;

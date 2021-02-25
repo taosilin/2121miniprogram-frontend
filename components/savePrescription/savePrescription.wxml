@@ -1,0 +1,21 @@
+<!--components/savePrescription/savePrescription.wxml-->
+<view class="container" hidden="{{flag}}">
+  <view class="background">
+    <view class="z-height">
+
+      <view class="infoDiv">
+        <view class="title">保存验光单:
+          <input class="inputName" maxlength="25" placeholder="光度主人" value="{{prescriptionName}}" bind:change="onPrescriptionNameChange"/>
+        </view>
+        <view class="content">保存的验光单日后无需手动输入</view>
+        <view class="info">保存后，可在 我的-我的验光单 中查看</view>
+      </view>
+      <view class="hr"></view>
+      <view class="btnDiv">
+        <view class="cancelBtn" bindtap="onCancel">取消</view>
+        <view class="saveBtn" bindtap="onSave">保存</view>
+      </view>
+
+    </view>
+  </view>
+</view>
