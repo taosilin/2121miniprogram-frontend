@@ -41,7 +41,7 @@
 
                 <view class="formCol">
                   <view class="formCell">瞳距</view>
-                  <view class="formCell" style="height:98rpx;">{{item.interpupillary}}</view>
+                  <view class="formCell" style="height:96rpx;">{{item.interpupillary}}</view>
                 </view>
 
               </view>

@@ -36,6 +36,7 @@
   align-items: center;
   justify-content: center;
   border: 0.5px #C0C0C0 solid;
+  box-sizing: border-box;
 }
 .formCol{
   width: 122rpx;
