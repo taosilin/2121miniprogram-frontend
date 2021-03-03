@@ -1,4 +1,4 @@
-<!--components/actionSheet/actionSheet.wxml-->
+<!--components/actionSheetNew/actionSheetNew.wxml-->
 <wxs module="filters" src="../../utils/filter.wxs"></wxs>
 <view class="container" hidden="{{flag}}" catchtouchmove="move">
   <view class="action-sheet">  
@@ -8,19 +8,19 @@
           <image class="productImg" src="{{colors[selectedColor].specImage}}" mode="widthFix"></image>
       </view>
       <view class="info">
-        <view wx:if="{{selectTab==2}}" class="price">¥ {{colors[selectedColor].price + enabledLens[optionType].specs[optionSpec].price}}</view>
-        <view wx:else class="price">¥ {{colors[selectedColor].price}}</view>
-        <!-- <text class="originalPrice">¥ {{originalPrice}}</text> -->
+        <view wx:if="{{selectTab==2}}" class="price">{{frame.frameName}}  ¥{{colors[selectedColor].price + enabledLens[optionType].specs[optionSpec].price}}</view>
+        <view wx:else class="price">{{frame.frameName}} ¥ {{colors[selectedColor].price}}</view>
+        <view class="cycle">已选：{{colors[selectedColor].colorName}}</view>
         <view wx:if="{{selectTab==2}}" class="cycle">预计发货：{{enabledLens[optionType].specs[optionSpec].deliveryTime}}小时</view>
-        <view wx:elif="{{selectTab==1&&prescriptionName}}" class="cycle">光度主人：{{prescriptionName}}</view>
+        <view wx:elif="{{selectTab==1&&prescriptionName}}" class="cycle">光度主人：{{prescriptionName}}</view> 
       </view>
       <view class="btnDiv">
-        <view class="btn1 {{selectTab==0?'selectBtn':'btn1-after'}}" bindtap="onBtn1">1.选择镜框和镜腿</view>
-        <view class="btn2 {{selectTab==1?'selectBtn':(selectTab==2?'btn2-after':'normalBtn')}}" bindtap="onBtn2">2.选择度数</view>
-        <view class="btn3 {{selectTab==2?'selectBtn':'normalBtn'}}" bindtap="onBtn3">3.选择镜片</view>
+        <!-- <view class="btn1 {{selectTab==0?'selectBtn':'btn1-after'}}" bindtap="onBtn1">1.选择镜框和镜腿</view> -->
+        <view class="btn2 {{selectTab==1?'selectBtn':'btn2-after'}}" bindtap="onBtn2">1. 选择度数</view>
+        <view class="btn3 {{selectTab==2?'selectBtn':'normalBtn'}}" bindtap="onBtn3">2. 选择镜片</view>
       </view>
       <view class="contentDiv">
-        <block wx:if="{{selectTab==0}}">
+        <!-- <block wx:if="{{selectTab==0}}">
           <view class="content1">
             <text class="title">镜框</text>
             <text class="choose">已选：{{colors[selectedColor].colorName}}</text>
@@ -32,11 +32,11 @@
               </view>
             </block>
           </view>
-        </block>
-        <block wx:elif="{{selectTab==1}}">
+        </block> -->
+        <block wx:if="{{selectTab==1}}">
           <view class="content2">
             <view class="degreeRow">
-              度数：<option-box placeholderText="左眼度数" bindoptionChange="onLeftDegreeChange" optionValue="{{filters.toFix(leftDegree)}}"/><option-box style="margin-left:25rpx;" placeholderText="右眼度数" bindoptionChange="onRightDegreeChange" optionValue="{{filters.toFix(rightDegree)}}"/>
+              度数：<option-box placeholderText="左眼度数" bindoptionChange="onLeftDegreeChange" optionValue="{{leftDegree}}"/><option-box style="margin-left:25rpx;" placeholderText="右眼度数" bindoptionChange="onRightDegreeChange" optionValue="{{rightDegree}}"/>
             </view>
             <view class="degreeRow">
               瞳距：<option-box boxWidth="610" placeholderText="请选择瞳距" options="{{interpupillarys}}" bindoptionChange="onInterpupillaryChange" optionValue="{{interpupillary}}" defaultValue="[0]"/>

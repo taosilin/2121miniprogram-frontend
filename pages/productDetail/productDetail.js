@@ -209,6 +209,11 @@ Page({
   onBuyNow: function(){
     this.buyNow.showSheet();
   },
+  onAddCartNew:function(){
+    wx.navigateTo({
+      url: '../addCart/addCart?frameID='+this.data.frameDetail.frameID,
+    })
+  },
   // 添加到收藏夹
   onAddLike: function(){
     var _this = this;

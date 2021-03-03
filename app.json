@@ -30,7 +30,8 @@
     "pages/webView/webView",
     "pages/myPrescription/myPrescription",
     "pages/addPrescription/addPrescription",
-    "pages/prescriptionChoose/prescriptionChoose"
+    "pages/prescriptionChoose/prescriptionChoose",
+    "pages/addCart/addCart"
   ],
   "tabBar": {
     "position": "bottom",

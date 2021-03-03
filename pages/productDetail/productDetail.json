@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "action-sheet-new":"../../components/actionSheetNew/actionSheetNew",
     "action-sheet":"../../components/actionSheet/actionSheet",
     "grant-dialog":"../../components/grantDialog/grantDialog",
     "login-dialog":"../../components/loginDialog/loginDialog",

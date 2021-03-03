@@ -1,4 +1,4 @@
-// components/actionSheet/actionSheet.js
+// components/actionSheetNew/actionSheetNew.js
 const app = getApp();
 const degreeList=[
   {
@@ -683,7 +683,7 @@ Component({
     },
     selectTab:{
       type:Number,
-      value:0
+      value:1
     },
     optionType:{
       type:Number,
@@ -728,7 +728,7 @@ Component({
     prescriptionID: null,
     prescriptionName: null
   },
-  
+
   /**
    * 组件的方法列表
    */
@@ -777,7 +777,7 @@ Component({
         }
       })
     },
- 
+
     onBtn3:function(){
       //检查第二步是否填写完整
       var _this = this;
@@ -1175,5 +1175,6 @@ Component({
       
     },
     move: function(){}
+
   }
 })

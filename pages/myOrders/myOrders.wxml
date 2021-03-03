@@ -6,7 +6,7 @@
 
     <!-- 标签页 -->
     <view class="labelbar">
-      <label-bar tabs="{{tabs}}" selected="{{selectTab}}" selectColor="#72C9FA" selectTextColor="#000000" textColor="#000000" letterSpacing="1" textSize="28" height="78" binditemtap="onTabChange">
+      <label-bar tabs="{{tabs}}" selected="{{selectTab}}" selectColor="#72C9FA" selectTextColor="#000000" textColor="#000000" letterSpacing="1" textSize="28" height="78" binditemtap="onTabChange" selectBold="bold">
         <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
         <!-- <view>这里是插入到组件slot中的内容</view> -->
       </label-bar>

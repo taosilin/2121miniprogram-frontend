@@ -1,0 +1,332 @@
+/* pages/addCart/addCart.wxss */
+.container{
+  width: 100%;
+}
+.selectSpecImgDiv{
+  width: 100%;
+}
+.selectSpecImg{
+  width: 100%;
+}
+.z-height{
+  width: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 38rpx 38rpx 0rpx 0rpx;
+  overflow: visible;
+}
+.productImg{
+  width: 252rpx;
+}
+.info{
+  width: 100%;
+  height: 116rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 48rpx;
+  padding-right: 40rpx;
+}
+.frameName{
+  color: #333333;
+  font-size: 40rpx;
+}
+.price{
+  font-size: 40rpx;
+  color: #000000;
+}
+.cycle{
+  font-size: 24rpx;
+  color: #9E9E9E;
+  margin-left: 24rpx;
+}
+.prescriptionName{
+  font-size: 24rpx;
+  color: #9E9E9E;
+  width: 678rpx;
+  margin-bottom: 44rpx;
+}
+.btnDiv{
+  width: 100%;
+  height: 86rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 616rpx;
+}
+.btn1{
+  width: 34%;
+  height: 86rpx;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0rpx 43rpx 43rpx 0rpx;
+  position: absolute;
+  z-index: 3;
+  box-sizing: border-box;
+}
+.btn2{
+  width: 68%;
+  height: 86rpx;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 0rpx 43rpx 43rpx 0rpx;
+  position: absolute;
+  z-index: 2;
+  padding-right: 100rpx;
+  box-sizing: border-box;
+}
+.btn3{
+  width: 100%;
+  height: 86rpx;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  z-index: 1;
+  padding-right: 74rpx;
+  box-sizing: border-box;
+}
+.normalBtn{
+  border: 1.8rpx solid #F1F1F1;
+  color: #747474;
+  background-color: white;
+}
+.selectBtn{
+  background-color: #72C9FA;
+  color: white;
+}
+.btn1-after{
+  background-color: #F9F9F9;
+  color: #BBBBBB;
+}
+.btn2-after{
+  background-color: #F2F2F2;
+  color: #BBBBBB;
+}
+
+.contentDiv{
+  width: 100%;
+  /* height: 680rpx; */
+  box-sizing: border-box;
+  position: absolute;
+  top: 702rpx;
+  /* overflow-y: scroll; */
+}
+
+.content1{
+  font-size: 24rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 28rpx;
+  padding-top: 46rpx;
+}
+.title{
+  color: black;
+}
+.choose{
+  color: #747474;
+  margin-left: 16rpx;
+}
+.frameImgDiv{
+  width: 100%;
+  box-sizing: border-box;
+  padding:24rpx 28rpx;
+  display: flex;
+  flex-direction: row;
+}
+.frameItemNormal{
+  width: 120rpx;
+  height: 56rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.6rpx solid #E2E2E2;
+  font-size: 22rpx;
+  color: #666666;
+  margin-right: 40rpx;
+}
+.frameItemSelected{
+  width: 120rpx;
+  height: 56rpx;
+  border: 1.6rpx solid #72C9FA;
+  background-color: #72C9FA;
+  color: white;
+  font-size: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40rpx;
+}
+.frameImg{
+  width: 108rpx;
+  height: 108rpx;
+  background-color: #979797;
+}
+
+.content2{
+  padding: 46rpx 26rpx 0rpx 26rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.degreeRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx; /*26rpx*/
+  margin-bottom: 44rpx;
+}
+.bottomDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding: 16rpx 40rpx;
+  box-sizing: border-box;
+}
+.bottomText{
+  /* width: 100%; */
+  font-size: 26rpx;
+  color: #747474;
+  text-align: right;
+  box-sizing: border-box;
+  padding-right: 26rpx;
+  position: absolute;
+  right: 0px;
+}
+.bottomBtn{
+  /* display: flex;
+  align-items: center;
+  justify-content: center;*/
+  width: 112rpx;
+  height: 45rpx; /*???*/ 
+  font-size: 26rpx;
+  color: #747474;
+  border-bottom: 2rpx solid #747474;
+  /* text-decoration:underline; */
+}
+.choosePrescription{
+  width: 260rpx;
+  height: 68rpx;
+  color: white;
+  background-color: #72C9FA;
+  border-radius: 34rpx;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26rpx;
+}
+.noPrescription{
+  width: 260rpx;
+  height: 68rpx;
+  color: #999999;
+  background-color: #EEEEEE;
+  border: 2rpx solid #FFFFFF;
+  border-radius: 34rpx;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26rpx;
+}
+.content3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+  /* height: 740rpx;
+  box-sizing: border-box;*/
+  /* border: 1px solid black;  */
+}
+.lensTitle{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 50rpx;/*????????*/
+  font-size: 28rpx;
+  color: black;
+  margin-top: 20rpx;
+}
+.optionList{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12rpx 28rpx;/*???????*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.optionItem{
+  height: 64rpx;
+  box-sizing: border-box;
+  padding: 12.6rpx 16.3rpx;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  margin-right: 16rpx;
+  margin-bottom: 12rpx;/*?????????*/
+  color: #747474;
+  border: 2rpx solid transparent;
+}
+.selectItem{
+  height: 64rpx;
+  box-sizing: border-box;
+  padding: 12.6rpx 16.3rpx;
+  font-size: 24rpx;
+  border: 2rpx solid #72C9FA;
+  color: #72C9FA;
+  border-radius: 10rpx;
+  margin-right: 16rpx;
+  margin-bottom: 12rpx;/*?????????*/
+}
+.description{
+  background-color: #F5F5F5;
+  color: #747474;
+  font-size: 24rpx;
+  width: 100%;
+  box-sizing: border-box;
+  /* padding: 38rpx 43.4rpx; */
+  padding-left: 43.4rpx;
+  padding-right: 43.4rpx;
+  padding-bottom: 30rpx;
+}
+.addBtn{
+  width: 228rpx;
+  height: 64rpx;
+  border-radius: 32rpx;
+  background-color: #72C9FA;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+}
+.completeBtn{
+  width: 224rpx;
+  height: 64rpx;
+  border-radius: 32rpx;
+  background-color: #72C9FA;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+}
+.disappear {
+  display: none;
+}
+.show {
+  display: block;
+}

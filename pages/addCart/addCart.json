@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "option-box":"../../components/optionBox/optionBox",
+    "save-dialog":"../../components/savePrescription/savePrescription"
+  }
+}

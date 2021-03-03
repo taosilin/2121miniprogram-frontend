@@ -1,4 +1,5 @@
 <!--pages/orderDetail/orderDetail.wxml-->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
 <view class="container">
   <view wx:if="{{orderDetail.order.state!='8'&&orderDetail.order.state!='9'&&orderDetail.order.state!='10'}}" class="orderStateDiv" style="height:143.1rpx;">
     <view class="iconDiv">
@@ -58,8 +59,8 @@
           <view class="productItemDiv">
             <view class="frameName">{{item.frameName}}</view>
             <view class="productItemInfo">{{item.colorName}}【{{item.lensName}},{{item.refractiveIndex}}】</view>
-            <view class="customInfo">度数：{{item.leftDegree}}|{{item.rightDegree}}瞳距：{{item.interpupillary}}</view>
-            <view class="customInfo">散光：{{item.leftAstigmatism}}|{{item.rightAstigmatism}}</view>
+            <view class="customInfo">度数：{{filters.toFix(item.leftDegree)}}|{{filters.toFix(item.rightDegree)}}瞳距：{{item.interpupillary}}</view>
+            <view class="customInfo">散光：{{filters.toFix(item.leftAstigmatism)}}|{{filters.toFix(item.rightAstigmatism)}}</view>
             <view class="customInfo">轴位：{{item.leftAxis}}|{{item.rightAxis}}</view>
           </view>
           <view class="itemRightDiv">

@@ -39,7 +39,7 @@
     </view>
 
     <view class="otherDiv">
-      <text class="parameter">颜色：{{colors[selectSpec].colorName}}</text>
+      <text class="parameter">已选颜色：{{colors[selectSpec].colorName}}</text>
       <view class="iconDiv">
 
         <view wx:if="{{isLike}}" bindtap="onDeleteLike">
@@ -163,8 +163,10 @@
   
 </view>
 
-<action-sheet id="addCart" addCart="0" colors="{{colors}}" frame="{{frameDetail}}"/>
-<action-sheet id="buyNow" addCart="1" colors="{{colors}}" frame="{{frameDetail}}"/>
+<!-- <action-sheet id="addCart" addCart="0" colors="{{colors}}" frame="{{frameDetail}}"/>
+<action-sheet id="buyNow" addCart="1" colors="{{colors}}" frame="{{frameDetail}}"/> -->
+<action-sheet-new id="addCart" addCart="0" colors="{{colors}}" frame="{{frameDetail}}" selectedColor="{{selectSpec}}"/>
+<action-sheet-new id="buyNow" addCart="1" colors="{{colors}}" frame="{{frameDetail}}" selectedColor="{{selectSpec}}"/>
 
 <grant-dialog id="getUserInfo" bindgetuserinfo="bindgetuserinfo"/>
 <login-dialog id="getPhoneNumber" binduserExist="binduserExist" bindgetphoneNumber="bindgetphoneNumber" />
