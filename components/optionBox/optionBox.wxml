@@ -5,15 +5,11 @@
     <view class="arrow"></view>
   </view>
 </view>
-<view class="z-height {{isOpen?'show':'disappear'}}" bindtap="openOption">
-  <picker-view class="optionBox" indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{defaultValue}}">
+<view class="z-height {{isOpen?'show':'disappear'}}" bindtap="closeOption">
+  <picker-view class="optionBox" indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{defaultValue}}" bindchange="onChangeValue">
     <picker-view-column>
       <view class="optionItem" wx:for="{{options}}" wx:key="{{options}}" data-id="{{index}}" style="line-height: 50px; text-align: center;" bindtap="onSelect">{{item}}</view>
     </picker-view-column>
-    <!-- <view class="btnDiv">
-      <view class="cancelBtn">取消</view>
-      <view class="confirmBtn">确定</view>
-    </view> -->
   </picker-view>
   
 </view>

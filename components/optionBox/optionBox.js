@@ -55,11 +55,23 @@ Component({
         isOpen:!this.data.isOpen
       })
     },
-    
+    closeOption:function(){
+      this.setData({
+        isOpen:false
+      })
+    },
     onSelect:function(e){
       let id = e.currentTarget.dataset.id
       this.setData({
         optionValue: this.properties.options[id]
+      })
+      this.triggerEvent("optionChange",this.properties.optionValue)
+    },
+    onChangeValue:function(e){
+      const val = e.detail.value
+      // console.log(e,val)
+      this.setData({
+        optionValue: this.properties.options[val[0]]
       })
       this.triggerEvent("optionChange",this.properties.optionValue)
     }
