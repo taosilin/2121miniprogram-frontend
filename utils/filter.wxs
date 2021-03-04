@@ -1,7 +1,8 @@
 var filters = {
   toFix: function (value) {
     if (value=="0.00") return (0.00).toFixed(2)
-    if (value) return Number(value).toFixed(2) 
+    if (value>0) return "+" + Number(value).toFixed(2).toString()
+    else if (value<0) return Number(value).toFixed(2)
     else return null
   } 
 }

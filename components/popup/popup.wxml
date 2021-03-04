@@ -1,4 +1,5 @@
 <!--components/popup/popup.wxml-->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
 <view class="container" hidden="{{flag}}" bindtap="hidePopup">
   <view class="popupContainer">
     <view class="popupTitle">定制信息</view>
@@ -7,9 +8,9 @@
     <view class="popupRow" wx:elif="{{customInfo.leftEyeDegree==0&&customInfo.rightEyeDegree==0}}">类型：平光</view>
     <view class="popupRow" wx:elif="{{customInfo.leftEyeDegree>0&&customInfo.rightEyeDegree>0}}">类型：远视</view>
     <view class="popupRow" wx:else>类型：其他</view>
-    <view class="popupRow">度数：左眼 {{customInfo.leftEyeDegree}}；右眼 {{customInfo.rightEyeDegree}}</view>
+    <view class="popupRow">度数：左眼 {{filters.toFix(customInfo.leftEyeDegree)}}；右眼 {{filters.toFix(customInfo.rightEyeDegree)}}</view>
     <view class="popupRow">瞳距：{{customInfo.interpupillaryDistance}}</view>
-    <view class="popupRow">散光：左眼 {{customInfo.leftEyeAstigmatism}}；右眼 {{customInfo.rightEyeAstigmatism}}</view>
+    <view class="popupRow">散光：左眼 {{filters.toFix(customInfo.leftEyeAstigmatism)}}；右眼 {{filters.toFix(customInfo.rightEyeAstigmatism)}}</view>
     <view class="popupRow">轴位：左眼 {{customInfo.leftEyeAxis}}；右眼 {{customInfo.rightEyeAxis}}</view>
   </view>
 </view>

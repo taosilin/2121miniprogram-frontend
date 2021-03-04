@@ -745,18 +745,6 @@ Component({
       this.setData({
         flag: !this.data.flag
       })
-    },
-
-    onBtn1:function(){
-      this.setData({
-        selectTab:0
-      })
-    },
-
-    onBtn2:function(){
-      this.setData({
-        selectTab:1
-      })
       var _this = this;
       wx.request({
         url: app.globalData.host+'/prescription/list',
@@ -775,6 +763,18 @@ Component({
         fail: function (res) {
           console.log(res);
         }
+      })
+    },
+
+    onBtn1:function(){
+      this.setData({
+        selectTab:0
+      })
+    },
+
+    onBtn2:function(){
+      this.setData({
+        selectTab:1
       })
     },
 
